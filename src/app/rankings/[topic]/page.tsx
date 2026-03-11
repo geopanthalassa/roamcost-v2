@@ -1,14 +1,16 @@
 import { supabase } from '@/lib/supabase';
 import CityCard from '@/components/CityCard';
 import Link from 'next/link';
+import { City } from '@/types/database';
 
 interface RankingPageProps {
-    params: {
+    params: Promise<{
         topic: string; // "cheapest", "nomads", "safest", etc.
-    };
+    }>;
 }
 
 export async function generateMetadata({ params }: RankingPageProps) {
+    const { topic } = await params;
     const titles: Record<string, string> = {
         cheapest: 'Cheapest Cities to Live in 2026',
         nomads: 'Best Cities for Digital Nomads',
@@ -16,7 +18,7 @@ export async function generateMetadata({ params }: RankingPageProps) {
         quality: 'Highest Quality of Life Cities',
     };
 
-    const title = titles[params.topic] || 'City Rankings';
+    const title = titles[topic] || 'City Rankings';
 
     return {
         title: `${title} | RoamCost`,
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: RankingPageProps) {
 }
 
 export default async function RankingPage({ params }: RankingPageProps) {
-    const { topic } = params;
+    const { topic } = await params;
 
     let query = supabase.from('cities_master').select('*').limit(50);
 
@@ -50,7 +52,7 @@ export default async function RankingPage({ params }: RankingPageProps) {
         description = 'The ultimate balance of amenities, environment, and community.';
     }
 
-    const { data: cities } = await query;
+    const { data: cities } = await query as unknown as { data: City[] };
 
     return (
         <div className="container section animate-fade-in">

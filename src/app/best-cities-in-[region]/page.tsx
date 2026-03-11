@@ -2,21 +2,24 @@ import { supabase } from '@/lib/supabase';
 import CityCard from '@/components/CityCard';
 import Link from 'next/link';
 
+import { City } from '@/types/database';
+
 interface RegionalPageProps {
-    params: {
+    params: Promise<{
         region: string;
-    };
+    }>;
 }
 
 export default async function BestCitiesInRegionPage({ params }: RegionalPageProps) {
-    const regionName = params.region.replace(/-/g, ' ');
+    const { region } = await params;
+    const regionName = region.replace(/-/g, ' ');
 
     const { data: cities } = await supabase
         .from('cities_master')
         .select('*')
         .ilike('country', regionName)
         .order('cost_index', { ascending: false })
-        .limit(20);
+        .limit(20) as unknown as { data: City[] };
 
     return (
         <div className="container section animate-fade-in">
@@ -45,7 +48,8 @@ export default async function BestCitiesInRegionPage({ params }: RegionalPagePro
 }
 
 export async function generateMetadata({ params }: RegionalPageProps) {
-    const name = params.region.replace(/-/g, ' ').toUpperCase();
+    const { region } = await params;
+    const name = region.replace(/-/g, ' ').toUpperCase();
     return {
         title: `Best Cities to Live in ${name} | RoamCost`,
         description: `Ranking the top cities in ${name} by quality of life, safety, and internet speed.`,

@@ -5,17 +5,18 @@ import WeatherWidget from '@/components/WeatherWidget';
 import Link from 'next/link';
 
 interface CityPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateMetadata({ params }: CityPageProps) {
+    const { slug } = await params;
     const { data: city } = await supabase
         .from('cities_master')
         .select('*')
-        .eq('slug', params.slug)
-        .single();
+        .eq('slug', slug)
+        .single() as unknown as { data: City | null };
 
     if (!city) return { title: 'City Not Found | RoamCost' };
 
@@ -26,11 +27,12 @@ export async function generateMetadata({ params }: CityPageProps) {
 }
 
 export default async function CityPage({ params }: CityPageProps) {
+    const { slug } = await params;
     const { data: city, error } = await supabase
         .from('cities_master')
         .select('*')
-        .eq('slug', params.slug)
-        .single();
+        .eq('slug', slug)
+        .single() as unknown as { data: City | null; error: any };
 
     if (error || !city) {
         notFound();
@@ -139,7 +141,7 @@ export default async function CityPage({ params }: CityPageProps) {
             <div className="card" style={{ marginTop: '3rem', padding: '2rem' }}>
                 <h3>Location</h3>
                 <div style={{ height: '300px', backgroundColor: '#f1f5f9', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--muted)' }}>
-                    Map View ({city.lat}, {city.long})
+                    Map View ({city.lat}, {city.lng})
                 </div>
             </div>
         </div>

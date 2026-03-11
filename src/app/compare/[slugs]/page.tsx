@@ -5,13 +5,14 @@ import Link from 'next/link';
 import CityCard from '@/components/CityCard';
 
 interface ComparePageProps {
-    params: {
+    params: Promise<{
         slugs: string; // formats: "paris-vs-tokyo"
-    };
+    }>;
 }
 
 export async function generateMetadata({ params }: ComparePageProps) {
-    const [city1Slug, city2Slug] = params.slugs.split('-vs-');
+    const { slugs } = await params;
+    const [city1Slug, city2Slug] = slugs.split('-vs-');
     if (!city1Slug || !city2Slug) return { title: 'Comparison | RoamCost' };
 
     return {
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: ComparePageProps) {
 }
 
 export default async function ComparePage({ params }: ComparePageProps) {
-    const [slug1, slug2] = params.slugs.split('-vs-');
+    const { slugs } = await params;
+    const [slug1, slug2] = slugs.split('-vs-');
 
     if (!slug1 || !slug2) {
         notFound();
@@ -30,9 +32,9 @@ export default async function ComparePage({ params }: ComparePageProps) {
     const { data, error } = await supabase
         .from('cities_master')
         .select('*')
-        .in('slug', [slug1, slug2]);
+        .in('slug', [slug1, slug2]) as unknown as { data: City[] | null; error: any };
 
-    const cities = data as City[];
+    const cities = data || [];
 
     if (error || !cities || cities.length < 2) {
         // Attempt fallback or show error

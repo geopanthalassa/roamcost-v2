@@ -1,10 +1,12 @@
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 
+import { City } from '@/types/database';
+
 interface ThingsToDoProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 async function getFoursquarePlaces(lat: number, lng: number) {
@@ -30,17 +32,18 @@ async function getFoursquarePlaces(lat: number, lng: number) {
 }
 
 export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
+    const { slug } = await params;
     const { data: city, error } = await supabase
         .from('cities_master')
         .select('*')
-        .eq('slug', params.slug)
-        .single();
+        .eq('slug', slug)
+        .single() as unknown as { data: City; error: any };
 
     if (error || !city) {
         notFound();
     }
 
-    const places = await getFoursquarePlaces(city.lat, city.long);
+    const places = await getFoursquarePlaces(city.lat, city.lng);
 
     return (
         <div className="container section animate-fade-in">
