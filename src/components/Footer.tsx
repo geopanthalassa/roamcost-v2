@@ -28,9 +28,9 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="container" style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', textAlign: 'center', color: var(--muted-foreground), fontSize: '0.875rem' }}>
-            &copy; {new Date().getFullYear()} RoamCost. All rights reserved. Built for explorers.
-        </div>
-    </footer >
-  );
+            <div className="container" style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', textAlign: 'center', color: 'var(--muted-foreground)', fontSize: '0.875rem' }}>
+                &copy; {new Date().getFullYear()} RoamCost. All rights reserved. Built for explorers.
+            </div>
+        </footer >
+    );
 }

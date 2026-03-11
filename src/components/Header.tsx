@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Translator from './Translator';
 
 export default function Header() {
     return (
@@ -9,9 +10,10 @@ export default function Header() {
                 </Link>
 
                 <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <Link href="/ranking/cheapest" style={{ fontWeight: 500 }}>Rankings</Link>
+                    <Link href="/rankings/cheapest" style={{ fontWeight: 500 }}>Rankings</Link>
                     <Link href="/compare" style={{ fontWeight: 500 }}>Compare</Link>
-                    <Link href="/nomads" style={{ fontWeight: 500 }}>Digital Nomads</Link>
+                    <Link href="/rankings/nomads" style={{ fontWeight: 500 }}>Nomads</Link>
+                    <Translator />
                     <button className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Get Started</button>
                 </nav>
             </div>

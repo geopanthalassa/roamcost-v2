@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import CityCard from '@/components/CityCard';
 import { supabase } from '@/lib/supabase';
+import { City } from '@/types/database';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -11,19 +12,19 @@ export default async function Home() {
     .from('cities_master')
     .select('*')
     .order('cost_index', { ascending: false })
-    .limit(4);
+    .limit(4) as unknown as { data: City[] };
 
   const { data: cheapestCities } = await supabase
     .from('cities_master')
     .select('*')
     .order('rent_index', { ascending: true })
-    .limit(4);
+    .limit(4) as unknown as { data: City[] };
 
   const { data: topNomadCities } = await supabase
     .from('cities_master')
     .select('*')
     .order('internet', { ascending: false })
-    .limit(4);
+    .limit(4) as unknown as { data: City[] };
 
   return (
     <div className="homepage">
@@ -59,11 +60,11 @@ export default async function Home() {
           <Link href="/rankings/safest" className="card" style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🛡️</div>
             <h3 style={{ fontSize: '1.1rem' }}>Safest Cities</h3>
-          </<ctrl94>
-            <Link href="/compare" className="card" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⚖️</div>
-              <h3 style={{ fontSize: '1.1rem' }}>Compare Cities</h3>
-            </Link>
+          </Link>
+          <Link href="/compare" className="card" style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⚖️</div>
+            <h3 style={{ fontSize: '1.1rem' }}>Compare Cities</h3>
+          </Link>
         </div>
       </section>
 
