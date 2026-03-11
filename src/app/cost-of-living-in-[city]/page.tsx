@@ -10,9 +10,15 @@ interface SEOPageProps {
     }>;
 }
 
+export const dynamic = 'force-dynamic';
+
 // We reuse the CityPage logic but under an SEO-friendly URL
 export default async function CostOfLivingCityPage({ params }: SEOPageProps) {
     const { city: cityName } = await params;
+
+    if (!cityName) {
+        return notFound();
+    }
     const { data: city } = await supabase
         .from('cities_master')
         .select('slug')
@@ -29,6 +35,7 @@ export default async function CostOfLivingCityPage({ params }: SEOPageProps) {
 
 export async function generateMetadata({ params }: SEOPageProps) {
     const { city } = await params;
+    if (!city) return { title: 'Cost of Living | RoamCost' };
     const name = city.replace(/-/g, ' ').toUpperCase();
     return {
         title: `Cost of Living in ${name} | RoamCost`,

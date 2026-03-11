@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import CityCard from '@/components/CityCard';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
 
 interface RankingPageProps {
@@ -26,8 +27,14 @@ export async function generateMetadata({ params }: RankingPageProps) {
     };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function RankingPage({ params }: RankingPageProps) {
     const { topic } = await params;
+
+    if (!topic) {
+        return notFound();
+    }
 
     let query = supabase.from('cities_master').select('*').limit(50);
 

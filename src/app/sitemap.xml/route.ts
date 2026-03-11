@@ -19,8 +19,8 @@ function generateSiteMap(cities: any[]) {
      </url>
      ${cities
       .map(({ slug, city, country }) => {
-        const citySlug = city.toLowerCase().replace(/ /g, '-');
-        const regionSlug = country.toLowerCase().replace(/ /g, '-');
+        const citySlug = (city || '').toLowerCase().replace(/ /g, '-');
+        const regionSlug = (country || '').toLowerCase().replace(/ /g, '-');
         return `
        <url><loc>${`${EXTERNAL_DATA_URL}/city/${slug}`}</loc></url>
        <url><loc>${`${EXTERNAL_DATA_URL}/city/${slug}/things-to-do`}</loc></url>

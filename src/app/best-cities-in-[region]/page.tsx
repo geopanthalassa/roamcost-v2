@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import CityCard from '@/components/CityCard';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 import { City } from '@/types/database';
 
@@ -10,8 +11,15 @@ interface RegionalPageProps {
     }>;
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function BestCitiesInRegionPage({ params }: RegionalPageProps) {
     const { region } = await params;
+
+    if (!region) {
+        return notFound();
+    }
+
     const regionName = region.replace(/-/g, ' ');
 
     const { data: cities } = await supabase
@@ -49,6 +57,7 @@ export default async function BestCitiesInRegionPage({ params }: RegionalPagePro
 
 export async function generateMetadata({ params }: RegionalPageProps) {
     const { region } = await params;
+    if (!region) return { title: 'Region Rankings | RoamCost' };
     const name = region.replace(/-/g, ' ').toUpperCase();
     return {
         title: `Best Cities to Live in ${name} | RoamCost`,

@@ -12,6 +12,8 @@ interface ComparePageProps {
 
 export async function generateMetadata({ params }: ComparePageProps) {
     const { slugs } = await params;
+    if (!slugs) return { title: 'Comparison | RoamCost' };
+
     const [city1Slug, city2Slug] = slugs.split('-vs-');
     if (!city1Slug || !city2Slug) return { title: 'Comparison | RoamCost' };
 
@@ -21,8 +23,15 @@ export async function generateMetadata({ params }: ComparePageProps) {
     };
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function ComparePage({ params }: ComparePageProps) {
     const { slugs } = await params;
+
+    if (!slugs) {
+        return notFound();
+    }
+
     const [slug1, slug2] = slugs.split('-vs-');
 
     if (!slug1 || !slug2) {
