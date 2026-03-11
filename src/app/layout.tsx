@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: "Explore and compare the cost of living, lifestyle quality, and travel experiences between cities around the world.",
 };
 
+import { CurrencyProvider } from "@/context/CurrencyContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,9 +24,11 @@ export default function RootLayout({
         <meta name="google-translate-customization" content="9f35768e67a71c1-f03e73ef93656214-gd98f869974204e30-10"></meta>
       </head>
       <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CurrencyProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </CurrencyProvider>
       </body>
     </html>
   );

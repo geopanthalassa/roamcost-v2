@@ -30,40 +30,48 @@ export default async function Home() {
     <div className="homepage">
       {/* Hero Section */}
       <section className="hero" style={{
-        padding: '8rem 0',
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+        padding: '10rem 0',
+        background: 'linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%)',
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container animate-fade-in">
-          <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-            Find the perfect city for your <span style={{ color: 'var(--secondary)' }}>next chapter</span>.
+        {/* Abstract background elements */}
+        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+        <div style={{ position: 'absolute', bottom: '-10%', left: '-5%', width: '30%', height: '30%', background: 'radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+
+        <div className="container animate-fade-in" style={{ position: 'relative', zIndex: 1 }}>
+          <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.05em' }}>
+            Your <span style={{ color: 'var(--secondary)' }}>Next Chapter</span> <br /> Starts Here.
           </h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--muted-foreground)', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
-            Compare cost of living, quality of life, and travel experiences across 45,000+ cities worldwide.
+          <p style={{ fontSize: '1.4rem', color: 'rgba(255, 255, 255, 0.8)', marginBottom: '3.5rem', maxWidth: '750px', margin: '0 auto 3.5rem', fontWeight: 500 }}>
+            Compare costs, quality of life, and travel metrics across <span style={{ color: 'var(--secondary)' }}>45,000+ cities</span> worldwide. Clear, data-driven, and beautiful.
           </p>
-          <SearchBar />
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <SearchBar />
+          </div>
         </div>
       </section>
 
       {/* Categories / Quick Links */}
-      <section className="container section">
+      <section className="container section" style={{ marginTop: '-4rem', position: 'relative', zIndex: 2 }}>
         <div className="grid grid-cols-4">
-          <Link href="/rankings/nomads" className="card" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>💻</div>
-            <h3 style={{ fontSize: '1.1rem' }}>Digital Nomad Hubs</h3>
+          <Link href="/rankings/nomads" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Digital Nomads</div>
+            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Fast internet & workspaces</p>
           </Link>
-          <Link href="/rankings/cheapest" className="card" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>💰</div>
-            <h3 style={{ fontSize: '1.1rem' }}>Budget Friendly</h3>
+          <Link href="/rankings/cheapest" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Budget Friendly</div>
+            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Most affordable living</p>
           </Link>
-          <Link href="/rankings/safest" className="card" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🛡️</div>
-            <h3 style={{ fontSize: '1.1rem' }}>Safest Cities</h3>
+          <Link href="/rankings/safest" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Safest Cities</div>
+            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Secure & peaceful stays</p>
           </Link>
-          <Link href="/compare" className="card" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⚖️</div>
-            <h3 style={{ fontSize: '1.1rem' }}>Compare Cities</h3>
+          <Link href="/compare" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Compare Now</div>
+            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Detailed 1-on-1 metrics</p>
           </Link>
         </div>
       </section>

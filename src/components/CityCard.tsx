@@ -1,45 +1,67 @@
+'use client';
+
 import Link from 'next/link';
 import { City } from '@/types/database';
+import { useCurrency } from '@/context/CurrencyContext';
 
 interface CityCardProps {
     city: City;
 }
 
 export default function CityCard({ city }: CityCardProps) {
-    // Mock image based on city name for now, or just a colored background
-    const placeholderImage = `https://source.unsplash.com/featured/?${city.city},${city.country}`;
+    const { formatValue } = useCurrency();
+
+    // Better imagery: use city name and a fallback pattern
+    const imageUrl = `https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800&q=80`;
+    // We'll use a dynamic one based on city but with more robust keywords
+    const dynamicImage = `https://source.unsplash.com/featured/800x600?${encodeURIComponent(city.city)},${encodeURIComponent(city.country)},cityscape`;
 
     return (
-        <Link href={`/city/${city.slug}`} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <Link href={`/city/${city.slug}`} className="card" style={{
+            padding: 0,
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            border: 'none',
+            boxShadow: 'var(--shadow-md)',
+            background: 'var(--card)'
+        }}>
             <div style={{
-                height: '200px',
-                backgroundColor: '#e2e8f0',
-                backgroundImage: `url(${placeholderImage})`,
+                height: '220px',
+                backgroundColor: 'var(--primary)',
+                backgroundImage: `url(${dynamicImage}), url(${imageUrl})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
+                transition: 'transform 0.5s ease'
             }} />
-            <div style={{ padding: '1.25rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+            <div style={{ padding: '1.5rem', position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
                     <div>
-                        <h3 style={{ margin: 0, fontSize: '1.25rem' }}>{city.city}</h3>
-                        <p style={{ margin: 0, color: 'var(--muted)', fontSize: '0.875rem' }}>{city.country}</p>
-                    </div>
-                    <div style={{
-                        backgroundColor: 'var(--accent)',
-                        color: 'white',
-                        padding: '0.25rem 0.75rem',
-                        borderRadius: '2rem',
-                        fontSize: '0.875rem',
-                        fontWeight: 700
-                    }}>
-                        {city.cost_index}
+                        <h3 style={{ margin: 0, fontSize: '1.4rem', fontWeight: 800, color: 'var(--foreground)' }}>{city.city}</h3>
+                        <p style={{ margin: 0, color: 'var(--muted)', fontSize: '0.9rem', fontWeight: 600 }}>{city.country}</p>
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted)' }}>
-                    <div>Rent: {city.rent_index}</div>
-                    <div>Safety: {city.safety}</div>
-                    <div>Internet: {city.internet}</div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <span style={{ fontSize: '0.7rem', fontWeight: 700, backgroundColor: '#fef3c7', color: '#92400e', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                            RENT: {formatValue(city.rent_index * 10)}
+                        </span>
+                        <span style={{ fontSize: '0.7rem', fontWeight: 700, backgroundColor: '#f3e8ff', color: '#6b21a8', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                            SAFETY: {city.safety}/100
+                        </span>
+                    </div>
+                    <div style={{
+                        backgroundColor: 'var(--secondary)',
+                        color: 'var(--foreground)',
+                        padding: '0.4rem 0.8rem',
+                        borderRadius: '0.75rem',
+                        fontSize: '1rem',
+                        fontWeight: 900,
+                        boxShadow: '0 2px 4px rgba(251, 191, 36, 0.3)'
+                    }}>
+                        {city.cost_index}
+                    </div>
                 </div>
             </div>
         </Link>
