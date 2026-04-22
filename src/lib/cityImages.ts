@@ -127,12 +127,12 @@ export const CITY_IMAGES: Record<string, string> = {
     'algiers': 'photo-1539650116574-8efeb43e2750',
 };
 
-export function getCityImage(slug: string, width = 800, height = 600): string {
+export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
     const photoId = CITY_IMAGES[slug];
     if (photoId) {
         return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
     }
-    // Fallback: picsum with consistent seed
-    const seed = Math.abs((slug || 'city').split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
-    return `https://picsum.photos/seed/${seed}/${width}/${height}`;
+    // Fallback: use city name for a relevant Unsplash search
+    const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
+    return `https://source.unsplash.com/${width}x${height}/?${query}`;
 }

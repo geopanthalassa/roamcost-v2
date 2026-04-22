@@ -89,22 +89,22 @@ export default function ProfileFilter() {
                 </div>
 
                 {/* Profile selector */}
-                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', marginBottom: '2rem', maxWidth: '500px', margin: '0 auto 2rem' }}>
                     {PROFILES.map(p => (
                         <button
                             key={p.id}
                             onClick={() => setActive(p.id)}
                             style={{
                                 display: 'flex', alignItems: 'center', gap: '0.5rem',
-                                padding: '0.625rem 1.25rem', borderRadius: '2rem',
+                                padding: '0.75rem 1rem', borderRadius: '0.875rem',
                                 border: `2px solid ${active === p.id ? p.color : '#e2e8f0'}`,
                                 backgroundColor: active === p.id ? p.bg : '#ffffff',
                                 color: active === p.id ? p.color : '#64748b',
                                 fontWeight: 700, fontSize: '0.875rem', cursor: 'pointer',
-                                transition: 'all 0.15s',
+                                transition: 'all 0.15s', width: '100%', justifyContent: 'center',
                             }}
                         >
-                            <span style={{ color: active === p.id ? p.color : '#94a3b8' }}>{p.icon}</span>
+                            <span style={{ color: active === p.id ? p.color : '#94a3b8', flexShrink: 0 }}>{p.icon}</span>
                             {p.label}
                         </button>
                     ))}
@@ -126,7 +126,9 @@ export default function ProfileFilter() {
                         </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.625rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.625rem' }}
+                        className="profile-results-grid"
+                    >
                         {profile.rankings.map(r => (
                             <Link
                                 key={r.href}
@@ -152,6 +154,10 @@ export default function ProfileFilter() {
             <style jsx global>{`
                 @media (max-width: 768px) {
                     .profile-grid { grid-template-columns: repeat(2, 1fr) !important; }
+                    .profile-results-grid { grid-template-columns: repeat(2, 1fr) !important; }
+                }
+                @media (max-width: 480px) {
+                    .profile-results-grid { grid-template-columns: 1fr !important; }
                 }
             `}</style>
         </section>

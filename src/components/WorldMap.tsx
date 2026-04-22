@@ -20,7 +20,7 @@ interface WorldMapProps {
 function getCostColor(cost: number): string {
     // Green (cheap) → Orange → Red (expensive)
     if (cost <= 0) return '#94a3b8';
-    if (cost < 200) return '#22c55e';   // very cheap
+    if (cost < 200) return '#00C896';   // very cheap
     if (cost < 400) return '#2BC0B4';   // cheap
     if (cost < 600) return '#F7831E';   // medium
     if (cost < 800) return '#ef4444';   // expensive
@@ -123,7 +123,7 @@ export default function WorldMap({ cities }: WorldMapProps) {
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem', alignItems: 'center' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost of living:</span>
                 {[
-                    { color: '#22c55e', label: 'Very affordable' },
+                    { color: '#00C896', label: 'Very affordable' },
                     { color: '#2BC0B4', label: 'Affordable' },
                     { color: '#F7831E', label: 'Moderate' },
                     { color: '#ef4444', label: 'Expensive' },

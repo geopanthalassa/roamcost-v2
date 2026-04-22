@@ -13,7 +13,7 @@ export default function CityCard({ city }: CityCardProps) {
     const { formatValue } = useCurrency();
 
     const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
-    const dynamicImage = getCityImage(city.slug, 800, 600);
+    const dynamicImage = getCityImage(city.slug, 800, 600, city.city);
 
     const safetyColor = city.safety >= 7 ? '#0ea5a0' : city.safety >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = city.internet >= 50 ? 'Fast' : city.internet >= 20 ? 'Good' : city.internet > 0 ? 'Slow' : null;
@@ -46,10 +46,10 @@ export default function CityCard({ city }: CityCardProps) {
                 )}
             </div>
 
-            <div style={{ padding: '1.5rem' }}>
-                <div style={{ marginBottom: '1rem' }}>
-                    <h3 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em' }}>{city.city}</h3>
-                    <p style={{ margin: '0.2rem 0 0', color: '#64748b', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city.country}</p>
+            <div style={{ padding: '1rem 1.25rem' }}>
+                <div style={{ marginBottom: '0.75rem' }}>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.2, wordBreak: 'break-word' }}>{city.city}</h3>
+                    <p style={{ margin: '0.15rem 0 0', color: '#64748b', fontSize: '0.72rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city.country}</p>
                 </div>
 
                 <div style={{ marginBottom: '0.75rem' }}>
