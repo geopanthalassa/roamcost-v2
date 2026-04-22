@@ -50,11 +50,17 @@ export default async function Home() {
     const { data: popularCities } = await supabase
         .from('cities_master')
         .select('*')
-        .in('slug', POPULAR_CITY_SLUGS) as unknown as { data: City[] };
+        .in('slug', POPULAR_CITY_SLUGS)
+        .order('population', { ascending: false }) as unknown as { data: City[] };
 
-    // Sort to match our preferred order
+    // For each slug, pick the city with highest population (avoid small towns)
+    const seenSlugs = new Set<string>();
     const sortedPopular = POPULAR_CITY_SLUGS
-        .map(slug => popularCities?.find(c => c.slug === slug))
+        .map(slug => {
+            const city = popularCities?.find(c => c.slug === slug && !seenSlugs.has(c.slug));
+            if (city) seenSlugs.add(city.slug);
+            return city;
+        })
         .filter(Boolean) as City[];
 
     const { data: cheapestCities } = await supabase

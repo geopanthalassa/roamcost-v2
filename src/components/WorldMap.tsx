@@ -18,13 +18,12 @@ interface WorldMapProps {
 }
 
 function getCostColor(cost: number): string {
-    // Jade green (cheap) → Mint → Orange → Red (expensive)
-    if (cost <= 0) return '#94a3b8';
-    if (cost < 200) return '#1B4332';   // very cheap — deep jade
-    if (cost < 400) return '#40916C';   // cheap — jade
-    if (cost < 600) return '#52B788';   // moderate — mint succulent
-    if (cost < 800) return '#F7831E';   // expensive — orange
-    return '#dc2626';                    // very expensive — red
+    if (cost <= 0) return '#94a3b8';      // grey — no data
+    if (cost < 200) return '#52B788';     // mint green — very affordable
+    if (cost < 400) return '#40916C';     // jade — affordable
+    if (cost < 600) return '#F7831E';     // orange — moderate
+    if (cost < 800) return '#ef4444';     // red — expensive
+    return '#991b1b';                      // dark red — very expensive
 }
 
 function getCostLabel(cost: number): string {
@@ -123,13 +122,11 @@ export default function WorldMap({ cities }: WorldMapProps) {
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem', alignItems: 'center' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost of living:</span>
                 {[
-                    { color: '#1B4332', label: 'Very affordable' },
+                    { color: '#52B788', label: 'Very affordable' },
                     { color: '#40916C', label: 'Affordable' },
-                    { color: '#52B788', label: 'Moderate' },
-                    { color: '#F7831E', label: 'Expensive' },
-                    { color: '#dc2626', label: 'Very expensive' },
+                    { color: '#F7831E', label: 'Moderate' },
                     { color: '#ef4444', label: 'Expensive' },
-                    { color: '#b91c1c', label: 'Very expensive' },
+                    { color: '#991b1b', label: 'Very expensive' },
                 ].map(l => (
                     <div key={l.label} style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                         <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: l.color, display: 'inline-block', flexShrink: 0 }} />
