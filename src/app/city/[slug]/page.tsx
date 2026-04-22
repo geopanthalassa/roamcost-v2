@@ -7,6 +7,7 @@ import Link from 'next/link';
 import CityCard from '@/components/CityCard';
 import CurrencyDisplay from '@/components/CurrencyDisplay';
 import WeatherWidget from '@/components/WeatherWidget';
+import CostPersonalizer from '@/components/CostPersonalizer';
 
 interface CityPageProps { params: Promise<{ slug: string }>; }
 
@@ -231,6 +232,17 @@ export default async function CityPage({ params }: CityPageProps) {
                             See cities with full data →
                         </Link>
                     </div>
+                )}
+
+                {/* COST PERSONALIZER */}
+                {hasData && (
+                    <CostPersonalizer
+                        baseRent={rent}
+                        baseFood={food}
+                        baseTransport={transport}
+                        baseUtilities={utilities}
+                        city={c.city}
+                    />
                 )}
 
                 {/* WEATHER */}
