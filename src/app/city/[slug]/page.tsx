@@ -204,20 +204,50 @@ export default async function CityPage({ params }: CityPageProps) {
 
                 {/* TRAVEL — always visible */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
-                    <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem' }}>✈️ Plan your trip to {c.city}</h2>
+                    <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e8833a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 16z"/></svg>
+                        Plan your trip to {c.city}
+                    </h2>
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Find the best deals on flights, hotels and long-term stays</p>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
                         {[
-                            { icon: '🏨', label: `Hotels in ${c.city}`, sub: 'via Booking.com', color: '#003580', bg: '#eff6ff', href: `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(c.city + ', ' + c.country)}` },
-                            { icon: '✈️', label: `Flights to ${c.city}`, sub: 'via Kiwi.com', color: '#e8612c', bg: '#fff7ed', href: `https://www.kiwi.com/en/search/results/anywhere/${encodeURIComponent(c.city.toLowerCase().replace(/ /g, '-'))}/anytime/anytime` },
-                            { icon: '🏠', label: 'Long-term Stays', sub: 'via Airbnb', color: '#ff385c', bg: '#fff1f2', href: `https://www.airbnb.com/s/${encodeURIComponent(c.city)}/homes` },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
+                                label: `Hotels in ${c.city}`, sub: 'Booking.com', color: '#003580', bg: '#eff6ff',
+                                href: `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(c.city + ', ' + c.country)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8612c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+                                label: `Flights to ${c.city}`, sub: 'Google Flights', color: '#e8612c', bg: '#fff7ed',
+                                href: `https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI1LTAxLTAxagcIARIDJEpGcgcIARIDJkpG`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff385c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>,
+                                label: 'Long-term Stays', sub: 'Airbnb', color: '#ff385c', bg: '#fff1f2',
+                                href: `https://www.airbnb.com/s/${encodeURIComponent(c.city)}/homes`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00aa6c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
+                                label: `Things to do`, sub: 'Tripadvisor', color: '#00aa6c', bg: '#f0fdf4',
+                                href: `https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4285f4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>,
+                                label: `Explore ${c.city}`, sub: 'Google Maps', color: '#4285f4', bg: '#eff6ff',
+                                href: `https://www.google.com/maps/search/${encodeURIComponent(c.city)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+                                label: 'Cost of Living', sub: 'Numbeo', color: '#5b8c71', bg: '#f0fdf4',
+                                href: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(c.city.replace(/ /g, '-'))}`
+                            },
                         ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
-                                style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: link.bg, borderRadius: '0.875rem', textDecoration: 'none', color: '#0f172a', border: `1px solid ${link.color}22` }}>
-                                <span style={{ fontSize: '1.75rem', flexShrink: 0 }}>{link.icon}</span>
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.25rem', backgroundColor: link.bg, borderRadius: '0.875rem', textDecoration: 'none', color: '#0f172a', border: `1px solid ${link.color}22` }}>
+                                <div style={{ flexShrink: 0 }}>{link.svg}</div>
                                 <div>
-                                    <div style={{ fontWeight: 800, fontSize: '0.875rem' }}>{link.label}</div>
-                                    <div style={{ fontSize: '0.75rem', color: link.color, fontWeight: 600, marginTop: '2px' }}>{link.sub}</div>
+                                    <div style={{ fontWeight: 800, fontSize: '0.8rem', color: '#0f172a' }}>{link.label}</div>
+                                    <div style={{ fontSize: '0.7rem', color: link.color, fontWeight: 600, marginTop: '1px' }}>{link.sub}</div>
                                 </div>
                             </a>
                         ))}
