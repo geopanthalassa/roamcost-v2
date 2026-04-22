@@ -46,10 +46,10 @@ export default async function CityPage({ params }: CityPageProps) {
         .order('population', { ascending: false })
         .limit(3) as unknown as { data: City[] };
 
-    const rent = (c.rent_index ?? 0) * 10;
-    const food = (c.food_index ?? 0) * 5;
-    const transport = (c.transport_index ?? 0) * 2;
-    const utilities = (c.utilities_index ?? 0) * 3;
+    const rent = (c.rent_index ?? 0);           // already USD/month
+    const food = (c.food_index ?? 0) * 30;      // USD/day × 30 days
+    const transport = (c.transport_index ?? 0); // already USD/month
+    const utilities = (c.utilities_index ?? 0); // already USD/month
     const monthly = Math.round(rent + food + transport + utilities);
 
     return (

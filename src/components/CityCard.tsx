@@ -12,7 +12,7 @@ interface CityCardProps {
 export default function CityCard({ city }: CityCardProps) {
     const { formatValue } = useCurrency();
 
-    const estimatedMonthly = (city.rent_index * 10) + (city.food_index * 5) + (city.transport_index * 2) + (city.utilities_index * 3);
+    const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
     const dynamicImage = getCityImage(city.slug, 800, 600);
 
     const safetyColor = city.safety >= 7 ? '#16a34a' : city.safety >= 5 ? '#d97706' : '#dc2626';

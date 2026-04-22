@@ -47,15 +47,22 @@ export default async function ComparePage({ params }: ComparePageProps) {
         );
     }
 
-    const est1 = Math.round((city1.rent_index * 10) + (city1.food_index * 5) + (city1.transport_index * 2) + (city1.utilities_index * 3));
-    const est2 = Math.round((city2.rent_index * 10) + (city2.food_index * 5) + (city2.transport_index * 2) + (city2.utilities_index * 3));
+    const est1 = Math.round((city1.rent_index) + (city1.food_index * 30) + (city1.transport_index) + (city1.utilities_index));
+    const est2 = Math.round((city2.rent_index) + (city2.food_index * 30) + (city2.transport_index) + (city2.utilities_index));
 
     const metrics = [
         { label: 'Quality Score', icon: 'chart', key: 'cost_index', higherBetter: true },
-        { label: 'Monthly Rent', icon: 'home', key: 'rent_index', factor: 10, higherBetter: false, prefix: '$' },
-        { label: 'Food & Dining', icon: 'food', key: 'food_index', factor: 5, higherBetter: false, prefix: '$' },
-        { label: 'Transport', icon: 'bus', key: 'transport_index', factor: 2, higherBetter: false, prefix: '$' },
-        { label: 'Utilities', icon: 'bolt', key: 'utilities_index', factor: 3, higherBetter: false, prefix: '$' },
+        { label: 'Monthly Rent', icon: 'home', key: 'rent_index', factor: 1, higherBetter: false, prefix: '$' },
+        { label: 'Food & Dining', icon: 'food', key: 'food_index', factor: 30, higherBetter: false, prefix: '$' },
+        { label: 'Transport', icon: 'bus', key: 'transport_index', factor: 1, higherBetter: false, prefix: '$' },
+        { label: 'Utilities', icon: 'bolt', key: 'utilities_index', factor: 1, higherBetter: false, prefix: '$' },
+
+    const metrics = [
+        { label: 'Quality Score', icon: 'chart', key: 'cost_index', higherBetter: true },
+        { label: 'Monthly Rent', icon: 'home', key: 'rent_index', factor: 1, higherBetter: false, prefix: '$' },
+        { label: 'Food & Dining', icon: 'food', key: 'food_index', factor: 30, higherBetter: false, prefix: '$' },
+        { label: 'Transport', icon: 'bus', key: 'transport_index', factor: 1, higherBetter: false, prefix: '$' },
+        { label: 'Utilities', icon: 'bolt', key: 'utilities_index', factor: 1, higherBetter: false, prefix: '$' },
         { label: 'Safety', icon: 'shield', key: 'safety', higherBetter: true },
         { label: 'Internet (Mbps)', icon: 'wifi', key: 'internet', higherBetter: true },
         { label: 'Healthcare', icon: 'health', key: 'healthcare', higherBetter: true },
