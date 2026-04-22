@@ -215,7 +215,9 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     if (photoId) {
         return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
     }
-    // Fallback: use city name for a relevant Unsplash search
+    // Fallback: use city name for Unsplash search
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
 }
+
+export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
