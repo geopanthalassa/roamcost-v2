@@ -209,12 +209,12 @@ export const CITY_IMAGES: Record<string, string> = {
     'cairo-egypt': 'photo-1539650116574-8efeb43e2750',
     'nairobi-kenya': 'photo-1611348586804-61bf6c080437',
     // African & Middle East cities - curated Unsplash photos
-    'abuja': 'photo-1614935151651-0bea6508db6b',
-    'kinshasa': 'photo-1577948000111-9c970dfe3743',
-    'luanda': 'photo-1580060839134-75a5edca2e99',
-    'abuja-nigeria': 'photo-1614935151651-0bea6508db6b',
-    'kinshasa-congo--kinshasa': 'photo-1577948000111-9c970dfe3743',
-    'luanda-angola': 'photo-1580060839134-75a5edca2e99',
+    'abuja': 'photo-1577948000111-9c970dfe3743',
+    'kinshasa': 'photo-1597212720156-b0a6ae05e3aa',
+    'luanda': 'photo-1611348586804-61bf6c080437',
+    'abuja-nigeria': 'photo-1577948000111-9c970dfe3743',
+    'kinshasa-congo--kinshasa': 'photo-1597212720156-b0a6ae05e3aa',
+    'luanda-angola': 'photo-1611348586804-61bf6c080437',
     'lagos-nigeria': 'photo-1577948000111-9c970dfe3743',
     'accra-ghana': 'photo-1611348586804-61bf6c080437',
     'addis-ababa-ethiopia': 'photo-1611348586804-61bf6c080437',
@@ -282,9 +282,21 @@ export const CITY_IMAGES: Record<string, string> = {
     'valencia-spain': 'photo-1558618047-f4e58f39cf65',
     'warsaw-poland-1': 'photo-1607427293702-036933bbf746',
 
-    'bamako': 'photo-1580060839134-75a5edca2e99',
+    'bamako': 'photo-1611348586804-61bf6c080437',
     'beirut': 'photo-1539650116574-8efeb43e2750',
 
+    'brazzaville': 'photo-1577948000111-9c970dfe3743',
+    'brazzaville-congo--brazzaville': 'photo-1577948000111-9c970dfe3743',
+    'abidjan': 'photo-1580060839134-75a5edca2e99',
+    'abidjan-cote-divoire': 'photo-1580060839134-75a5edca2e99',
+    'daegu': 'photo-1601621915196-2621bfb0cd6e',
+    'daegu-south-korea': 'photo-1601621915196-2621bfb0cd6e',
+    'almaty': 'photo-1508804185872-d7badad00f7d',
+    'kuwait-city': 'photo-1575547991-c7f97cd4ea08',
+    'kuwait-city-kuwait': 'photo-1575547991-c7f97cd4ea08',
+    'phoenix': 'photo-1534190760961-74e8c1c5c3da',
+    'guatemala-city': 'photo-1585464231875-d9ef1f5ad396',
+    'perth-australia': 'photo-1506973035872-a4ec16b8e8d9',
 };
 
 export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
