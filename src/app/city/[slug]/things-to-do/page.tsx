@@ -102,6 +102,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
 
     const heroImage = getCityImage(slug, 1400, 500, city.city);
     const GYG_ID = 'VVPTRVK';
+    const KLOOK_ID = '119390';
 
     // JSON-LD structured data
     const schema = {
@@ -157,6 +158,11 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                         target="_blank" rel="noopener noreferrer"
                         style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, border: '1px solid rgba(255,255,255,0.2)' }}>
                         Search Viator →
+                    </a>
+                    <a href={`https://affiliate.klook.com/redirect?aid=${KLOOK_ID}&k_site=${encodeURIComponent('https://www.klook.com/s/' + city.city)}`}
+                        target="_blank" rel="noopener noreferrer"
+                        style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, border: '1px solid rgba(255,255,255,0.2)' }}>
+                        Search Klook →
                     </a>
                 </div>
 
@@ -294,6 +300,11 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
                                     Tripadvisor
+                                </a>
+                                <a href={`https://affiliate.klook.com/redirect?aid=${KLOOK_ID}&k_site=${encodeURIComponent('https://www.klook.com/s/' + city.city)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
+                                    Klook
                                 </a>
                             </div>
                         </div>
