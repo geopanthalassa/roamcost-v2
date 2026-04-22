@@ -27,9 +27,13 @@ export default async function ComparePage({ params }: ComparePageProps) {
     if (!slug1 || !slug2) notFound();
 
     const { data } = await supabase
-        .from('cities_master').select('*').in('slug', [slug1, slug2]);
+        .from('cities_master')
+        .select('*')
+        .in('slug', [slug1, slug2])
+        .order('population', { ascending: false });
 
     const cities = (data as City[]) || [];
+    // Pick the row with highest population for each slug (avoids small towns with same slug)
     const city1 = cities.find(c => c.slug === slug1);
     const city2 = cities.find(c => c.slug === slug2);
 
