@@ -183,7 +183,7 @@ export default async function RegionRankingPage({ params }: Props) {
                                             onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#f8fafc')}
                                             onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}>
                                             <td style={{ padding: '0.875rem 1rem', textAlign: 'center', fontWeight: 800, color: i < 3 ? GREEN : '#94a3b8', fontSize: '0.85rem' }}>
-                                                {i < 3 ? ['🥇','🥈','🥉'][i] : i + 1}
+                                                {i + 1}
                                             </td>
                                             <td style={{ padding: '0.875rem 1rem' }}>
                                                 <Link href={`/city/${city.slug}`} style={{ textDecoration: 'none' }}>
