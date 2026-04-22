@@ -272,7 +272,7 @@ export default async function CityPage({ params }: CityPageProps) {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
                         {/* GetYourGuide */}
-                        <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1`}
+                        <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
                             target="_blank" rel="noopener noreferrer"
                             style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #e8833a22', borderRadius: '0.875rem', textDecoration: 'none' }}>
                             <div style={{ width: '44px', height: '44px', backgroundColor: '#e8833a', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -308,7 +308,7 @@ export default async function CityPage({ params }: CityPageProps) {
                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                         {['Walking Tours', 'Food Tours', 'Day Trips', 'Museums', 'Night Life', 'Outdoor'].map(cat => (
                             <a key={cat}
-                                href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat + ' ' + c.city)}&searchSource=1`}
+                                href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat + ' ' + c.city)}&searchSource=1&partner_id=VVPTRVK`}
                                 target="_blank" rel="noopener noreferrer"
                                 style={{ fontSize: '0.75rem', fontWeight: 700, color: '#5b8c71', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '2rem', padding: '0.3rem 0.75rem', textDecoration: 'none' }}>
                                 {cat}
