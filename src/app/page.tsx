@@ -7,83 +7,58 @@ import { City } from '@/types/database';
 export const revalidate = 3600; // Revalidate every hour
 
 export default async function Home() {
-  // Fetch featured data for the homepage
+  // Fetch featured data for the homepage - Prioritizing recognizable global hubs
   const { data: featuredCities } = await supabase
     .from('cities_master')
     .select('*')
-    .order('cost_index', { ascending: false })
+    .not('population', 'is', null)
+    .gt('population', 2000000)
+    .order('population', { ascending: false })
     .limit(4) as unknown as { data: City[] };
 
   const { data: cheapestCities } = await supabase
     .from('cities_master')
     .select('*')
+    .not('population', 'is', null)
+    .gt('population', 1000000)
     .order('rent_index', { ascending: true })
     .limit(4) as unknown as { data: City[] };
 
   const { data: topNomadCities } = await supabase
     .from('cities_master')
     .select('*')
+    .not('population', 'is', null)
+    .gt('population', 1500000)
     .order('internet', { ascending: false })
     .limit(4) as unknown as { data: City[] };
 
   return (
-    <div className="homepage">
+    <div className="homepage animate-fade-in">
       {/* Hero Section */}
       <section className="hero" style={{
-        padding: '10rem 0',
-        background: 'linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%)',
-        color: 'white',
+        padding: '8rem 0 10rem',
+        background: '#ffffff',
         textAlign: 'center',
-        position: 'relative',
-        overflow: 'hidden'
+        position: 'relative'
       }}>
-        {/* Abstract background elements */}
-        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '40%', height: '40%', background: 'radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, transparent 70%)', filter: 'blur(40px)' }} />
-        <div style={{ position: 'absolute', bottom: '-10%', left: '-5%', width: '30%', height: '30%', background: 'radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)', filter: 'blur(40px)' }} />
-
-        <div className="container animate-fade-in" style={{ position: 'relative', zIndex: 1 }}>
-          <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.05em' }}>
-            Your <span style={{ color: 'var(--secondary)' }}>Next Chapter</span> <br /> Starts Here.
+        <div className="container">
+          <h1 style={{ fontSize: '5rem', marginBottom: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.06em', lineHeight: 1 }}>
+            Compare the <span style={{ color: '#5b8c71' }}>cost of living</span> <br /> between any two cities
           </h1>
-          <p style={{ fontSize: '1.4rem', color: 'rgba(255, 255, 255, 0.8)', marginBottom: '3.5rem', maxWidth: '750px', margin: '0 auto 3.5rem', fontWeight: 500 }}>
-            Compare costs, quality of life, and travel metrics across <span style={{ color: 'var(--secondary)' }}>45,000+ cities</span> worldwide. Clear, data-driven, and beautiful.
+          <p style={{ fontSize: '1.25rem', color: '#64748b', marginBottom: '4rem', maxWidth: '650px', margin: '0 auto 4rem', fontWeight: 500 }}>
+            Explore rent, food, transport, safety, and more. Plan your next global move or trip with reliable data.
           </p>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '850px', margin: '0 auto' }}>
             <SearchBar />
           </div>
         </div>
       </section>
 
-      {/* Categories / Quick Links */}
-      <section className="container section" style={{ marginTop: '-4rem', position: 'relative', zIndex: 2 }}>
-        <div className="grid grid-cols-4">
-          <Link href="/rankings/nomads" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Digital Nomads</div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Fast internet & workspaces</p>
-          </Link>
-          <Link href="/rankings/cheapest" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Budget Friendly</div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Most affordable living</p>
-          </Link>
-          <Link href="/rankings/safest" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Safest Cities</div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Secure & peaceful stays</p>
-          </Link>
-          <Link href="/compare" className="card glass" style={{ textAlign: 'center', padding: '2.5rem', border: '1px solid rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)' }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.5rem' }}>Compare Now</div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', margin: 0 }}>Detailed 1-on-1 metrics</p>
-          </Link>
-        </div>
-      </section>
-
-      {/* Featured Cities */}
+      {/* Featured Section */}
       <section className="container section">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
-          <div>
-            <h2 style={{ marginBottom: '0.5rem' }}>Top Quality of Life</h2>
-            <p style={{ color: 'var(--muted)', margin: 0 }}>The highest rated cities for standard of living.</p>
-          </div>
-          <Link href="/rankings/quality" style={{ color: 'var(--secondary)', fontWeight: 600 }}>View all →</Link>
+        <div style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
+          <span style={{ color: '#5b8c71', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Global Hubs</span>
+          <h2 style={{ marginTop: '0.5rem', fontSize: '2.5rem', fontWeight: 900, color: '#0f172a' }}>Premier Destinations</h2>
         </div>
         <div className="grid grid-cols-4">
           {featuredCities?.map(city => (
@@ -92,30 +67,26 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Cheapest Cities */}
-      <section className="container section" style={{ backgroundColor: '#f8fafc', borderRadius: 'var(--radius-xl)', padding: '4rem 2rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
-          <div>
-            <h2 style={{ marginBottom: '0.5rem' }}>Best for Budgets</h2>
-            <p style={{ color: 'var(--muted)', margin: 0 }}>Where your money goes the furthest.</p>
+      {/* Value Section */}
+      <section style={{ backgroundColor: '#f8fafc', padding: '6rem 0' }}>
+        <div className="container">
+          <div style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
+            <span style={{ color: '#5b8c71', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Budget Optimization</span>
+            <h2 style={{ marginTop: '0.5rem', fontSize: '2.5rem', fontWeight: 900, color: '#0f172a' }}>Global Lifestyle Value</h2>
           </div>
-          <Link href="/rankings/cheapest" style={{ color: 'var(--secondary)', fontWeight: 600 }}>View all →</Link>
-        </div>
-        <div className="grid grid-cols-4">
-          {cheapestCities?.map(city => (
-            <CityCard key={city.slug} city={city} />
-          ))}
+          <div className="grid grid-cols-4">
+            {cheapestCities?.map(city => (
+              <CityCard key={city.slug} city={city} />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Nomad Picks */}
+      {/* Infrastructure Section */}
       <section className="container section">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
-          <div>
-            <h2 style={{ marginBottom: '0.5rem' }}>Digital Nomad Favorites</h2>
-            <p style={{ color: 'var(--muted)', margin: 0 }}>Fast internet and vibrant work environments.</p>
-          </div>
-          <Link href="/rankings/nomads" style={{ color: 'var(--secondary)', fontWeight: 600 }}>View all →</Link>
+        <div style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
+          <span style={{ color: '#5b8c71', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Digital Infrastructure</span>
+          <h2 style={{ marginTop: '0.5rem', fontSize: '2.5rem', fontWeight: 900, color: '#0f172a' }}>Connectivity Leaders</h2>
         </div>
         <div className="grid grid-cols-4">
           {topNomadCities?.map(city => (

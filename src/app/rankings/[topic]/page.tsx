@@ -28,60 +28,70 @@ export default async function RankingPage({ params }: RankingPageProps) {
     const { topic } = await params;
     if (!topic) return notFound();
 
-    let query = supabase.from('cities_master').select('*').limit(50);
+    let query = supabase.from('cities_master').select('*').not('population', 'is', null).limit(100);
     let title = 'City Rankings';
     let description = 'Discover top destinations based on your preferences.';
 
     if (topic === 'cheapest') {
-        query = query.order('rent_index', { ascending: true });
-        title = 'Cheapest Cities to Live';
-        description = 'Where your monthly budget goes the furthest.';
+        query = query.gt('population', 1000000).order('rent_index', { ascending: true });
+        title = 'Value Leaders';
+        description = 'Global hubs where your budget stretches the furthest.';
     } else if (topic === 'nomads') {
-        query = query.order('internet', { ascending: false });
-        title = 'Best for Digital Nomads';
-        description = 'High-speed internet and high nomad quality scores.';
+        query = query.gt('population', 1500000).order('internet', { ascending: false });
+        title = 'Connectivity Hubs';
+        description = 'Leading cities for distal work and high-speed infrastructure.';
     } else if (topic === 'safest') {
-        query = query.order('safety', { ascending: false });
-        title = 'Safest Cities Globally';
-        description = 'Top destinations with the lowest crime rates.';
+        query = query.gt('population', 1200000).order('safety', { ascending: false });
+        title = 'Safest Global Cities';
+        description = 'Secured metropolitan areas with the highest safety ratings.';
     } else if (topic === 'quality') {
-        query = query.order('cost_index', { ascending: false });
-        title = 'Highest Quality of Life';
-        description = 'The ultimate balance of amenities and environment.';
+        query = query.gt('population', 2000000).order('cost_index', { ascending: false });
+        title = 'Quality of Life';
+        description = 'The world\'s most established and high-functioning capitals.';
     }
 
-    const { data: cities } = await query as unknown as { data: City[] };
+    const { data: rawCities } = await query as unknown as { data: City[] };
+
+    // De-duplicate by country to ensure global diversity and avoid "same country" repeats
+    const cities: City[] = [];
+    const seenCountries = new Set<string>();
+
+    if (rawCities) {
+        for (const city of rawCities) {
+            if (!seenCountries.has(city.country) && cities.length < 24) {
+                cities.push(city);
+                seenCountries.add(city.country);
+            }
+        }
+    }
 
     return (
         <div className="container section animate-fade-in">
-            <div style={{ marginBottom: '5rem', textAlign: 'center' }}>
-                <h1 style={{ fontSize: '4rem', fontWeight: 900, color: 'var(--primary)', letterSpacing: '-0.04em' }}>
+            <div style={{ marginBottom: '6rem', textAlign: 'center' }}>
+                <span style={{ color: '#5b8c71', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Global Benchmarks</span>
+                <h1 style={{ fontSize: '4.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.06em', marginTop: '0.5rem' }}>
                     {title}
                 </h1>
-                <p style={{ color: 'var(--muted)', fontSize: '1.4rem', fontWeight: 500 }}>{description}</p>
+                <p style={{ color: '#64748b', fontSize: '1.25rem', fontWeight: 500, maxWidth: '600px', margin: '1rem auto 0' }}>{description}</p>
             </div>
 
-            <div className="grid grid-cols-4" style={{ gap: '2.5rem' }}>
-                {cities?.map((city, idx) => (
+            <div className="grid grid-cols-4" style={{ gap: '3rem' }}>
+                {cities.map((city, idx) => (
                     <div key={city.slug} style={{ position: 'relative' }}>
                         <div style={{
                             position: 'absolute',
-                            top: '-15px',
-                            left: '-15px',
+                            top: '20px',
+                            left: '20px',
                             zIndex: 10,
-                            backgroundColor: 'var(--secondary)',
-                            color: 'var(--foreground)',
-                            width: '40px',
-                            height: '40px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: '12px',
-                            fontSize: '1.1rem',
+                            backgroundColor: '#0f172a',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '4px',
+                            fontSize: '0.75rem',
                             fontWeight: 900,
-                            boxShadow: 'var(--shadow-md)'
+                            letterSpacing: '0.05em'
                         }}>
-                            #{idx + 1}
+                            RANK {idx + 1}
                         </div>
                         <CityCard city={city} />
                     </div>

@@ -1,36 +1,54 @@
+import Link from 'next/link';
+
 export default function Footer() {
     return (
-        <footer className="footer" style={{ borderTop: '1px solid var(--border)', padding: '4rem 0', marginTop: '4rem', backgroundColor: '#f8fafc' }}>
+        <footer style={{ borderTop: '1px solid var(--border)', padding: '4rem 0', marginTop: '4rem', backgroundColor: '#f8fafc' }}>
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem' }}>
                 <div>
-                    <h3 style={{ color: 'var(--secondary)' }}>RoamCost</h3>
-                    <p style={{ color: 'var(--muted)', maxWidth: '300px' }}>
-                        Helping wanderers find their next home by comparing the world's most vibrant cities.
+                    <h3 style={{ color: '#5b8c71', marginBottom: '1rem' }}>RoamCost</h3>
+                    <p style={{ color: 'var(--muted)', maxWidth: '280px', fontSize: '0.9rem', lineHeight: 1.7 }}>
+                        Data-driven insights to help you find your perfect global base. Compare cities, plan your move.
                     </p>
                 </div>
 
                 <div>
-                    <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>Platform</h4>
+                    <h4 style={{ fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', color: '#0f172a' }}>Platform</h4>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        <li><a href="/rankings" style={{ color: 'var(--muted)' }}>Rankings</a></li>
-                        <li><a href="/compare" style={{ color: 'var(--muted)' }}>Compare Cities</a></li>
-                        <li><a href="/nomads" style={{ color: 'var(--muted)' }}>Digital Nomads</a></li>
+                        <li><Link href="/rankings/quality" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Quality of Life</Link></li>
+                        <li><Link href="/rankings/cheapest" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Cheapest Cities</Link></li>
+                        <li><Link href="/rankings/safest" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Safest Cities</Link></li>
+                        <li><Link href="/rankings/nomads" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Digital Nomads</Link></li>
+                        <li><Link href="/compare" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Compare Cities</Link></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>Support</h4>
+                    <h4 style={{ fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', color: '#0f172a' }}>Travel</h4>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        <li><a href="/about" style={{ color: 'var(--muted)' }}>About Us</a></li>
-                        <li><a href="/contact" style={{ color: 'var(--muted)' }}>Contact</a></li>
-                        <li><a href="/privacy" style={{ color: 'var(--muted)' }}>Privacy Policy</a></li>
+                        <li><a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Find Hotels</a></li>
+                        <li><a href="https://www.kiwi.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Find Flights</a></li>
+                        <li><a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Long-term Stays</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style={{ fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', color: '#0f172a' }}>Company</h4>
+                    <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                        <li><Link href="/about" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>About Us</Link></li>
+                        <li><Link href="/contact" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Contact</Link></li>
+                        <li><Link href="/privacy" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Privacy Policy</Link></li>
                     </ul>
                 </div>
             </div>
 
-            <div className="container" style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', textAlign: 'center', color: 'var(--muted-foreground)', fontSize: '0.875rem' }}>
-                &copy; {new Date().getFullYear()} RoamCost. All rights reserved. Built for explorers.
+            <div className="container" style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <span style={{ color: 'var(--muted)', fontSize: '0.875rem' }}>
+                    © {new Date().getFullYear()} RoamCost. Built for explorers.
+                </span>
+                <span style={{ color: 'var(--muted)', fontSize: '0.8rem' }}>
+                    Data updated regularly • Weather via Open-Meteo • Rates via ExchangeRate-API
+                </span>
             </div>
-        </footer >
+        </footer>
     );
 }
