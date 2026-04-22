@@ -38,6 +38,12 @@ function getWeatherDesc(code: number): { label: string; color: string } {
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+function getDayLabel(date: Date, index: number): string {
+    if (index === 0) return 'Today';
+    // Use date number + short day to avoid translation issues
+    return DAYS[date.getDay()];
+}
+
 const SunIcon = ({ color = '#F7831E' }: { color?: string }) => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="5"/>
@@ -140,7 +146,7 @@ export default function WeatherWidget({ lat, long, city }: Props) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.25rem' }}>
                 {daily.time.slice(0, 7).map((date, i) => {
                     const d = new Date(date);
-                    const dayName = i === 0 ? 'Today' : DAYS[d.getDay()];
+                    const dayName = getDayLabel(d, i);
                     return (
                         <div key={date} style={{
                             textAlign: 'center', padding: '0.5rem 0.1rem',

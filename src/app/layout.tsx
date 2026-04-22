@@ -38,6 +38,8 @@ export const metadata: Metadata = {
     },
 };
 
+import Script from 'next/script';
+
 export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -49,6 +51,13 @@ export default function RootLayout({
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6334611421204216" crossOrigin="anonymous"></script>
             </head>
             <body className={inter.className}>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-J2QKKP0J0C" strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">{`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-J2QKKP0J0C');
+            `}</Script>
                 <CurrencyProvider>
                     <Header />
                     <main>{children}</main>

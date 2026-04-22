@@ -274,12 +274,14 @@ p {
   /* How it works stacked */
   .how-it-works-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
 
-  /* Quick converter stacked */
+  /* Quick converter stacked and centered */
   .quick-converter-inner {
     flex-direction: column !important;
-    align-items: stretch !important;
+    align-items: center !important;
     gap: 0.875rem !important;
+    width: 100% !important;
   }
+  .quick-converter-inner > * { width: 100% !important; }
   .quick-converter-divider, .quick-converter-rate { display: none !important; }
 
   /* Map smaller */
