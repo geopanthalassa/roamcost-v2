@@ -88,8 +88,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                     <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 700 }}>
                                         Quality Score: {c.cost_index}
                                     </span>
-                                )}
-                                <WeatherWidget lat={c.lat} long={c.long} />
+                                )}<WeatherWidget lat={c.lat} lng={c.long} />
                             </div>
                         </div>
                         <div style={{ display: 'flex', gap: '0.75rem' }}>
