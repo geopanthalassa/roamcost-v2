@@ -74,10 +74,9 @@ export default async function RankingPage({ params }: RankingPageProps) {
 
     const { data: rawCities } = await query as unknown as { data: City[] };
 
-    // De-duplicate by country, max 2 per country to keep diversity but allow big countries
+    // De-duplicate by country, max 2 per country
     const cities: City[] = [];
     const countryCount = new Map<string, number>();
-
     if (rawCities) {
         for (const city of rawCities) {
             const count = countryCount.get(city.country) || 0;
@@ -87,6 +86,15 @@ export default async function RankingPage({ params }: RankingPageProps) {
             }
         }
     }
+
+    // Fetch images server-side for all cities in parallel
+    const { getCityImageServer } = await import('@/lib/getCityImageServer');
+    const imageMap: Record<string, string> = {};
+    await Promise.all(
+        cities.map(async (city) => {
+            imageMap[city.slug] = await getCityImageServer(city.slug, city.city, city.country, 600);
+        })
+    );
 
     return (
         <div className="container section animate-fade-in">
@@ -116,7 +124,7 @@ export default async function RankingPage({ params }: RankingPageProps) {
                         }}>
                             RANK {idx + 1}
                         </div>
-                        <CityCard city={city} />
+                        <CityCard city={city} preloadedImage={imageMap[city.slug]} />
                     </div>
                 ))}
             </div>

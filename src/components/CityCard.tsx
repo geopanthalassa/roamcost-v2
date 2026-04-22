@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 
 interface CityCardProps {
     city: City;
+    preloadedImage?: string;
 }
 
 function useCityImage(slug: string, cityName: string, countryName: string) {
@@ -54,11 +55,12 @@ function useCityImage(slug: string, cityName: string, countryName: string) {
     return imgUrl || staticImg;
 }
 
-export default function CityCard({ city }: CityCardProps) {
+export default function CityCard({ city, preloadedImage }: CityCardProps) {
     const { formatValue } = useCurrency();
     const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
     const hasData = estimatedMonthly > 0;
-    const dynamicImage = useCityImage(city.slug, city.city, city.country);
+    const clientImage = useCityImage(city.slug, city.city, city.country);
+    const dynamicImage = preloadedImage || clientImage;
 
     const safetyColor = (city.safety ?? 0) >= 7 ? '#40916C' : (city.safety ?? 0) >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = (city.internet ?? 0) >= 50 ? 'Fast' : (city.internet ?? 0) >= 20 ? 'Good' : (city.internet ?? 0) > 0 ? 'Slow' : null;
