@@ -6,6 +6,7 @@ import { City } from '@/types/database';
 import Link from 'next/link';
 import CityCard from '@/components/CityCard';
 import CurrencyDisplay from '@/components/CurrencyDisplay';
+import WeatherWidget from '@/components/WeatherWidget';
 
 interface CityPageProps { params: Promise<{ slug: string }>; }
 
@@ -230,6 +231,9 @@ export default async function CityPage({ params }: CityPageProps) {
                         </Link>
                     </div>
                 )}
+
+                {/* WEATHER */}
+                <WeatherWidget lat={c.lat} long={c.long} city={c.city} />
 
                 {/* TRAVEL — always visible */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>

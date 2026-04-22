@@ -3,7 +3,7 @@ export interface City {
     country: string;
     slug: string;
     lat: number;
-    lng: number;
+    long: number;
     population: number;
     rent_index: number;
     food_index: number;
