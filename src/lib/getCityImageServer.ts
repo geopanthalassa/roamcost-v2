@@ -1,3 +1,4 @@
+// v3 - no wikipedia, unique photos per city
 import { getCityImage, CITY_IMAGES_KEYS } from './cityImages';
 
 export async function getCityImageServer(
