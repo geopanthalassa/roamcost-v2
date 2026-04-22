@@ -4,20 +4,64 @@ import Link from 'next/link';
 import { City } from '@/types/database';
 import { useCurrency } from '@/context/CurrencyContext';
 import { getCityImage } from '@/lib/cityImages';
+import { useState, useEffect } from 'react';
 
 interface CityCardProps {
     city: City;
 }
 
+function useCityImage(slug: string, cityName: string, countryName: string) {
+    const staticImg = getCityImage(slug, 800, 600, cityName);
+    const hasStatic = !staticImg.includes('picsum') && !staticImg.includes('source.unsplash');
+
+    const [imgUrl, setImgUrl] = useState(hasStatic ? staticImg : '');
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        if (hasStatic) { setLoaded(true); return; }
+
+        // Fetch from Wikimedia
+        const query = encodeURIComponent(cityName.replace(/ /g, '_'));
+        fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${query}`)
+            .then(r => r.json())
+            .then(data => {
+                const url = data?.thumbnail?.source || data?.originalimage?.source;
+                if (url && !url.match(/flag|Flag|map|Map|coat|Coat|logo/i)) {
+                    setImgUrl(url.replace(/\/\d+px-/, '/800px-'));
+                } else {
+                    // Try city + country
+                    return fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent((cityName + ',_' + countryName).replace(/ /g, '_'))}`)
+                        .then(r => r.json())
+                        .then(d => {
+                            const u = d?.thumbnail?.source;
+                            if (u && !u.match(/flag|Flag|map|Map|coat|Coat/i)) {
+                                setImgUrl(u.replace(/\/\d+px-/, '/800px-'));
+                            } else {
+                                // picsum fallback
+                                const seed = Math.abs(slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
+                                setImgUrl(`https://picsum.photos/seed/${seed}/800/600`);
+                            }
+                        });
+                }
+            })
+            .catch(() => {
+                const seed = Math.abs(slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
+                setImgUrl(`https://picsum.photos/seed/${seed}/800/600`);
+            })
+            .finally(() => setLoaded(true));
+    }, [slug, cityName, countryName, hasStatic, staticImg]);
+
+    return imgUrl || staticImg;
+}
+
 export default function CityCard({ city }: CityCardProps) {
     const { formatValue } = useCurrency();
-
     const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
-    const dynamicImage = getCityImage(city.slug, 800, 600, city.city);
-
-    const safetyColor = city.safety >= 7 ? '#40916C' : city.safety >= 5 ? '#d97706' : '#dc2626';
-    const internetLabel = city.internet >= 50 ? 'Fast' : city.internet >= 20 ? 'Good' : city.internet > 0 ? 'Slow' : null;
     const hasData = estimatedMonthly > 0;
+    const dynamicImage = useCityImage(city.slug, city.city, city.country);
+
+    const safetyColor = (city.safety ?? 0) >= 7 ? '#40916C' : (city.safety ?? 0) >= 5 ? '#d97706' : '#dc2626';
+    const internetLabel = (city.internet ?? 0) >= 50 ? 'Fast' : (city.internet ?? 0) >= 20 ? 'Good' : (city.internet ?? 0) > 0 ? 'Slow' : null;
 
     return (
         <Link href={`/city/${city.slug}`} className="card" style={{
@@ -28,10 +72,9 @@ export default function CityCard({ city }: CityCardProps) {
             <div style={{
                 height: '200px',
                 backgroundColor: '#f1f5f9',
-                backgroundImage: `url(${dynamicImage})`,
+                backgroundImage: dynamicImage ? `url(${dynamicImage})` : 'none',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                transition: 'transform 0.4s ease',
                 position: 'relative'
             }}>
                 {internetLabel && (
@@ -60,17 +103,17 @@ export default function CityCard({ city }: CityCardProps) {
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    {city.safety > 0 && (
+                    {(city.safety ?? 0) > 0 && (
                         <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f1f5f9', color: safetyColor, fontWeight: 700 }}>
                             Safety {city.safety}/10
                         </span>
                     )}
-                    {city.internet > 0 && (
+                    {(city.internet ?? 0) > 0 && (
                         <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f1f5f9', color: '#64748b', fontWeight: 600 }}>
                             {city.internet} Mbps
                         </span>
                     )}
-                    {city.cost_index > 0 && (
+                    {(city.cost_index ?? 0) > 0 && (
                         <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#F0FAF4', color: '#52B788', fontWeight: 700 }}>
                             Score {Math.round(city.cost_index)}
                         </span>
