@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import CityCard from '@/components/CityCard';
+import WorldMap from '@/components/WorldMap';
 import { supabase } from '@/lib/supabase';
 import { City } from '@/types/database';
 
@@ -68,6 +69,16 @@ export default async function Home() {
         .gt('population', 2000000)
         .order('internet', { ascending: false })
         .limit(4) as unknown as { data: City[] };
+
+    // Map cities — well-known cities with lat/long
+    const { data: mapCities } = await supabase
+        .from('cities_master')
+        .select('city, country, slug, lat, long, cost_index, rent_index')
+        .gt('cost_index', 0)
+        .gt('population', 1500000)
+        .not('lat', 'is', null)
+        .not('long', 'is', null)
+        .limit(300) as unknown as { data: City[] };
 
     return (
         <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
@@ -304,65 +315,24 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── CHEAPEST + NOMAD ── */}
+            {/* ── WORLD MAP ── */}
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
-
-                        {/* Cheapest */}
-                        <div>
-                            <div style={{ marginBottom: '1.75rem' }}>
-                                <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Budget travel</p>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', margin: 0 }}>Most affordable cities</h2>
-                                    <Link href="/rankings/cheapest" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#5b8c71', textDecoration: 'none' }}>See all →</Link>
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                {cheapestCities?.map((city, i) => {
-                                    const monthly = Math.round(((city.rent_index ?? 0) * 10) + ((city.food_index ?? 0) * 5) + ((city.transport_index ?? 0) * 2) + ((city.utilities_index ?? 0) * 3));
-                                    return (
-                                        <Link key={city.slug} href={`/city/${city.slug}`}
-                                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', backgroundColor: '#ffffff', borderRadius: '0.875rem', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
-                                            <span style={{ fontSize: '0.75rem', fontWeight: 900, color: '#94a3b8', minWidth: '20px' }}>#{i + 1}</span>
-                                            <div style={{ flex: 1 }}>
-                                                <div style={{ fontSize: '0.925rem', fontWeight: 800, color: '#0f172a' }}>{city.city}</div>
-                                                <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 500 }}>{city.country}</div>
-                                            </div>
-                                            <div style={{ fontSize: '0.95rem', fontWeight: 900, color: '#5b8c71' }}>${monthly.toLocaleString()}/mo</div>
-                                        </Link>
-                                    );
-                                })}
-                            </div>
+                    <div style={{ marginBottom: '2rem' }}>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Interactive</p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
+                                Cost of living — world map
+                            </h2>
+                            <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#5b8c71', textDecoration: 'none' }}>
+                                See rankings →
+                            </Link>
                         </div>
-
-                        {/* Nomad */}
-                        <div>
-                            <div style={{ marginBottom: '1.75rem' }}>
-                                <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Remote work</p>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                    <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', margin: 0 }}>Best for digital nomads</h2>
-                                    <Link href="/rankings/nomads" style={{ fontSize: '0.8rem', fontWeight: 700, color: '#5b8c71', textDecoration: 'none' }}>See all →</Link>
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                {nomadCities?.map((city, i) => (
-                                    <Link key={city.slug} href={`/city/${city.slug}`}
-                                        style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', backgroundColor: '#ffffff', borderRadius: '0.875rem', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
-                                        <span style={{ fontSize: '0.75rem', fontWeight: 900, color: '#94a3b8', minWidth: '20px' }}>#{i + 1}</span>
-                                        <div style={{ flex: 1 }}>
-                                            <div style={{ fontSize: '0.925rem', fontWeight: 800, color: '#0f172a' }}>{city.city}</div>
-                                            <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 500 }}>{city.country}</div>
-                                        </div>
-                                        <div style={{ textAlign: 'right' }}>
-                                            <div style={{ fontSize: '0.8rem', fontWeight: 900, color: '#8b5cf6' }}>{city.internet} Mbps</div>
-                                            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>internet</div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
+                        <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+                            Click any city to explore costs. Colors indicate affordability.
+                        </p>
                     </div>
+                    <WorldMap cities={(mapCities ?? []) as any} />
                 </div>
             </section>
 
