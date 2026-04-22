@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
 import Link from 'next/link';
 import CityCard from '@/components/CityCard';
+import { getCityImageServer } from '@/lib/getCityImageServer';
 import CurrencyDisplay from '@/components/CurrencyDisplay';
 import WeatherWidget from '@/components/WeatherWidget';
 import CostPersonalizer from '@/components/CostPersonalizer';
@@ -59,6 +60,14 @@ export default async function CityPage({ params }: CityPageProps) {
         .gt('cost_index', 0)
         .order('population', { ascending: false })
         .limit(3) as unknown as { data: City[] };
+
+    // Prefetch related city images server-side
+    const relatedImages: Record<string, string> = {};
+    if (related) {
+        await Promise.all(related.map(async (rc) => {
+            relatedImages[rc.slug] = await getCityImageServer(rc.slug, rc.city, rc.country, 400);
+        }));
+    }
 
     const rent = (c.rent_index ?? 0);
     const food = (c.food_index ?? 0) * 30;
@@ -377,7 +386,7 @@ export default async function CityPage({ params }: CityPageProps) {
                     <div>
                         <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Other cities in {c.country}</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-                            {related.map(rc => <CityCard key={rc.slug} city={rc} />)}
+                            {related.map(rc => <CityCard key={rc.slug} city={rc} preloadedImage={relatedImages[rc.slug]} />)}
                         </div>
                     </div>
                 )}

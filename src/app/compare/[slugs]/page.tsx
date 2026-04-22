@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
 import Link from 'next/link';
 import CityCard from '@/components/CityCard';
+import { getCityImageServer } from '@/lib/getCityImageServer';
 
 interface ComparePageProps {
     params: Promise<{ slugs: string }>;
@@ -61,6 +62,12 @@ export default async function ComparePage({ params }: ComparePageProps) {
 
     const est1 = Math.round((city1.rent_index) + (city1.food_index * 30) + (city1.transport_index) + (city1.utilities_index));
     const est2 = Math.round((city2.rent_index) + (city2.food_index * 30) + (city2.transport_index) + (city2.utilities_index));
+
+    // Prefetch images server-side
+    const [img1, img2] = await Promise.all([
+        getCityImageServer(city1.slug, city1.city, city1.country, 600),
+        getCityImageServer(city2.slug, city2.city, city2.country, 600),
+    ]);
 
     const metrics = [
         { label: 'Quality Score', icon: 'chart', key: 'cost_index', higherBetter: true },
@@ -201,8 +208,8 @@ export default async function ComparePage({ params }: ComparePageProps) {
             </div>
 
             <div className="grid grid-cols-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
-                <CityCard city={city1} />
-                <CityCard city={city2} />
+                <CityCard city={city1} preloadedImage={img1} />
+                <CityCard city={city2} preloadedImage={img2} />
             </div>
 
             <div style={{ textAlign: 'center' }}>
