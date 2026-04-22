@@ -71,7 +71,7 @@ export default function CityCard({ city }: CityCardProps) {
                         </span>
                     )}
                     {city.cost_index > 0 && (
-                        <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f0fdfc', color: '#4ECDC4', fontWeight: 700 }}>
+                        <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f0fdfc', color: '#2BC0B4', fontWeight: 700 }}>
                             Score {Math.round(city.cost_index)}
                         </span>
                     )}

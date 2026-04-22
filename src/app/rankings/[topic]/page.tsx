@@ -12,14 +12,36 @@ interface RankingPageProps {
 
 export async function generateMetadata({ params }: RankingPageProps) {
     const { topic } = await params;
-    const titles: Record<string, string> = {
-        cheapest: 'Cheapest Cities to Live in 2026',
-        nomads: 'Best Cities for Digital Nomads',
-        safest: 'Safest Cities in the World',
-        quality: 'Highest Quality of Life Cities',
+    const meta: Record<string, { title: string; description: string; keywords: string }> = {
+        cheapest: {
+            title: 'Cheapest Cities to Live in 2026 | RoamCost',
+            description: 'Find the most affordable cities in the world. Compare cost of living, rent prices and monthly budgets. Best cheap cities for expats, digital nomads and budget travelers.',
+            keywords: 'cheapest cities to live, most affordable cities, cheap cities for expats, low cost of living cities, budget travel destinations, cheap places to retire, affordable cities europe asia latin america',
+        },
+        nomads: {
+            title: 'Best Cities for Digital Nomads 2026 | RoamCost',
+            description: 'Top cities for remote workers with fast internet, coworking spaces and affordable living. Compare digital nomad hubs worldwide — from Bali to Lisbon to Medellín.',
+            keywords: 'best cities for digital nomads, remote work destinations, nomad cities, fast internet cities, coworking cities, best places to work remotely, digital nomad guide 2026',
+        },
+        safest: {
+            title: 'Safest Cities in the World 2026 | RoamCost',
+            description: 'Discover the safest cities to live and travel. Compare safety scores, crime rates and quality of life. Best secure cities for families, expats and solo travelers.',
+            keywords: 'safest cities in the world, safe cities to live, low crime cities, safest places to travel, safe cities for expats, secure cities 2026',
+        },
+        quality: {
+            title: 'Highest Quality of Life Cities 2026 | RoamCost',
+            description: 'Cities with the best quality of life worldwide. Compare healthcare, safety, internet, environment and leisure scores. Find the perfect city to live well.',
+            keywords: 'best quality of life cities, top cities to live, best cities in the world 2026, highest quality of life, best healthcare cities, livable cities ranking',
+        },
     };
-    const title = titles[topic] || 'City Rankings';
-    return { title: `${title} | RoamCost` };
+    const m = meta[topic] || { title: 'City Rankings | RoamCost', description: 'Explore city rankings by cost, safety, internet and quality of life.', keywords: 'city rankings, best cities, cost of living' };
+    return {
+        title: m.title,
+        description: m.description,
+        keywords: m.keywords,
+        openGraph: { title: m.title, description: m.description, url: `https://www.roamcost.com/rankings/${topic}`, siteName: 'RoamCost', type: 'website' },
+        alternates: { canonical: `https://www.roamcost.com/rankings/${topic}` },
+    };
 }
 
 export const dynamic = 'force-dynamic';
@@ -69,7 +91,7 @@ export default async function RankingPage({ params }: RankingPageProps) {
     return (
         <div className="container section animate-fade-in">
             <div style={{ marginBottom: '6rem', textAlign: 'center' }}>
-                <span style={{ color: '#4ECDC4', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Global Benchmarks</span>
+                <span style={{ color: '#2BC0B4', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Global Benchmarks</span>
                 <h1 className="rankings-title" style={{ fontSize: '4.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.06em', marginTop: '0.5rem' }}>
                     {title}
                 </h1>

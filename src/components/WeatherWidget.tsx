@@ -26,19 +26,19 @@ interface Props {
 }
 
 function getWeatherDesc(code: number): { label: string; color: string } {
-    if (code === 0) return { label: 'Clear sky', color: '#F7931E' };
+    if (code === 0) return { label: 'Clear sky', color: '#F7831E' };
     if (code <= 2) return { label: 'Partly cloudy', color: '#94a3b8' };
     if (code === 3) return { label: 'Overcast', color: '#94a3b8' };
     if (code <= 49) return { label: 'Foggy', color: '#94a3b8' };
     if (code <= 67) return { label: 'Rain', color: '#3b82f6' };
     if (code <= 77) return { label: 'Snow', color: '#93c5fd' };
-    if (code <= 99) return { label: 'Thunderstorm', color: '#F7931E' };
+    if (code <= 99) return { label: 'Thunderstorm', color: '#F7831E' };
     return { label: 'Unknown', color: '#94a3b8' };
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const SunIcon = ({ color = '#F7931E' }: { color?: string }) => (
+const SunIcon = ({ color = '#F7831E' }: { color?: string }) => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="5"/>
         <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
@@ -62,13 +62,13 @@ const RainIcon = () => (
 );
 
 const BoltIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
     </svg>
 );
 
 function WeatherIcon({ code, size = 18 }: { code: number; size?: number }) {
-    if (code === 0) return <SunIcon color="#F7931E" />;
+    if (code === 0) return <SunIcon color="#F7831E" />;
     if (code <= 3) return <CloudIcon />;
     if (code <= 67) return <RainIcon />;
     if (code <= 99) return <BoltIcon />;
@@ -109,7 +109,7 @@ export default function WeatherWidget({ lat, long, city }: Props) {
         <div style={{ backgroundColor: '#ffffff', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
-                <SunIcon color="#F7931E" />
+                <SunIcon color="#F7831E" />
                 <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>Weather in {city}</h2>
                 <span style={{ fontSize: '0.65rem', color: '#94a3b8', marginLeft: 'auto', fontWeight: 500 }}>Live · Open-Meteo</span>
             </div>
@@ -148,7 +148,7 @@ export default function WeatherWidget({ lat, long, city }: Props) {
                             borderRadius: '0.5rem',
                             border: i === 0 ? '1px solid #b2f0ec' : '1px solid transparent'
                         }}>
-                            <div style={{ fontSize: '0.58rem', fontWeight: 700, color: i === 0 ? '#4ECDC4' : '#94a3b8', textTransform: 'uppercase', marginBottom: '0.25rem' }}>{dayName}</div>
+                            <div style={{ fontSize: '0.58rem', fontWeight: 700, color: i === 0 ? '#2BC0B4' : '#94a3b8', textTransform: 'uppercase', marginBottom: '0.25rem' }}>{dayName}</div>
                             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.25rem' }}>
                                 <WeatherIcon code={daily.weather_code[i]} size={14} />
                             </div>

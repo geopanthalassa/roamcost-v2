@@ -55,7 +55,7 @@ export default function QuickConverter() {
                 <div className="quick-converter-inner" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
                     {/* Label */}
                     <div style={{ flexShrink: 0 }}>
-                        <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2px' }}>Quick Convert</div>
+                        <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2px' }}>Quick Convert</div>
                         <div style={{ fontSize: '0.8rem', color: '#94a3b8', fontWeight: 500 }}>Live rates</div>
                     </div>
 
@@ -90,7 +90,7 @@ export default function QuickConverter() {
                     </div>
 
                     {/* Arrow */}
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
 
@@ -98,7 +98,7 @@ export default function QuickConverter() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: '0 0 auto' }}>
                         <div style={{
                             padding: '0.5rem 0.75rem', fontSize: '1.1rem', fontWeight: 800,
-                            color: '#4ECDC4', backgroundColor: 'rgba(91,140,113,0.15)',
+                            color: '#2BC0B4', backgroundColor: 'rgba(91,140,113,0.15)',
                             border: '1px solid rgba(91,140,113,0.3)',
                             borderRadius: '0.5rem', minWidth: '110px',
                         }}>
@@ -131,7 +131,7 @@ export default function QuickConverter() {
                     {/* CTA */}
                     <Link href="/calculator" style={{
                         flexShrink: 0, padding: '0.5rem 1.25rem',
-                        backgroundColor: '#F7931E', color: '#ffffff',
+                        backgroundColor: '#F7831E', color: '#ffffff',
                         borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.8rem',
                         textDecoration: 'none', whiteSpace: 'nowrap',
                     }}>

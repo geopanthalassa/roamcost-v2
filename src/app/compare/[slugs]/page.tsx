@@ -75,15 +75,15 @@ export default async function ComparePage({ params }: ComparePageProps) {
     ];
 
     const iconMap: Record<string, React.ReactNode> = {
-        chart: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
-        home: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
-        food: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
-        bus: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
-        bolt: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
-        shield: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-        wifi: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>,
-        health: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
-        leaf: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9"/><path d="M17 8l-5 5"/></svg>,
+        chart: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
+        home: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
+        food: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
+        bus: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
+        bolt: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+        shield: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+        wifi: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>,
+        health: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
+        leaf: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9"/><path d="M17 8l-5 5"/></svg>,
     };
 
     return (
@@ -91,18 +91,18 @@ export default async function ComparePage({ params }: ComparePageProps) {
 
             {/* Breadcrumb */}
             <nav style={{ marginBottom: '1.5rem', fontSize: '0.875rem', color: '#94a3b8' }}>
-                <Link href="/" style={{ color: '#4ECDC4', fontWeight: 600 }}>Home</Link>
+                <Link href="/" style={{ color: '#2BC0B4', fontWeight: 600 }}>Home</Link>
                 <span style={{ margin: '0 0.5rem' }}>→</span>
-                <Link href="/compare" style={{ color: '#4ECDC4', fontWeight: 600 }}>Compare</Link>
+                <Link href="/compare" style={{ color: '#2BC0B4', fontWeight: 600 }}>Compare</Link>
                 <span style={{ margin: '0 0.5rem' }}>→</span>
                 <span style={{ color: '#0f172a', fontWeight: 700 }}>{city1.city} vs {city2.city}</span>
             </nav>
 
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                 <h1 className="compare-title" style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.04em', color: '#0f172a' }}>
-                    <span style={{ color: '#4ECDC4' }}>{city1.city}</span>
+                    <span style={{ color: '#2BC0B4' }}>{city1.city}</span>
                     <span style={{ color: '#94a3b8', fontSize: '2rem', margin: '0 1rem' }}>vs</span>
-                    <span style={{ color: '#4ECDC4' }}>{city2.city}</span>
+                    <span style={{ color: '#2BC0B4' }}>{city2.city}</span>
                 </h1>
                 <p style={{ color: '#64748b', fontSize: '1.1rem', marginTop: '0.5rem' }}>
                     {city1.country} — {city2.country} · Cost of Living Comparison 2026
@@ -111,15 +111,15 @@ export default async function ComparePage({ params }: ComparePageProps) {
 
             {/* Monthly total comparison */}
             <div className="compare-totals" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '1rem', alignItems: 'center', marginBottom: '2rem' }}>
-                <div className="card" style={{ textAlign: 'center', padding: '1.5rem', border: est1 < est2 ? '2px solid #4ECDC4' : '1px solid #e2e8f0', boxShadow: 'none' }}>
-                    {est1 < est2 && <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', marginBottom: '0.4rem' }}>✓ More Affordable</div>}
+                <div className="card" style={{ textAlign: 'center', padding: '1.5rem', border: est1 < est2 ? '2px solid #2BC0B4' : '1px solid #e2e8f0', boxShadow: 'none' }}>
+                    {est1 < est2 && <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', marginBottom: '0.4rem' }}>✓ More Affordable</div>}
                     <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city1.city}</div>
                     <div style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', margin: '0.4rem 0' }}>${est1.toLocaleString()}</div>
                     <div style={{ fontSize: '0.8rem', color: '#64748b' }}>per month</div>
                 </div>
                 <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#94a3b8', textAlign: 'center' }}>vs</div>
-                <div className="card" style={{ textAlign: 'center', padding: '1.5rem', border: est2 < est1 ? '2px solid #4ECDC4' : '1px solid #e2e8f0', boxShadow: 'none' }}>
-                    {est2 < est1 && <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', marginBottom: '0.4rem' }}>✓ More Affordable</div>}
+                <div className="card" style={{ textAlign: 'center', padding: '1.5rem', border: est2 < est1 ? '2px solid #2BC0B4' : '1px solid #e2e8f0', boxShadow: 'none' }}>
+                    {est2 < est1 && <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', marginBottom: '0.4rem' }}>✓ More Affordable</div>}
                     <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city2.city}</div>
                     <div style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', margin: '0.4rem 0' }}>${est2.toLocaleString()}</div>
                     <div style={{ fontSize: '0.8rem', color: '#64748b' }}>per month</div>

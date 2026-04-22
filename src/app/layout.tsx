@@ -9,14 +9,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "RoamCost | Compare Cost of Living Between Cities Worldwide",
-    description: "Compare rent, food, safety, internet speed and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers.",
-    keywords: "cost of living comparison, digital nomad cities, cheapest cities to live, expat guide, city comparison",
+    description: "Compare rent, food, safety, internet speed and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers. Find the cheapest cities to live, work and travel.",
+    keywords: "cost of living comparison, digital nomad cities, cheapest cities to live, expat guide, city comparison, where to live abroad, best cities for remote work, cost of living calculator, move abroad, retire abroad, cheapest countries to live, best travel destinations cost",
     openGraph: {
         title: "RoamCost — Compare Cost of Living Worldwide",
         description: "Data-driven city comparisons for digital nomads and expats. Find your perfect global base.",
         url: "https://www.roamcost.com",
         siteName: "RoamCost",
         type: "website",
+        images: [{ url: "https://www.roamcost.com/favicon_512.png", width: 512, height: 512, alt: "RoamCost" }],
     },
     twitter: {
         card: "summary_large_image",
@@ -31,6 +32,9 @@ export const metadata: Metadata = {
     icons: {
         icon: '/favicon_32.png',
         apple: '/favicon_512.png',
+    },
+    alternates: {
+        canonical: 'https://www.roamcost.com',
     },
 };
 

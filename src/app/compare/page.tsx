@@ -51,9 +51,9 @@ export default function CompareLandingPage() {
     return (
         <div className="container section animate-fade-in" style={{ maxWidth: '900px' }}>
             <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-                <span style={{ color: '#4ECDC4', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Side-by-Side Analysis</span>
+                <span style={{ color: '#2BC0B4', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Side-by-Side Analysis</span>
                 <h1 style={{ fontSize: '4.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.06em', marginTop: '0.5rem' }}>
-                    Compare <span style={{ color: '#4ECDC4' }}>global living</span> costs
+                    Compare <span style={{ color: '#2BC0B4' }}>global living</span> costs
                 </h1>
                 <p style={{ fontSize: '1.25rem', color: '#64748b', maxWidth: '600px', margin: '1rem auto 0', fontWeight: 500 }}>
                     Select any two major cities to compare rent, food, transport, and overall standards.
@@ -65,7 +65,7 @@ export default function CompareLandingPage() {
                 <div style={{ position: 'relative' }}>
                     <label style={{ display: 'block', marginBottom: '1rem', fontWeight: 800, color: '#0f172a', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Origin Hub</label>
                     {city1 ? (
-                        <div className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderColor: '#4ECDC4', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
+                        <div className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderColor: '#2BC0B4', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
                             <span style={{ fontWeight: 800, color: '#0f172a' }}>{city1.city}, {city1.country}</span>
                             <button onClick={() => setCity1(null)} style={{ color: '#ef4444', fontWeight: 900 }}>✕</button>
                         </div>
@@ -109,7 +109,7 @@ export default function CompareLandingPage() {
                 <div style={{ position: 'relative' }}>
                     <label style={{ display: 'block', marginBottom: '1rem', fontWeight: 800, color: '#0f172a', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Destination Hub</label>
                     {city2 ? (
-                        <div className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderColor: '#4ECDC4', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
+                        <div className="card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderColor: '#2BC0B4', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
                             <span style={{ fontWeight: 800, color: '#0f172a' }}>{city2.city}, {city2.country}</span>
                             <button onClick={() => setCity2(null)} style={{ color: '#ef4444', fontWeight: 900 }}>✕</button>
                         </div>

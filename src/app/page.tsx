@@ -93,15 +93,15 @@ export default async function Home() {
 
                         {/* Eyebrow */}
                         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#f0fdfc', border: '1px solid #b2f0ec', borderRadius: '2rem', padding: '0.35rem 1rem', marginBottom: '2rem' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#4ECDC4' }} />
-                            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#2BC0B4' }} />
+                            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                                 Global Cost of Living Data
                             </span>
                         </div>
 
                         <h1 style={{ fontSize: '3.75rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '1.25rem' }}>
                             Compare the{' '}
-                            <span style={{ color: '#4ECDC4' }}>cost of living</span>
+                            <span style={{ color: '#2BC0B4' }}>cost of living</span>
                             {' '}between any two cities
                         </h1>
 
@@ -139,7 +139,7 @@ export default async function Home() {
                             { value: 'Free', label: 'Always' },
                         ].map((s, i) => (
                             <div key={s.label} style={{ padding: '0.5rem 1rem', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}>
-                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#4ECDC4' }}>{s.value}</div>
+                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#2BC0B4' }}>{s.value}</div>
                                 <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.2rem', fontWeight: 500 }}>{s.label}</div>
                             </div>
                         ))}
@@ -151,10 +151,10 @@ export default async function Home() {
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Side-by-side analysis</p>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Side-by-side analysis</p>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Comparisons</h2>
-                            <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#4ECDC4', textDecoration: 'none' }}>
+                            <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#2BC0B4', textDecoration: 'none' }}>
                                 Compare any city →
                             </Link>
                         </div>
@@ -168,7 +168,7 @@ export default async function Home() {
                                 <p style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
                                     {labelA} vs {labelB}
                                 </p>
-                                <p style={{ fontSize: '0.75rem', color: '#4ECDC4', margin: 0, fontWeight: 600 }}>Compare costs →</p>
+                                <p style={{ fontSize: '0.75rem', color: '#2BC0B4', margin: 0, fontWeight: 600 }}>Compare costs →</p>
                             </Link>
                         ))}
                     </div>
@@ -185,10 +185,10 @@ export default async function Home() {
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Global hubs</p>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Global hubs</p>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Cities</h2>
-                            <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#4ECDC4', textDecoration: 'none' }}>
+                            <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#2BC0B4', textDecoration: 'none' }}>
                                 View all rankings →
                             </Link>
                         </div>
@@ -245,15 +245,15 @@ export default async function Home() {
                                             {[
                                                 {
                                                     label: 'Cost', value: cost,
-                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                                                 },
                                                 {
                                                     label: 'Safety', value: safety,
-                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                                 },
                                                 {
                                                     label: 'Climate', value: climate,
-                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                                                 },
                                             ].map(stat => (
                                                 <div key={stat.label} style={{ padding: '0.4rem 0.25rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem' }}>
@@ -275,7 +275,7 @@ export default async function Home() {
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>How it works</p>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>How it works</p>
                         <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em' }}>Data-driven decisions</h2>
                     </div>
                     <div className="how-it-works-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
@@ -285,7 +285,7 @@ export default async function Home() {
                                 title: 'Search any city',
                                 desc: 'Access data for over 45,000 cities worldwide including rent, food, transport, safety and internet speed.',
                                 icon: (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
                                     </svg>
                                 )
@@ -295,7 +295,7 @@ export default async function Home() {
                                 title: 'Compare side by side',
                                 desc: 'Select any two cities and get a detailed breakdown of every cost category to make an informed comparison.',
                                 icon: (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
                                     </svg>
                                 )
@@ -305,7 +305,7 @@ export default async function Home() {
                                 title: 'Plan your move',
                                 desc: 'Use our currency calculator and travel tools to plan your relocation or trip with real, up-to-date data.',
                                 icon: (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
                                     </svg>
                                 )
@@ -330,12 +330,12 @@ export default async function Home() {
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Interactive</p>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Interactive</p>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
                                 Cost of living — world map
                             </h2>
-                            <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#4ECDC4', textDecoration: 'none' }}>
+                            <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#2BC0B4', textDecoration: 'none' }}>
                                 See rankings →
                             </Link>
                         </div>
@@ -351,7 +351,7 @@ export default async function Home() {
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#4ECDC4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Rankings</p>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Rankings</p>
                         <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Explore by category</h2>
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
@@ -359,7 +359,7 @@ export default async function Home() {
                             <Link key={r.href + r.label} href={r.href}
                                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0.875rem', textDecoration: 'none' }}>
                                 <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a' }}>{r.label}</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </Link>
@@ -378,7 +378,7 @@ export default async function Home() {
                         Compare costs, explore destinations and plan your next move with real data.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Link href="/compare" style={{ backgroundColor: '#4ECDC4', color: 'white', padding: '0.875rem 2rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.95rem' }}>
+                        <Link href="/compare" style={{ backgroundColor: '#2BC0B4', color: 'white', padding: '0.875rem 2rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.95rem' }}>
                             Compare cities
                         </Link>
                         <Link href="/rankings/quality" style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'white', padding: '0.875rem 2rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem', border: '1px solid rgba(255,255,255,0.15)' }}>

@@ -105,7 +105,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             <h1 style={{ fontSize: '3.5rem', fontWeight: 900, color: 'white', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '1rem' }}>{c.city}</h1>
                             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                                 {hasData && monthly > 0 && (
-                                    <span style={{ backgroundColor: '#4ECDC4', color: 'white', padding: '0.5rem 1.1rem', borderRadius: '2rem', fontWeight: 800, fontSize: '0.95rem' }}>
+                                    <span style={{ backgroundColor: '#2BC0B4', color: 'white', padding: '0.5rem 1.1rem', borderRadius: '2rem', fontWeight: 800, fontSize: '0.95rem' }}>
                                         ~${monthly.toLocaleString()}/month
                                     </span>
                                 )}
@@ -138,7 +138,7 @@ export default async function CityPage({ params }: CityPageProps) {
                         {/* Stats cards - scroll horizontal en mobile */}
                         <div className="city-stats-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
                             {[
-                                { label: 'Monthly Budget', value: `$${monthly.toLocaleString()}`, sub: 'all-in estimate', color: '#4ECDC4', bg: '#f0fdfc' },
+                                { label: 'Monthly Budget', value: `$${monthly.toLocaleString()}`, sub: 'all-in estimate', color: '#2BC0B4', bg: '#f0fdfc' },
                                 { label: 'Annual Cost', value: `$${(monthly * 12).toLocaleString()}`, sub: 'per year', color: '#3b82f6', bg: '#eff6ff' },
                                 { label: 'Internet', value: c.internet != null ? `${c.internet} Mbps` : 'N/A', sub: (c.internet ?? 0) >= 50 ? 'Excellent' : (c.internet ?? 0) >= 20 ? 'Good' : 'Limited', color: '#8b5cf6', bg: '#f5f3ff' },
                                 { label: 'Safety', value: c.safety != null ? `${c.safety}/10` : 'N/A', sub: (c.safety ?? 0) >= 7 ? 'Very safe' : (c.safety ?? 0) >= 5 ? 'Moderate' : 'Caution', color: (c.safety ?? 0) >= 7 ? '#0ea5a0' : '#d97706', bg: (c.safety ?? 0) >= 7 ? '#f0fdfc' : '#fffbeb' },
@@ -157,7 +157,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.75rem' }}>Estimated breakdown in USD</p>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                                     {[
-                                        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#4ECDC4', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
+                                        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#2BC0B4', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
                                         { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> },
                                         { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> },
                                         { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> },
@@ -178,7 +178,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                     <div style={{ paddingTop: '1rem', borderTop: '2px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <span style={{ fontWeight: 800, color: '#0f172a' }}>Total</span>
                                         <div style={{ textAlign: 'right' }}>
-                                            <span style={{ fontSize: '1.25rem', fontWeight: 900, color: '#4ECDC4' }}>${monthly.toLocaleString()}/mo</span>
+                                            <span style={{ fontSize: '1.25rem', fontWeight: 900, color: '#2BC0B4' }}>${monthly.toLocaleString()}/mo</span>
                                             <CurrencyDisplay usdAmount={monthly} large />
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 ) : (
                     <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2.5rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0', textAlign: 'center' }}>
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                 <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                             </svg>
@@ -228,7 +228,7 @@ export default async function CityPage({ params }: CityPageProps) {
                         <p style={{ color: '#64748b', fontSize: '0.95rem', maxWidth: '500px', margin: '0 auto 1.5rem', lineHeight: 1.7 }}>
                             We're working on adding detailed cost of living data for this city. Meanwhile, explore hotels, flights and local experiences below.
                         </p>
-                        <Link href="/rankings/quality" style={{ display: 'inline-block', backgroundColor: '#4ECDC4', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>
+                        <Link href="/rankings/quality" style={{ display: 'inline-block', backgroundColor: '#2BC0B4', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>
                             See cities with full data →
                         </Link>
                     </div>
@@ -251,7 +251,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 {/* TRAVEL — always visible */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
                     <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 16z"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 16z"/></svg>
                         Plan your trip to {c.city}
                     </h2>
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Find the best deals on flights, hotels and long-term stays</p>
@@ -283,8 +283,8 @@ export default async function CityPage({ params }: CityPageProps) {
                                 href: `https://www.google.com/maps/search/${encodeURIComponent(c.city)}`
                             },
                             {
-                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
-                                label: 'Cost of Living', sub: 'Numbeo', color: '#4ECDC4', bg: '#f0fdfc',
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+                                label: 'Cost of Living', sub: 'Numbeo', color: '#2BC0B4', bg: '#f0fdfc',
                                 href: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(c.city.replace(/ /g, '-'))}`
                             },
                         ].map(link => (
@@ -303,7 +303,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 {/* THINGS TO DO */}
                 <div style={{ backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
                     <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7931E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
                         Things to do in {c.city}
@@ -314,15 +314,15 @@ export default async function CityPage({ params }: CityPageProps) {
                         {/* GetYourGuide */}
                         <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
                             target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7931E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#F7931E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
+                            <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                     <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
                                 </svg>
                             </div>
                             <div>
                                 <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
-                                <div style={{ fontSize: '0.75rem', color: '#F7931E', fontWeight: 700, marginTop: '2px' }}>via GetYourGuide</div>
+                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via GetYourGuide</div>
                                 <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line, day trips & more</div>
                             </div>
                         </a>
@@ -330,15 +330,15 @@ export default async function CityPage({ params }: CityPageProps) {
                         {/* Viator */}
                         <a href={`https://www.viator.com/search/${encodeURIComponent(c.city)}`}
                             target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#f0fdfc', border: '2px solid #4ECDC422', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#4ECDC4', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#f0fdfc', border: '2px solid #2BC0B422', borderRadius: '0.875rem', textDecoration: 'none' }}>
+                            <div style={{ width: '44px', height: '44px', backgroundColor: '#2BC0B4', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
                                 </svg>
                             </div>
                             <div>
                                 <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Activities & Attractions</div>
-                                <div style={{ fontSize: '0.75rem', color: '#4ECDC4', fontWeight: 700, marginTop: '2px' }}>via Viator</div>
+                                <div style={{ fontSize: '0.75rem', color: '#2BC0B4', fontWeight: 700, marginTop: '2px' }}>via Viator</div>
                                 <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Powered by Tripadvisor</div>
                             </div>
                         </a>
@@ -350,7 +350,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             <a key={cat}
                                 href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat + ' ' + c.city)}&searchSource=1&partner_id=VVPTRVK`}
                                 target="_blank" rel="noopener noreferrer"
-                                style={{ fontSize: '0.75rem', fontWeight: 700, color: '#4ECDC4', backgroundColor: '#f0fdfc', border: '1px solid #b2f0ec', borderRadius: '2rem', padding: '0.3rem 0.75rem', textDecoration: 'none' }}>
+                                style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2BC0B4', backgroundColor: '#f0fdfc', border: '1px solid #b2f0ec', borderRadius: '2rem', padding: '0.3rem 0.75rem', textDecoration: 'none' }}>
                                 {cat}
                             </a>
                         ))}

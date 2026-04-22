@@ -2,9 +2,9 @@
   /* RoamCost Brand Colors — from favicon */
   --primary: #0f172a;
   /* Deep Navy for text and heads */
-  --secondary: #4ECDC4;
+  --secondary: #2BC0B4;
   /* Teal/Mint — main brand color */
-  --accent: #F7931E;
+  --accent: #F7831E;
   /* Orange — from airplane gradient */
   --accent-warm: #FFD700;
   /* Gold/Yellow — airplane tail */
@@ -137,7 +137,7 @@ p {
 }
 
 .btn-primary {
-  background-color: #4ECDC4;
+  background-color: #2BC0B4;
   color: white;
 }
 

@@ -78,8 +78,8 @@ export default function CostPersonalizer({ baseRent, baseFood, baseTransport, ba
     const total = calcRent + calcFood + calcTransport + calcUtilities;
     const annual = total * 12;
 
-    const GREEN = '#4ECDC4';
-    const ORANGE = '#F7931E';
+    const GREEN = '#2BC0B4';
+    const ORANGE = '#F7831E';
 
     const barMax = Math.max(calcRent, calcFood * 3, calcTransport * 5, calcUtilities * 3, 100);
 
