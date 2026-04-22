@@ -56,13 +56,6 @@ export default async function ComparePage({ params }: ComparePageProps) {
         { label: 'Food & Dining', icon: 'food', key: 'food_index', factor: 30, higherBetter: false, prefix: '$' },
         { label: 'Transport', icon: 'bus', key: 'transport_index', factor: 1, higherBetter: false, prefix: '$' },
         { label: 'Utilities', icon: 'bolt', key: 'utilities_index', factor: 1, higherBetter: false, prefix: '$' },
-
-    const metrics = [
-        { label: 'Quality Score', icon: 'chart', key: 'cost_index', higherBetter: true },
-        { label: 'Monthly Rent', icon: 'home', key: 'rent_index', factor: 1, higherBetter: false, prefix: '$' },
-        { label: 'Food & Dining', icon: 'food', key: 'food_index', factor: 30, higherBetter: false, prefix: '$' },
-        { label: 'Transport', icon: 'bus', key: 'transport_index', factor: 1, higherBetter: false, prefix: '$' },
-        { label: 'Utilities', icon: 'bolt', key: 'utilities_index', factor: 1, higherBetter: false, prefix: '$' },
         { label: 'Safety', icon: 'shield', key: 'safety', higherBetter: true },
         { label: 'Internet (Mbps)', icon: 'wifi', key: 'internet', higherBetter: true },
         { label: 'Healthcare', icon: 'health', key: 'healthcare', higherBetter: true },
