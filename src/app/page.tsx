@@ -194,14 +194,24 @@ export default async function Home() {
                                                 {currency}
                                             </span>
                                         </div>
-                                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', textAlign: 'center' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', textAlign: 'center' }}>
                                             {[
-                                                { label: 'Cost', value: cost },
-                                                { label: 'Safety', value: safety },
-                                                { label: 'Climate', value: climate },
+                                                {
+                                                    label: 'Cost', value: cost,
+                                                    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                                },
+                                                {
+                                                    label: 'Safety', value: safety,
+                                                    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                                },
+                                                {
+                                                    label: 'Climate', value: climate,
+                                                    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                                                },
                                             ].map(stat => (
                                                 <div key={stat.label} style={{ padding: '0.5rem 0.25rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem' }}>
-                                                    <div style={{ fontSize: '0.6rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.2rem' }}>{stat.label}</div>
+                                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.25rem' }}>{stat.icon}</div>
+                                                    <div style={{ fontSize: '0.6rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.15rem' }}>{stat.label}</div>
                                                     <div style={{ fontSize: '1rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? '—'}</div>
                                                 </div>
                                             ))}
