@@ -282,6 +282,9 @@ export const CITY_IMAGES: Record<string, string> = {
     'valencia-spain': 'photo-1558618047-f4e58f39cf65',
     'warsaw-poland-1': 'photo-1607427293702-036933bbf746',
 
+    'bamako': 'photo-1580060839134-75a5edca2e99',
+    'beirut': 'photo-1539650116574-8efeb43e2750',
+
 };
 
 export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
