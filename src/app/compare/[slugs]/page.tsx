@@ -13,9 +13,17 @@ interface ComparePageProps {
 export async function generateMetadata({ params }: ComparePageProps) {
     const { slugs } = await params;
     const [slug1, slug2] = (slugs || '').split('-vs-');
+    const c1 = slug1?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const c2 = slug2?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const title = `${c1} vs ${c2} Cost of Living Comparison 2026 | RoamCost`;
+    const description = `Compare cost of living between ${c1} and ${c2}. Rent, food, safety, internet and quality of life — side by side. Free data for expats and digital nomads.`;
     return {
-        title: `${slug1?.replace(/-/g,' ')} vs ${slug2?.replace(/-/g,' ')} Cost of Living | RoamCost`,
-        description: `Side-by-side comparison of cost of living, safety, internet and quality of life between ${slug1} and ${slug2}.`,
+        title,
+        description,
+        openGraph: { title, description, url: `https://www.roamcost.com/compare/${slugs}`, siteName: 'RoamCost', type: 'website' },
+        twitter: { card: 'summary_large_image', title, description },
+        alternates: { canonical: `https://www.roamcost.com/compare/${slugs}` },
+        keywords: `${c1} vs ${c2}, cost of living comparison, ${c1} ${c2} rent prices, living in ${c1} vs ${c2}`,
     };
 }
 

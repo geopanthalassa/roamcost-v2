@@ -11,12 +11,24 @@ interface CityPageProps { params: Promise<{ slug: string }>; }
 
 export async function generateMetadata({ params }: CityPageProps) {
     const { slug } = await params;
-    const { data } = await supabase.from('cities_master').select('city, country').eq('slug', slug).maybeSingle();
+    const { data } = await supabase.from('cities_master').select('city, country, cost_index, rent_index, safety').eq('slug', slug).order('population', { ascending: false }).limit(1).maybeSingle();
     if (!data) return { title: 'City Not Found | RoamCost' };
-    const d = data as { city: string; country: string };
+    const d = data as { city: string; country: string; cost_index: number; rent_index: number; safety: number };
+    const title = `Cost of Living in ${d.city}, ${d.country} 2026 | RoamCost`;
+    const description = `Move to ${d.city}? Compare rent ($${Math.round(d.rent_index)}/mo), food, safety (${d.safety}/10) and quality of life. Real data for digital nomads, expats and travelers.`;
     return {
-        title: `Cost of Living in ${d.city}, ${d.country} 2026 | RoamCost`,
-        description: `Compare rent, food, safety and quality of life in ${d.city}. Real data for digital nomads and expats.`,
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            url: `https://www.roamcost.com/city/${slug}`,
+            siteName: 'RoamCost',
+            type: 'website',
+        },
+        twitter: { card: 'summary_large_image', title, description },
+        alternates: { canonical: `https://www.roamcost.com/city/${slug}` },
+        keywords: `cost of living ${d.city}, ${d.city} rent prices, living in ${d.city}, ${d.city} expat guide, ${d.city} digital nomad, ${d.city} ${d.country} cost`,
     };
 }
 
@@ -46,14 +58,25 @@ export default async function CityPage({ params }: CityPageProps) {
         .order('population', { ascending: false })
         .limit(3) as unknown as { data: City[] };
 
-    const rent = (c.rent_index ?? 0);           // already USD/month
-    const food = (c.food_index ?? 0) * 30;      // USD/day × 30 days
-    const transport = (c.transport_index ?? 0); // already USD/month
-    const utilities = (c.utilities_index ?? 0); // already USD/month
+    const rent = (c.rent_index ?? 0);
+    const food = (c.food_index ?? 0) * 30;
+    const transport = (c.transport_index ?? 0);
+    const utilities = (c.utilities_index ?? 0);
     const monthly = Math.round(rent + food + transport + utilities);
+
+    const schemaOrg = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: `Cost of Living in ${c.city}, ${c.country} 2026`,
+        description: `Complete cost of living guide for ${c.city}. Monthly rent, food, transport and quality of life data.`,
+        url: `https://www.roamcost.com/city/${slug}`,
+        publisher: { '@type': 'Organization', name: 'RoamCost', url: 'https://www.roamcost.com' },
+        about: { '@type': 'City', name: c.city, containedInPlace: { '@type': 'Country', name: c.country } },
+    };
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
 
             {/* HERO with real Pexels image */}
             <div style={{ position: 'relative', height: '520px', overflow: 'hidden' }}>
