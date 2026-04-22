@@ -42,6 +42,7 @@ export default function RootLayout({
             <head>
                 <meta name="google-translate-customization" content="9f35768e67a71c1-f03e73ef93656214-gd98f869974204e30-10" />
                 <link rel="canonical" href="https://www.roamcost.com" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6334611421204216" crossOrigin="anonymous"></script>
             </head>
             <body className={inter.className}>
                 <CurrencyProvider>
