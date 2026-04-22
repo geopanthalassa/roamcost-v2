@@ -3,6 +3,7 @@ import SearchBar from '@/components/SearchBar';
 import CityCard from '@/components/CityCard';
 import WorldMap from '@/components/WorldMap';
 import QuickConverter from '@/components/QuickConverter';
+import ProfileFilter from '@/components/ProfileFilter';
 import { supabase } from '@/lib/supabase';
 import { getCityImage } from '@/lib/cityImages';
 import { City } from '@/types/database';
@@ -173,6 +174,9 @@ export default async function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* ── PROFILE FILTER ── */}
+            <ProfileFilter />
 
             {/* ── QUICK CONVERTER ── */}
             <QuickConverter />
