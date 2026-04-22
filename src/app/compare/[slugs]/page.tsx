@@ -1,4 +1,5 @@
 // ✅ SERVER COMPONENT — compare/[slugs]/page.tsx
+import React from 'react';
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
@@ -50,16 +51,28 @@ export default async function ComparePage({ params }: ComparePageProps) {
     const est2 = Math.round((city2.rent_index * 10) + (city2.food_index * 5) + (city2.transport_index * 2) + (city2.utilities_index * 3));
 
     const metrics = [
-        { label: '📊 Quality Score', key: 'cost_index', higherBetter: true },
-        { label: '🏠 Monthly Rent', key: 'rent_index', factor: 10, higherBetter: false, prefix: '$' },
-        { label: '🍽️ Food & Dining', key: 'food_index', factor: 5, higherBetter: false, prefix: '$' },
-        { label: '🚌 Transport', key: 'transport_index', factor: 2, higherBetter: false, prefix: '$' },
-        { label: '⚡ Utilities', key: 'utilities_index', factor: 3, higherBetter: false, prefix: '$' },
-        { label: '🛡️ Safety', key: 'safety', higherBetter: true },
-        { label: '📡 Internet (Mbps)', key: 'internet', higherBetter: true },
-        { label: '🏥 Healthcare', key: 'healthcare', higherBetter: true },
-        { label: '🌿 Environment', key: 'environment', higherBetter: true },
+        { label: 'Quality Score', icon: 'chart', key: 'cost_index', higherBetter: true },
+        { label: 'Monthly Rent', icon: 'home', key: 'rent_index', factor: 10, higherBetter: false, prefix: '$' },
+        { label: 'Food & Dining', icon: 'food', key: 'food_index', factor: 5, higherBetter: false, prefix: '$' },
+        { label: 'Transport', icon: 'bus', key: 'transport_index', factor: 2, higherBetter: false, prefix: '$' },
+        { label: 'Utilities', icon: 'bolt', key: 'utilities_index', factor: 3, higherBetter: false, prefix: '$' },
+        { label: 'Safety', icon: 'shield', key: 'safety', higherBetter: true },
+        { label: 'Internet (Mbps)', icon: 'wifi', key: 'internet', higherBetter: true },
+        { label: 'Healthcare', icon: 'health', key: 'healthcare', higherBetter: true },
+        { label: 'Environment', icon: 'leaf', key: 'environment', higherBetter: true },
     ];
+
+    const iconMap: Record<string, React.ReactNode> = {
+        chart: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
+        home: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
+        food: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
+        bus: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
+        bolt: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+        shield: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+        wifi: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>,
+        health: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
+        leaf: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9"/><path d="M17 8l-5 5"/></svg>,
+    };
 
     return (
         <div className="container section animate-fade-in">
@@ -120,7 +133,12 @@ export default async function ComparePage({ params }: ComparePageProps) {
                             const winner = metric.higherBetter ? (raw1 > raw2 ? 1 : raw2 > raw1 ? 2 : 0) : (raw1 < raw2 ? 1 : raw2 < raw1 ? 2 : 0);
                             return (
                                 <tr key={metric.label} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: idx % 2 === 0 ? 'transparent' : '#fafafa' }}>
-                                    <td style={{ padding: '1.1rem 2rem', fontWeight: 700, color: '#475569', fontSize: '0.9rem' }}>{metric.label}</td>
+                                    <td style={{ padding: '1.1rem 2rem', fontWeight: 700, color: '#475569', fontSize: '0.9rem' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                            {iconMap[(metric as any).icon]}
+                                            {metric.label}
+                                        </div>
+                                    </td>
                                     <td style={{ padding: '1.1rem 2rem', textAlign: 'center', fontWeight: 900, fontSize: '1.1rem', color: winner === 1 ? '#16a34a' : '#0f172a', backgroundColor: winner === 1 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
                                         {display1} {winner === 1 && '★'}
                                     </td>
