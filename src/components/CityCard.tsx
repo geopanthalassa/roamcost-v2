@@ -12,8 +12,9 @@ export default function CityCard({ city }: CityCardProps) {
     const { formatValue } = useCurrency();
 
     const estimatedMonthly = (city.rent_index * 10) + (city.food_index * 5) + (city.transport_index * 2) + (city.utilities_index * 3);
-    const cityQuery = encodeURIComponent(`${city.city} city skyline`);
-    const dynamicImage = `https://source.unsplash.com/800x600/?${cityQuery}`;
+    // Use picsum with a consistent seed per city for reliable images
+    const seed = Math.abs(city.city.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
+    const dynamicImage = `https://picsum.photos/seed/${seed}/800/600`;
 
     const safetyColor = city.safety >= 7 ? '#16a34a' : city.safety >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = city.internet >= 50 ? 'Fast' : city.internet >= 20 ? 'Good' : city.internet > 0 ? 'Slow' : null;

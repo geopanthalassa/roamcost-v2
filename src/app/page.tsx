@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import CityCard from '@/components/CityCard';
 import WorldMap from '@/components/WorldMap';
+import QuickConverter from '@/components/QuickConverter';
 import { supabase } from '@/lib/supabase';
 import { City } from '@/types/database';
 
@@ -172,6 +173,9 @@ export default async function Home() {
                 </div>
             </section>
 
+            {/* ── QUICK CONVERTER ── */}
+            <QuickConverter />
+
             {/* ── POPULAR CITIES ── */}
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
@@ -191,7 +195,8 @@ export default async function Home() {
                             const safety = city.safety > 0 ? Math.round(city.safety * 10) : null;
                             const climate = city.environment > 0 ? Math.round(city.environment * 10) : null;
                             const imgQuery = encodeURIComponent(`${city.city} city`);
-                            const imgUrl = `https://source.unsplash.com/400x200/?${imgQuery}`;
+                            const seed = Math.abs(city.city.split('').reduce((a: number, c: string) => a + c.charCodeAt(0), 0)) % 1000;
+                            const imgUrl = `https://picsum.photos/seed/${seed + 100}/400/200`;
                             return (
                                 <Link key={city.slug} href={`/city/${city.slug}`} style={{ textDecoration: 'none' }}>
                                     <div style={{
