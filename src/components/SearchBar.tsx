@@ -85,7 +85,7 @@ export default function SearchBar() {
                                 <span style={{ fontWeight: 800, color: '#0f172a' }}>{city.city}</span>
                                 <span style={{ color: '#64748b', marginLeft: '0.5rem', fontSize: '0.85rem' }}>{city.country}</span>
                             </div>
-                            <div style={{ color: '#2BC0B4', fontWeight: 900, fontSize: '0.9rem' }}>
+                            <div style={{ color: '#52B788', fontWeight: 900, fontSize: '0.9rem' }}>
                                 Value Index: {city.cost_index}
                             </div>
                         </Link>

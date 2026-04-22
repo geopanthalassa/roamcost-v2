@@ -78,7 +78,7 @@ export default function CostPersonalizer({ baseRent, baseFood, baseTransport, ba
     const total = calcRent + calcFood + calcTransport + calcUtilities;
     const annual = total * 12;
 
-    const GREEN = '#2BC0B4';
+    const GREEN = '#52B788';
     const ORANGE = '#F7831E';
 
     const barMax = Math.max(calcRent, calcFood * 3, calcTransport * 5, calcUtilities * 3, 100);
@@ -95,7 +95,7 @@ export default function CostPersonalizer({ baseRent, baseFood, baseTransport, ba
                 }}
             >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <div style={{ width: '36px', height: '36px', backgroundColor: '#f0fdfc', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '36px', height: '36px', backgroundColor: '#F0FAF4', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={GREEN} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/>
                             <line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>

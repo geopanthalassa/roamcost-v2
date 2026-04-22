@@ -14,7 +14,7 @@ export default function CurrencyDisplay({ usdAmount, large }: Props) {
     return (
         <div style={{
             fontSize: large ? '0.9rem' : '0.75rem',
-            color: '#2BC0B4', fontWeight: 600, marginTop: '1px'
+            color: '#52B788', fontWeight: 600, marginTop: '1px'
         }}>
             ≈ {formatValue(usdAmount)}
         </div>

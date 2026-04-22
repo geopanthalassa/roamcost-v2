@@ -151,9 +151,9 @@ export default function CalculatorPage() {
             {/* Hero */}
             <section style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '4rem 0 3rem' }}>
                 <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#f0fdfc', border: '1px solid #b2f0ec', borderRadius: '2rem', padding: '0.35rem 1rem', marginBottom: '1.5rem' }}>
-                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#2BC0B4' }} />
-                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Live Exchange Rates</span>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#F0FAF4', border: '1px solid #D8F3DC', borderRadius: '2rem', padding: '0.35rem 1rem', marginBottom: '1.5rem' }}>
+                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#52B788' }} />
+                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Live Exchange Rates</span>
                     </div>
                     <h1 style={{ fontSize: '3rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.04em', marginBottom: '0.75rem' }}>Currency Converter</h1>
                     <p style={{ color: '#64748b', fontSize: '1.05rem', lineHeight: 1.6 }}>
@@ -186,7 +186,7 @@ export default function CalculatorPage() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '1.25rem 0' }}>
                         <div style={{ flex: 1, height: '1px', backgroundColor: '#e2e8f0' }} />
                         <button onClick={swap} style={{ width: '44px', height: '44px', borderRadius: '50%', border: '2px solid #e2e8f0', backgroundColor: '#ffffff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2BC0B4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
                             </svg>
                         </button>
@@ -201,7 +201,7 @@ export default function CalculatorPage() {
                                 type="number"
                                 value={toAmount || ''}
                                 onChange={e => handleToChange(e.target.value)}
-                                style={{ ...inputStyle, backgroundColor: '#f8fafc', color: '#2BC0B4' }}
+                                style={{ ...inputStyle, backgroundColor: '#f8fafc', color: '#52B788' }}
                                 placeholder="0"
                             />
                             <select value={toCode} onChange={e => { direction.current = 'from'; setToCode(e.target.value); }} style={selectStyle}>
@@ -215,7 +215,7 @@ export default function CalculatorPage() {
                         <div>
                             <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.25rem' }}>Exchange Rate</div>
                             <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#0f172a' }}>
-                                1 {fromCode} = <span style={{ color: '#2BC0B4' }}>{fmt(rate, toCode)} {toCode}</span>
+                                1 {fromCode} = <span style={{ color: '#52B788' }}>{fmt(rate, toCode)} {toCode}</span>
                             </div>
                         </div>
                         <div style={{ textAlign: 'right' }}>
@@ -240,9 +240,9 @@ export default function CalculatorPage() {
                             return (
                                 <button key={`${pair.from}-${pair.to}`}
                                     onClick={() => { direction.current = 'from'; setFromCode(pair.from); setToCode(pair.to); setToAmount(doConvert(fromAmount, pair.from, pair.to, rates)); }}
-                                    style={{ backgroundColor: active ? '#f0fdfc' : '#ffffff', border: `2px solid ${active ? '#2BC0B4' : '#e2e8f0'}`, borderRadius: '0.75rem', padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+                                    style={{ backgroundColor: active ? '#F0FAF4' : '#ffffff', border: `2px solid ${active ? '#52B788' : '#e2e8f0'}`, borderRadius: '0.75rem', padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
                                     <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem' }}>{pair.from} → {pair.to}</div>
-                                    <div style={{ fontSize: '0.85rem', color: '#2BC0B4', fontWeight: 700 }}>{fmt(r, pair.to)} {sym}</div>
+                                    <div style={{ fontSize: '0.85rem', color: '#52B788', fontWeight: 700 }}>{fmt(r, pair.to)} {sym}</div>
                                 </button>
                             );
                         })}
@@ -251,11 +251,11 @@ export default function CalculatorPage() {
 
                 {/* CTA */}
                 <div style={{ marginTop: '2.5rem', backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2rem', textAlign: 'center' }}>
-                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Going somewhere?</div>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Going somewhere?</div>
                     <h3 style={{ color: '#ffffff', fontWeight: 900, fontSize: '1.4rem', letterSpacing: '-0.03em', margin: '0 0 0.75rem' }}>Compare the full cost of living</h3>
                     <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Rent, food, safety, internet — not just exchange rates.</p>
                     <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Link href="/compare" style={{ backgroundColor: '#2BC0B4', color: '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>Compare Cities</Link>
+                        <Link href="/compare" style={{ backgroundColor: '#52B788', color: '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>Compare Cities</Link>
                         <Link href="/rankings/cheapest" style={{ backgroundColor: 'transparent', color: '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', border: '1px solid #334155' }}>Cheapest Cities</Link>
                     </div>
                 </div>

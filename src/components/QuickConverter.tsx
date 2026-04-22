@@ -55,7 +55,7 @@ export default function QuickConverter() {
                 <div className="quick-converter-inner" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
                     {/* Label */}
                     <div style={{ flexShrink: 0 }}>
-                        <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2px' }}>Quick Convert</div>
+                        <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2px' }}>Quick Convert</div>
                         <div style={{ fontSize: '0.8rem', color: '#94a3b8', fontWeight: 500 }}>Live rates</div>
                     </div>
 
@@ -98,7 +98,7 @@ export default function QuickConverter() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: '0 0 auto' }}>
                         <div style={{
                             padding: '0.5rem 0.75rem', fontSize: '1.1rem', fontWeight: 800,
-                            color: '#2BC0B4', backgroundColor: 'rgba(91,140,113,0.15)',
+                            color: '#52B788', backgroundColor: 'rgba(91,140,113,0.15)',
                             border: '1px solid rgba(91,140,113,0.3)',
                             borderRadius: '0.5rem', minWidth: '110px',
                         }}>

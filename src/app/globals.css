@@ -1,13 +1,12 @@
 :root {
-  /* RoamCost Brand Colors — from favicon */
+  /* RoamCost Brand Colors — Succulent Green */
   --primary: #0f172a;
-  /* Deep Navy for text and heads */
-  --secondary: #2BC0B4;
-  /* Teal/Mint — main brand color */
-  --accent: #F7831E;
-  /* Orange — from airplane gradient */
+  --secondary: #52B788;        /* Verde menta suculenta */
+  --secondary-dark: #40916C;   /* Verde jade */
+  --secondary-light: #95D5B2;  /* Verde medio */
+  --secondary-bg: #D8F3DC;     /* Verde muy suave */
+  --accent: #F7831E;           /* Naranja */
   --accent-warm: #FFD700;
-  /* Gold/Yellow — airplane tail */
   --background: #ffffff;
   --foreground: #0f172a;
   --muted: #64748b;
@@ -16,12 +15,10 @@
   --card: #ffffff;
   --card-foreground: #0f172a;
 
-  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
   --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08);
 
-  /* Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
@@ -137,12 +134,12 @@ p {
 }
 
 .btn-primary {
-  background-color: #2BC0B4;
+  background-color: #52B788;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #3dbdb4;
+  background-color: #40916C;
   transform: translateY(-1px);
 }
 

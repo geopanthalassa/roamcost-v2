@@ -144,11 +144,11 @@ export default function WeatherWidget({ lat, long, city }: Props) {
                     return (
                         <div key={date} style={{
                             textAlign: 'center', padding: '0.5rem 0.1rem',
-                            backgroundColor: i === 0 ? '#f0fdfc' : '#f8fafc',
+                            backgroundColor: i === 0 ? '#F0FAF4' : '#f8fafc',
                             borderRadius: '0.5rem',
-                            border: i === 0 ? '1px solid #b2f0ec' : '1px solid transparent'
+                            border: i === 0 ? '1px solid #D8F3DC' : '1px solid transparent'
                         }}>
-                            <div style={{ fontSize: '0.58rem', fontWeight: 700, color: i === 0 ? '#2BC0B4' : '#94a3b8', textTransform: 'uppercase', marginBottom: '0.25rem' }}>{dayName}</div>
+                            <div style={{ fontSize: '0.58rem', fontWeight: 700, color: i === 0 ? '#52B788' : '#94a3b8', textTransform: 'uppercase', marginBottom: '0.25rem' }}>{dayName}</div>
                             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.25rem' }}>
                                 <WeatherIcon code={daily.weather_code[i]} size={14} />
                             </div>

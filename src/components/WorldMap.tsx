@@ -18,13 +18,13 @@ interface WorldMapProps {
 }
 
 function getCostColor(cost: number): string {
-    // Green (cheap) → Orange → Red (expensive)
+    // Jade green (cheap) → Mint → Orange → Red (expensive)
     if (cost <= 0) return '#94a3b8';
-    if (cost < 200) return '#00C896';   // very cheap
-    if (cost < 400) return '#2BC0B4';   // cheap
-    if (cost < 600) return '#F7831E';   // medium
-    if (cost < 800) return '#ef4444';   // expensive
-    return '#b91c1c';                    // very expensive
+    if (cost < 200) return '#1B4332';   // very cheap — deep jade
+    if (cost < 400) return '#40916C';   // cheap — jade
+    if (cost < 600) return '#52B788';   // moderate — mint succulent
+    if (cost < 800) return '#F7831E';   // expensive — orange
+    return '#dc2626';                    // very expensive — red
 }
 
 function getCostLabel(cost: number): string {
@@ -100,7 +100,7 @@ export default function WorldMap({ cities }: WorldMapProps) {
                             <span style="font-size: 0.75rem; font-weight: 700; color: ${color};">${label}</span>
                         </div>
                         <div style="font-size: 0.75rem; color: #475569; margin-bottom: 10px;">${monthly}</div>
-                        <a href="/city/${city.slug}" style="display: block; text-align: center; background: #2BC0B4; color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-decoration: none;">View details →</a>
+                        <a href="/city/${city.slug}" style="display: block; text-align: center; background: #52B788; color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-decoration: none;">View details →</a>
                     </div>
                 `, { maxWidth: 200 });
 
@@ -123,9 +123,11 @@ export default function WorldMap({ cities }: WorldMapProps) {
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem', alignItems: 'center' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost of living:</span>
                 {[
-                    { color: '#00C896', label: 'Very affordable' },
-                    { color: '#2BC0B4', label: 'Affordable' },
-                    { color: '#F7831E', label: 'Moderate' },
+                    { color: '#1B4332', label: 'Very affordable' },
+                    { color: '#40916C', label: 'Affordable' },
+                    { color: '#52B788', label: 'Moderate' },
+                    { color: '#F7831E', label: 'Expensive' },
+                    { color: '#dc2626', label: 'Very expensive' },
                     { color: '#ef4444', label: 'Expensive' },
                     { color: '#b91c1c', label: 'Very expensive' },
                 ].map(l => (

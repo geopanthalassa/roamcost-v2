@@ -17,9 +17,9 @@ const PROFILES = [
             { href: '/city/bangkok', label: 'Bangkok' },
             { href: '/city/lisbon', label: 'Lisbon' },
         ],
-        color: '#2BC0B4',
-        bg: '#f0fdfc',
-        border: '#b2f0ec',
+        color: '#52B788',
+        bg: '#F0FAF4',
+        border: '#D8F3DC',
     },
     {
         id: 'expat',
@@ -82,7 +82,7 @@ export default function ProfileFilter() {
         <section style={{ padding: '4rem 0', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                    <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2BC0B4', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.4rem' }}>Personalized for you</p>
+                    <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.4rem' }}>Personalized for you</p>
                     <h2 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
                         What describes you best?
                     </h2>
