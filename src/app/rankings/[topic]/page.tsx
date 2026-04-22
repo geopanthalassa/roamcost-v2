@@ -28,20 +28,20 @@ export default async function RankingPage({ params }: RankingPageProps) {
     const { topic } = await params;
     if (!topic) return notFound();
 
-    let query = supabase.from('cities_master').select('*').not('population', 'is', null).limit(100);
+    let query = supabase.from('cities_master').select('*').gt('cost_index', 0).not('population', 'is', null).limit(100);
     let title = 'City Rankings';
     let description = 'Discover top destinations based on your preferences.';
 
     if (topic === 'cheapest') {
-        query = query.gt('population', 1000000).order('rent_index', { ascending: true });
+        query = query.gt('population', 2000000).order('rent_index', { ascending: true });
         title = 'Value Leaders';
         description = 'Global hubs where your budget stretches the furthest.';
     } else if (topic === 'nomads') {
-        query = query.gt('population', 1500000).order('internet', { ascending: false });
+        query = query.gt('population', 2000000).order('internet', { ascending: false });
         title = 'Connectivity Hubs';
-        description = 'Leading cities for distal work and high-speed infrastructure.';
+        description = 'Leading cities for digital work and high-speed infrastructure.';
     } else if (topic === 'safest') {
-        query = query.gt('population', 1200000).order('safety', { ascending: false });
+        query = query.gt('population', 2000000).order('safety', { ascending: false });
         title = 'Safest Global Cities';
         description = 'Secured metropolitan areas with the highest safety ratings.';
     } else if (topic === 'quality') {

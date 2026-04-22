@@ -28,6 +28,10 @@ export const metadata: Metadata = {
         follow: true,
         googleBot: { index: true, follow: true },
     },
+    icons: {
+        icon: '/favicon_32.png',
+        apple: '/favicon_512.png',
+    },
 };
 
 export default function RootLayout({
