@@ -254,6 +254,63 @@ export default async function CityPage({ params }: CityPageProps) {
                     </div>
                 </div>
 
+                {/* THINGS TO DO */}
+                <div style={{ backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
+                    <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e8833a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        Things to do in {c.city}
+                    </h2>
+                    <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Tours, experiences and activities curated for travelers</p>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
+                        {/* GetYourGuide */}
+                        <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1`}
+                            target="_blank" rel="noopener noreferrer"
+                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #e8833a22', borderRadius: '0.875rem', textDecoration: 'none' }}>
+                            <div style={{ width: '44px', height: '44px', backgroundColor: '#e8833a', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
+                                <div style={{ fontSize: '0.75rem', color: '#e8833a', fontWeight: 700, marginTop: '2px' }}>via GetYourGuide</div>
+                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line, day trips & more</div>
+                            </div>
+                        </a>
+
+                        {/* Viator */}
+                        <a href={`https://www.viator.com/search/${encodeURIComponent(c.city)}`}
+                            target="_blank" rel="noopener noreferrer"
+                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#f0fdf4', border: '2px solid #5b8c7122', borderRadius: '0.875rem', textDecoration: 'none' }}>
+                            <div style={{ width: '44px', height: '44px', backgroundColor: '#5b8c71', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Activities & Attractions</div>
+                                <div style={{ fontSize: '0.75rem', color: '#5b8c71', fontWeight: 700, marginTop: '2px' }}>via Viator</div>
+                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Powered by Tripadvisor</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    {/* Category quick links */}
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                        {['Walking Tours', 'Food Tours', 'Day Trips', 'Museums', 'Night Life', 'Outdoor'].map(cat => (
+                            <a key={cat}
+                                href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat + ' ' + c.city)}&searchSource=1`}
+                                target="_blank" rel="noopener noreferrer"
+                                style={{ fontSize: '0.75rem', fontWeight: 700, color: '#5b8c71', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '2rem', padding: '0.3rem 0.75rem', textDecoration: 'none' }}>
+                                {cat}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
                 {related && related.length > 0 && (
                     <div>
                         <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Other cities in {c.country}</h2>
