@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
 import Link from 'next/link';
 import CityCard from '@/components/CityCard';
-import { getCityImageServer } from '@/lib/getCityImageServer';
 import CurrencyDisplay from '@/components/CurrencyDisplay';
 import WeatherWidget from '@/components/WeatherWidget';
 import CostPersonalizer from '@/components/CostPersonalizer';
