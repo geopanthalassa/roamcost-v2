@@ -1,34 +1,33 @@
-// ✅ SERVER COMPONENT — Google indexa todo
-// ✅ Columna "long" corregida (no "lng") — fix principal del bug de Supabase
+// SERVER COMPONENT - no 'use client'
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
 import Link from 'next/link';
 import CityCard from '@/components/CityCard';
 import CurrencyDisplay from '@/components/CurrencyDisplay';
-import WeatherWidget from '@/components/WeatherWidget';
 
 interface CityPageProps { params: Promise<{ slug: string }>; }
+
 export async function generateMetadata({ params }: CityPageProps) {
     const { slug } = await params;
     const { data } = await supabase.from('cities_master').select('city, country').eq('slug', slug).single();
     if (!data) return { title: 'City Not Found | RoamCost' };
-    const city = data as { city: string; country: string };
+    const d = data as { city: string; country: string };
     return {
-        title: `Cost of Living in ${city.city}, ${city.country} 2026 | RoamCost`,
-        description: `Compare rent, food, safety and quality of life in ${city.city}. Real data for digital nomads and expats.`,
-        openGraph: { title: `${city.city} Cost of Living 2026 | RoamCost`, description: `Everything you need to know before moving to ${city.city}.` },
+        title: `Cost of Living in ${d.city}, ${d.country} 2026 | RoamCost`,
+        description: `Compare rent, food, safety and quality of life in ${d.city}. Real data for digital nomads and expats.`,
     };
 }
+
 export const dynamic = 'force-dynamic';
 
 export default async function CityPage({ params }: CityPageProps) {
     const { slug } = await params;
-    const { data: city } = await supabase.from('cities_master').select('*').eq('slug', slug).single();
-    if (!city) notFound();
-    const c = city as City;
+    const { data } = await supabase.from('cities_master').select('*').eq('slug', slug).single();
+    if (!data) notFound();
+    const c = data as unknown as City;
 
-    const { data: relatedCities } = await supabase
+    const { data: related } = await supabase
         .from('cities_master').select('*')
         .eq('country', c.country).neq('slug', slug)
         .not('slug', 'is', null).not('population', 'is', null)
@@ -38,25 +37,9 @@ export default async function CityPage({ params }: CityPageProps) {
     const food = (c.food_index ?? 0) * 5;
     const transport = (c.transport_index ?? 0) * 2;
     const utilities = (c.utilities_index ?? 0) * 3;
-    const estimatedMonthly = Math.round(rent + food + transport + utilities);
+    const monthly = Math.round(rent + food + transport + utilities);
 
-    const dynamicImage = `https://source.unsplash.com/featured/1400x700?${encodeURIComponent(c.city)},cityscape`;
-
-    const costMetrics = [
-        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#5b8c71', icon: '🏠' },
-        { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', icon: '🍽️' },
-        { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', icon: '🚌' },
-        { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', icon: '⚡' },
-    ];
-
-    const qualityMetrics = [
-        { label: 'Safety', value: c.safety, icon: '🛡️', max: 10 },
-        { label: 'Healthcare', value: c.healthcare, icon: '🏥', max: 10 },
-        { label: 'Internet', value: c.internet, icon: '📡', unit: 'Mbps', max: 100 },
-        { label: 'Environment', value: c.environment, icon: '🌿', max: 10 },
-        { label: 'Leisure', value: c.leisure, icon: '🎭', max: 10 },
-        { label: 'Outdoors', value: c.outdoors, icon: '🏔️', max: 10 },
-    ];
+    const img = `https://source.unsplash.com/featured/1400x700?${encodeURIComponent(c.city)},cityscape`;
 
     return (
         <div className="container section animate-fade-in">
@@ -68,8 +51,9 @@ export default async function CityPage({ params }: CityPageProps) {
                 <span style={{ color: '#0f172a', fontWeight: 700 }}>{c.city}</span>
             </nav>
 
+            {/* HERO */}
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 'var(--radius-xl)', minHeight: '480px', display: 'flex', alignItems: 'flex-end', marginBottom: '3rem', boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }}>
-                <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${dynamicImage}), url(https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1400)`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.45)' }} />
+                <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${img}), url(https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1400)`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.45)' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
                 <div style={{ position: 'relative', zIndex: 1, padding: '3rem 4rem', color: 'white', width: '100%' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem' }}>
@@ -78,19 +62,18 @@ export default async function CityPage({ params }: CityPageProps) {
                                 {c.country}{c.population ? ` • ${c.population.toLocaleString()} inhabitants` : ''}
                             </p>
                             <h1 style={{ fontSize: '4.5rem', fontWeight: 900, letterSpacing: '-0.05em', marginBottom: '1.5rem', lineHeight: 1 }}>{c.city}</h1>
-                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                                {estimatedMonthly > 0 && (
+                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                                {monthly > 0 && (
                                     <span style={{ backgroundColor: '#5b8c71', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 800 }}>
-                                        ~${estimatedMonthly.toLocaleString()}/month
+                                        ~${monthly.toLocaleString()}/month
                                     </span>
-                               }}
-                            {c.cost_index != null && (
-                                <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 700 }}>
-                                    Quality Score: {c.cost_index}
-                                </span>
-                            )}
-                        </div>
-                    </div>
+                                )}
+                                {c.cost_index != null && (
+                                    <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 700 }}>
+                                        Quality Score: {c.cost_index}
+                                    </span>
+                                )}
+                            </div>
                         </div>
                         <div style={{ display: 'flex', gap: '0.75rem' }}>
                             <Link href={`/compare?city1=${c.slug}`} style={{ backgroundColor: 'white', color: '#0f172a', padding: '0.875rem 1.5rem', borderRadius: 'var(--radius-md)', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none' }}>Compare →</Link>
@@ -100,12 +83,13 @@ export default async function CityPage({ params }: CityPageProps) {
                 </div>
             </div>
 
+            {/* STATS */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
                 {[
-                    { label: 'Monthly Budget', value: estimatedMonthly > 0 ? `$${estimatedMonthly.toLocaleString()}` : 'N/A', sub: 'all-in estimate', color: '#5b8c71' },
-                    { label: 'Annual Cost', value: estimatedMonthly > 0 ? `$${(estimatedMonthly * 12).toLocaleString()}` : 'N/A', sub: 'per year', color: '#3b82f6' },
+                    { label: 'Monthly Budget', value: monthly > 0 ? `$${monthly.toLocaleString()}` : 'N/A', sub: 'all-in estimate', color: '#5b8c71' },
+                    { label: 'Annual Cost', value: monthly > 0 ? `$${(monthly * 12).toLocaleString()}` : 'N/A', sub: 'per year', color: '#3b82f6' },
                     { label: 'Internet Speed', value: c.internet != null ? `${c.internet} Mbps` : 'N/A', sub: (c.internet ?? 0) >= 50 ? 'Excellent' : (c.internet ?? 0) >= 20 ? 'Good' : 'Limited', color: '#8b5cf6' },
-                    { label: 'Safety Index', value: c.safety != null ? `${c.safety}/10` : 'N/A', sub: (c.safety ?? 0) >= 7 ? 'Very safe' : (c.safety ?? 0) >= 5 ? 'Moderate' : 'Caution', color: (c.safety ?? 0) >= 7 ? '#16a34a' : (c.safety ?? 0) >= 5 ? '#d97706' : '#dc2626' },
+                    { label: 'Safety Index', value: c.safety != null ? `${c.safety}/10` : 'N/A', sub: (c.safety ?? 0) >= 7 ? 'Very safe' : (c.safety ?? 0) >= 5 ? 'Moderate' : 'Caution', color: (c.safety ?? 0) >= 7 ? '#16a34a' : '#d97706' },
                 ].map(stat => (
                     <div key={stat.label} className="card" style={{ padding: '1.5rem', textAlign: 'center', boxShadow: 'none', border: '1px solid #e2e8f0' }}>
                         <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>{stat.label}</div>
@@ -116,48 +100,62 @@ export default async function CityPage({ params }: CityPageProps) {
             </div>
 
             <div className="grid grid-cols-2" style={{ gap: '2rem', marginBottom: '2rem' }}>
+                {/* COSTS */}
                 <section className="card" style={{ padding: '2.5rem', boxShadow: 'none', border: '1px solid #e2e8f0' }}>
                     <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem' }}>Monthly Living Costs</h2>
                     <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '2rem' }}>Estimated breakdown in USD</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                        {costMetrics.map((metric) => (
-                            <div key={metric.label}>
+                        {[
+                            { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#5b8c71', icon: '🏠' },
+                            { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', icon: '🍽️' },
+                            { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', icon: '🚌' },
+                            { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', icon: '⚡' },
+                        ].map((m) => (
+                            <div key={m.label}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                                    <span style={{ fontWeight: 700, color: '#475569', fontSize: '0.9rem' }}>{metric.icon} {metric.label}</span>
+                                    <span style={{ fontWeight: 700, color: '#475569', fontSize: '0.9rem' }}>{m.icon} {m.label}</span>
                                     <div style={{ textAlign: 'right' }}>
-                                        <span style={{ fontWeight: 900, color: '#0f172a' }}>${Math.round(metric.usd).toLocaleString()}</span>
-                                        <CurrencyDisplay usdAmount={metric.usd} />
+                                        <span style={{ fontWeight: 900, color: '#0f172a' }}>${Math.round(m.usd).toLocaleString()}</span>
+                                        <CurrencyDisplay usdAmount={m.usd} />
                                     </div>
                                 </div>
                                 <div style={{ height: '8px', backgroundColor: '#f1f5f9', borderRadius: '4px', overflow: 'hidden' }}>
-                                    <div style={{ height: '100%', width: `${Math.min(metric.value, 100)}%`, backgroundColor: metric.color, borderRadius: '4px' }} />
+                                    <div style={{ height: '100%', width: `${Math.min(m.value, 100)}%`, backgroundColor: m.color, borderRadius: '4px' }} />
                                 </div>
                             </div>
                         ))}
                         <div style={{ paddingTop: '1rem', borderTop: '2px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <span style={{ fontWeight: 800, color: '#0f172a' }}>Total Estimate</span>
                             <div style={{ textAlign: 'right' }}>
-                                <span style={{ fontSize: '1.4rem', fontWeight: 900, color: '#5b8c71' }}>${estimatedMonthly.toLocaleString()}/mo</span>
-                                <CurrencyDisplay usdAmount={estimatedMonthly} large />
+                                <span style={{ fontSize: '1.4rem', fontWeight: 900, color: '#5b8c71' }}>${monthly.toLocaleString()}/mo</span>
+                                <CurrencyDisplay usdAmount={monthly} large />
                             </div>
                         </div>
                     </div>
                 </section>
 
+                {/* QUALITY */}
                 <section className="card" style={{ padding: '2.5rem', boxShadow: 'none', border: '1px solid #e2e8f0' }}>
                     <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem' }}>Quality of Life</h2>
                     <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '2rem' }}>Indexed scores for key life factors</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
-                        {qualityMetrics.map((metric) => {
-                            const val = metric.value ?? 0;
-                            const good = metric.max === 100 ? val >= 30 : val >= 6;
+                        {[
+                            { label: 'Safety', value: c.safety, icon: '🛡️', max: 10 },
+                            { label: 'Healthcare', value: c.healthcare, icon: '🏥', max: 10 },
+                            { label: 'Internet', value: c.internet, icon: '📡', unit: 'Mbps', max: 100 },
+                            { label: 'Environment', value: c.environment, icon: '🌿', max: 10 },
+                            { label: 'Leisure', value: c.leisure, icon: '🎭', max: 10 },
+                            { label: 'Outdoors', value: c.outdoors, icon: '🏔️', max: 10 },
+                        ].map((m) => {
+                            const val = m.value ?? 0;
+                            const good = m.max === 100 ? val >= 30 : val >= 6;
                             return (
-                                <div key={metric.label} style={{ padding: '1.25rem', backgroundColor: good ? '#f0fdf4' : '#fafafa', border: `1px solid ${good ? '#bbf7d0' : '#e2e8f0'}`, borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
-                                    <div style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{metric.icon}</div>
+                                <div key={m.label} style={{ padding: '1.25rem', backgroundColor: good ? '#f0fdf4' : '#fafafa', border: `1px solid ${good ? '#bbf7d0' : '#e2e8f0'}`, borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
+                                    <div style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{m.icon}</div>
                                     <div style={{ fontSize: '1.5rem', fontWeight: 900, color: good ? '#16a34a' : '#64748b', marginBottom: '0.2rem' }}>
-                                        {metric.value != null ? metric.value : '—'}{metric.unit ? ` ${metric.unit}` : ''}
+                                        {m.value != null ? m.value : '—'}{m.unit ? ` ${m.unit}` : ''}
                                     </div>
-                                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{metric.label}</div>
+                                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{m.label}</div>
                                 </div>
                             );
                         })}
@@ -165,6 +163,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 </section>
             </div>
 
+            {/* TRAVEL */}
             <section className="card" style={{ padding: '2.5rem', marginBottom: '2rem', boxShadow: 'none', border: '1px solid #e2e8f0', background: 'linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%)' }}>
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>✈️ Ready to visit {c.city}?</h2>
                 <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '2rem' }}>Find the best deals on flights, hotels and long-term stays.</p>
@@ -185,16 +184,16 @@ export default async function CityPage({ params }: CityPageProps) {
                 </div>
             </section>
 
-            {relatedCities && relatedCities.length > 0 && (
+            {/* RELATED */}
+            {related && related.length > 0 && (
                 <section style={{ marginBottom: '2rem' }}>
                     <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem' }}>Other cities in {c.country}</h2>
                     <div className="grid grid-cols-3" style={{ gap: '1.25rem' }}>
-                        {relatedCities.map(rc => <CityCard key={rc.slug} city={rc} />)}
+                        {related.map(rc => <CityCard key={rc.slug} city={rc} />)}
                     </div>
                 </section>
             )}
-
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "City", "name": c.city, "containedInPlace": { "@type": "Country", "name": c.country }, "description": `Cost of living in ${c.city}: ~$${estimatedMonthly}/month. Safety: ${c.safety ?? 'N/A'}/10.` }) }} />
         </div>
     );
 }
+
