@@ -208,18 +208,6 @@ export const CITY_IMAGES: Record<string, string> = {
     'johannesburg-south-africa': 'photo-1577948000111-9c970dfe3743',
     'cairo-egypt': 'photo-1539650116574-8efeb43e2750',
     'nairobi-kenya': 'photo-1611348586804-61bf6c080437',
-};
-
-export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
-    const photoId = CITY_IMAGES[slug];
-    if (photoId) {
-        return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
-    }
-    // Fallback: use city name for Unsplash search
-    const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
-    return `https://source.unsplash.com/${width}x${height}/?${query}`;
-}
-
     // African & Middle East cities - curated Unsplash photos
     'abuja': 'photo-1614935151651-0bea6508db6b',
     'kinshasa': 'photo-1577948000111-9c970dfe3743',
@@ -293,4 +281,17 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     'valencia-venezuela': 'photo-1589923188900-85dae523342b',
     'valencia-spain': 'photo-1558618047-f4e58f39cf65',
     'warsaw-poland-1': 'photo-1607427293702-036933bbf746',
+
+};
+
+export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
+    const photoId = CITY_IMAGES[slug];
+    if (photoId) {
+        return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
+    }
+    // Fallback: use city name for Unsplash search
+    const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
+    return `https://source.unsplash.com/${width}x${height}/?${query}`;
+}
+
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
