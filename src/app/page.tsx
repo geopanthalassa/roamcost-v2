@@ -131,8 +131,7 @@ export default async function Home() {
                         {POPULAR_COMPARISONS.map(({ a, b, labelA, labelB }) => (
                             <Link key={`${a}-${b}`} href={`/compare/${a}-vs-${b}`}
                                 style={{ display: 'block', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0.875rem', padding: '1.25rem', textDecoration: 'none', transition: 'border-color 0.15s, background 0.15s' }}
-                                onMouseOver={e => { (e.currentTarget as HTMLElement).style.borderColor = '#5b8c71'; (e.currentTarget as HTMLElement).style.backgroundColor = '#f0fdf4'; }}
-                                onMouseOut={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e2e8f0'; (e.currentTarget as HTMLElement).style.backgroundColor = '#f8fafc'; }}
+                               
                             >
                                 <p style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
                                     {labelA} vs {labelB}
