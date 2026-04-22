@@ -43,7 +43,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
         notFound();
     }
 
-    const places = await getFoursquarePlaces(city.lat, city.lng);
+    const places = await getFoursquarePlaces(city.lat, city.long);
 
     return (
         <div className="container section animate-fade-in">

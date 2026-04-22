@@ -189,6 +189,7 @@ export default async function Home() {
                             </Link>
                         </div>
                     </div>
+                    {/* Desktop grid / Mobile carousel */}
                     <div className="popular-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
                         {sortedPopular.map(city => {
                             const currency = CURRENCY_MAP[city.country] || 'USD';
