@@ -35,6 +35,7 @@ export default function Header() {
                         <Link href="/" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.9rem' }}>Home</Link>
                         <Link href="/rankings/quality" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.9rem' }}>Rankings</Link>
                         <Link href="/compare" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.9rem' }}>Compare</Link>
+                        <Link href="/calculator" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.9rem' }}>Calculator</Link>
                         <Link href="/rankings/nomads" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.9rem' }}>Nomads</Link>
                         <Link href="/about" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.9rem' }}>About</Link>
                     </div>
