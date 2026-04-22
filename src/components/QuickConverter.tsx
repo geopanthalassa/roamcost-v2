@@ -52,7 +52,7 @@ export default function QuickConverter() {
     return (
         <section style={{ backgroundColor: '#0f172a', padding: '2rem 0' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+                <div className="quick-converter-inner" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
                     {/* Label */}
                     <div style={{ flexShrink: 0 }}>
                         <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2px' }}>Quick Convert</div>

@@ -129,7 +129,7 @@ export default async function Home() {
             {/* ── STATS BAR ── */}
             <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
+                    <div className="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
                         {[
                             { value: '45,000+', label: 'Cities covered' },
                             { value: '4,000+', label: 'With full cost data' },
@@ -157,7 +157,7 @@ export default async function Home() {
                             </Link>
                         </div>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.875rem' }}>
+                    <div className="rankings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.875rem' }}>
                         {POPULAR_COMPARISONS.map(({ a, b, labelA, labelB }) => (
                             <Link key={`${a}-${b}`} href={`/compare/${a}-vs-${b}`}
                                 style={{ display: 'block', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0.875rem', padding: '1.25rem', textDecoration: 'none', transition: 'border-color 0.15s, background 0.15s' }}
@@ -188,7 +188,7 @@ export default async function Home() {
                             </Link>
                         </div>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+                    <div className="popular-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
                         {sortedPopular.map(city => {
                             const currency = CURRENCY_MAP[city.country] || 'USD';
                             const cost = city.cost_index > 0 ? Math.round(city.cost_index) : null;

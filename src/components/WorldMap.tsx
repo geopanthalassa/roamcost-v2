@@ -139,6 +139,7 @@ export default function WorldMap({ cities }: WorldMapProps) {
             {/* Map */}
             <div
                 ref={mapRef}
+                className="world-map-container"
                 style={{
                     width: '100%',
                     height: '440px',
