@@ -131,14 +131,14 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.75rem' }}>Estimated breakdown in USD</p>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                                     {[
-                                        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#5b8c71', icon: '🏠' },
-                                        { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', icon: '🍽️' },
-                                        { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', icon: '🚌' },
-                                        { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', icon: '⚡' },
+                                        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#5b8c71', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
+                                        { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> },
+                                        { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> },
+                                        { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> },
                                     ].map((m) => (
                                         <div key={m.label}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                                                <span style={{ fontWeight: 600, color: '#475569', fontSize: '0.875rem' }}>{m.icon} {m.label}</span>
+                                                <span style={{ fontWeight: 600, color: '#475569', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>{m.svg}{m.label}</span>
                                                 <div style={{ textAlign: 'right' }}>
                                                     <span style={{ fontWeight: 800, color: '#0f172a', fontSize: '0.875rem' }}>${Math.round(m.usd).toLocaleString()}</span>
                                                     <CurrencyDisplay usdAmount={m.usd} />
@@ -164,18 +164,19 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.75rem' }}>Indexed scores for key life factors</p>
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
                                     {[
-                                        { label: 'Safety', value: c.safety, icon: '🛡️', max: 10 },
-                                        { label: 'Healthcare', value: c.healthcare, icon: '🏥', max: 10 },
-                                        { label: 'Internet', value: c.internet, icon: '📡', unit: 'Mbps', max: 100 },
-                                        { label: 'Environment', value: c.environment, icon: '🌿', max: 10 },
-                                        { label: 'Leisure', value: c.leisure, icon: '🎭', max: 10 },
-                                        { label: 'Outdoors', value: c.outdoors, icon: '🏔️', max: 10 },
+                                        { label: 'Safety', value: c.safety, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> },
+                                        { label: 'Healthcare', value: c.healthcare, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> },
+                                        { label: 'Internet', value: c.internet, unit: 'Mbps', max: 100, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> },
+                                        { label: 'Environment', value: c.environment, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9"/><path d="M17 8l-5 5"/></svg> },
+                                        { label: 'Leisure', value: c.leisure, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> },
+                                        { label: 'Outdoors', value: c.outdoors, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> },
                                     ].map((m) => {
                                         const val = m.value ?? 0;
                                         const good = m.max === 100 ? val >= 30 : val >= 6;
+                                        const iconColor = good ? '#16a34a' : '#94a3b8';
                                         return (
                                             <div key={m.label} style={{ padding: '1rem', backgroundColor: good ? '#f0fdf4' : '#fafafa', border: `1px solid ${good ? '#bbf7d0' : '#e2e8f0'}`, borderRadius: '0.75rem', textAlign: 'center' }}>
-                                                <div style={{ fontSize: '1.1rem', marginBottom: '0.2rem' }}>{m.icon}</div>
+                                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.3rem', color: iconColor }}>{m.svg}</div>
                                                 <div style={{ fontSize: '1.25rem', fontWeight: 900, color: good ? '#16a34a' : '#94a3b8' }}>
                                                     {m.value != null ? m.value : '—'}{m.unit ? ` ${m.unit}` : ''}
                                                 </div>
@@ -189,7 +190,12 @@ export default async function CityPage({ params }: CityPageProps) {
                     </>
                 ) : (
                     <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2.5rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0', textAlign: 'center' }}>
-                        <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🌍</div>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
                             Detailed cost data coming soon for {c.city}
                         </h2>
