@@ -22,8 +22,9 @@ const POPULAR_COMPARISONS = [
 ];
 
 const RANKING_LINKS = [
-    { href: '/rankings/cheapest', label: 'Cheapest Cities in Europe' },
-    { href: '/rankings/cheapest', label: 'Cheapest Cities in Asia' },
+    { href: '/rankings/region/europe', label: 'Cheapest Cities in Europe' },
+    { href: '/rankings/region/asia', label: 'Cheapest Cities in Asia' },
+    { href: '/rankings/region/latin-america', label: 'Cheapest Cities in Latin America' },
     { href: '/rankings/cheapest', label: 'Cheapest Cities in Latin America' },
     { href: '/rankings/nomads', label: 'Best Cities for Digital Nomads' },
     { href: '/rankings/safest', label: 'Safest Cities in the World' },

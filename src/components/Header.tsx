@@ -9,6 +9,7 @@ import { useState } from 'react';
 const NAV_LINKS = [
     { href: '/', label: 'Home' },
     { href: '/rankings/quality', label: 'Rankings' },
+    { href: '/rankings/region/europe', label: 'By Region' },
     { href: '/compare', label: 'Compare' },
     { href: '/calculator', label: 'Calculator' },
     { href: '/rankings/nomads', label: 'Nomads' },
