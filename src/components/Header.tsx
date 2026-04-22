@@ -23,7 +23,7 @@ export default function Header() {
         <header style={{ borderBottom: '1px solid #e2e8f0', padding: '1rem 0', position: 'sticky', top: 0, backgroundColor: '#ffffff', zIndex: 1000 }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-                    <Image src="/roamcost-logo.jpg" alt="RoamCost" width={140} height={38} style={{ objectFit: 'contain' }} priority />
+                    <Image src="/roamcost-logo.png" alt="RoamCost" width={140} height={38} style={{ objectFit: 'contain' }} priority />
                 </Link>
 
                 {/* Desktop nav */}
