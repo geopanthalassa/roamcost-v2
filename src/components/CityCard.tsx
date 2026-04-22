@@ -53,25 +53,14 @@ const dynamicImage = `https://picsum.photos/seed/${seed}/800/600`;
                     <p style={{ margin: '0.2rem 0 0', color: '#64748b', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city.country}</p>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                    <div>
-                        <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', marginBottom: '2px' }}>Est. Monthly</div>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#0f172a' }}>
-                            {hasData ? formatValue(estimatedMonthly) : 'N/A'}
-                        </div>
+                <div style={{ marginBottom: '0.75rem' }}>
+                    <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', marginBottom: '2px' }}>Est. Monthly</div>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#0f172a' }}>
+                        {hasData ? formatValue(estimatedMonthly) : 'N/A'}
                     </div>
-                    {city.cost_index > 0 && (
-                        <div style={{
-                            border: '2px solid #5b8c71', color: '#5b8c71',
-                            width: '38px', height: '38px', display: 'flex', alignItems: 'center',
-                            justifyContent: 'center', borderRadius: '50%', fontSize: '0.8rem', fontWeight: 900
-                        }}>
-                            {city.cost_index}
-                        </div>
-                    )}
                 </div>
 
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     {city.safety > 0 && (
                         <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f1f5f9', color: safetyColor, fontWeight: 700 }}>
                             Safety {city.safety}/10
@@ -80,6 +69,11 @@ const dynamicImage = `https://picsum.photos/seed/${seed}/800/600`;
                     {city.internet > 0 && (
                         <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f1f5f9', color: '#64748b', fontWeight: 600 }}>
                             {city.internet} Mbps
+                        </span>
+                    )}
+                    {city.cost_index > 0 && (
+                        <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f0fdf4', color: '#5b8c71', fontWeight: 700 }}>
+                            Score {Math.round(city.cost_index)}
                         </span>
                     )}
                 </div>

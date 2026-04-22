@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import Translator from './Translator';
 import { useCurrency } from '@/context/CurrencyContext';
 import { useState } from 'react';
@@ -19,15 +20,8 @@ export default function Header() {
             zIndex: 100,
         }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link href="/" style={{
-                    fontSize: '1.5rem', fontWeight: 900, color: '#0f172a',
-                    letterSpacing: '-0.05em', display: 'flex', alignItems: 'center', gap: '0.5rem'
-                }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b8c71" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    </svg>
-                    RoamCost
+                <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+                    <Image src="/roamcost-logo.jpg" alt="RoamCost" width={160} height={44} style={{ objectFit: 'contain' }} priority />
                 </Link>
 
                 <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
