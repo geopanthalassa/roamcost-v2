@@ -5,7 +5,7 @@ export default function Footer() {
         <footer style={{ borderTop: '1px solid var(--border)', padding: '4rem 0', marginTop: '4rem', backgroundColor: '#f8fafc' }}>
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem' }}>
                 <div>
-                    <h3 style={{ color: '#5b8c71', marginBottom: '1rem' }}>RoamCost</h3>
+                    <h3 style={{ color: '#4ECDC4', marginBottom: '1rem' }}>RoamCost</h3>
                     <p style={{ color: 'var(--muted)', maxWidth: '280px', fontSize: '0.9rem', lineHeight: 1.7 }}>
                         Data-driven insights to help you find your perfect global base. Compare cities, plan your move.
                     </p>

@@ -9,10 +9,10 @@ export default function AboutPage() {
     return (
         <div className="container section animate-fade-in" style={{ maxWidth: '800px' }}>
             <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                <span style={{ color: '#5b8c71', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Our mission</span>
+                <span style={{ color: '#4ECDC4', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Our mission</span>
                 <h1 style={{ fontSize: '3.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.05em', marginTop: '0.5rem', lineHeight: 1.1 }}>
                     The world is your home.{' '}
-                    <span style={{ color: '#5b8c71' }}>We help you choose where.</span>
+                    <span style={{ color: '#4ECDC4' }}>We help you choose where.</span>
                 </h1>
             </div>
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
                 <Link href="/compare" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontWeight: 800 }}>
                     Start Comparing →
                 </Link>
-                <Link href="/contact" style={{ padding: '1rem 2.5rem', fontWeight: 700, color: '#5b8c71', border: '2px solid #5b8c71', borderRadius: 'var(--radius-md)', textDecoration: 'none' }}>
+                <Link href="/contact" style={{ padding: '1rem 2.5rem', fontWeight: 700, color: '#4ECDC4', border: '2px solid #4ECDC4', borderRadius: 'var(--radius-md)', textDecoration: 'none' }}>
                     Contact Us
                 </Link>
             </div>

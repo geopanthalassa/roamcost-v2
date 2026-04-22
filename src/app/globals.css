@@ -1,11 +1,13 @@
 :root {
-  /* Minimalist Sage & Navy Palette */
+  /* RoamCost Brand Colors — from favicon */
   --primary: #0f172a;
   /* Deep Navy for text and heads */
-  --secondary: #5b8c71;
-  /* Sage Green for focus/accents */
-  --accent: #9fb8b0;
-  /* Lighter Sage for secondary actions */
+  --secondary: #4ECDC4;
+  /* Teal/Mint — main brand color */
+  --accent: #F7931E;
+  /* Orange — from airplane gradient */
+  --accent-warm: #FFD700;
+  /* Gold/Yellow — airplane tail */
   --background: #ffffff;
   --foreground: #0f172a;
   --muted: #64748b;
@@ -135,12 +137,12 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--secondary);
+  background-color: #4ECDC4;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #2563eb;
+  background-color: #3dbdb4;
   transform: translateY(-1px);
 }
 

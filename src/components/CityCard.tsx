@@ -15,7 +15,7 @@ export default function CityCard({ city }: CityCardProps) {
     const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
     const dynamicImage = getCityImage(city.slug, 800, 600);
 
-    const safetyColor = city.safety >= 7 ? '#16a34a' : city.safety >= 5 ? '#d97706' : '#dc2626';
+    const safetyColor = city.safety >= 7 ? '#0ea5a0' : city.safety >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = city.internet >= 50 ? 'Fast' : city.internet >= 20 ? 'Good' : city.internet > 0 ? 'Slow' : null;
     const hasData = estimatedMonthly > 0;
 
@@ -71,7 +71,7 @@ export default function CityCard({ city }: CityCardProps) {
                         </span>
                     )}
                     {city.cost_index > 0 && (
-                        <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f0fdf4', color: '#5b8c71', fontWeight: 700 }}>
+                        <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f0fdfc', color: '#4ECDC4', fontWeight: 700 }}>
                             Score {Math.round(city.cost_index)}
                         </span>
                     )}
