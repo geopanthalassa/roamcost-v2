@@ -28,7 +28,7 @@ const dynamicImage = `https://picsum.photos/seed/${seed}/800/600`;
             <div style={{
                 height: '200px',
                 backgroundColor: '#f1f5f9',
-                backgroundImage: `url(${dynamicImage}), url(${fallbackImage})`,
+                backgroundImage: `url(${dynamicImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: 'transform 0.4s ease',
