@@ -83,13 +83,14 @@ export default async function CityPage({ params }: CityPageProps) {
                                     <span style={{ backgroundColor: '#5b8c71', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 800 }}>
                                         ~${estimatedMonthly.toLocaleString()}/month
                                     </span>
-                                )}
-                                {c.cost_index != null && (
-                                    <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 700 }}>
-                                        Quality Score: {c.cost_index}
-                                    </span>
-                                }} 
-                            </div>
+                               }}
+                            {c.cost_index != null && (
+                                <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.6rem 1.25rem', borderRadius: '2rem', fontWeight: 700 }}>
+                                    Quality Score: {c.cost_index}
+                                </span>
+                            )}
+                        </div>
+                    </div>
                         </div>
                         <div style={{ display: 'flex', gap: '0.75rem' }}>
                             <Link href={`/compare?city1=${c.slug}`} style={{ backgroundColor: 'white', color: '#0f172a', padding: '0.875rem 1.5rem', borderRadius: 'var(--radius-md)', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none' }}>Compare →</Link>
