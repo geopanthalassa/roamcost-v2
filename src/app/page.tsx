@@ -4,6 +4,7 @@ import CityCard from '@/components/CityCard';
 import WorldMap from '@/components/WorldMap';
 import QuickConverter from '@/components/QuickConverter';
 import { supabase } from '@/lib/supabase';
+import { getCityImage } from '@/lib/cityImages';
 import { City } from '@/types/database';
 
 export const revalidate = 3600;
@@ -196,7 +197,7 @@ export default async function Home() {
                             const climate = city.environment > 0 ? Math.round(city.environment * 10) : null;
                             const imgQuery = encodeURIComponent(`${city.city} city`);
                             const seed = Math.abs(city.city.split('').reduce((a: number, c: string) => a + c.charCodeAt(0), 0)) % 1000;
-                            const imgUrl = `https://picsum.photos/seed/${seed + 100}/400/200`;
+                            const imgUrl = getCityImage(city.slug, 400, 200);
                             return (
                                 <Link key={city.slug} href={`/city/${city.slug}`} style={{ textDecoration: 'none' }}>
                                     <div style={{

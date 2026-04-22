@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { City } from '@/types/database';
 import { useCurrency } from '@/context/CurrencyContext';
+import { getCityImage } from '@/lib/cityImages';
 
 interface CityCardProps {
     city: City;
@@ -12,9 +13,7 @@ export default function CityCard({ city }: CityCardProps) {
     const { formatValue } = useCurrency();
 
     const estimatedMonthly = (city.rent_index * 10) + (city.food_index * 5) + (city.transport_index * 2) + (city.utilities_index * 3);
-    // Use picsum with a consistent seed per city for reliable images
-    const seed = Math.abs(city.city.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
-    const dynamicImage = `https://picsum.photos/seed/${seed}/800/600`;
+    const dynamicImage = getCityImage(city.slug, 800, 600);
 
     const safetyColor = city.safety >= 7 ? '#16a34a' : city.safety >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = city.internet >= 50 ? 'Fast' : city.internet >= 20 ? 'Good' : city.internet > 0 ? 'Slow' : null;
