@@ -33,7 +33,7 @@ export async function getCityImageServer(
             if (!res.ok) continue;
             const data = await res.json();
             const imgUrl = data?.thumbnail?.source || data?.originalimage?.source;
-            if (imgUrl && !/flag|Flag|map|Map|coat|Coat|logo|Logo|seal|Seal|emblem/i.test(imgUrl)) {
+            if (imgUrl && !/flag|Flag|map|Map|coat|Coat|logo|Logo|seal|Seal|emblem|Emblem|symbol|Symbol|portrait|Portrait|person|Person|people|People|head|Head|face|Face|statue|Statue|vehicle|Vehicle|aircraft|Aircraft|ship|Ship|tool|Tool|machine|Machine|sign|Sign|badge|Badge/i.test(imgUrl)) {
                 return imgUrl.replace(/\/\d+px-/, `/${width}px-`);
             }
         } catch {
