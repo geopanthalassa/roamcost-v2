@@ -9,18 +9,17 @@ import CurrencyDisplay from '@/components/CurrencyDisplay';
 import WeatherWidget from '@/components/WeatherWidget';
 
 interface CityPageProps { params: Promise<{ slug: string }>; }
-
 export async function generateMetadata({ params }: CityPageProps) {
     const { slug } = await params;
-    const { data: city } = await supabase.from('cities_master').select('city, country').eq('slug', slug).single();
-    if (!city) return { title: 'City Not Found | RoamCost' };
+    const { data } = await supabase.from('cities_master').select('city, country').eq('slug', slug).single();
+    if (!data) return { title: 'City Not Found | RoamCost' };
+    const city = data as { city: string; country: string };
     return {
         title: `Cost of Living in ${city.city}, ${city.country} 2026 | RoamCost`,
         description: `Compare rent, food, safety and quality of life in ${city.city}. Real data for digital nomads and expats.`,
         openGraph: { title: `${city.city} Cost of Living 2026 | RoamCost`, description: `Everything you need to know before moving to ${city.city}.` },
     };
 }
-
 export const dynamic = 'force-dynamic';
 
 export default async function CityPage({ params }: CityPageProps) {
