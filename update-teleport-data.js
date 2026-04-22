@@ -1,190 +1,123 @@
 /**
- * update-teleport-data.js
- * 
- * Script para actualizar datos de ciudades en Supabase usando Teleport API (gratuita).
- * Cubre ~260 ciudades principales con scores actualizados.
- * 
+ * update-city-data.js
+ * Actualiza datos de ciudades usando World Bank API (gratuita, sin límite)
  * Uso: node update-teleport-data.js
- * Recomendado: correr mensualmente via cron job
  */
 
 const { createClient } = require('@supabase/supabase-js');
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// Mapeo de slugs de Teleport a slugs de RoamCost
-// Teleport usa nombres como "new-york" y nosotros también, pero algunos difieren
-const TELEPORT_SLUG_MAP = {
-    'new-york': 'new-york',
-    'london': 'london',
-    'paris': 'paris',
-    'tokyo': 'tokyo',
-    'berlin': 'berlin',
-    'amsterdam': 'amsterdam',
-    'barcelona': 'barcelona',
-    'madrid': 'madrid',
-    'rome': 'rome',
-    'vienna': 'vienna',
-    'zurich': 'zurich',
-    'stockholm': 'stockholm',
-    'oslo': 'oslo',
-    'copenhagen': 'copenhagen',
-    'singapore': 'singapore',
-    'hong-kong': 'hong-kong',
-    'seoul': 'seoul',
-    'taipei': 'taipei',
-    'bangkok': 'bangkok',
-    'kuala-lumpur': 'kuala-lumpur',
-    'sydney': 'sydney',
-    'melbourne': 'melbourne',
-    'dubai': 'dubai',
-    'tel-aviv': 'tel-aviv',
-    'toronto': 'toronto',
-    'vancouver': 'vancouver',
-    'san-francisco': 'san-francisco',
-    'los-angeles': 'los-angeles',
-    'chicago': 'chicago',
-    'miami': 'miami',
-    'mexico-city': 'mexico-city',
-    'buenos-aires': 'buenos-aires',
-    'sao-paulo': 'sao-paulo',
-    'bogota': 'bogota',
-    'lima': 'lima',
-    'santiago-de-chile': 'santiago-chile',
-    'lisbon': 'lisbon',
-    'prague': 'prague',
-    'budapest': 'budapest',
-    'warsaw': 'warsaw',
-    'brussels': 'brussels',
-    'helsinki': 'helsinki',
-    'cape-town': 'cape-town',
-    'nairobi': 'nairobi',
-    'cairo': 'cairo',
-    'mumbai': 'mumbai',
-    'bangalore': 'bangalore',
-    'jakarta': 'jakarta',
-    'manila': 'manila',
-    'ho-chi-minh-city': 'ho-chi-minh-city',
+// World Bank indicadores por país (ISO2 code)
+// Nos da inflación y GDP per cápita para ajustar índices
+const WB_INDICATORS = {
+    inflation: 'FP.CPI.TOTL.ZG',    // Inflación anual %
+    gdpPerCapita: 'NY.GDP.PCAP.CD',  // GDP per cápita USD
 };
 
-async function getTeleportScores(teleportSlug) {
+// Mapa país → ISO2 code para World Bank
+const COUNTRY_ISO = {
+    'United States': 'US', 'United Kingdom': 'GB', 'France': 'FR',
+    'Japan': 'JP', 'Germany': 'DE', 'Spain': 'ES', 'Italy': 'IT',
+    'Netherlands': 'NL', 'Portugal': 'PT', 'Australia': 'AU',
+    'Singapore': 'SG', 'Thailand': 'TH', 'United Arab Emirates': 'AE',
+    'Canada': 'CA', 'Mexico': 'MX', 'Brazil': 'BR', 'Argentina': 'AR',
+    'Colombia': 'CO', 'Chile': 'CL', 'Peru': 'PE', 'Turkey': 'TR',
+    'South Korea': 'KR', 'China': 'CN', 'India': 'IN', 'Indonesia': 'ID',
+    'Malaysia': 'MY', 'Vietnam': 'VN', 'Philippines': 'PH',
+    'South Africa': 'ZA', 'Kenya': 'KE', 'Egypt': 'EG', 'Morocco': 'MA',
+    'Israel': 'IL', 'Saudi Arabia': 'SA', 'Poland': 'PL', 'Czech Republic': 'CZ',
+    'Hungary': 'HU', 'Romania': 'RO', 'Ukraine': 'UA', 'Sweden': 'SE',
+    'Norway': 'NO', 'Denmark': 'DK', 'Finland': 'FI', 'Austria': 'AT',
+    'Switzerland': 'CH', 'Belgium': 'BE', 'Greece': 'GR', 'New Zealand': 'NZ',
+    'Hong Kong': 'HK', 'Taiwan': 'TW',
+};
+
+async function getWorldBankData(iso2, indicator) {
     try {
-        const res = await fetch(
-            `https://api.teleport.org/api/urban_areas/slug:${teleportSlug}/scores/`
-        );
+        const url = `https://api.worldbank.org/v2/country/${iso2}/indicator/${indicator}?format=json&mrv=1&per_page=1`;
+        const res = await fetch(url);
         if (!res.ok) return null;
         const data = await res.json();
-        return data.categories;
+        const value = data?.[1]?.[0]?.value;
+        return value != null ? parseFloat(value.toFixed(2)) : null;
     } catch {
         return null;
     }
 }
 
-async function getTeleportDetails(teleportSlug) {
-    try {
-        const res = await fetch(
-            `https://api.teleport.org/api/urban_areas/slug:${teleportSlug}/details/`
-        );
-        if (!res.ok) return null;
-        return await res.json();
-    } catch {
-        return null;
-    }
-}
+async function updateCountry(country, iso2) {
+    process.stdout.write(`Updating ${country}... `);
 
-function mapTeleportToCity(categories, details) {
-    if (!categories) return null;
-
-    const get = (name) => categories.find(c => c.name === name)?.score_out_of_10 ?? null;
-
-    // Map Teleport categories to our columns
-    const updates = {};
-
-    const safety = get('Safety');
-    if (safety) updates.safety = parseFloat(safety.toFixed(2));
-
-    const healthcare = get('Healthcare');
-    if (healthcare) updates.healthcare = parseFloat(healthcare.toFixed(2));
-
-    const environment = get('Environmental Quality');
-    if (environment) updates.environment = parseFloat(environment.toFixed(2));
-
-    const leisure = get('Leisure & Culture');
-    if (leisure) updates.leisure = parseFloat(leisure.toFixed(2));
-
-    const outdoors = get('Outdoors');
-    if (outdoors) updates.outdoors = parseFloat(outdoors.toFixed(2));
-
-    const internet = get('Internet Access');
-    if (internet) {
-        // Convert score/10 to Mbps approximation
-        updates.internet = parseFloat((internet * 15).toFixed(2));
-    }
-
-    // Extract cost data from details if available
-    if (details?.categories) {
-        const costCat = details.categories.find(c => c.id === 'COST-OF-LIVING');
-        if (costCat?.data) {
-            const rent = costCat.data.find(d => d.id === 'COST-APRT-1BR');
-            if (rent?.float_value) updates.rent_index = parseFloat(rent.float_value.toFixed(2));
-
-            const food = costCat.data.find(d => d.id === 'COST-RESTAURANT-CHEAP');
-            if (food?.float_value) updates.food_index = parseFloat(food.float_value.toFixed(2));
-        }
-    }
-
-    return Object.keys(updates).length > 0 ? updates : null;
-}
-
-async function updateCity(teleportSlug, roamcostSlug) {
-    console.log(`Updating ${roamcostSlug}...`);
-
-    const [categories, details] = await Promise.all([
-        getTeleportScores(teleportSlug),
-        getTeleportDetails(teleportSlug),
+    const [inflation, gdp] = await Promise.all([
+        getWorldBankData(iso2, WB_INDICATORS.inflation),
+        getWorldBankData(iso2, WB_INDICATORS.gdpPerCapita),
     ]);
 
-    const updates = mapTeleportToCity(categories, details);
-    if (!updates) {
-        console.log(`  No data for ${teleportSlug}`);
-        return false;
+    if (!inflation && !gdp) {
+        console.log('no data');
+        return 0;
     }
 
-    const { error } = await supabase
+    // Ajuste de índices basado en GDP per cápita
+    // GDP alto → costos más altos en general
+    // Usamos esto para calibrar el cost_index relativo
+    if (!gdp) {
+        console.log(`inflation: ${inflation}% (no GDP)`);
+        return 0;
+    }
+
+    // Normalizar GDP a un multiplicador (US GDP ~65k = 1.0)
+    const gdpMultiplier = Math.min(Math.max(gdp / 65000, 0.05), 3.0);
+
+    // Actualizar ciudades de ese país que tengan cost_index > 0
+    const { data: cities } = await supabase
         .from('cities_master')
-        .update(updates)
-        .eq('slug', roamcostSlug)
-        .gt('population', 100000); // solo actualiza la ciudad principal
+        .select('slug, rent_index, food_index, cost_index')
+        .eq('country', country)
+        .gt('cost_index', 0)
+        .gt('population', 500000);
 
-    if (error) {
-        console.error(`  Error updating ${roamcostSlug}:`, error.message);
-        return false;
+    if (!cities || cities.length === 0) {
+        console.log('no cities found');
+        return 0;
     }
 
-    console.log(`  Updated: ${Object.keys(updates).join(', ')}`);
-    return true;
+    let updated = 0;
+    for (const city of cities) {
+        // Recalcular cost_index basado en GDP relativo
+        // cost_index alto = mejor calidad de vida en relación al costo
+        const newCostIndex = Math.round(Math.min(gdpMultiplier * 100 + (city.rent_index > 0 ? 50 : 0), 900) * 10) / 10;
+
+        const { error } = await supabase
+            .from('cities_master')
+            .update({ cost_index: newCostIndex })
+            .eq('slug', city.slug)
+            .eq('country', country);
+
+        if (!error) updated++;
+    }
+
+    console.log(`GDP $${Math.round(gdp).toLocaleString()}, inflation ${inflation}%, updated ${updated} cities`);
+    return updated;
 }
 
 async function main() {
-    console.log('Starting Teleport data update...\n');
+    console.log('Starting World Bank data update...\n');
 
-    const entries = Object.entries(TELEPORT_SLUG_MAP);
-    let updated = 0;
-    let failed = 0;
+    const entries = Object.entries(COUNTRY_ISO);
+    let totalUpdated = 0;
 
-    for (const [teleportSlug, roamcostSlug] of entries) {
-        const success = await updateCity(teleportSlug, roamcostSlug);
-        if (success) updated++;
-        else failed++;
-
-        // Rate limiting — 1 req/second para ser respetuoso con la API
-        await new Promise(r => setTimeout(r, 1000));
+    for (const [country, iso2] of entries) {
+        const updated = await updateCountry(country, iso2);
+        totalUpdated += updated;
+        // Respetar rate limits
+        await new Promise(r => setTimeout(r, 500));
     }
 
-    console.log(`\nDone! Updated: ${updated}, Failed: ${failed}`);
+    console.log(`\nDone! Total cities updated: ${totalUpdated}`);
 }
 
 main().catch(console.error);
