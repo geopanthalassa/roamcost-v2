@@ -99,7 +99,7 @@ export default async function ComparePage({ params }: ComparePageProps) {
             </nav>
 
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                <h1 style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.04em', color: '#0f172a' }}>
+                <h1 className="compare-title" style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.04em', color: '#0f172a' }}>
                     <span style={{ color: '#5b8c71' }}>{city1.city}</span>
                     <span style={{ color: '#94a3b8', fontSize: '2rem', margin: '0 1rem' }}>vs</span>
                     <span style={{ color: '#5b8c71' }}>{city2.city}</span>

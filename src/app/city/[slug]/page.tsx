@@ -134,16 +134,17 @@ export default async function CityPage({ params }: CityPageProps) {
 
                 {hasData ? (
                     <>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+                        {/* Stats cards - scroll horizontal en mobile */}
+                        <div className="city-stats-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
                             {[
                                 { label: 'Monthly Budget', value: `$${monthly.toLocaleString()}`, sub: 'all-in estimate', color: '#5b8c71', bg: '#f0fdf4' },
                                 { label: 'Annual Cost', value: `$${(monthly * 12).toLocaleString()}`, sub: 'per year', color: '#3b82f6', bg: '#eff6ff' },
                                 { label: 'Internet', value: c.internet != null ? `${c.internet} Mbps` : 'N/A', sub: (c.internet ?? 0) >= 50 ? 'Excellent' : (c.internet ?? 0) >= 20 ? 'Good' : 'Limited', color: '#8b5cf6', bg: '#f5f3ff' },
                                 { label: 'Safety', value: c.safety != null ? `${c.safety}/10` : 'N/A', sub: (c.safety ?? 0) >= 7 ? 'Very safe' : (c.safety ?? 0) >= 5 ? 'Moderate' : 'Caution', color: (c.safety ?? 0) >= 7 ? '#16a34a' : '#d97706', bg: (c.safety ?? 0) >= 7 ? '#f0fdf4' : '#fffbeb' },
                             ].map(s => (
-                                <div key={s.label} style={{ backgroundColor: s.bg, borderRadius: '1rem', padding: '1.25rem', border: `1px solid ${s.color}22` }}>
-                                    <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.4rem' }}>{s.label}</div>
-                                    <div style={{ fontSize: '1.4rem', fontWeight: 900, color: s.color }}>{s.value}</div>
+                                <div key={s.label} style={{ backgroundColor: s.bg, borderRadius: '1rem', padding: '1.25rem', border: `1px solid ${s.color}22`, minWidth: '140px' }}>
+                                    <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.4rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{s.label}</div>
+                                    <div style={{ fontSize: '1.3rem', fontWeight: 900, color: s.color, lineHeight: 1.1 }}>{s.value}</div>
                                     <div style={{ fontSize: '0.7rem', color: '#64748b', marginTop: '0.2rem' }}>{s.sub}</div>
                                 </div>
                             ))}
@@ -242,7 +243,7 @@ export default async function CityPage({ params }: CityPageProps) {
                         Plan your trip to {c.city}
                     </h2>
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Find the best deals on flights, hotels and long-term stays</p>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
+                    <div className="travel-links-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
                         {[
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,

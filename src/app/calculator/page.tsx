@@ -168,7 +168,7 @@ export default function CalculatorPage() {
                     {/* FROM */}
                     <div style={{ marginBottom: '1rem' }}>
                         <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>From</label>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 180px', gap: '0.75rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 140px', gap: '0.75rem' }}>
                             <input
                                 type="number"
                                 value={fromAmount || ''}
@@ -196,7 +196,7 @@ export default function CalculatorPage() {
                     {/* TO */}
                     <div style={{ marginBottom: '2rem' }}>
                         <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>To</label>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 180px', gap: '0.75rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 140px', gap: '0.75rem' }}>
                             <input
                                 type="number"
                                 value={toAmount || ''}

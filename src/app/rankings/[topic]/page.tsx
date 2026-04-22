@@ -70,7 +70,7 @@ export default async function RankingPage({ params }: RankingPageProps) {
         <div className="container section animate-fade-in">
             <div style={{ marginBottom: '6rem', textAlign: 'center' }}>
                 <span style={{ color: '#5b8c71', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.875rem' }}>Global Benchmarks</span>
-                <h1 style={{ fontSize: '4.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.06em', marginTop: '0.5rem' }}>
+                <h1 className="rankings-title" style={{ fontSize: '4.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.06em', marginTop: '0.5rem' }}>
                     {title}
                 </h1>
                 <p style={{ color: '#64748b', fontSize: '1.25rem', fontWeight: 500, maxWidth: '600px', margin: '1rem auto 0' }}>{description}</p>

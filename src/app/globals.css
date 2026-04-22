@@ -201,6 +201,9 @@ p {
   .section { padding: 2.5rem 0; }
   .container { padding: 0 1rem; }
 
+  /* Rankings big title */
+  .rankings-title { font-size: 2.5rem !important; letter-spacing: -0.03em !important; }
+
   /* Compare page */
   .compare-table-desktop { display: none !important; }
   .compare-table-mobile { display: flex !important; }
@@ -214,15 +217,13 @@ p {
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch !important;
     gap: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
-    /* hide scrollbar but keep functionality */
+    padding-bottom: 0.5rem !important;
     scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
   }
   .popular-cities-grid::-webkit-scrollbar { display: none !important; }
   .popular-cities-grid > * {
-    flex: 0 0 72vw !important;
-    max-width: 280px !important;
+    flex: 0 0 75vw !important;
+    max-width: 260px !important;
     scroll-snap-align: start !important;
   }
 
@@ -238,21 +239,41 @@ p {
   }
   .rankings-grid::-webkit-scrollbar { display: none !important; }
   .rankings-grid > * {
-    flex: 0 0 70vw !important;
+    flex: 0 0 78vw !important;
     scroll-snap-align: start !important;
   }
+
+  /* City stats cards - horizontal scroll */
+  .city-stats-scroll {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+    scrollbar-width: none !important;
+  }
+  .city-stats-scroll::-webkit-scrollbar { display: none !important; }
+  .city-stats-scroll > * {
+    flex: 0 0 42vw !important;
+    min-width: 140px !important;
+    scroll-snap-align: start !important;
+  }
+
+  /* City data grid stacked */
+  .city-data-grid { grid-template-columns: 1fr !important; }
+
+  /* Travel links 2 cols */
+  .travel-links-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.625rem !important; }
 
   /* Stats bar 2x2 */
   .stats-bar-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.5rem !important;
+    gap: 0 !important;
   }
 
   /* How it works stacked */
-  .how-it-works-grid { grid-template-columns: 1fr !important; }
-
-  /* Travel links 2 cols */
-  .travel-links-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .how-it-works-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
 
   /* Quick converter stacked */
   .quick-converter-inner {
@@ -268,29 +289,22 @@ p {
   /* Header */
   .header-nav-links { display: none !important; }
 
-  /* Language overflow fix — truncate long translated words */
-  .nav-link-text, button, a, span, div {
-    overflow-wrap: break-word !important;
-    word-break: break-word !important;
-  }
+  /* Prevent text overflow everywhere */
+  * { max-width: 100%; }
+  img { max-width: 100%; height: auto; }
 
-  /* City page 2-col grid to stacked */
-  .city-data-grid {
-    grid-template-columns: 1fr !important;
-  }
+  /* Hero city title */
+  .city-hero h1 { font-size: 2rem !important; }
 
-  /* Hero text smaller on city pages */
-  .city-hero-title { font-size: 1.75rem !important; }
-
-  /* Compare totals font */
-  .compare-totals .card { padding: 1rem 0.75rem !important; }
-  .compare-totals .card div[style*="2.5rem"] { font-size: 1.75rem !important; }
+  /* Compare title overflow */
+  .compare-title { font-size: 1.75rem !important; }
 }
 
 @media (max-width: 480px) {
   .popular-cities-grid > * { flex: 0 0 82vw !important; }
+  .city-stats-scroll > * { flex: 0 0 55vw !important; }
   .travel-links-grid { grid-template-columns: 1fr !important; }
-  .stats-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .rankings-title { font-size: 2rem !important; }
 }
 
 /* Animations */
