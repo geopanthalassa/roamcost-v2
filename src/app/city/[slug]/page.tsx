@@ -1,6 +1,6 @@
 // SERVER COMPONENT - Google indexa todo
 import { supabase } from '@/lib/supabase';
-import { getCityImage } from '@/lib/pexels';
+import { getCityImageServer } from '@/lib/getCityImageServer';
 import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
 import Link from 'next/link';
@@ -50,7 +50,7 @@ export default async function CityPage({ params }: CityPageProps) {
     const c = data as unknown as City;
 
     const hasData = (c.cost_index ?? 0) > 0;
-    const heroImage = await getCityImage(c.city, c.country);
+    const heroImage = await getCityImageServer(c.slug, c.city, c.country, 1400);
 
     const { data: related } = await supabase
         .from('cities_master').select('*')
