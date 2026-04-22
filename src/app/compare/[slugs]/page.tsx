@@ -102,58 +102,94 @@ export default async function ComparePage({ params }: ComparePageProps) {
             </div>
 
             {/* Monthly total comparison */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '1.5rem', alignItems: 'center', marginBottom: '3rem' }}>
-                <div className="card" style={{ textAlign: 'center', padding: '2rem', border: est1 < est2 ? '2px solid #5b8c71' : '1px solid #e2e8f0', boxShadow: 'none' }}>
-                    {est1 < est2 && <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', marginBottom: '0.5rem' }}>✓ More Affordable</div>}
-                    <div style={{ fontSize: '0.8rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city1.city}</div>
-                    <div style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0f172a', margin: '0.5rem 0' }}>${est1.toLocaleString()}</div>
-                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>per month</div>
+            <div className="compare-totals" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '1rem', alignItems: 'center', marginBottom: '2rem' }}>
+                <div className="card" style={{ textAlign: 'center', padding: '1.5rem', border: est1 < est2 ? '2px solid #5b8c71' : '1px solid #e2e8f0', boxShadow: 'none' }}>
+                    {est1 < est2 && <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', marginBottom: '0.4rem' }}>✓ More Affordable</div>}
+                    <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city1.city}</div>
+                    <div style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', margin: '0.4rem 0' }}>${est1.toLocaleString()}</div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>per month</div>
                 </div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#94a3b8', textAlign: 'center' }}>vs</div>
-                <div className="card" style={{ textAlign: 'center', padding: '2rem', border: est2 < est1 ? '2px solid #5b8c71' : '1px solid #e2e8f0', boxShadow: 'none' }}>
-                    {est2 < est1 && <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', marginBottom: '0.5rem' }}>✓ More Affordable</div>}
-                    <div style={{ fontSize: '0.8rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city2.city}</div>
-                    <div style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0f172a', margin: '0.5rem 0' }}>${est2.toLocaleString()}</div>
-                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>per month</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#94a3b8', textAlign: 'center' }}>vs</div>
+                <div className="card" style={{ textAlign: 'center', padding: '1.5rem', border: est2 < est1 ? '2px solid #5b8c71' : '1px solid #e2e8f0', boxShadow: 'none' }}>
+                    {est2 < est1 && <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#5b8c71', textTransform: 'uppercase', marginBottom: '0.4rem' }}>✓ More Affordable</div>}
+                    <div style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city2.city}</div>
+                    <div style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', margin: '0.4rem 0' }}>${est2.toLocaleString()}</div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>per month</div>
                 </div>
             </div>
 
-            {/* Comparison table */}
-            <div className="card" style={{ padding: 0, overflow: 'hidden', marginBottom: '3rem', border: '1px solid #e2e8f0', boxShadow: 'none' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                    <thead>
-                        <tr style={{ backgroundColor: '#0f172a', color: 'white' }}>
-                            <th style={{ padding: '1.25rem 2rem', textAlign: 'left', fontSize: '0.875rem', fontWeight: 700 }}>Metric</th>
-                            <th style={{ padding: '1.25rem 2rem', textAlign: 'center', fontSize: '1.1rem', fontWeight: 900 }}>{city1.city}</th>
-                            <th style={{ padding: '1.25rem 2rem', textAlign: 'center', fontSize: '1.1rem', fontWeight: 900 }}>{city2.city}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {metrics.map((metric, idx) => {
-                            const raw1 = (city1 as any)[metric.key];
-                            const raw2 = (city2 as any)[metric.key];
-                            const display1 = metric.prefix ? `${metric.prefix}${(raw1 * (metric.factor || 1)).toLocaleString()}` : raw1;
-                            const display2 = metric.prefix ? `${metric.prefix}${(raw2 * (metric.factor || 1)).toLocaleString()}` : raw2;
-                            const winner = metric.higherBetter ? (raw1 > raw2 ? 1 : raw2 > raw1 ? 2 : 0) : (raw1 < raw2 ? 1 : raw2 < raw1 ? 2 : 0);
-                            return (
-                                <tr key={metric.label} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: idx % 2 === 0 ? 'transparent' : '#fafafa' }}>
-                                    <td style={{ padding: '1.1rem 2rem', fontWeight: 700, color: '#475569', fontSize: '0.9rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                                            {iconMap[(metric as any).icon]}
-                                            {metric.label}
-                                        </div>
-                                    </td>
-                                    <td style={{ padding: '1.1rem 2rem', textAlign: 'center', fontWeight: 900, fontSize: '1.1rem', color: winner === 1 ? '#16a34a' : '#0f172a', backgroundColor: winner === 1 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
-                                        {display1} {winner === 1 && '★'}
-                                    </td>
-                                    <td style={{ padding: '1.1rem 2rem', textAlign: 'center', fontWeight: 900, fontSize: '1.1rem', color: winner === 2 ? '#16a34a' : '#0f172a', backgroundColor: winner === 2 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
-                                        {display2} {winner === 2 && '★'}
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+            {/* Comparison — mobile cards, desktop table */}
+            <div style={{ marginBottom: '3rem' }}>
+                {/* Desktop table */}
+                <div className="compare-table-desktop" style={{ borderRadius: '1rem', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                        <thead>
+                            <tr style={{ backgroundColor: '#0f172a', color: 'white' }}>
+                                <th style={{ padding: '1rem 1.5rem', textAlign: 'left', fontSize: '0.875rem', fontWeight: 700 }}>Metric</th>
+                                <th style={{ padding: '1rem 1.5rem', textAlign: 'center', fontSize: '1rem', fontWeight: 900 }}>{city1.city}</th>
+                                <th style={{ padding: '1rem 1.5rem', textAlign: 'center', fontSize: '1rem', fontWeight: 900 }}>{city2.city}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {metrics.map((metric, idx) => {
+                                const raw1 = (city1 as any)[metric.key];
+                                const raw2 = (city2 as any)[metric.key];
+                                const val1 = raw1 * (metric.factor || 1);
+                                const val2 = raw2 * (metric.factor || 1);
+                                const display1 = metric.prefix ? `${metric.prefix}${Math.round(val1).toLocaleString()}` : raw1;
+                                const display2 = metric.prefix ? `${metric.prefix}${Math.round(val2).toLocaleString()}` : raw2;
+                                const winner = metric.higherBetter ? (raw1 > raw2 ? 1 : raw2 > raw1 ? 2 : 0) : (raw1 < raw2 ? 1 : raw2 < raw1 ? 2 : 0);
+                                return (
+                                    <tr key={metric.label} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: idx % 2 === 0 ? 'transparent' : '#fafafa' }}>
+                                        <td style={{ padding: '0.875rem 1.5rem', fontWeight: 700, color: '#475569', fontSize: '0.85rem' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                {iconMap[(metric as any).icon]}
+                                                {metric.label}
+                                            </div>
+                                        </td>
+                                        <td style={{ padding: '0.875rem 1.5rem', textAlign: 'center', fontWeight: 900, fontSize: '1rem', color: winner === 1 ? '#16a34a' : '#0f172a', backgroundColor: winner === 1 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
+                                            {display1} {winner === 1 && '★'}
+                                        </td>
+                                        <td style={{ padding: '0.875rem 1.5rem', textAlign: 'center', fontWeight: 900, fontSize: '1rem', color: winner === 2 ? '#16a34a' : '#0f172a', backgroundColor: winner === 2 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
+                                            {display2} {winner === 2 && '★'}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+
+                {/* Mobile cards */}
+                <div className="compare-table-mobile" style={{ display: 'none', flexDirection: 'column', gap: '0.75rem' }}>
+                    {metrics.map((metric) => {
+                        const raw1 = (city1 as any)[metric.key];
+                        const raw2 = (city2 as any)[metric.key];
+                        const val1 = raw1 * (metric.factor || 1);
+                        const val2 = raw2 * (metric.factor || 1);
+                        const display1 = metric.prefix ? `${metric.prefix}${Math.round(val1).toLocaleString()}` : raw1;
+                        const display2 = metric.prefix ? `${metric.prefix}${Math.round(val2).toLocaleString()}` : raw2;
+                        const winner = metric.higherBetter ? (raw1 > raw2 ? 1 : raw2 > raw1 ? 2 : 0) : (raw1 < raw2 ? 1 : raw2 < raw1 ? 2 : 0);
+                        return (
+                            <div key={metric.label} style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.75rem', overflow: 'hidden' }}>
+                                <div style={{ backgroundColor: '#f8fafc', padding: '0.6rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', borderBottom: '1px solid #e2e8f0' }}>
+                                    {iconMap[(metric as any).icon]}
+                                    <span style={{ fontWeight: 700, color: '#475569', fontSize: '0.8rem' }}>{metric.label}</span>
+                                </div>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                                    <div style={{ padding: '0.875rem 1rem', textAlign: 'center', borderRight: '1px solid #f1f5f9', backgroundColor: winner === 1 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
+                                        <div style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.25rem' }}>{city1.city}</div>
+                                        <div style={{ fontSize: '1rem', fontWeight: 900, color: winner === 1 ? '#16a34a' : '#0f172a' }}>{display1} {winner === 1 && '★'}</div>
+                                    </div>
+                                    <div style={{ padding: '0.875rem 1rem', textAlign: 'center', backgroundColor: winner === 2 ? 'rgba(22,163,74,0.05)' : 'transparent' }}>
+                                        <div style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.25rem' }}>{city2.city}</div>
+                                        <div style={{ fontSize: '1rem', fontWeight: 900, color: winner === 2 ? '#16a34a' : '#0f172a' }}>{display2} {winner === 2 && '★'}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
 
             <div className="grid grid-cols-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
