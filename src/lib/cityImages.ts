@@ -157,8 +157,6 @@ export const CITY_IMAGES: Record<string, string> = {
     'lyon-france': 'photo-1502602898657-3e91760cbb34',
     'marseille-france': 'photo-1558618666-fcd25c85cd64',
     'berlin-germany': 'photo-1560969184-10fe8719e047',
-    'munich-germany': 'photo-1595867818082-083862f3d630',
-    'hamburg-germany': 'photo-1558618666-fcd25c85cd64',
     'madrid-spain': 'photo-1539037116277-4db20889f2d4',
     'barcelona-spain': 'photo-1523531294919-4bcd7c65e216',
     'rome-italy': 'photo-1552832230-c0197dd311b5',
