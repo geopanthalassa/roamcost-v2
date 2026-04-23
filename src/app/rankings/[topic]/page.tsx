@@ -50,31 +50,54 @@ export default async function RankingPage({ params }: RankingPageProps) {
     const { topic } = await params;
     if (!topic) return notFound();
 
-    let query = supabase.from('cities_master').select('*').gt('cost_index', 0).not('population', 'is', null).limit(200);
+    // Well-known cities that travelers actually search for
+    const POPULAR_SLUGS = [
+        'london','paris','berlin','madrid','barcelona','rome','amsterdam','vienna','prague',
+        'lisbon','budapest','warsaw','stockholm','oslo','copenhagen','athens','dublin',
+        'zurich','geneva','brussels','munich','hamburg','milan','florence','venice',
+        'tokyo','seoul','bangkok','singapore','hong-kong','kuala-lumpur','jakarta','bali',
+        'taipei','ho-chi-minh-city','hanoi','manila','osaka','beijing','shanghai',
+        'dubai','abu-dhabi','tel-aviv','istanbul','riyadh','doha','beirut','amman',
+        'new-york','los-angeles','chicago','miami','san-francisco','toronto','vancouver',
+        'mexico-city','bogota','buenos-aires','sao-paulo','rio-de-janeiro','lima','santiago',
+        'sydney','melbourne','auckland','cape-town','cairo','nairobi','casablanca',
+        'montreal','seattle','boston','denver','miami','atlanta','dallas',
+        'medellin','montevideo','quito','panama-city','san-jose',
+        'delhi','mumbai','bangalore','kathmandu','colombo',
+        'moscow','kyiv','budapest','sofia','bucharest','belgrade','zagreb',
+        'edinburgh','porto','seville','valencia','krakow','tallinn','riga','vilnius',
+    ];
+
+    let query = supabase.from('cities_master').select('*')
+        .in('slug', POPULAR_SLUGS)
+        .gt('cost_index', 0)
+        .not('population', 'is', null)
+        .limit(200);
+
     let title = 'City Rankings';
     let description = 'Discover top destinations based on your preferences.';
 
     if (topic === 'cheapest') {
-        query = query.gt('population', 2000000).gt('rent_index', 0).order('rent_index', { ascending: true });
+        query = query.gt('rent_index', 0).order('rent_index', { ascending: true });
         title = 'Value Leaders';
         description = 'Global hubs where your budget stretches the furthest.';
     } else if (topic === 'nomads') {
-        query = query.gt('population', 2000000).gt('internet', 0).order('internet', { ascending: false });
+        query = query.gt('internet', 0).gt('safety', 4).order('internet', { ascending: false });
         title = 'Connectivity Hubs';
         description = 'Leading cities for digital work and high-speed infrastructure.';
     } else if (topic === 'safest') {
-        query = query.gt('population', 2000000).gt('safety', 0).order('safety', { ascending: false });
+        query = query.gt('safety', 0).order('safety', { ascending: false });
         title = 'Safest Global Cities';
         description = 'Secured metropolitan areas with the highest safety ratings.';
     } else if (topic === 'quality') {
-        query = query.gt('population', 2000000).gt('cost_index', 0).order('cost_index', { ascending: false });
+        query = query.gt('cost_index', 0).order('cost_index', { ascending: false });
         title = 'Quality of Life';
         description = 'The world\'s most established and high-functioning capitals.';
     }
 
     const { data: rawCities } = await query as unknown as { data: City[] };
 
-    // De-duplicate by country, max 2 per country
+    // Max 1 per country for diversity
     const cities: City[] = [];
     const countryCount = new Map<string, number>();
     if (rawCities) {
