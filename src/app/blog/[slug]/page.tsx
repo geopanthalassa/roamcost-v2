@@ -181,7 +181,7 @@ Do I need a visa to live in Southeast Asia? Each country has different rules. Th
         desc: 'Rent, food, transport, taxes and visas. Everything you need to know before moving to Lisbon, Portugal.',
         category: 'Europe', date: 'March 2026', readTime: '7 min',
         keywords: 'move to lisbon 2026, lisbon cost of living, portugal digital nomad visa, living in lisbon expat guide',
-        image: 'photo-1585208798174-6cedd4454069',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Lisbon_%2836831344374%29.jpg/1280px-Lisbon_%2836831344374%29.jpg',
         content: `## Moving to Lisbon in 2026: What It Actually Costs
 
 Lisbon has become one of Europe's most sought-after cities for relocation — and for good reason. Mild Atlantic climate, a vibrant food scene, English widely spoken, and significantly lower costs than Northern European capitals. But Lisbon has changed. Rents have increased substantially since 2019, and the affordable-at-all-costs era is over. Here is what moving to Lisbon actually costs in 2026.
@@ -327,7 +327,7 @@ Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or
         desc: 'Medellín, Mexico City, Buenos Aires — where to live well in Latin America without breaking the bank.',
         category: 'Latin America', date: 'February 2026', readTime: '8 min',
         keywords: 'cheapest cities latin america, cost of living latin america 2026, expat latin america, medellín cost of living, buenos aires expat',
-        image: 'photo-1589909202802-8f4aadce9d55',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Buenos_Aires_-_Argentina_%2838753855040%29.jpg/1280px-Buenos_Aires_-_Argentina_%2838753855040%29.jpg',
         content: `## Cheapest Cities in Latin America for Expats in 2026
 
 Latin America offers some of the best value for international residents anywhere in the world — combining a lower cost base with warm weather, vibrant culture and (in most cities) a welcoming attitude toward foreigners. Here are the most affordable cities for expats in 2026.
@@ -371,7 +371,7 @@ Which Latin American country is easiest for visa? Colombia's Digital Nomad Visa 
         desc: 'Retire early or stretch your pension further. The best affordable countries with quality healthcare for retirement abroad.',
         category: 'Retirement', date: 'January 2026', readTime: '9 min',
         keywords: 'retire abroad cheap countries, best countries retire 2026, retire on social security abroad, affordable retirement destinations',
-        image: 'photo-1514395462421-22b2f9f6b81c',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Algarve_Coastline_Edit.jpg/1280px-Algarve_Coastline_Edit.jpg',
         content: `## Best Countries to Retire Abroad in 2026
 
 The arithmetic of international retirement is compelling: a monthly income that struggles to cover rent in a major Western city can fund a comfortable, enriching life in dozens of countries. Here are the best destinations for retirement abroad in 2026, evaluated on cost, healthcare quality, safety, climate and visa accessibility.
@@ -546,8 +546,14 @@ export default async function BlogPost({ params }: Props) {
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
             <div style={{ position: 'relative', height: '350px', overflow: 'hidden' }}>
-                <img src={`https://images.unsplash.com/${post.image}?auto=format&fit=crop&w=1400&h=350&q=80`}
-                    alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img 
+                    src={post.image.startsWith('photo-') 
+                        ? `https://images.unsplash.com/${post.image}?auto=format&fit=crop&w=1400&h=350&q=80`
+                        : post.image}
+                    alt={post.title} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&h=350&q=80'; }}
+                />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem 2rem 2.5rem', maxWidth: '1100px', margin: '0 auto' }}>
                     <nav style={{ marginBottom: '1rem', fontSize: '0.8rem' }}>
