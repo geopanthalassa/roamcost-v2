@@ -50,44 +50,37 @@ export default async function RankingPage({ params }: RankingPageProps) {
     const { topic } = await params;
     if (!topic) return notFound();
 
-    // Only show cities with curated photos — no unknown cities
-    const CURATED_SLUGS = ['abidjan','abu-dhabi','abuja','accra','addis-ababa','algiers','almaty','amman','amsterdam','asuncion','athens','atlanta','auckland','austin','baghdad','baku','bali','bamako','bangalore','bangkok','barcelona','beijing','beirut','belgrade','berlin','birmingham','bogota','boston','brazzaville','brisbane','brussels','bucharest','budapest','buenos-aires','busan','cairo','cali','cape-town','caracas','casablanca','chennai','chiang-mai','chicago','colombo','copenhagen','daegu','dakar','dallas','dar-es-salaam','delhi','denver','dhaka','doha','dubai','dublin','edinburgh','florence','frankfurt','geneva','guangzhou','guatemala-city','hamburg','hanoi','havana','helsinki','ho-chi-minh-city','hong-kong','houston','hyderabad','istanbul','jakarta','johannesburg','kampala','karachi','kathmandu','khartoum','kinshasa','krakow','kuala-lumpur','kuwait-city','kyiv','kyoto','la-paz','lagos','lahore','las-vegas','lima','lisbon','london','los-angeles','luanda','lyon','madrid','managua','manila','marrakech','marseille','medellin','melbourne','mexico-city','miami','milan','minsk','montevideo','moscow','mumbai','munich','muscat','nairobi','naples','new-york','osaka','oslo','panama-city','paris','perth','philadelphia','phnom-penh','phoenix','porto','prague','quito','riga','rio-de-janeiro','riyadh','rome','san-antonio','san-diego','san-francisco','san-jose','santiago','sao-paulo','seattle','seoul','seville','shanghai','singapore','sofia','stockholm','sydney','taipei','tallinn','tashkent','tehran','tel-aviv','tokyo','toronto','tunis','valencia','vancouver','venice','vienna','vilnius','warsaw','yangon','zagreb','zurich'];
-
-    let query = supabase.from('cities_master').select('*')
-        .in('slug', CURATED_SLUGS)
-        .gt('cost_index', 0)
-        .not('population', 'is', null)
-        .limit(300);
+    let query = supabase.from('cities_master').select('*').gt('cost_index', 0).not('population', 'is', null).limit(200);
     let title = 'City Rankings';
     let description = 'Discover top destinations based on your preferences.';
 
     if (topic === 'cheapest') {
-        query = query.gt('rent_index', 0).gt('safety', 0).order('rent_index', { ascending: true });
+        query = query.gt('population', 2000000).gt('rent_index', 0).order('rent_index', { ascending: true });
         title = 'Value Leaders';
         description = 'Global hubs where your budget stretches the furthest.';
     } else if (topic === 'nomads') {
-        query = query.gt('internet', 0).gt('safety', 0).order('internet', { ascending: false });
+        query = query.gt('population', 2000000).gt('internet', 0).order('internet', { ascending: false });
         title = 'Connectivity Hubs';
         description = 'Leading cities for digital work and high-speed infrastructure.';
     } else if (topic === 'safest') {
-        query = query.gt('safety', 0).gt('rent_index', 0).order('safety', { ascending: false });
+        query = query.gt('population', 2000000).gt('safety', 0).order('safety', { ascending: false });
         title = 'Safest Global Cities';
         description = 'Secured metropolitan areas with the highest safety ratings.';
     } else if (topic === 'quality') {
-        query = query.gt('cost_index', 0).gt('safety', 0).gt('rent_index', 0).order('cost_index', { ascending: false });
+        query = query.gt('population', 2000000).gt('cost_index', 0).order('cost_index', { ascending: false });
         title = 'Quality of Life';
         description = 'The world\'s most established and high-functioning capitals.';
     }
 
     const { data: rawCities } = await query as unknown as { data: City[] };
 
-    // De-duplicate by country, max 1 per country for diversity
+    // De-duplicate by country, max 2 per country
     const cities: City[] = [];
     const countryCount = new Map<string, number>();
     if (rawCities) {
         for (const city of rawCities) {
             const count = countryCount.get(city.country) || 0;
-            if (count < 1 && cities.length < 24) {
+            if (count < 2 && cities.length < 24) {
                 cities.push(city);
                 countryCount.set(city.country, count + 1);
             }

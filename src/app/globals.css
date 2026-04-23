@@ -193,11 +193,6 @@ p {
   }
 }
 
-/* Rankings dropdown */
-.rankings-dropdown-wrapper:hover .rankings-dropdown {
-  display: block !important;
-}
-
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 768px) {
   h1 { font-size: 1.9rem; }

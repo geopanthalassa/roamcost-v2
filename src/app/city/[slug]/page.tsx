@@ -1,4 +1,4 @@
-// SERVER COMPONENT - Google indexa todo - v2
+// SERVER COMPONENT - Google indexa todo
 import { supabase } from '@/lib/supabase';
 import { getCityImageServer } from '@/lib/getCityImageServer';
 import { notFound } from 'next/navigation';
@@ -46,7 +46,7 @@ export default async function CityPage({ params }: CityPageProps) {
         .limit(1)
         .maybeSingle();
 
-    if (!data) return notFound();
+    if (!data) notFound();
     const c = data as unknown as City;
 
     const hasData = (c.cost_index ?? 0) > 0;
@@ -59,14 +59,6 @@ export default async function CityPage({ params }: CityPageProps) {
         .gt('cost_index', 0)
         .order('population', { ascending: false })
         .limit(3) as unknown as { data: City[] };
-
-    // Prefetch related city images server-side
-    const relatedImages: Record<string, string> = {};
-    if (related) {
-        await Promise.all(related.map(async (rc) => {
-            relatedImages[rc.slug] = await getCityImageServer(rc.slug, rc.city, rc.country, 400);
-        }));
-    }
 
     const rent = (c.rent_index ?? 0);
     const food = (c.food_index ?? 0) * 30;
@@ -91,8 +83,7 @@ export default async function CityPage({ params }: CityPageProps) {
             {/* HERO with real Pexels image */}
             <div style={{ position: 'relative', height: '520px', overflow: 'hidden' }}>
                 <img src={heroImage} alt={`${c.city} cityscape`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&h=500&q=80'; }} />
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)' }} />
 
                 <div style={{ position: 'absolute', top: '1.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: '1200px', padding: '0 1.5rem' }}>
@@ -166,14 +157,14 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.75rem' }}>Estimated breakdown in USD</p>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                                     {[
-                                        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#52B788', path: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' },
-                                        { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', path: 'M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z' },
-                                        { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', path: 'M1 3h15v13H1zM16 8h7v8h-7z' },
-                                        { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', path: 'M13 2L3 14h9l-1 8 10-12h-9z' },
+                                        { label: 'Rent / Housing', usd: rent, value: c.rent_index ?? 0, color: '#52B788', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
+                                        { label: 'Food & Dining', usd: food, value: c.food_index ?? 0, color: '#3b82f6', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> },
+                                        { label: 'Transport', usd: transport, value: c.transport_index ?? 0, color: '#8b5cf6', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> },
+                                        { label: 'Utilities', usd: utilities, value: c.utilities_index ?? 0, color: '#f59e0b', svg: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> },
                                     ].map((m) => (
                                         <div key={m.label}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                                                <span style={{ fontWeight: 600, color: '#475569', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d={m.path}/></svg>{m.label}</span>
+                                                <span style={{ fontWeight: 600, color: '#475569', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>{m.svg}{m.label}</span>
                                                 <div style={{ textAlign: 'right' }}>
                                                     <span style={{ fontWeight: 800, color: '#0f172a', fontSize: '0.875rem' }}>${Math.round(m.usd).toLocaleString()}</span>
                                                     <CurrencyDisplay usdAmount={m.usd} />
@@ -199,19 +190,19 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.75rem' }}>Indexed scores for key life factors</p>
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
                                     {[
-                                        { label: 'Safety', value: c.safety, max: 10, path: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
-                                        { label: 'Healthcare', value: c.healthcare, max: 10, path: 'M22 12h-4l-3 9L9 3l-3 9H2' },
-                                        { label: 'Internet', value: c.internet, unit: 'Mbps', max: 100, path: 'M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0' },
-                                        { label: 'Environment', value: c.environment, max: 10, path: 'M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9M17 8l-5 5' },
-                                        { label: 'Leisure', value: c.leisure, max: 10, path: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z' },
-                                        { label: 'Outdoors', value: c.outdoors, max: 10, path: 'M3 11l19-9-9 19-2-8-8-2z' },
+                                        { label: 'Safety', value: c.safety, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> },
+                                        { label: 'Healthcare', value: c.healthcare, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> },
+                                        { label: 'Internet', value: c.internet, unit: 'Mbps', max: 100, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> },
+                                        { label: 'Environment', value: c.environment, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9"/><path d="M17 8l-5 5"/></svg> },
+                                        { label: 'Leisure', value: c.leisure, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> },
+                                        { label: 'Outdoors', value: c.outdoors, max: 10, svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> },
                                     ].map((m) => {
                                         const val = m.value ?? 0;
                                         const good = m.max === 100 ? val >= 30 : val >= 6;
                                         const iconColor = good ? '#40916C' : '#94a3b8';
                                         return (
                                             <div key={m.label} style={{ padding: '1rem', backgroundColor: good ? '#F0FAF4' : '#fafafa', border: `1px solid ${good ? '#D8F3DC' : '#e2e8f0'}`, borderRadius: '0.75rem', textAlign: 'center' }}>
-                                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.3rem', color: iconColor }}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={m.path}/></svg></div>
+                                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.3rem', color: iconColor }}>{m.svg}</div>
                                                 <div style={{ fontSize: '1.25rem', fontWeight: 900, color: good ? '#40916C' : '#94a3b8' }}>
                                                     {m.value != null ? m.value : '—'}{m.unit ? ` ${m.unit}` : ''}
                                                 </div>
@@ -265,21 +256,41 @@ export default async function CityPage({ params }: CityPageProps) {
                     </h2>
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Find the best deals on flights, hotels and long-term stays</p>
                     <div className="travel-links-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
-                        {([
-                            { label: `Hotels in ${c.city}`, sub: 'Booking.com', color: '#003580', bg: '#eff6ff', href: `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(c.city + ', ' + c.country)}`, path: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' },
-                            { label: `Flights to ${c.city}`, sub: 'Google Flights', color: '#e8612c', bg: '#fff7ed', href: `https://www.google.com/travel/flights/`, path: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z' },
-                            { label: 'Long-term Stays', sub: 'Airbnb', color: '#ff385c', bg: '#fff1f2', href: `https://www.airbnb.com/s/${encodeURIComponent(c.city)}/homes`, path: 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z' },
-                            { label: `Things to do`, sub: 'Tripadvisor', color: '#00aa6c', bg: '#F0FAF4', href: `https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`, path: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14-3-3 3-3 3 3z' },
-                            { label: `Explore ${c.city}`, sub: 'Google Maps', color: '#4285f4', bg: '#eff6ff', href: `https://www.google.com/maps/search/${encodeURIComponent(c.city)}`, path: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z' },
-                            { label: 'Cost of Living', sub: 'Numbeo', color: '#52B788', bg: '#F0FAF4', href: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(c.city.replace(/ /g, '-'))}`, path: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z' },
-                        ] as Array<{label: string; sub: string; color: string; bg: string; href: string; path: string}>).map(link => (
+                        {[
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
+                                label: `Hotels in ${c.city}`, sub: 'Booking.com', color: '#003580', bg: '#eff6ff',
+                                href: `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(c.city + ', ' + c.country)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8612c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+                                label: `Flights to ${c.city}`, sub: 'Google Flights', color: '#e8612c', bg: '#fff7ed',
+                                href: `https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI1LTAxLTAxagcIARIDJEpGcgcIARIDJkpG`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff385c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>,
+                                label: 'Long-term Stays', sub: 'Airbnb', color: '#ff385c', bg: '#fff1f2',
+                                href: `https://www.airbnb.com/s/${encodeURIComponent(c.city)}/homes`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00aa6c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
+                                label: `Things to do`, sub: 'Tripadvisor', color: '#00aa6c', bg: '#F0FAF4',
+                                href: `https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4285f4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>,
+                                label: `Explore ${c.city}`, sub: 'Google Maps', color: '#4285f4', bg: '#eff6ff',
+                                href: `https://www.google.com/maps/search/${encodeURIComponent(c.city)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+                                label: 'Cost of Living', sub: 'Numbeo', color: '#52B788', bg: '#F0FAF4',
+                                href: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(c.city.replace(/ /g, '-'))}`
+                            },
+                        ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.25rem', backgroundColor: link.bg, borderRadius: '0.875rem', textDecoration: 'none', color: '#0f172a', border: `1px solid ${link.color}22` }}>
-                                <div style={{ flexShrink: 0 }}>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={link.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d={link.path}/>
-                                    </svg>
-                                </div>
+                                <div style={{ flexShrink: 0 }}>{link.svg}</div>
                                 <div>
                                     <div style={{ fontWeight: 800, fontSize: '0.8rem', color: '#0f172a' }}>{link.label}</div>
                                     <div style={{ fontSize: '0.7rem', color: link.color, fontWeight: 600, marginTop: '1px' }}>{link.sub}</div>
@@ -366,7 +377,7 @@ export default async function CityPage({ params }: CityPageProps) {
                     <div>
                         <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Other cities in {c.country}</h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-                            {related.map(rc => <CityCard key={rc.slug} city={rc} preloadedImage={relatedImages[rc.slug]} />)}
+                            {related.map(rc => <CityCard key={rc.slug} city={rc} />)}
                         </div>
                     </div>
                 )}
