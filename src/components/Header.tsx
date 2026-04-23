@@ -31,6 +31,7 @@ const RANKINGS_LINKS = [
 export default function Header() {
     const { currency, setCurrency } = useCurrency();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [rankingsOpen, setRankingsOpen] = useState(false);
 
     return (
         <header style={{ borderBottom: '1px solid #e2e8f0', padding: '1rem 0', position: 'sticky', top: 0, backgroundColor: '#ffffff', zIndex: 1000 }}>
@@ -44,18 +45,25 @@ export default function Header() {
                     <Link href="/" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.875rem' }}>Home</Link>
 
                     {/* Rankings dropdown */}
-                    <div style={{ position: 'relative' }} className="rankings-dropdown-wrapper">
-                        <Link href="/rankings/quality" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                    <div style={{ position: 'relative' }}>
+                        <button
+                            onClick={() => setRankingsOpen(!rankingsOpen)}
+                            onBlur={() => setTimeout(() => setRankingsOpen(false), 150)}
+                            style={{ fontWeight: 600, color: '#64748b', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
                             Rankings
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                        </Link>
-                        <div className="rankings-dropdown" style={{ display: 'none', position: 'absolute', top: '100%', left: '-1rem', marginTop: '0.5rem', backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '0.75rem', padding: '0.5rem', minWidth: '220px', boxShadow: '0 4px 16px rgba(0,0,0,0.1)', zIndex: 200 }}>
-                            {RANKINGS_LINKS.map(l => (
-                                <Link key={l.href} href={l.href} style={{ display: 'block', padding: '0.5rem 0.875rem', fontSize: '0.8rem', fontWeight: l.label.startsWith('—') ? 600 : 700, color: l.label.startsWith('—') ? '#64748b' : '#0f172a', borderRadius: '0.5rem', textDecoration: 'none' }}>
-                                    {l.label}
-                                </Link>
-                            ))}
-                        </div>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: rankingsOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }}><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        {rankingsOpen && (
+                            <div style={{ position: 'absolute', top: 'calc(100% + 0.5rem)', left: '-1rem', backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '0.75rem', padding: '0.5rem', minWidth: '220px', boxShadow: '0 8px 24px rgba(0,0,0,0.12)', zIndex: 200 }}>
+                                {RANKINGS_LINKS.map(l => (
+                                    <Link key={l.href} href={l.href}
+                                        onClick={() => setRankingsOpen(false)}
+                                        style={{ display: 'block', padding: '0.5rem 0.875rem', fontSize: '0.8rem', fontWeight: l.label.startsWith('—') ? 600 : 700, color: l.label.startsWith('—') ? '#64748b' : '#0f172a', borderRadius: '0.5rem', textDecoration: 'none' }}>
+                                        {l.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     {NAV_LINKS.filter(l => l.href !== '/').map(l => (
