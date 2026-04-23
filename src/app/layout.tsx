@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -42,7 +43,7 @@ import Script from 'next/script';
 
 export default function RootLayout({
     children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: import('react').ReactNode }>) {
     return (
         <html lang="en">
             <head>

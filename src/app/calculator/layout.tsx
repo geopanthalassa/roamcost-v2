@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
     title: 'Currency Converter — Live Exchange Rates 2026 | RoamCost',
@@ -14,6 +15,6 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://www.roamcost.com/calculator' },
 };
 
-export default function CalculatorLayout({ children }: { children: React.ReactNode }) {
+export default function CalculatorLayout({ children }: { children: ReactNode }) {
     return <>{children}</>;
 }
