@@ -37,7 +37,6 @@ export async function generateMetadata({ params }: CityPageProps) {
 export const dynamic = 'force-dynamic';
 
 export default async function CityPage({ params }: CityPageProps) {
-    try {
     const { slug } = await params;
 
     const { data } = await supabase
@@ -394,8 +393,4 @@ export default async function CityPage({ params }: CityPageProps) {
             </div>
         </div>
     );
-    } catch (error) {
-        console.error('City page error:', error);
-        return notFound();
-    }
 }
