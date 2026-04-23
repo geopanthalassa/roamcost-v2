@@ -274,7 +274,7 @@ Is $2,000/month enough to retire abroad? In most of Southeast Asia, Eastern Euro
     },
     'bangkok-vs-bali': {
         title: 'Bangkok vs Bali: Cost of Living Comparison 2026',
-        desc: 'Two of Asia's top nomad destinations compared head to head. Which is cheaper, safer and better for remote work?',
+        desc: "Two of Asia's top nomad destinations compared head to head. Which is cheaper, safer and better for remote work?",
         category: 'Asia', date: 'February 2026', readTime: '7 min',
         keywords: 'bangkok vs bali, bangkok or bali cheaper, bali cost of living 2026, bangkok cost of living 2026, digital nomad asia',
         image: 'photo-1508009603885-50cf7c579365',
