@@ -3,64 +3,70 @@
 import Link from 'next/link';
 import { City } from '@/types/database';
 import { useCurrency } from '@/context/CurrencyContext';
-import { getCityImage } from '@/lib/cityImages';
-import { useState, useEffect } from 'react';
+import { getCityImage, CITY_IMAGES_KEYS } from '@/lib/cityImages';
 
 interface CityCardProps {
     city: City;
     preloadedImage?: string;
 }
 
-function useCityImage(slug: string, cityName: string, countryName: string) {
-    const staticImg = getCityImage(slug, 800, 600, cityName);
-    const hasStatic = !staticImg.includes('picsum') && !staticImg.includes('source.unsplash');
+// Same verified pool as getCityImageServer — guaranteed city skylines, no people/animals
+const URBAN_POOL = [
+    'photo-1477959858617-67f85cf4f1df', 'photo-1502602898657-3e91760cbb34',
+    'photo-1513635269975-59663e0ac1ad', 'photo-1474181487882-5abf3f0ba6c2',
+    'photo-1512470876302-972faa2aa9a4', 'photo-1525625293386-3f8f99389edd',
+    'photo-1560969184-10fe8719e047', 'photo-1512453979798-5ea266f8880c',
+    'photo-1506973035872-a4ec16b8e8d9', 'photo-1524231757912-21f4fe3a7200',
+    'photo-1540959733332-eab4deabeeaf', 'photo-1601621915196-2621bfb0cd6e',
+    'photo-1590559899731-a382839e5549', 'photo-1508009603885-50cf7c579365',
+    'photo-1596422846543-75c6fc197f07', 'photo-1483729558449-99ef09a8c325',
+    'photo-1589909202802-8f4aadce9d55', 'photo-1619546813926-a78fa6372cd2',
+    'photo-1585464231875-d9ef1f5ad396', 'photo-1517935706615-2717063c2225',
+    'photo-1496442226666-8d4d0e62e6e9', 'photo-1516550135131-fe3dcdd41517',
+    'photo-1549517045-bc93de075e53', 'photo-1541849546-216549ae216d',
+    'photo-1607427293702-036933bbf746', 'photo-1509356843151-3e7d96241e11',
+    'photo-1555993539-1732b0258235', 'photo-1552832230-c0197dd311b5',
+    'photo-1539037116277-4db20889f2d4', 'photo-1523531294919-4bcd7c65e216',
+    'photo-1580060839134-75a5edca2e99', 'photo-1597212720156-b0a6ae05e3aa',
+    'photo-1514395462421-22b2f9f6b81c', 'photo-1507699622108-4be3abd695ad',
+    'photo-1585208798174-6cedd4454069', 'photo-1608031751869-893e5e0bd97e',
+    'photo-1513622470522-26c3c8a854bc', 'photo-1531366936337-7c912a4589a7',
+    'photo-1534190760961-74e8c1c5c3da', 'photo-1619946794135-5bc917a27793',
+    'photo-1508804185872-d7badad00f7d', 'photo-1536431311719-398b6704d4cc',
+    'photo-1570168007204-dfb528c6958f', 'photo-1559511260-b120d11350cf',
+    'photo-1606924248585-c04f1c737b90', 'photo-1611348586804-61bf6c080437',
+    'photo-1577948000111-9c970dfe3743', 'photo-1575547991-c7f97cd4ea08',
+    'photo-1539650116574-8efeb43e2750', 'photo-1537996194471-e657df975ab4',
+];
 
-    const [imgUrl, setImgUrl] = useState(hasStatic ? staticImg : '');
-    const [loaded, setLoaded] = useState(false);
+function getFallbackImage(cityName: string, countryName: string): string {
+    const hash = Math.abs(`${cityName}-${countryName}`.split('').reduce(
+        (a, c) => ((a << 5) - a) + c.charCodeAt(0), 0
+    ));
+    const photoId = URBAN_POOL[hash % URBAN_POOL.length];
+    return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=800&h=500&q=80`;
+}
 
-    useEffect(() => {
-        if (hasStatic) { setLoaded(true); return; }
-
-        // Fetch from Wikimedia
-        const query = encodeURIComponent(cityName.replace(/ /g, '_'));
-        fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${query}`)
-            .then(r => r.json())
-            .then(data => {
-                const url = data?.thumbnail?.source || data?.originalimage?.source;
-                if (url && !url.match(/flag|Flag|map|Map|coat|Coat|logo/i)) {
-                    setImgUrl(url.replace(/\/\d+px-/, '/800px-'));
-                } else {
-                    // Try city + country
-                    return fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent((cityName + ',_' + countryName).replace(/ /g, '_'))}`)
-                        .then(r => r.json())
-                        .then(d => {
-                            const u = d?.thumbnail?.source;
-                            if (u && !u.match(/flag|Flag|map|Map|coat|Coat/i)) {
-                                setImgUrl(u.replace(/\/\d+px-/, '/800px-'));
-                            } else {
-                                // picsum fallback
-                                const seed = Math.abs(slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
-                                setImgUrl(`https://picsum.photos/seed/${seed}/800/600`);
-                            }
-                        });
-                }
-            })
-            .catch(() => {
-                const seed = Math.abs(slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % 1000;
-                setImgUrl(`https://picsum.photos/seed/${seed}/800/600`);
-            })
-            .finally(() => setLoaded(true));
-    }, [slug, cityName, countryName, hasStatic, staticImg]);
-
-    return imgUrl || staticImg;
+function getCityImageClient(slug: string, cityName: string, countryName: string): string {
+    // 1. Check curated map
+    if (CITY_IMAGES_KEYS.includes(slug)) {
+        return getCityImage(slug, 800, 500, cityName);
+    }
+    // 2. Try variants
+    const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    const variants = [clean(cityName), `${clean(cityName)}-${clean(countryName)}`];
+    for (const v of variants) {
+        if (CITY_IMAGES_KEYS.includes(v)) return getCityImage(v, 800, 500, cityName);
+    }
+    // 3. Deterministic fallback — always a city skyline
+    return getFallbackImage(cityName, countryName);
 }
 
 export default function CityCard({ city, preloadedImage }: CityCardProps) {
     const { formatValue } = useCurrency();
     const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
     const hasData = estimatedMonthly > 0;
-    const clientImage = useCityImage(city.slug, city.city, city.country);
-    const dynamicImage = preloadedImage || clientImage;
+    const imageUrl = preloadedImage || getCityImageClient(city.slug, city.city, city.country);
 
     const safetyColor = (city.safety ?? 0) >= 7 ? '#40916C' : (city.safety ?? 0) >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = (city.internet ?? 0) >= 50 ? 'Fast' : (city.internet ?? 0) >= 20 ? 'Good' : (city.internet ?? 0) > 0 ? 'Slow' : null;
@@ -74,7 +80,7 @@ export default function CityCard({ city, preloadedImage }: CityCardProps) {
             <div style={{
                 height: '200px',
                 backgroundColor: '#f1f5f9',
-                backgroundImage: dynamicImage ? `url(${dynamicImage})` : 'none',
+                backgroundImage: `url(${imageUrl})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 position: 'relative'
@@ -90,20 +96,17 @@ export default function CityCard({ city, preloadedImage }: CityCardProps) {
                     </div>
                 )}
             </div>
-
             <div style={{ padding: '1rem 1.25rem' }}>
                 <div style={{ marginBottom: '0.75rem' }}>
-                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.2, wordBreak: 'break-word' }}>{city.city}</h3>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.2 }}>{city.city}</h3>
                     <p style={{ margin: '0.15rem 0 0', color: '#64748b', fontSize: '0.72rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city.country}</p>
                 </div>
-
                 <div style={{ marginBottom: '0.75rem' }}>
                     <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', marginBottom: '2px' }}>Est. Monthly</div>
                     <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#0f172a' }}>
                         {hasData ? formatValue(estimatedMonthly) : 'N/A'}
                     </div>
                 </div>
-
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     {(city.safety ?? 0) > 0 && (
                         <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem', borderRadius: '4px', backgroundColor: '#f1f5f9', color: safetyColor, fontWeight: 700 }}>

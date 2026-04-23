@@ -281,20 +281,20 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Book tours</div>
                             <div style={{ fontSize: '1rem', fontWeight: 800, color: 'white', marginBottom: '1.25rem' }}>Ready to explore {city.city}?</div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
-                                <a href={`https://www.klook.com/s/${encodeURIComponent(city.city)}`}
+                                <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(city.city)}&searchSource=1&partner_id=VVPTRVK`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', textAlign: 'center', backgroundColor: '#F7831E', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none' }}>
+                                    Book on GetYourGuide
+                                </a>
+                                <a href={`https://www.klook.com/s/${encodeURIComponent(city.city)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
                                     Book on Klook
                                 </a>
                                 <a href={`https://www.viator.com/search/${encodeURIComponent(city.city)}`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
                                     Book on Viator
-                                </a>
-                                <a href={`https://www.tripadvisor.com/Attractions-a_geo.${encodeURIComponent(city.city)}.html`}
-                                    target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    Explore on Tripadvisor
                                 </a>
                             </div>
                         </div>
