@@ -1,4 +1,4 @@
-// SERVER COMPONENT - Google indexa todo
+// SERVER COMPONENT - Google indexa todo - v2
 import { supabase } from '@/lib/supabase';
 import { getCityImageServer } from '@/lib/getCityImageServer';
 import { notFound } from 'next/navigation';
@@ -91,7 +91,8 @@ export default async function CityPage({ params }: CityPageProps) {
             {/* HERO with real Pexels image */}
             <div style={{ position: 'relative', height: '520px', overflow: 'hidden' }}>
                 <img src={heroImage} alt={`${c.city} cityscape`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&h=500&q=80'; }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)' }} />
 
                 <div style={{ position: 'absolute', top: '1.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: '1200px', padding: '0 1.5rem' }}>
