@@ -95,9 +95,13 @@ export default async function RegionRankingPage({ params }: Props) {
 
     // Prefetch images
     const imageMap: Record<string, string> = {};
-    await Promise.all(validCities.slice(0, 24).map(async c => {
-        imageMap[c.slug] = await getCityImageServer(c.slug, c.city, c.country, 400);
-    }));
+    try {
+        await Promise.all(validCities.slice(0, 24).map(async c => {
+            try {
+                imageMap[c.slug] = await getCityImageServer(c.slug, c.city, c.country, 400);
+            } catch { /* skip */ }
+        }));
+    } catch { /* continue */ }
 
     const GREEN = '#52B788';
     const JADE = '#40916C';

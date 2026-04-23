@@ -8,12 +8,24 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
     { href: '/', label: 'Home' },
-    { href: '/rankings/quality', label: 'Rankings' },
-    { href: '/rankings/region/europe', label: 'By Region' },
     { href: '/compare', label: 'Compare' },
     { href: '/calculator', label: 'Calculator' },
     { href: '/rankings/nomads', label: 'Nomads' },
     { href: '/about', label: 'About' },
+];
+
+const RANKINGS_LINKS = [
+    { href: '/rankings/quality', label: 'Quality of Life' },
+    { href: '/rankings/cheapest', label: 'Most Affordable' },
+    { href: '/rankings/safest', label: 'Safest Cities' },
+    { href: '/rankings/nomads', label: 'Best for Nomads' },
+    { href: '/rankings/region/europe', label: '— Europe' },
+    { href: '/rankings/region/asia', label: '— Asia' },
+    { href: '/rankings/region/latin-america', label: '— Latin America' },
+    { href: '/rankings/region/north-america', label: '— North America' },
+    { href: '/rankings/region/africa', label: '— Africa' },
+    { href: '/rankings/region/middle-east', label: '— Middle East' },
+    { href: '/rankings/region/oceania', label: '— Oceania' },
 ];
 
 export default function Header() {
@@ -29,7 +41,24 @@ export default function Header() {
 
                 {/* Desktop nav */}
                 <nav className="header-nav-links" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                    {NAV_LINKS.map(l => (
+                    <Link href="/" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.875rem' }}>Home</Link>
+
+                    {/* Rankings dropdown */}
+                    <div style={{ position: 'relative' }} className="rankings-dropdown-wrapper">
+                        <Link href="/rankings/quality" style={{ fontWeight: 600, color: '#64748b', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                            Rankings
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </Link>
+                        <div className="rankings-dropdown" style={{ display: 'none', position: 'absolute', top: '100%', left: '-1rem', marginTop: '0.5rem', backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '0.75rem', padding: '0.5rem', minWidth: '220px', boxShadow: '0 4px 16px rgba(0,0,0,0.1)', zIndex: 200 }}>
+                            {RANKINGS_LINKS.map(l => (
+                                <Link key={l.href} href={l.href} style={{ display: 'block', padding: '0.5rem 0.875rem', fontSize: '0.8rem', fontWeight: l.label.startsWith('—') ? 600 : 700, color: l.label.startsWith('—') ? '#64748b' : '#0f172a', borderRadius: '0.5rem', textDecoration: 'none' }}>
+                                    {l.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {NAV_LINKS.filter(l => l.href !== '/').map(l => (
                         <Link key={l.href} href={l.href} style={{ fontWeight: 600, color: '#64748b', fontSize: '0.875rem' }}>{l.label}</Link>
                     ))}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderLeft: '1px solid #e2e8f0', paddingLeft: '1.25rem' }}>
