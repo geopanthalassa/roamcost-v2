@@ -31,7 +31,7 @@ const CATEGORIES = [
     {
         id: 'tours',
         label: 'Walking Tours',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
+        icon: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 8v4l3 3',
         color: '#52B788',
         bg: '#F0FAF4',
         desc: 'Explore the city on foot with expert local guides',
@@ -40,7 +40,7 @@ const CATEGORIES = [
     {
         id: 'food',
         label: 'Food & Drinks',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
+        icon: 'M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z',
         color: '#F7831E',
         bg: '#FFF8F0',
         desc: 'Taste local cuisine, street food and cooking classes',
@@ -49,7 +49,7 @@ const CATEGORIES = [
     {
         id: 'culture',
         label: 'Culture & History',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg>,
+        icon: 'M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z',
         color: '#8b5cf6',
         bg: '#F5F3FF',
         desc: 'Museums, landmarks, historical sites and art galleries',
@@ -58,7 +58,7 @@ const CATEGORIES = [
     {
         id: 'outdoor',
         label: 'Outdoor & Nature',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>,
+        icon: 'M3 11l19-9-9 19-2-8-8-2z',
         color: '#40916C',
         bg: '#F0FAF4',
         desc: 'Hiking, cycling, water sports and nature excursions',
@@ -67,7 +67,7 @@ const CATEGORIES = [
     {
         id: 'daytrips',
         label: 'Day Trips',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
+        icon: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z',
         color: '#3b82f6',
         bg: '#EFF6FF',
         desc: 'Explore nearby destinations and surrounding regions',
@@ -76,7 +76,7 @@ const CATEGORIES = [
     {
         id: 'nightlife',
         label: 'Nightlife & Shows',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+        icon: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z',
         color: '#ec4899',
         bg: '#FDF2F8',
         desc: 'Flamenco shows, concerts, bars and entertainment',
@@ -177,7 +177,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                             target="_blank" rel="noopener noreferrer"
                             style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.25rem', backgroundColor: cat.bg, borderRadius: '1rem', border: `1px solid ${cat.color}22`, textDecoration: 'none', transition: 'transform 0.15s' }}>
                             <div style={{ width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: cat.color, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
-                                {cat.icon}
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={cat.icon}/></svg>
                             </div>
                             <div>
                                 <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#0f172a', marginBottom: '0.2rem' }}>{cat.label}</div>
