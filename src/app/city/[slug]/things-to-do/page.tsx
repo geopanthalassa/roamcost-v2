@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: ThingsToDoProps) {
     };
 }
 
-// Categories with icons and GetYourGuide search terms
+// Categories with icons and search terms
 const CATEGORIES = [
     {
         id: 'tours',
@@ -101,7 +101,6 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
     const city = cityData as unknown as City;
 
     const heroImage = getCityImage(slug, 1400, 500, city.city);
-    const GYG_ID = 'VVPTRVK';
     const KLOOK_ID = '119390';
 
     // JSON-LD structured data
@@ -149,11 +148,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                         <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Book instantly</div>
                         <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'white' }}>Find tours & activities in {city.city}</div>
                     </div>
-                    <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(city.city)}&searchSource=1&partner_id=${GYG_ID}`}
-                        target="_blank" rel="noopener noreferrer"
-                        style={{ backgroundColor: '#F7831E', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                        Search GetYourGuide →
-                    </a>
+                    
                     <a href={`https://www.viator.com/search/${encodeURIComponent(city.city)}`}
                         target="_blank" rel="noopener noreferrer"
                         style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, border: '1px solid rgba(255,255,255,0.2)' }}>
@@ -173,7 +168,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
                     {CATEGORIES.map(cat => (
                         <a key={cat.id}
-                            href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat.searchTerm + ' ' + city.city)}&searchSource=1&partner_id=${GYG_ID}`}
+                            href={`https://www.klook.com/s/${encodeURIComponent(cat.searchTerm + ' ' + city.city)}`}
                             target="_blank" rel="noopener noreferrer"
                             style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.25rem', backgroundColor: cat.bg, borderRadius: '1rem', border: `1px solid ${cat.color}22`, textDecoration: 'none', transition: 'transform 0.15s' }}>
                             <div style={{ width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: cat.color, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
@@ -182,7 +177,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                             <div>
                                 <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#0f172a', marginBottom: '0.2rem' }}>{cat.label}</div>
                                 <div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{cat.desc}</div>
-                                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: cat.color, marginTop: '0.5rem' }}>Browse on GetYourGuide →</div>
+                                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: cat.color, marginTop: '0.5rem' }}>Browse on Klook →</div>
                             </div>
                         </a>
                     ))}
@@ -218,7 +213,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                                 { title: `${city.city} night tours & shows`, desc: 'Experience the city after dark with entertainment and nightlife', term: 'night tour show' },
                             ].map((exp, i) => (
                                 <a key={i}
-                                    href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(exp.term + ' ' + city.city)}&searchSource=1&partner_id=${GYG_ID}`}
+                                    href={`https://www.klook.com/s/${encodeURIComponent(exp.term + ' ' + city.city)}`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', backgroundColor: 'white', borderRadius: '0.75rem', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
                                     <div style={{ width: '32px', height: '32px', backgroundColor: '#F0FAF4', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.8rem', fontWeight: 900, color: '#52B788' }}>{i + 1}</div>
@@ -286,25 +281,20 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                             <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Book tours</div>
                             <div style={{ fontSize: '1rem', fontWeight: 800, color: 'white', marginBottom: '1.25rem' }}>Ready to explore {city.city}?</div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
-                                <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(city.city)}&searchSource=1&partner_id=${GYG_ID}`}
+                                <a href={`https://www.klook.com/s/${encodeURIComponent(city.city)}`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', textAlign: 'center', backgroundColor: '#F7831E', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none' }}>
-                                    GetYourGuide (8% commission)
+                                    Book on Klook
                                 </a>
                                 <a href={`https://www.viator.com/search/${encodeURIComponent(city.city)}`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    Viator / Tripadvisor
+                                    Book on Viator
                                 </a>
                                 <a href={`https://www.tripadvisor.com/Attractions-a_geo.${encodeURIComponent(city.city)}.html`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    Tripadvisor
-                                </a>
-                                <a href={`https://affiliate.klook.com/redirect?aid=${KLOOK_ID}&k_site=${encodeURIComponent('https://www.klook.com/s/' + city.city)}`}
-                                    target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    Klook
+                                    Explore on Tripadvisor
                                 </a>
                             </div>
                         </div>

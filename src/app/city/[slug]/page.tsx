@@ -311,8 +311,8 @@ export default async function CityPage({ params }: CityPageProps) {
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Tours, experiences and activities curated for travelers</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
-                        {/* GetYourGuide */}
-                        <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
+                        {/* Book Tours */}
+                        <a href={`https://www.klook.com/s/${encodeURIComponent(c.city)}`}
                             target="_blank" rel="noopener noreferrer"
                             style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
                             <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -322,7 +322,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             </div>
                             <div>
                                 <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
-                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via GetYourGuide</div>
+                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via Klook</div>
                                 <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line, day trips & more</div>
                             </div>
                         </a>
@@ -364,7 +364,7 @@ export default async function CityPage({ params }: CityPageProps) {
                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                         {['Walking Tours', 'Food Tours', 'Day Trips', 'Museums', 'Night Life', 'Outdoor'].map(cat => (
                             <a key={cat}
-                                href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat + ' ' + c.city)}&searchSource=1&partner_id=VVPTRVK`}
+                                href={`https://www.klook.com/s/${encodeURIComponent(cat + ' ' + c.city)}`}
                                 target="_blank" rel="noopener noreferrer"
                                 style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', backgroundColor: '#F0FAF4', border: '1px solid #D8F3DC', borderRadius: '2rem', padding: '0.3rem 0.75rem', textDecoration: 'none' }}>
                                 {cat}
