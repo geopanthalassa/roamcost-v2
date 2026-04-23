@@ -1,5 +1,5 @@
 // ✅ SERVER COMPONENT — compare/[slugs]/page.tsx
-import React from 'react';
+
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import { City } from '@/types/database';
@@ -81,16 +81,16 @@ export default async function ComparePage({ params }: ComparePageProps) {
         { label: 'Environment', icon: 'leaf', key: 'environment', higherBetter: true },
     ];
 
-    const iconMap: Record<string, React.ReactNode> = {
-        chart: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
-        home: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
-        food: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
-        bus: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
-        bolt: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
-        shield: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-        wifi: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>,
-        health: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
-        leaf: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9"/><path d="M17 8l-5 5"/></svg>,
+    const iconMap: Record<string, string> = {
+        chart: 'M18 20v-10M12 20V4M6 20v-6',
+        home: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',
+        food: 'M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z',
+        bus: 'M1 3h15v13H1zM16 8h4l3 3v5h-7V8z',
+        bolt: 'M13 2L3 14h9l-1 8 10-12h-9z',
+        shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+        wifi: 'M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0',
+        health: 'M22 12h-4l-3 9L9 3l-3 9H2',
+        leaf: 'M17 8C8 10 5.9 16.17 3.82 19.34a1 1 0 0 0 1.38 1.37C7.14 19.14 10.5 18 13 18c5 0 9-4 9-9M17 8l-5 5',
     };
 
     return (
@@ -158,7 +158,7 @@ export default async function ComparePage({ params }: ComparePageProps) {
                                     <tr key={metric.label} style={{ borderBottom: '1px solid #f1f5f9', backgroundColor: idx % 2 === 0 ? 'transparent' : '#fafafa' }}>
                                         <td style={{ padding: '0.875rem 1.5rem', fontWeight: 700, color: '#475569', fontSize: '0.85rem' }}>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                {iconMap[(metric as any).icon]}
+                                                {iconMap[(metric as any).icon] ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={iconMap[(metric as any).icon]} /></svg> : null}
                                                 {metric.label}
                                             </div>
                                         </td>
@@ -188,7 +188,7 @@ export default async function ComparePage({ params }: ComparePageProps) {
                         return (
                             <div key={metric.label} style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '0.75rem', overflow: 'hidden' }}>
                                 <div style={{ backgroundColor: '#f8fafc', padding: '0.6rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', borderBottom: '1px solid #e2e8f0' }}>
-                                    {iconMap[(metric as any).icon]}
+                                    {iconMap[(metric as any).icon] ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={iconMap[(metric as any).icon]} /></svg> : null}
                                     <span style={{ fontWeight: 700, color: '#475569', fontSize: '0.8rem' }}>{metric.label}</span>
                                 </div>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
