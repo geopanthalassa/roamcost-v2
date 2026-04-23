@@ -10,7 +10,6 @@ interface CityCardProps {
     preloadedImage?: string;
 }
 
-// Same verified pool as getCityImageServer — guaranteed city skylines, no people/animals
 const URBAN_POOL = [
     'photo-1477959858617-67f85cf4f1df', 'photo-1502602898657-3e91760cbb34',
     'photo-1513635269975-59663e0ac1ad', 'photo-1474181487882-5abf3f0ba6c2',
@@ -39,35 +38,26 @@ const URBAN_POOL = [
     'photo-1539650116574-8efeb43e2750', 'photo-1537996194471-e657df975ab4',
 ];
 
-function getFallbackImage(cityName: string, countryName: string): string {
-    const hash = Math.abs(`${cityName}-${countryName}`.split('').reduce(
-        (a, c) => ((a << 5) - a) + c.charCodeAt(0), 0
-    ));
-    const photoId = URBAN_POOL[hash % URBAN_POOL.length];
-    return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=800&h=500&q=80`;
-}
-
-function getCityImageClient(slug: string, cityName: string, countryName: string): string {
-    // 1. Check curated map
+function getImageUrl(slug: string, cityName: string, countryName: string): string {
+    // 1. Curated map
     if (CITY_IMAGES_KEYS.includes(slug)) {
         return getCityImage(slug, 800, 500, cityName);
     }
-    // 2. Try variants
+    // 2. Variants
     const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    const variants = [clean(cityName), `${clean(cityName)}-${clean(countryName)}`];
-    for (const v of variants) {
+    for (const v of [clean(cityName), `${clean(cityName)}-${clean(countryName)}`]) {
         if (CITY_IMAGES_KEYS.includes(v)) return getCityImage(v, 800, 500, cityName);
     }
-    // 3. Deterministic fallback — always a city skyline
-    return getFallbackImage(cityName, countryName);
+    // 3. Deterministic pool
+    const hash = Math.abs(`${cityName}-${countryName}`.split('').reduce((a, c) => ((a << 5) - a) + c.charCodeAt(0), 0));
+    return `https://images.unsplash.com/${URBAN_POOL[hash % URBAN_POOL.length]}?auto=format&fit=crop&w=800&h=500&q=80`;
 }
 
 export default function CityCard({ city, preloadedImage }: CityCardProps) {
     const { formatValue } = useCurrency();
     const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
     const hasData = estimatedMonthly > 0;
-    const imageUrl = preloadedImage || getCityImageClient(city.slug, city.city, city.country);
-
+    const imageUrl = preloadedImage || getImageUrl(city.slug, city.city, city.country);
     const safetyColor = (city.safety ?? 0) >= 7 ? '#40916C' : (city.safety ?? 0) >= 5 ? '#d97706' : '#dc2626';
     const internetLabel = (city.internet ?? 0) >= 50 ? 'Fast' : (city.internet ?? 0) >= 20 ? 'Good' : (city.internet ?? 0) > 0 ? 'Slow' : null;
 
@@ -77,14 +67,14 @@ export default function CityCard({ city, preloadedImage }: CityCardProps) {
             border: '1px solid #e2e8f0', boxShadow: 'none', background: '#ffffff',
             borderRadius: 'var(--radius-md)', textDecoration: 'none'
         }}>
-            <div style={{
-                height: '200px',
-                backgroundColor: '#f1f5f9',
-                backgroundImage: `url(${imageUrl})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                position: 'relative'
-            }}>
+            {/* Use <img> tag instead of background-image — works correctly with Unsplash */}
+            <div style={{ height: '200px', overflow: 'hidden', position: 'relative', backgroundColor: '#e2e8f0' }}>
+                <img
+                    src={imageUrl}
+                    alt={city.city}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+                    loading="lazy"
+                />
                 {internetLabel && (
                     <div style={{
                         position: 'absolute', bottom: '10px', right: '10px',
