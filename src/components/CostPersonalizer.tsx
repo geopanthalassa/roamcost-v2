@@ -40,7 +40,8 @@ const LIFESTYLE_OPTIONS = [
 ];
 
 
-const ICON_SVG: Record<string, ReactNode> = {
+function getIcon(id: string): ReactNode {
+    const icons: Record<string, ReactNode> = {
     BUS: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
     TAXI: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2h-2M9 17h6"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>,
     CAR: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1L2 12v4h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>,
@@ -57,7 +58,9 @@ const ICON_SVG: Record<string, ReactNode> = {
     BUDGET: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
     MIDRANGE: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
     LUXURY: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="6 3 18 3 22 9 12 22 2 9 6 3"/><polyline points="22 9 12 22 2 9"/><line x1="6" y1="3" x2="12" y2="22"/><line x1="18" y1="3" x2="12" y2="22"/></svg>,
-};
+    };
+    return icons[id] || null;
+}
 
 function OptionButton({ option, selected, onSelect, color }: {
     option: any; selected: boolean; onSelect: () => void; color: string;
@@ -73,7 +76,7 @@ function OptionButton({ option, selected, onSelect, color }: {
                 transition: 'all 0.15s', flex: 1, minWidth: '70px',
             }}
         >
-            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{ICON_SVG[option.icon] || option.icon}</span>
+            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{getIcon(option.icon)}</span>
             <span style={{ fontSize: '0.68rem', fontWeight: 800, color: selected ? color : '#475569', textAlign: 'center', lineHeight: 1.2 }}>{option.label}</span>
             <span style={{ fontSize: '0.6rem', color: '#94a3b8', textAlign: 'center', lineHeight: 1.2 }}>{option.desc}</span>
         </button>
