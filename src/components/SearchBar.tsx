@@ -58,12 +58,14 @@ export default function SearchBar() {
                     top: 'calc(100% + 8px)',
                     left: 0,
                     right: 0,
-                    zIndex: 50,
+                    zIndex: 500,
                     padding: '0.75rem',
-                    maxHeight: '400px',
+                    maxHeight: '320px',
                     overflowY: 'auto',
                     border: '1px solid #e2e8f0',
-                    boxShadow: 'var(--shadow-lg)'
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.25)',
+                    borderRadius: '0.875rem',
+                    backgroundColor: 'white',
                 }}>
                     {results.map((city) => (
                         <Link

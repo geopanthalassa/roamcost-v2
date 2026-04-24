@@ -39,17 +39,22 @@ export default function Header() {
                 <nav className="header-nav-links" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
                     {NAV_LINKS.map(l => {
                         const active = isActive(l);
+                        const isHot = l.href === '/hot-takes';
+                        const linkColor = isHot ? '#F7831E' : active ? '#52B788' : '#64748b';
+                        const borderColor = isHot && active ? '#F7831E' : active ? '#52B788' : 'transparent';
                         return (
                             <Link key={l.href} href={l.href} style={{
-                                fontWeight: active ? 800 : 600,
-                                color: active ? '#52B788' : '#64748b',
+                                fontWeight: active || isHot ? 800 : 600,
+                                color: linkColor,
                                 fontSize: '0.875rem',
                                 textDecoration: 'none',
-                                borderBottom: active ? '2px solid #52B788' : '2px solid transparent',
+                                borderBottom: `2px solid ${borderColor}`,
                                 paddingBottom: '2px',
                                 transition: 'color 0.15s',
+                                display: 'flex', alignItems: 'center', gap: '0.3rem',
                             }}>
                                 {l.label}
+                                {isHot && <span style={{ fontSize: '0.5rem', backgroundColor: '#F7831E', color: 'white', padding: '0.1rem 0.35rem', borderRadius: '2rem', fontWeight: 900, letterSpacing: '0.04em', lineHeight: 1.4 }}>NEW</span>}
                             </Link>
                         );
                     })}

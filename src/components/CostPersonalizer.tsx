@@ -224,7 +224,7 @@ export default function CostPersonalizer({ baseRent, baseFood, baseTransport, ba
                             <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#eff6ff', borderRadius: '0.625rem' }}>
                                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#3b82f6', marginBottom: '0.5rem' }}>Find rental cars in {city}</div>
                                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                    <a href={`https://www.rentalcars.com/en/country/search/?location=${encodeURIComponent(city)}`} target="_blank" rel="noopener noreferrer"
+                                    <a href={`https://www.rentalcars.com/en/country/search/?location=${encodeURIComponent(city)}&affiliateCode=18808`} target="_blank" rel="noopener noreferrer"
                                         style={{ fontSize: '0.72rem', fontWeight: 700, color: '#fff', backgroundColor: '#3b82f6', padding: '0.3rem 0.75rem', borderRadius: '0.375rem', textDecoration: 'none' }}>
                                         Rentalcars.com
                                     </a>
