@@ -18,7 +18,18 @@ const CURATED = new Set(
 // ── 2. Lista completa de ciudades conocidas con su info ───────────────────
 // Ordenadas por prioridad: rankings primero, luego por población
 const ALL_CITIES = [
-    // ★ RANKING — aparecen en rankings/quality|cheapest|nomads|safest
+    // 10M+ — megaciudades sin foto
+    {s:'jakarta',p:'10M+',city:'Jakarta',country:'Indonesia',pop:34400000},
+    {s:'manila',p:'10M+',city:'Manila',country:'Philippines',pop:23088000},
+    {s:'mumbai',p:'10M+',city:'Mumbai',country:'India',pop:21357000},
+    {s:'chongqing',p:'10M+',city:'Chongqing',country:'China',pop:32000000},
+    {s:'nanjing',p:'10M+',city:'Nanjing',country:'China',pop:9300000},
+    {s:'hangzhou',p:'10M+',city:'Hangzhou',country:'China',pop:12000000},
+    {s:'xi-an',p:'10M+',city:"Xi'an",country:'China',pop:13000000},
+    {s:'shenyang',p:'10M+',city:'Shenyang',country:'China',pop:9100000},
+    {s:'harbin',p:'10M+',city:'Harbin',country:'China',pop:10900000},
+    {s:'kano',p:'10M+',city:'Kano',country:'Nigeria',pop:15900000},
+    // ★ RANKING — aparecen en rankings
     {s:'amman',p:'★ RANKING',city:'Amman',country:'Jordan',pop:4500000},
     {s:'san-francisco',p:'★ RANKING',city:'San Francisco',country:'United States',pop:3300000},
     {s:'montreal',p:'★ RANKING',city:'Montreal',country:'Canada',pop:4200000},
@@ -111,6 +122,24 @@ const ALL_CITIES = [
     {s:'beirut',p:'2M+',city:'Beirut',country:'Lebanon',pop:2400000},
     {s:'muscat',p:'2M+',city:'Muscat',country:'Oman',pop:1600000},
     {s:'kuwait-city',p:'2M+',city:'Kuwait City',country:'Kuwait',pop:3100000},
+    // Ciudades europeas frecuentes
+    {s:'cologne',p:'EU',city:'Cologne',country:'Germany',pop:1085000},
+    {s:'frankfurt',p:'EU',city:'Frankfurt',country:'Germany',pop:764000},
+    {s:'stuttgart',p:'EU',city:'Stuttgart',country:'Germany',pop:634000},
+    {s:'dusseldorf',p:'EU',city:'Düsseldorf',country:'Germany',pop:619000},
+    {s:'leipzig',p:'EU',city:'Leipzig',country:'Germany',pop:587000},
+    {s:'bremen',p:'EU',city:'Bremen',country:'Germany',pop:566000},
+    {s:'nuremberg',p:'EU',city:'Nuremberg',country:'Germany',pop:515000},
+    {s:'nice',p:'EU',city:'Nice',country:'France',pop:942000},
+    {s:'toulouse',p:'EU',city:'Toulouse',country:'France',pop:967000},
+    {s:'nantes',p:'EU',city:'Nantes',country:'France',pop:670000},
+    {s:'strasbourg',p:'EU',city:'Strasbourg',country:'France',pop:790000},
+    {s:'bordeaux',p:'EU',city:'Bordeaux',country:'France',pop:810000},
+    {s:'birmingham',p:'EU',city:'Birmingham',country:'United Kingdom',pop:2900000},
+    {s:'manchester',p:'EU',city:'Manchester',country:'United Kingdom',pop:2800000},
+    {s:'glasgow',p:'EU',city:'Glasgow',country:'United Kingdom',pop:1800000},
+    {s:'leeds',p:'EU',city:'Leeds',country:'United Kingdom',pop:1900000},
+    {s:'liverpool',p:'EU',city:'Liverpool',country:'United Kingdom',pop:900000},
 ];
 
 // ── 3. Filtrar los que ya tienen foto ─────────────────────────────────────
