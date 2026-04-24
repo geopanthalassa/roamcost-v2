@@ -9,7 +9,7 @@ export const CITY_IMAGES: Record<string, string> = {
     'toronto': 'photo-1517935706615-2717063c2225',
     'vancouver': 'photo-1559511260-b120d11350cf',
     'mexico-city': 'photo-1585464231875-d9ef1f5ad396',
-    'buenos-aires': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Buenos_Aires_-_Aerial_%28135055309%29.jpg/1280px-Buenos_Aires_-_Aerial_%28135055309%29.jpg',
+    'buenos-aires': '/cities/buenos-aires.jpg',
     'sao-paulo': 'photo-1619546813926-a78fa6372cd2',
     'rio-de-janeiro': 'photo-1483729558449-99ef09a8c325',
     'bogota': 'photo-1589923188900-85dae523342b',
@@ -36,7 +36,7 @@ export const CITY_IMAGES: Record<string, string> = {
     'brussels': 'photo-1608031751869-893e5e0bd97e',
     'vienna': 'photo-1516550135131-fe3dcdd41517',
     'zurich': 'photo-1515488764276-beab7607c1e6',
-    'lisbon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lisbon_%2836538056786%29.jpg/1280px-Lisbon_%2836538056786%29.jpg',
+    'lisbon': '/cities/lisbon.jpg',
     'lisboa': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lisbon_%2836538056786%29.jpg/1280px-Lisbon_%2836538056786%29.jpg',
     'porto': 'photo-1555881400-74d7acaacd8b',
     'oporto': 'photo-1555881400-74d7acaacd8b',
@@ -351,10 +351,30 @@ export const CITY_IMAGES: Record<string, string> = {
     'nanjing': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nanjing_Skyline_2019.jpg/1280px-Nanjing_Skyline_2019.jpg',
     'hangzhou': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Hangzhou_skyline.jpg/1280px-Hangzhou_skyline.jpg',
     'xi-an': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Xi%27an_Bell_Tower_at_night.jpg/1280px-Xi%27an_Bell_Tower_at_night.jpg',
+    'asuncion': '/cities/asuncion.jpg',
+    'barranquilla': '/cities/barranquilla.jpg',
+    'bordeaux': '/cities/bordeaux.jpg',
+    'chongqing': '/cities/chongqing.jpg',
+    'guayaquil': '/cities/guayaquil.jpg',
+    'harbin': '/cities/harbin.jpg',
+    'kano': '/cities/kano.jpg',
+    'katowice': '/cities/katowice.jpg',
+    'khartoum': '/cities/khartoum.jpg',
+    'marseille': '/cities/marseille.jpg',
+    'nantes': '/cities/nantes.jpg',
+    'nice': '/cities/nice.jpg',
+    'shenyang': '/cities/shenyang.jpg',
+    'skopje': '/cities/skopje.jpg',
+    'strasbourg': '/cities/strasbourg.jpg',
+    'stuttgart': '/cities/stuttgart.jpg',
+    'toulouse': '/cities/toulouse.jpg',
+    'wuhan': '/cities/wuhan.jpg',
 };
 
 export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
-    const photo = CITY_IMAGES[slug];
+
+    'lodz': '/cities/lodz.jpg',    const photo = CI
+    'chisinau': '/cities/chisinau.jpg',TY_IMAGES[slug];
     if (photo) {
         // Full URL (Wikipedia Commons, local, etc.)
         if (photo.startsWith('http') || photo.startsWith('/')) return photo;
