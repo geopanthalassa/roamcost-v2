@@ -97,12 +97,12 @@ export default async function Home() {
                 {/* Video background */}
                 <video
                     autoPlay muted loop playsInline
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65 }}
                 >
                     <source src="/hero-video.mp4" type="video/mp4" />
                 </video>
-                {/* Gradient overlay */}
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.5) 100%)' }} />
+                {/* Gradient overlay - lighter to show more video */}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.35) 100%)' }} />
 
                 {/* Content */}
                 <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '6rem 1.5rem 5rem', width: '100%' }}>
