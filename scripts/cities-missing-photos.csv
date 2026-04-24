@@ -1,4 +1,14 @@
+<<<<<<< Updated upstream
 PRIORIDAD,SLUG,CIUDAD,PAÍS,POBLACIÓN
+=======
+PRIORIDAD,SLUG,CIUDAD,PAÍS,POBLACIÓN
+10M+,chongqing,"Chongqing","China",32,000,000
+10M+,nanjing,"Nanjing","China",9,300,000
+10M+,hangzhou,"Hangzhou","China",12,000,000
+10M+,xi-an,"Xi'an","China",13,000,000
+10M+,shenyang,"Shenyang","China",9,100,000
+10M+,harbin,"Harbin","China",10,900,000
+10M+,kano,"Kano","Nigeria",15,900,000
 5M+,lahore,"Lahore","Pakistan",13,000,000
 5M+,karachi,"Karachi","Pakistan",16,000,000
 5M+,dhaka,"Dhaka","Bangladesh",21,000,000
@@ -38,3 +48,17 @@ PRIORIDAD,SLUG,CIUDAD,PAÍS,POBLACIÓN
 2M+,chisinau,"Chișinău","Moldova",690,000
 2M+,skopje,"Skopje","North Macedonia",540,000
 2M+,dakar,"Dakar","Senegal",3,700,000
+EU,stuttgart,"Stuttgart","Germany",634,000
+EU,dusseldorf,"Düsseldorf","Germany",619,000
+EU,leipzig,"Leipzig","Germany",587,000
+EU,bremen,"Bremen","Germany",566,000
+EU,nuremberg,"Nuremberg","Germany",515,000
+EU,nice,"Nice","France",942,000
+EU,toulouse,"Toulouse","France",967,000
+EU,nantes,"Nantes","France",670,000
+EU,strasbourg,"Strasbourg","France",790,000
+EU,bordeaux,"Bordeaux","France",810,000
+EU,manchester,"Manchester","United Kingdom",2,800,000
+EU,leeds,"Leeds","United Kingdom",1,900,000
+EU,liverpool,"Liverpool","United Kingdom",900,000
+>>>>>>> Stashed changes

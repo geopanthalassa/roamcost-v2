@@ -12,7 +12,17 @@ CUANDO TENGAS LAS FOTOS decile al chat:
    Actualizá src/lib/cityImages.ts"
 
 PRIORIDAD    SLUG                           CIUDAD                    PAÍS
+<<<<<<< Updated upstream
 ──────────────────────────────────────────────────────────────────────────────────────────
+=======
+──────────────────────────────────────────────────────────────────────────────────────────
+10M+         chongqing                      Chongqing                  China
+10M+         nanjing                        Nanjing                    China
+10M+         hangzhou                       Hangzhou                   China
+10M+         xi-an                          Xi'an                      China
+10M+         shenyang                       Shenyang                   China
+10M+         harbin                         Harbin                     China
+10M+         kano                           Kano                       Nigeria
 5M+          lahore                         Lahore                     Pakistan
 5M+          karachi                        Karachi                    Pakistan
 5M+          dhaka                          Dhaka                      Bangladesh
@@ -52,3 +62,17 @@ PRIORIDAD    SLUG                           CIUDAD                    PAÍS
 2M+          chisinau                       Chișinău                   Moldova
 2M+          skopje                         Skopje                     North Macedonia
 2M+          dakar                          Dakar                      Senegal
+EU           stuttgart                      Stuttgart                  Germany
+EU           dusseldorf                     Düsseldorf                 Germany
+EU           leipzig                        Leipzig                    Germany
+EU           bremen                         Bremen                     Germany
+EU           nuremberg                      Nuremberg                  Germany
+EU           nice                           Nice                       France
+EU           toulouse                       Toulouse                   France
+EU           nantes                         Nantes                     France
+EU           strasbourg                     Strasbourg                 France
+EU           bordeaux                       Bordeaux                   France
+EU           manchester                     Manchester                 United Kingdom
+EU           leeds                          Leeds                      United Kingdom
+EU           liverpool                      Liverpool                  United Kingdom
+>>>>>>> Stashed changes
