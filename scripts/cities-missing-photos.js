@@ -1,36 +1,56 @@
-// Script: ciudades sin foto curada, ordenadas por prioridad
-// Ejecutar: node scripts/cities-missing-photos.js
-// Genera:   scripts/cities-missing-photos.txt
+// Ejecutar desde CUALQUIER carpeta:
+//   node C:\ruta\al\proyecto\scripts\cities-missing-photos.js
+// O desde la raiz del proyecto:
+//   node scripts/cities-missing-photos.js
 
 const fs   = require('fs');
 const path = require('path');
 
-// ── 1. Leer credenciales de .env.local ───────────────────────────────────────
-const envFile = path.join(__dirname, '..', '.env.local');
-if (!fs.existsSync(envFile)) {
-    console.error('No se encontró .env.local en la raíz del proyecto');
+// Busca .env.local subiendo carpetas desde donde está el script
+function findEnvLocal(startDir) {
+    let dir = startDir;
+    for (let i = 0; i < 5; i++) {
+        const candidate = path.join(dir, '.env.local');
+        if (fs.existsSync(candidate)) return candidate;
+        dir = path.dirname(dir);
+    }
+    return null;
+}
+
+const envFile = findEnvLocal(__dirname);
+if (!envFile) {
+    console.error('\n❌ No se encontró .env.local');
+    console.error('   Asegurate de ejecutar desde la carpeta del proyecto:');
+    console.error('   cd C:\\Users\\andre\\Desktop\\PROYECTOS_GRAVITY\\ROAMCOST');
+    console.error('   node scripts/cities-missing-photos.js\n');
     process.exit(1);
 }
+
+console.log(`✓ Usando: ${envFile}`);
 fs.readFileSync(envFile, 'utf8').split('\n').forEach(line => {
     const eq = line.indexOf('=');
     if (eq > 0) process.env[line.slice(0, eq).trim()] = line.slice(eq + 1).trim();
 });
 
-const URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-if (!URL || !KEY) { console.error('Faltan vars de Supabase'); process.exit(1); }
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// ── 2. Slugs que YA tienen foto curada ───────────────────────────────────────
-// (generado leyendo cityImages.ts)
-const cityImagesTs = fs.readFileSync(
-    path.join(__dirname, '..', 'src', 'lib', 'cityImages.ts'), 'utf8'
-);
+if (!SUPABASE_URL || !SUPABASE_KEY) {
+    console.error('\n❌ .env.local encontrado pero faltan las variables:');
+    console.error('   NEXT_PUBLIC_SUPABASE_URL');
+    console.error('   NEXT_PUBLIC_SUPABASE_ANON_KEY\n');
+    process.exit(1);
+}
+
+// Lee cityImages.ts para saber qué slugs ya tienen foto
+const cityImagesPath = path.join(__dirname, '..', 'src', 'lib', 'cityImages.ts');
+const cityImagesTs   = fs.readFileSync(cityImagesPath, 'utf8');
 const CURATED = new Set(
-    [...cityImagesTs.matchAll(/'([a-z0-9-]+)':\s*['"`]/g)].map(m => m[1])
+    [...cityImagesTs.matchAll(/'([a-z0-9][a-z0-9-]*)':\s*['"`h]/g)].map(m => m[1])
 );
-console.log(`Fotos curadas en cityImages.ts: ${CURATED.size}`);
+console.log(`✓ Fotos curadas en cityImages.ts: ${CURATED.size}`);
 
-// ── 3. Ciudades prioritarias (rankings) ───────────────────────────────────────
+// Slugs que aparecen en rankings (prioridad máxima)
 const POPULAR = new Set([
     'london','paris','berlin','madrid','barcelona','rome','amsterdam','vienna','prague',
     'lisbon','budapest','warsaw','stockholm','oslo','copenhagen','athens','dublin',
@@ -48,92 +68,113 @@ const POPULAR = new Set([
     'edinburgh','porto','seville','valencia','krakow','tallinn','riga','vilnius',
 ]);
 
-// ── 4. Traer ciudades de Supabase (paginado) ──────────────────────────────────
-async function fetchAll(minPop) {
+async function fetchAll() {
     let all = [], offset = 0;
+    process.stdout.write('  Descargando ciudades');
     while (true) {
         const res = await fetch(
-            `${URL}/rest/v1/cities_master` +
+            `${SUPABASE_URL}/rest/v1/cities_master` +
             `?select=slug,city,country,population,cost_index` +
-            `&population=gt.${minPop}&cost_index=gt.0` +
+            `&population=gt.50000&cost_index=gt.0` +
             `&order=population.desc&limit=1000&offset=${offset}`,
-            { headers: { apikey: KEY } }
+            { headers: { apikey: SUPABASE_KEY } }
         );
+        if (!res.ok) { console.error(`\n❌ Error Supabase: ${res.status}`); process.exit(1); }
         const rows = await res.json();
         if (!Array.isArray(rows) || !rows.length) break;
         all = all.concat(rows);
+        process.stdout.write('.');
         if (rows.length < 1000) break;
         offset += 1000;
     }
+    console.log(` ${all.length} ciudades\n`);
     return all;
 }
 
-// ── 5. Main ───────────────────────────────────────────────────────────────────
 async function main() {
-    console.log('Consultando Supabase...');
-
-    const cities = await fetchAll(50000);          // todas con > 50k hab y datos
-    console.log(`Ciudades en Supabase con datos: ${cities.length}`);
-
-    // Filtrar las que YA tienen foto
+    const cities  = await fetchAll();
     const missing = cities.filter(c => !CURATED.has(c.slug));
 
-    // Ordenar: rankings primero → luego por población
     missing.sort((a, b) => {
-        const ap = POPULAR.has(a.slug) ? 2 : 0;
-        const bp = POPULAR.has(b.slug) ? 2 : 0;
+        const ap = POPULAR.has(a.slug) ? 3 : 0;
+        const bp = POPULAR.has(b.slug) ? 3 : 0;
         if (ap !== bp) return bp - ap;
         return (b.population || 0) - (a.population || 0);
     });
 
-    // ── 6. Generar salidas ────────────────────────────────────────────────────
-    const lines = ['PRIORIDAD | SLUG | CIUDAD | PAÍS | POBLACIÓN'];
-    lines.push('─'.repeat(80));
+    // ── Generar TXT ──────────────────────────────────────────────────────────
+    const lines = [];
+    lines.push('=== CIUDADES SIN FOTO CURADA ===');
+    lines.push(`Total: ${missing.length} ciudades`);
+    lines.push(`Curadas: ${CURATED.size} ciudades`);
+    lines.push('');
+    lines.push('PRIORIDAD  SLUG                           CIUDAD                PAÍS                  POBLACIÓN');
+    lines.push('─'.repeat(100));
 
     for (const c of missing) {
-        const prio = POPULAR.has(c.slug) ? '★ RANKING'
-                   : c.population > 5000000 ? '  5M+'
-                   : c.population > 2000000 ? '  2M+'
-                   : c.population > 1000000 ? '  1M+'
-                   : c.population > 500000  ? '  500k'
-                   : '  <500k';
-        const row = `${prio.padEnd(10)} | ${c.slug.padEnd(30)} | ${c.city.padEnd(22)} | ${c.country.padEnd(20)} | ${(c.population||0).toLocaleString()}`;
-        lines.push(row);
+        const prio = POPULAR.has(c.slug)    ? '★ RANKING'
+                   : c.population > 5000000 ? '  5M+    '
+                   : c.population > 2000000 ? '  2M+    '
+                   : c.population > 1000000 ? '  1M+    '
+                   : c.population > 500000  ? '  500k   '
+                   : '  <500k  ';
+        lines.push(
+            `${prio}  ${c.slug.padEnd(30)} ${c.city.padEnd(20)} ${c.country.padEnd(20)} ${(c.population||0).toLocaleString()}`
+        );
     }
 
     lines.push('');
-    lines.push(`Total sin foto: ${missing.length}`);
+    lines.push('=== CÓMO USAR ESTE ARCHIVO ===');
     lines.push('');
-    lines.push('=== CÓMO AGREGAR FOTOS ===');
-    lines.push('1. Crea la carpeta: ROAMCOST/public/cities/');
-    lines.push('2. Guarda cada foto como: public/cities/[SLUG].jpg');
-    lines.push('   Ej: public/cities/amman.jpg');
-    lines.push('   Tamaño mínimo: 1200x750px · Formato JPG · Sin personas en primer plano');
-    lines.push('   Solo 1 foto por ciudad — skyline, vista aérea o landmark icónico');
-    lines.push('3. Decile al chat:');
-    lines.push('   "Subí fotos en public/cities/ para: amman, seattle, etc.');
-    lines.push('    Actualizá src/lib/cityImages.ts para mapearlas"');
+    lines.push('ESTRUCTURA DE CARPETAS:');
+    lines.push('  ROAMCOST/');
+    lines.push('    public/');
+    lines.push('      cities/          ← CREAR esta carpeta');
+    lines.push('        amman.jpg      ← nombre = slug exacto de la columna SLUG');
+    lines.push('        seattle.jpg');
+    lines.push('        kyiv.jpg');
+    lines.push('');
+    lines.push('SPECS DE CADA FOTO:');
+    lines.push('  • 1 foto por ciudad');
+    lines.push('  • Nombre: [slug].jpg  (ej: buenos-aires.jpg)');
+    lines.push('  • Tamaño mínimo: 1200 x 750 px');
+    lines.push('  • Formato: JPG, calidad 80-90%');
+    lines.push('  • Contenido: skyline, vista aérea o landmark — SIN personas en primer plano');
+    lines.push('');
+    lines.push('CUANDO TENGAS LAS FOTOS, decile al chat:');
+    lines.push('  "Subí estas fotos a public/cities/: amman, seattle, kyiv');
+    lines.push('   Actualizá src/lib/cityImages.ts para mapearlas"');
 
     const outTxt = path.join(__dirname, 'cities-missing-photos.txt');
     fs.writeFileSync(outTxt, lines.join('\n'), 'utf8');
 
-    // CSV para abrir en Excel
+    // ── Generar CSV ──────────────────────────────────────────────────────────
     const csv = ['slug,city,country,population,priority'];
     for (const c of missing) {
-        const prio = POPULAR.has(c.slug) ? 'RANKING'
+        const prio = POPULAR.has(c.slug)    ? 'RANKING'
                    : c.population > 5000000 ? '5M+'
                    : c.population > 2000000 ? '2M+'
                    : c.population > 1000000 ? '1M+'
-                   : '500k';
+                   : c.population > 500000  ? '500k'
+                   : '<500k';
         csv.push(`${c.slug},"${c.city}","${c.country}",${c.population||0},${prio}`);
     }
     const outCsv = path.join(__dirname, 'cities-missing-photos.csv');
     fs.writeFileSync(outCsv, csv.join('\n'), 'utf8');
 
-    console.log('\n' + lines.slice(0, 30).join('\n'));
-    console.log(`\n✓ Guardado: scripts/cities-missing-photos.txt`);
-    console.log(`✓ Guardado: scripts/cities-missing-photos.csv  (ábrelo en Excel)`);
-    console.log(`\nTotal sin foto: ${missing.length}`);
+    // ── Preview en consola ───────────────────────────────────────────────────
+    console.log('PRIORIDAD  SLUG                           CIUDAD                PAÍS');
+    console.log('─'.repeat(85));
+    missing.slice(0, 40).forEach(c => {
+        const prio = POPULAR.has(c.slug) ? '★ RANKING' : `  ${(c.population/1000000).toFixed(1)}M  `;
+        console.log(`${prio}  ${c.slug.padEnd(30)} ${c.city.padEnd(20)} ${c.country}`);
+    });
+    if (missing.length > 40) console.log(`  ... y ${missing.length - 40} más`);
+
+    console.log(`\n✓ scripts/cities-missing-photos.txt`);
+    console.log(`✓ scripts/cities-missing-photos.csv  (abrí en Excel)`);
+    console.log(`\nTotal sin foto: ${missing.length} ciudades`);
+    console.log(`En rankings sin foto: ${missing.filter(c => POPULAR.has(c.slug)).length} ciudades`);
 }
 
-main().catch(console.error);
+main().catch(e => { console.error('\n❌', e.message); process.exit(1); });
