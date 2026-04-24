@@ -371,10 +371,12 @@ export const CITY_IMAGES: Record<string, string> = {
     'wuhan': '/cities/wuhan.jpg',
 };
 
+    'lodz': '/cities/lodz.jpg',
+    'chisinau': '/cities/chisinau.jpg',
 export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
 
-    'lodz': '/cities/lodz.jpg',    const photo = CI
-    'chisinau': '/cities/chisinau.jpg',TY_IMAGES[slug];
+    const photo = CI
+    TY_IMAGES[slug];
     if (photo) {
         // Full URL (Wikipedia Commons, local, etc.)
         if (photo.startsWith('http') || photo.startsWith('/')) return photo;
