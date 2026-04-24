@@ -311,8 +311,24 @@ export default async function CityPage({ params }: CityPageProps) {
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Tours, experiences and activities curated for travelers</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
-                        {/* Book Tours */}
-                        <a href={`https://www.klook.com/s/${encodeURIComponent(c.city)}`}
+                        {/* GetYourGuide */}
+                        <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
+                            target="_blank" rel="noopener noreferrer"
+                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
+                            <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
+                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via GetYourGuide</div>
+                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line, day trips & more</div>
+                            </div>
+                        </a>
+
+                        {/* Klook */}
+                        <a href={`https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`}
                             target="_blank" rel="noopener noreferrer"
                             style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
                             <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -323,7 +339,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             <div>
                                 <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
                                 <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via Klook</div>
-                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line, day trips & more</div>
+                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Activities & attractions</div>
                             </div>
                         </a>
 
@@ -343,19 +359,19 @@ export default async function CityPage({ params }: CityPageProps) {
                             </div>
                         </a>
 
-                        {/* Klook */}
-                        <a href={`https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`}
+                        {/* Tripadvisor */}
+                        <a href={`https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`}
                             target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#F0FAF4', border: '2px solid #52B78822', borderRadius: '0.875rem', textDecoration: 'none' }}>
+                            <div style={{ width: '44px', height: '44px', backgroundColor: '#52B788', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                 </svg>
                             </div>
                             <div>
-                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
-                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via Klook</div>
-                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line & more</div>
+                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Things to Do</div>
+                                <div style={{ fontSize: '0.75rem', color: '#52B788', fontWeight: 700, marginTop: '2px' }}>via Tripadvisor</div>
+                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Reviews & recommendations</div>
                             </div>
                         </a>
                     </div>
