@@ -1,0 +1,54 @@
+=== CIUDADES SIN FOTO — INSTRUCCIONES ===
+
+CARPETA: ROAMCOST/public/cities/
+NOMBRE:  [slug].jpg   (exactamente como aparece en columna SLUG)
+TAMAÑO:  1200 x 750 px mínimo
+FORMATO: JPG, calidad 80-90%
+FOTO:    Skyline, vista aérea o landmark — SIN personas en primer plano
+         1 sola foto por ciudad
+
+CUANDO TENGAS LAS FOTOS decile al chat:
+  "Subí fotos a public/cities/ para: amman, seattle, kyiv
+   Actualizá src/lib/cityImages.ts"
+
+PRIORIDAD    SLUG                           CIUDAD                    PAÍS
+──────────────────────────────────────────────────────────────────────────────────────────
+5M+          lahore                         Lahore                     Pakistan
+5M+          karachi                        Karachi                    Pakistan
+5M+          dhaka                          Dhaka                      Bangladesh
+5M+          chengdu                        Chengdu                    China
+5M+          wuhan                          Wuhan                      China
+5M+          tianjin                        Tianjin                    China
+5M+          pune                           Pune                       India
+5M+          ahmedabad                      Ahmedabad                  India
+5M+          kolkata                        Kolkata                    India
+5M+          khartoum                       Khartoum                   Sudan
+5M+          caracas                        Caracas                    Venezuela
+2M+          houston                        Houston                    United States
+2M+          detroit                        Detroit                    United States
+2M+          minneapolis                    Minneapolis                United States
+2M+          san-diego                      San Diego                  United States
+2M+          portland                       Portland                   United States
+2M+          las-vegas                      Las Vegas                  United States
+2M+          saint-petersburg               Saint Petersburg           Russia
+2M+          antwerp                        Antwerp                    Belgium
+2M+          manchester                     Manchester                 United Kingdom
+2M+          katowice                       Katowice                   Poland
+2M+          lodz                           Łódź                       Poland
+2M+          lviv                           Lviv                       Ukraine
+2M+          kharkiv                        Kharkiv                    Ukraine
+2M+          calgary                        Calgary                    Canada
+2M+          edmonton                       Edmonton                   Canada
+2M+          ottawa                         Ottawa                     Canada
+2M+          barranquilla                   Barranquilla               Colombia
+2M+          la-paz                         La Paz                     Bolivia
+2M+          asuncion                       Asunción                   Paraguay
+2M+          guayaquil                      Guayaquil                  Ecuador
+2M+          tashkent                       Tashkent                   Uzbekistan
+2M+          baku                           Baku                       Azerbaijan
+2M+          tbilisi                        Tbilisi                    Georgia
+2M+          yerevan                        Yerevan                    Armenia
+2M+          minsk                          Minsk                      Belarus
+2M+          chisinau                       Chișinău                   Moldova
+2M+          skopje                         Skopje                     North Macedonia
+2M+          dakar                          Dakar                      Senegal
