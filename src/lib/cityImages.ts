@@ -9,7 +9,7 @@ export const CITY_IMAGES: Record<string, string> = {
     'toronto': 'photo-1517935706615-2717063c2225',
     'vancouver': 'photo-1559511260-b120d11350cf',
     'mexico-city': 'photo-1585464231875-d9ef1f5ad396',
-    'buenos-aires': 'photo-1589909202802-8f4aadce9d55',
+    'buenos-aires': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Buenos_Aires_-_Aerial_%28135055309%29.jpg/1280px-Buenos_Aires_-_Aerial_%28135055309%29.jpg',
     'sao-paulo': 'photo-1619546813926-a78fa6372cd2',
     'rio-de-janeiro': 'photo-1483729558449-99ef09a8c325',
     'bogota': 'photo-1589923188900-85dae523342b',
@@ -17,7 +17,7 @@ export const CITY_IMAGES: Record<string, string> = {
     'santiago-chile': 'photo-1619946794135-5bc917a27793',
     'santiago': 'photo-1619946794135-5bc917a27793',
     'montevideo': 'photo-1568158879083-c42860933ed7',
-    'medellin': 'photo-1558618666-fcd25c85cd64',
+    'medellin': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Medell%C3%ADn_Panorama2.jpg/1280px-Medell%C3%ADn_Panorama2.jpg',
     'cartagena': 'photo-1583997052103-b4f3684b8c85',
     'quito': 'photo-1531968455001-5c5272a41129',
     'san-jose': 'photo-1578662996442-48f60103fc96',
@@ -36,8 +36,8 @@ export const CITY_IMAGES: Record<string, string> = {
     'brussels': 'photo-1608031751869-893e5e0bd97e',
     'vienna': 'photo-1516550135131-fe3dcdd41517',
     'zurich': 'photo-1515488764276-beab7607c1e6',
-    'lisbon': 'photo-1585208798174-6cedd4454069',
-    'lisboa': 'photo-1585208798174-6cedd4454069',
+    'lisbon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lisbon_%2836538056786%29.jpg/1280px-Lisbon_%2836538056786%29.jpg',
+    'lisboa': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lisbon_%2836538056786%29.jpg/1280px-Lisbon_%2836538056786%29.jpg',
     'porto': 'photo-1555881400-74d7acaacd8b',
     'oporto': 'photo-1555881400-74d7acaacd8b',
     'prague': 'photo-1541849546-216549ae216d',
@@ -54,10 +54,10 @@ export const CITY_IMAGES: Record<string, string> = {
     'munich-germany': 'photo-1595867818082-083862f3d630',
     'hamburg': 'photo-1558618666-fcd25c85cd64',
     'hamburg-germany': 'photo-1558618666-fcd25c85cd64',
-    'frankfurt': 'photo-1560969184-10fe8719e047',
+    'frankfurt': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Frankfurt_am_Main_-_skyline_-_panoramic_view_02.jpg/1280px-Frankfurt_am_Main_-_skyline_-_panoramic_view_02.jpg',
     'frankfurt-germany': 'photo-1560969184-10fe8719e047',
     'geneva': 'photo-1573108724029-4c46571d6490',
-    'lyon': 'photo-1502602898657-3e91760cbb34',
+    'lyon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Lyon_-_Panorama_depuis_la_tour_m%C3%A9tallique_de_Fourvière_%28avril_2019%29_1.jpg/1280px-Lyon_-_Panorama_depuis_la_tour_m%C3%A9tallique_de_Fourvière_%28avril_2019%29_1.jpg',
     'marseille': 'photo-1558618666-fcd25c85cd64',
     'valencia': 'photo-1558618047-f4e58f39cf65',
     'seville': 'photo-1559060017-5d3e16f45e55',
@@ -79,14 +79,14 @@ export const CITY_IMAGES: Record<string, string> = {
     'osaka': 'photo-1590559899731-a382839e5549',
     'kyoto': 'photo-1493976040374-85c8e12f0c0e',
     'seoul': 'photo-1601621915196-2621bfb0cd6e',
-    'busan': 'photo-1601621915196-2621bfb0cd6e',
+    'busan': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Busan_harbor.jpg/1280px-Busan_harbor.jpg',
     'beijing': 'photo-1508804185872-d7badad00f7d',
     'shanghai': 'photo-1474181487882-5abf3f0ba6c2',
     'hong-kong': 'photo-1536431311719-398b6704d4cc',
     'singapore': 'photo-1525625293386-3f8f99389edd',
     'bangkok': 'photo-1508009603885-50cf7c579365',
-    'chiang-mai': 'photo-1528360983277-13d401cdc186',
-    'phuket': 'photo-1589394815804-964ed0be2eb5',
+    'chiang-mai': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2018_Chiang_Mai_-_Doi_Suthep.jpg/1280px-2018_Chiang_Mai_-_Doi_Suthep.jpg',
+    'phuket': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Patong_Beach%2C_Phuket%2C_Thailand.jpg/1280px-Patong_Beach%2C_Phuket%2C_Thailand.jpg',
     'dubai': 'photo-1512453979798-5ea266f8880c',
     'abu-dhabi': 'photo-1600240644455-3edc55c375fe',
     'mumbai': 'photo-1570168007204-dfb528c6958f',
@@ -272,7 +272,7 @@ export const CITY_IMAGES: Record<string, string> = {
     'hyderabad': 'photo-1596176530529-78163a4f7af2',
     'hyderabad-india': 'photo-1596176530529-78163a4f7af2',
     'birmingham': 'photo-1513635269975-59663e0ac1ad',
-    'guangzhou': 'photo-1474181487882-5abf3f0ba6c2',
+    'guangzhou': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Canton_tower_and_Zhujiang_New_Town_in_Guangzhou.jpg/1280px-Canton_tower_and_Zhujiang_New_Town_in_Guangzhou.jpg',
     'guangzhou-china': 'photo-1474181487882-5abf3f0ba6c2',
     'riverside': 'photo-1534190760961-74e8c1c5c3da',
     'riverside-united-states': 'photo-1534190760961-74e8c1c5c3da',
@@ -302,8 +302,8 @@ export const CITY_IMAGES: Record<string, string> = {
 export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
     const photo = CITY_IMAGES[slug];
     if (photo) {
-        // Local file path (e.g. /cities/amman.jpg)
-        if (photo.startsWith('/')) return photo;
+        // Full URL (Wikipedia Commons, local, etc.)
+        if (photo.startsWith('http') || photo.startsWith('/')) return photo;
         // Unsplash photo ID
         return `https://images.unsplash.com/${photo}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
     }
@@ -314,10 +314,25 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
 
+    'seattle': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Space_Needle002.jpg/800px-Space_Needle002.jpg',
+    'kyiv': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Kyiv_montage.png/800px-Kyiv_montage.png',
+    'san-francisco': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/San_Francisco_from_the_Marin_Headlands_in_March_2019.jpg/1280px-San_Francisco_from_the_Marin_Headlands_in_March_2019.jpg',
+    'boston': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Boston_-_panoramio_%28130%29.jpg/1280px-Boston_-_panoramio_%28130%29.jpg',
+    'montreal': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Montreal_skyline.jpg/1280px-Montreal_skyline.jpg',
+    'denver': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Denver_skyline_20161118.jpg/1280px-Denver_skyline_20161118.jpg',
+    'atlanta': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Atlanta_Skyline_from_Buckhead_2017.jpg/1280px-Atlanta_Skyline_from_Buckhead_2017.jpg',
+    'dallas': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Dallas_skyline_at_night.jpg/1280px-Dallas_skyline_at_night.jpg',
+    'glasgow': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Glasgow_City_Chambers_and_George_Square.jpg/1280px-Glasgow_City_Chambers_and_George_Square.jpg',
+    'cologne': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Cologne_-_Aerial_shot_07_ies.jpg/1280px-Cologne_-_Aerial_shot_07_ies.jpg',
+    'düsseldorf': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/D%C3%BCsseldorf_Skyline_%28Blick_vom_Rheinturm%29.jpg/1280px-D%C3%BCsseldorf_Skyline_%28Blick_vom_Rheinturm%29.jpg',
+    'cali': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Cali-panoramica.jpg/1280px-Cali-panoramica.jpg',
+    'guadalajara': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Guadalajara_-_Panorama.jpg/1280px-Guadalajara_-_Panorama.jpg',
+    'monterrey': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Macroplaza_en_Monterrey.jpg/1280px-Macroplaza_en_Monterrey.jpg',
+    'shenzhen': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Shenzhen_skyline_201506.jpg/1280px-Shenzhen_skyline_201506.jpg',
 // ============================================================
 // LOCAL PHOTOS — saved in /public/cities/[slug].jpg
 // Add entries here after placing photos in public/cities/
 // ============================================================
-// Example: 'amman': '/cities/amman.jpg',
+// Example: 'amman': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Amman_Jordan_%28Jabal_Al-Qalaa%29.jpg/1280px-Amman_Jordan_%28Jabal_Al-Qalaa%29.jpg',
 // The getCityImageServer will detect paths starting with '/'
 // and serve them directly instead of using Unsplash

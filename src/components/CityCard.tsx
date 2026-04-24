@@ -39,16 +39,20 @@ const URBAN_POOL = [
 ];
 
 function getImageUrl(slug: string, cityName: string, countryName: string): string {
-    // 1. Curated map
+    // 1. Curated map (Unsplash IDs, Wikipedia URLs, local paths)
     if (CITY_IMAGES_KEYS.includes(slug)) {
-        return getCityImage(slug, 800, 500, cityName);
+        const url = getCityImage(slug, 800, 500, cityName);
+        if (url) return url;
     }
     // 2. Variants
     const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
     for (const v of [clean(cityName), `${clean(cityName)}-${clean(countryName)}`]) {
-        if (CITY_IMAGES_KEYS.includes(v)) return getCityImage(v, 800, 500, cityName);
+        if (CITY_IMAGES_KEYS.includes(v)) {
+            const url = getCityImage(v, 800, 500, cityName);
+            if (url) return url;
+        }
     }
-    // 3. Deterministic pool
+    // 3. Deterministic pool — guaranteed city skyline
     const hash = Math.abs(`${cityName}-${countryName}`.split('').reduce((a, c) => ((a << 5) - a) + c.charCodeAt(0), 0));
     return `https://images.unsplash.com/${URBAN_POOL[hash % URBAN_POOL.length]}?auto=format&fit=crop&w=800&h=500&q=80`;
 }
@@ -88,7 +92,7 @@ export default function CityCard({ city, preloadedImage }: CityCardProps) {
             </div>
             <div style={{ padding: '1rem 1.25rem' }}>
                 <div style={{ marginBottom: '0.75rem' }}>
-                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.2 }}>{city.city}</h3>
+                    <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.2, wordBreak: 'break-word', overflowWrap: 'break-word' }}>{city.city}</h3>
                     <p style={{ margin: '0.15rem 0 0', color: '#64748b', fontSize: '0.72rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{city.country}</p>
                 </div>
                 <div style={{ marginBottom: '0.75rem' }}>
