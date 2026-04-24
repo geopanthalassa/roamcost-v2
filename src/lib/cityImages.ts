@@ -300,9 +300,12 @@ export const CITY_IMAGES: Record<string, string> = {
 };
 
 export function getCityImage(slug: string, width = 800, height = 600, cityName?: string): string {
-    const photoId = CITY_IMAGES[slug];
-    if (photoId) {
-        return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
+    const photo = CITY_IMAGES[slug];
+    if (photo) {
+        // Local file path (e.g. /cities/amman.jpg)
+        if (photo.startsWith('/')) return photo;
+        // Unsplash photo ID
+        return `https://images.unsplash.com/${photo}?auto=format&fit=crop&w=${width}&h=${height}&q=80`;
     }
     // Fallback: use city name for Unsplash search
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
@@ -310,3 +313,11 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
 }
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
+
+// ============================================================
+// LOCAL PHOTOS — saved in /public/cities/[slug].jpg
+// Add entries here after placing photos in public/cities/
+// ============================================================
+// Example: 'amman': '/cities/amman.jpg',
+// The getCityImageServer will detect paths starting with '/'
+// and serve them directly instead of using Unsplash
