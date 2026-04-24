@@ -10,7 +10,7 @@ const NAV_LINKS = [
     { href: '/', label: 'Home' },
     { href: '/rankings/quality', label: 'Rankings', match: '/rankings' },
     { href: '/compare', label: 'Compare', match: '/compare' },
-    { href: '/calculator', label: 'Calculator', match: '/calculator' },
+    { href: '/hot-takes', label: 'Hot Takes', match: '/hot-takes' },
     { href: '/blog', label: 'Blog', match: '/blog' },
     { href: '/about', label: 'About', match: '/about' },
 ];
