@@ -92,26 +92,37 @@ export default async function Home() {
     return (
         <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
 
-            {/* ── HERO ── */}
-            <section style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '6rem 1.5rem 5rem' }}>
+            {/* ── HERO WITH VIDEO ── */}
+            <section style={{ position: 'relative', overflow: 'hidden', minHeight: '620px', display: 'flex', alignItems: 'center', backgroundColor: '#0f172a' }}>
+                {/* Video background */}
+                <video
+                    autoPlay muted loop playsInline
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
+                >
+                    <source src="/hero-video.mp4" type="video/mp4" />
+                </video>
+                {/* Gradient overlay */}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.5) 100%)' }} />
+
+                {/* Content */}
+                <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '6rem 1.5rem 5rem', width: '100%' }}>
                     <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
 
                         {/* Eyebrow */}
-                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#F0FAF4', border: '1px solid #D8F3DC', borderRadius: '2rem', padding: '0.35rem 1rem', marginBottom: '2rem' }}>
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'rgba(82,183,136,0.15)', border: '1px solid rgba(82,183,136,0.4)', borderRadius: '2rem', padding: '0.35rem 1rem', marginBottom: '2rem' }}>
                             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#52B788' }} />
                             <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                                 Global Cost of Living Data
                             </span>
                         </div>
 
-                        <h1 style={{ fontSize: '3.75rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '1.25rem' }}>
+                        <h1 style={{ fontSize: '3.75rem', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '1.25rem' }}>
                             Compare the{' '}
                             <span style={{ color: '#52B788' }}>cost of living</span>
                             {' '}between any two cities
                         </h1>
 
-                        <p style={{ fontSize: '1.1rem', color: '#64748b', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px', margin: '0 auto 2.5rem' }}>
+                        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px', margin: '0 auto 2.5rem' }}>
                             Rent, food, safety, internet speed and quality of life — all in one place.
                             Make informed decisions about where to live, work or travel.
                         </p>
@@ -125,7 +136,7 @@ export default async function Home() {
                         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                             {['Tokyo', 'Paris', 'Barcelona', 'Dubai', 'Bangkok', 'Berlin'].map(city => (
                                 <Link key={city} href={`/city/${city.toLowerCase()}`}
-                                    style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569', backgroundColor: '#f1f5f9', padding: '0.4rem 0.875rem', borderRadius: '2rem', textDecoration: 'none', border: '1px solid #e2e8f0' }}>
+                                    style={{ fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)', backgroundColor: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.875rem', borderRadius: '2rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
                                     {city}
                                 </Link>
                             ))}
