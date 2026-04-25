@@ -17,12 +17,18 @@ export const metadata: Metadata = {
         url: "https://www.roamcost.com",
         siteName: "RoamCost",
         type: "website",
-        images: [{ url: "https://www.roamcost.com/favicon_512.png", width: 512, height: 512, alt: "RoamCost" }],
+        images: [{ 
+            url: "https://www.roamcost.com/og-image.png", 
+            width: 1200, 
+            height: 630, 
+            alt: "RoamCost - Compare Cost of Living Between Cities Worldwide" 
+        }],
     },
     twitter: {
         card: "summary_large_image",
         title: "RoamCost — Compare Cost of Living Worldwide",
         description: "Find your perfect city. Compare rent, safety, internet and more.",
+        images: ["https://www.roamcost.com/og-image.png"],
     },
     robots: {
         index: true,
