@@ -4,15 +4,38 @@ import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 const GREEN = '#52B788';
-const ORANGE = '#F7831E';
 
-const POPULAR = [
-    'Bangkok', 'Bali', 'Lisbon', 'Barcelona', 'Berlin', 'Prague',
-    'Tokyo', 'Seoul', 'Dubai', 'Singapore', 'New York', 'Mexico City',
-    'Buenos Aires', 'Lima', 'Medellín', 'Amsterdam', 'Vienna', 'Madrid',
-    'Sydney', 'Melbourne', 'Toronto', 'Vancouver', 'Miami', 'Los Angeles',
-    'Paris', 'Rome', 'Istanbul', 'Tbilisi', 'Chiang Mai', 'Ho Chi Minh City',
-];
+// City name → exact DB slug mapping
+const CITY_SLUGS: Record<string, string> = {
+    'Bangkok': 'bangkok', 'Bali': 'bali', 'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
+    'Berlin': 'berlin', 'Prague': 'prague', 'Tokyo': 'tokyo', 'Seoul': 'seoul',
+    'Dubai': 'dubai', 'Singapore': 'singapore', 'New York': 'new-york', 'Mexico City': 'mexico-city',
+    'Buenos Aires': 'buenos-aires', 'Lima': 'lima', 'Medellín': 'medellin', 'Amsterdam': 'amsterdam',
+    'Vienna': 'vienna', 'Madrid': 'madrid', 'Sydney': 'sydney', 'Melbourne': 'melbourne',
+    'Toronto': 'toronto', 'Vancouver': 'vancouver', 'Miami': 'miami', 'Los Angeles': 'los-angeles',
+    'Paris': 'paris', 'Rome': 'rome', 'Istanbul': 'istanbul', 'Tbilisi': 'tbilisi',
+    'Chiang Mai': 'chiang-mai', 'Ho Chi Minh City': 'ho-chi-minh-city', 'Hanoi': 'hanoi',
+    'London': 'london', 'Zurich': 'zurich', 'Geneva': 'geneva', 'Brussels': 'brussels',
+    'Munich': 'munich', 'Hamburg': 'hamburg', 'Milan': 'milan', 'Florence': 'florence',
+    'Budapest': 'budapest', 'Warsaw': 'warsaw', 'Stockholm': 'stockholm', 'Oslo': 'oslo',
+    'Copenhagen': 'copenhagen', 'Athens': 'athens', 'Dublin': 'dublin', 'Bucharest': 'bucharest',
+    'Taipei': 'taipei', 'Manila': 'manila', 'Jakarta': 'jakarta', 'Osaka': 'osaka',
+    'Beijing': 'beijing', 'Shanghai': 'shanghai', 'Kuala Lumpur': 'kuala-lumpur',
+    'Abu Dhabi': 'abu-dhabi', 'Tel Aviv': 'tel-aviv', 'Riyadh': 'riyadh', 'Doha': 'doha',
+    'Cairo': 'cairo', 'Nairobi': 'nairobi', 'Cape Town': 'cape-town', 'Casablanca': 'casablanca',
+    'Chicago': 'chicago', 'San Francisco': 'san-francisco', 'Boston': 'boston',
+    'Seattle': 'seattle', 'Denver': 'denver', 'Atlanta': 'atlanta', 'Dallas': 'dallas',
+    'Montreal': 'montreal', 'Bogotá': 'bogota', 'São Paulo': 'sao-paulo',
+    'Rio de Janeiro': 'rio-de-janeiro', 'Santiago': 'santiago', 'Montevideo': 'montevideo',
+    'Quito': 'quito', 'Delhi': 'delhi', 'Mumbai': 'mumbai', 'Bangalore': 'bangalore',
+    'Kyiv': 'kyiv', 'Moscow': 'moscow', 'Sofia': 'sofia', 'Belgrade': 'belgrade',
+    'Zagreb': 'zagreb', 'Edinburgh': 'edinburgh', 'Porto': 'porto', 'Seville': 'seville',
+    'Valencia': 'valencia', 'Kraków': 'krakow', 'Tallinn': 'tallinn', 'Riga': 'riga',
+    'Vilnius': 'vilnius', 'Auckland': 'auckland', 'Colombo': 'colombo', 'Kathmandu': 'kathmandu',
+    'Amman': 'amman', 'Beirut': 'beirut', 'Panama City': 'panama-city',
+};
+
+const POPULAR_CITIES = Object.keys(CITY_SLUGS);
 
 export default function ComparePage() {
     const router = useRouter();
@@ -20,13 +43,20 @@ export default function ComparePage() {
     const [inputs, setInputs] = useState<string[]>(['', '']);
     const [focusIdx, setFocusIdx] = useState<number | null>(null);
 
-    const slugify = (name: string) =>
-        name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const getSlug = (name: string) => {
+        // Try exact match first
+        if (CITY_SLUGS[name]) return CITY_SLUGS[name];
+        // Try case-insensitive
+        const key = Object.keys(CITY_SLUGS).find(k => k.toLowerCase() === name.toLowerCase());
+        if (key) return CITY_SLUGS[key];
+        // Fallback slugify
+        return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    };
 
     const handleCompare = useCallback(() => {
         const valid = cities.filter(c => c.trim());
         if (valid.length < 2) return;
-        const slugs = valid.map(slugify).join('-vs-');
+        const slugs = valid.map(getSlug).join('-vs-');
         router.push(`/compare/${slugs}`);
     }, [cities, router]);
 
@@ -48,10 +78,11 @@ export default function ComparePage() {
         const ni = [...inputs]; ni[i] = val; setInputs(ni);
     };
 
-    const suggestions = (i: number) =>
-        inputs[i].length > 0
-            ? POPULAR.filter(c => c.toLowerCase().startsWith(inputs[i].toLowerCase())).slice(0, 5)
-            : POPULAR.slice(0, 8);
+    const suggestions = (i: number) => {
+        const q = inputs[i].toLowerCase();
+        if (!q) return POPULAR_CITIES.slice(0, 8);
+        return POPULAR_CITIES.filter(c => c.toLowerCase().includes(q)).slice(0, 6);
+    };
 
     const validCount = cities.filter(c => c.trim()).length;
 
