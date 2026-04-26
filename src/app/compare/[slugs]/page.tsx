@@ -259,29 +259,3 @@ export default function ComparePage() {
     );
 }
 
-interface Props { params: Promise<{ slugs: string }> }
-
-const GREEN = '#52B788';
-const ORANGE = '#F7831E';
-
-export async function generateMetadata({ params }: Props) {
-    const { slugs } = await params;
-    const cityNames = slugs.split('-vs-').map(s => s.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()));
-    const title = `${cityNames.join(' vs ')} — Cost of Living Comparison 2026 | RoamCost`;
-    const description = `Compare cost of living: ${cityNames.join(', ')}. Rent, food, safety, internet and quality of life side by side.`;
-    return {
-        title, description,
-        alternates: { canonical: `https://www.roamcost.com/compare/${slugs}` },
-        openGraph: { title, description, url: `https://www.roamcost.com/compare/${slugs}` },
-    };
-}
-
-export const dynamic = 'force-dynamic';
-
-function formatVal(val: number | null | undefined, key: string): string {
-    if (val == null || val === 0) return '—';
-    const moneyKeys = ['rent_index', 'food_index', 'transport_index', 'utilities_index'];
-    if (moneyKeys.includes(key)) return `$${Math.round(val).toLocaleString()}`;
-    if (key === 'internet') return `${Math.round(val)} Mbps`;
-    return val.toFixed(1);
-}
