@@ -40,7 +40,7 @@ const CITY_SLUGS: Record<string, string> = {
     'Belgrade': 'belgrade', 'Edinburgh': 'edinburgh', 'Porto': 'porto',
     'Seville': 'seville', 'Valencia': 'valencia', 'Kraków': 'krakow',
     'Tallinn': 'tallinn', 'Riga': 'riga', 'Vilnius': 'vilnius', 'Auckland': 'auckland',
-    'Amman': 'amman', 'Panama City': 'panama-city', 'Tbilisi': 'tbilisi',
+    'Amman': 'amman', 'Panama City': 'panama-city',
     'Medellin': 'medellin', 'Quito': 'quito',
 };
 
