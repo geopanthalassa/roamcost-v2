@@ -49,19 +49,22 @@ export default function ComparePage() {
     useEffect(() => {
         async function load() {
             setLoading(true);
-            const { data, error } = await supabase
-                .from('cities_master')
-                .select('slug,city,country,rent_index,food_index,transport_index,utilities_index,safety,internet,healthcare,cost_index,population')
-                .in('slug', citySlugList);
-
-            if (error || !data || data.length < 2) {
-                setError(true);
-            } else {
-                const ordered = citySlugList
-                    .map(s => data.find((c: City) => c.slug === s))
-                    .filter(Boolean) as City[];
-                setCities(ordered);
-            }
+            try {
+                const slugFilter = citySlugList.map(s => `"${s}"`).join(',');
+                const res = await fetch(
+                    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/cities_master?select=slug,city,country,rent_index,food_index,transport_index,utilities_index,safety,internet,healthcare,cost_index,population&slug=in.(${citySlugList.join(',')})`,
+                    { headers: { 'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! } }
+                );
+                if (!res.ok) throw new Error('Failed');
+                const data = await res.json();
+                if (!data || data.length < 2) { setError(true); }
+                else {
+                    const ordered = citySlugList
+                        .map((s: string) => data.find((c: City) => c.slug === s))
+                        .filter(Boolean) as City[];
+                    setCities(ordered);
+                }
+            } catch { setError(true); }
             setLoading(false);
         }
         load();

@@ -64,21 +64,19 @@ export default function ComparePage() {
 
     const searchCities = async (q: string) => {
         if (!q || q.length < 1) {
-            // Show popular cities
             setSuggestions(Object.entries(CITY_SLUGS).slice(0, 8).map(([city, slug]) => ({
                 city, slug, country: ''
             })));
             return;
         }
         setLoading(true);
-        // Search Supabase
-        const { data } = await supabase
-            .from('cities_master')
-            .select('city, country, slug')
-            .ilike('city', `%${q}%`)
-            .order('population', { ascending: false })
-            .limit(8);
-        setSuggestions((data || []) as Suggestion[]);
+        try {
+            const res = await fetch(
+                `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/cities_master?select=city,country,slug&city=ilike.*${encodeURIComponent(q)}*&order=population.desc&limit=8`,
+                { headers: { 'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! } }
+            );
+            if (res.ok) setSuggestions(await res.json());
+        } catch {}
         setLoading(false);
     };
 
