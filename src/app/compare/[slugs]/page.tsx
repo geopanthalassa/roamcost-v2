@@ -67,12 +67,14 @@ export default function CompareResultPage() {
             setLoading(true);
             try {
                 const res = await fetch(`/api/cities?slugs=${citySlugList.join(',')}`);
-                const data = await res.json();
-                if (!Array.isArray(data) || data.length < 1) {
+                const json = await res.json();
+                console.log('Compare API response:', JSON.stringify(json).slice(0, 200));
+                const data = Array.isArray(json) ? json : (json.data || []);
+                if (!data || data.length < 1) {
                     setError(`Couldn't find: ${citySlugList.join(', ')}`);
                 } else {
                     const ordered = citySlugList
-                        .map(s => data.find((c: City) => c.slug === s))
+                        .map((s: string) => data.find((c: City) => c.slug === s))
                         .filter(Boolean) as City[];
                     setCities(ordered.length >= 1 ? ordered : data);
                 }
