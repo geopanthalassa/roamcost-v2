@@ -14,6 +14,36 @@ async function supaFetch(path: string) {
     return JSON.parse(text);
 }
 
+// Smart slug resolver - tries multiple strategies to find a city
+async function resolveSlug(slug: string): Promise<any | null> {
+    // 1. Exact slug match
+    const exact = await supaFetch(`cities_master?select=${FIELDS}&slug=eq.${encodeURIComponent(slug)}&limit=1`).catch(() => []);
+    if (exact.length > 0) return exact[0];
+
+    // 2. Strip country suffix (barcelona-spain -> barcelona)
+    const parts = slug.split('-');
+    if (parts.length > 1) {
+        const stripped = parts.slice(0, -1).join('-');
+        const s2 = await supaFetch(`cities_master?select=${FIELDS}&slug=eq.${encodeURIComponent(stripped)}&limit=1`).catch(() => []);
+        if (s2.length > 0) return s2[0];
+    }
+
+    // 3. Search by city name (slug -> city name)
+    const cityName = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const byName = await supaFetch(
+        `cities_master?select=${FIELDS}&city=ilike.${encodeURIComponent(cityName)}&order=population.desc&limit=1`
+    ).catch(() => []);
+    if (byName.length > 0) return byName[0];
+
+    // 4. Partial match
+    const partial = await supaFetch(
+        `cities_master?select=${FIELDS}&city=ilike.*${encodeURIComponent(parts[0])}*&order=population.desc&limit=1`
+    ).catch(() => []);
+    if (partial.length > 0) return partial[0];
+
+    return null;
+}
+
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const slugsParam = searchParams.get('slugs');
@@ -23,7 +53,7 @@ export async function GET(req: NextRequest) {
     try {
         if (debugParam) {
             const data = await supaFetch(
-                `cities_master?select=slug,city,country&city=ilike.*${encodeURIComponent(debugParam)}*&order=population.desc&limit=10`
+                `cities_master?select=slug,city,country,population&city=ilike.*${encodeURIComponent(debugParam)}*&order=population.desc&limit=10`
             );
             return NextResponse.json(data);
         }
@@ -31,35 +61,11 @@ export async function GET(req: NextRequest) {
         if (slugsParam) {
             const slugList = slugsParam.split(',').filter(Boolean).slice(0, 4);
             
-            // Try exact slugs
-            let data = await supaFetch(
-                `cities_master?select=${FIELDS}&slug=in.(${slugList.join(',')})`
-            );
+            // Resolve each slug independently with smart fallbacks
+            const results = await Promise.all(slugList.map(s => resolveSlug(s)));
+            const found = results.filter(Boolean);
             
-            // For any not found, try without country suffix
-            const foundSlugs = new Set(data.map((c: any) => c.slug));
-            const notFound = slugList.filter(s => !foundSlugs.has(s));
-            
-            if (notFound.length > 0) {
-                // Try stripping country suffix: barcelona-spain -> barcelona
-                const stripped = notFound.map(s => s.split('-').slice(0, -1).join('-') || s);
-                const extra1 = await supaFetch(
-                    `cities_master?select=${FIELDS}&slug=in.(${stripped.join(',')})`
-                ).catch(() => []);
-                data = [...data, ...extra1];
-                
-                // Still missing? Try searching by city name
-                const stillMissing = notFound.filter(s => !data.find((c: any) => c.slug.startsWith(s.split('-')[0])));
-                for (const m of stillMissing) {
-                    const cityName = m.replace(/-/g, ' ');
-                    const found = await supaFetch(
-                        `cities_master?select=${FIELDS}&city=ilike.${encodeURIComponent(cityName)}&order=population.desc&limit=1`
-                    ).catch(() => []);
-                    if (found.length > 0) data = [...data, ...found];
-                }
-            }
-            
-            return NextResponse.json(data);
+            return NextResponse.json(found);
         }
 
         if (searchParam) {
