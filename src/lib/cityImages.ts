@@ -284,7 +284,7 @@ const CITY_IMAGES: Record<string, string> = {
     'portland-united-states': 'photo-1559511260-b120d11350cf',
     'porto': 'photo-1555881400-74d7acaacd8b',
     'portsmouth': '/cities/portsmouth.jpg',
-    'prague': 'photo-1541849546-216549ae216d',
+    'prague': '/cities/prague-czechia.jpg',
     'prague-czech-republic': 'photo-1541849546-216549ae216d',
     'pristina-kosovo': 'photo-1558618666-fcd25c85cd64',
     'pune': '/cities/pune-india.jpg',
@@ -342,8 +342,8 @@ const CITY_IMAGES: Record<string, string> = {
     'tallinn': 'photo-1509356843151-3e7d96241e11',
     'tashkent': 'photo-1596422846543-75c6fc197f07',
     'tashkent-uzbekistan': 'photo-1508804185872-d7badad00f7d',
-    'tbilisi': '/cities/tbilisi.jpg',
-    'tbilisi-georgia': 'photo-1524231757912-21f4fe3a7200',
+    'tbilisi': '/cities/tbilisi-georgia.jpg',
+    'tbilisi-georgia': '/cities/tbilisi-georgia.jpg',
     'tegucigalpa-honduras': 'photo-1585464231875-d9ef1f5ad396',
     'tehran': 'photo-1586724237569-f3d0c1dee8c6',
     'tehran-iran': 'photo-1586724237569-f3d0c1dee8c6',
@@ -392,6 +392,8 @@ const CITY_IMAGES: Record<string, string> = {
     'zhengzhou-china': 'photo-1508804185872-d7badad00f7d',
     'zurich': 'photo-1515488764276-beab7607c1e6',
     'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
+    'prague-czechia': '/cities/prague-czechia.jpg',
+    'sevilla': '/cities/sevilla-spain.jpg',
 };
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
