@@ -71,10 +71,7 @@ export default function ComparePage() {
         }
         setLoading(true);
         try {
-            const res = await fetch(
-                `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/cities_master?select=city,country,slug&city=ilike.*${encodeURIComponent(q)}*&order=population.desc&limit=8`,
-                { headers: { 'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! } }
-            );
+            const res = await fetch(`/api/cities?search=${encodeURIComponent(q)}`);
             if (res.ok) setSuggestions(await res.json());
         } catch {}
         setLoading(false);

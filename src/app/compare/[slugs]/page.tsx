@@ -52,8 +52,7 @@ export default function ComparePage() {
             try {
                 const slugFilter = citySlugList.map(s => `"${s}"`).join(',');
                 const res = await fetch(
-                    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/cities_master?select=slug,city,country,rent_index,food_index,transport_index,utilities_index,safety,internet,healthcare,cost_index,population&slug=in.(${citySlugList.join(',')})`,
-                    { headers: { 'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! } }
+                    `/api/cities?slugs=${citySlugList.join(',')}`
                 );
                 if (!res.ok) throw new Error('Failed');
                 const data = await res.json();

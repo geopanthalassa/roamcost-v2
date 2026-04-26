@@ -317,3 +317,21 @@ p {
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
+/* ── HOT TAKES CARDS MOBILE ── */
+@media (max-width: 768px) {
+  .hot-takes-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 640px) {
+  .hot-takes-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── PREVENT TEXT CLIPPING IN ALL CARDS ── */
+h3, .city-name, [style*="fontWeight: 900"] {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
