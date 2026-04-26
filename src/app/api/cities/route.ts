@@ -41,16 +41,22 @@ export async function GET(req: NextRequest) {
             const notFound = slugList.filter(s => !foundSlugs.has(s));
             
             if (notFound.length > 0) {
-                // Strip country suffix: barcelona-spain -> barcelona
-                const stripped = notFound.map(s => {
-                    const parts = s.split('-');
-                    // Try removing last word if it looks like a country
-                    return parts.slice(0, -1).join('-') || s;
-                });
-                const extra = await supaFetch(
+                // Try stripping country suffix: barcelona-spain -> barcelona
+                const stripped = notFound.map(s => s.split('-').slice(0, -1).join('-') || s);
+                const extra1 = await supaFetch(
                     `cities_master?select=${FIELDS}&slug=in.(${stripped.join(',')})`
                 ).catch(() => []);
-                data = [...data, ...extra];
+                data = [...data, ...extra1];
+                
+                // Still missing? Try searching by city name
+                const stillMissing = notFound.filter(s => !data.find((c: any) => c.slug.startsWith(s.split('-')[0])));
+                for (const m of stillMissing) {
+                    const cityName = m.replace(/-/g, ' ');
+                    const found = await supaFetch(
+                        `cities_master?select=${FIELDS}&city=ilike.${encodeURIComponent(cityName)}&order=population.desc&limit=1`
+                    ).catch(() => []);
+                    if (found.length > 0) data = [...data, ...found];
+                }
             }
             
             return NextResponse.json(data);
