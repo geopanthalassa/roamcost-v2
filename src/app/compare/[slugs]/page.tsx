@@ -56,7 +56,7 @@ export default function ComparePage() {
                 );
                 if (!res.ok) throw new Error('Failed');
                 const data = await res.json();
-                if (!data || data.length < 2) { setError(true); }
+                if (!data || data.length < 1) { setError(true); }
                 else {
                     const ordered = citySlugList
                         .map((s: string) => data.find((c: City) => c.slug === s))
@@ -87,7 +87,8 @@ export default function ComparePage() {
                 </div>
                 <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>Cities not found</h2>
                 <p style={{ color: '#64748b', marginBottom: '2rem', lineHeight: 1.6 }}>
-                    We couldn't find: <strong>{citySlugList.join(', ')}</strong>.<br/>Try searching from the compare page.
+                    We couldn't find data for: <strong>{citySlugList.join(', ')}</strong>.<br/>
+                        These cities may not be in our database yet. Try other cities.
                 </p>
                 <Link href="/compare" style={{ backgroundColor: GREEN, color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
                     Try another comparison →

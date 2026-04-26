@@ -13,7 +13,7 @@ const supabase = createClient(
 
 // Known slugs map for fast resolution
 const CITY_SLUGS: Record<string, string> = {
-    'Bangkok': 'bangkok', 'Bali': 'bali', 'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
+    'Bangkok': 'bangkok', 'Bali': 'denpasar', 'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
     'Berlin': 'berlin', 'Prague': 'prague', 'Tokyo': 'tokyo', 'Seoul': 'seoul',
     'Dubai': 'dubai', 'Singapore': 'singapore', 'New York': 'new-york',
     'Mexico City': 'mexico-city', 'Buenos Aires': 'buenos-aires', 'Lima': 'lima',
