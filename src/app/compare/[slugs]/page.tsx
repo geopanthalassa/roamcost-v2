@@ -104,10 +104,9 @@ export default function CompareResultPage() {
                 const res = await fetch(`/api/cities?slugs=${citySlugList.join(',')}`);
                 const data = await res.json();
                 const arr = Array.isArray(data) ? data : [];
-                const ordered = citySlugList
-                    .map(s => arr.find((c: City) => c.slug === s))
-                    .filter(Boolean) as City[];
-                const missing = citySlugList.filter(s => !arr.find((c: City) => c.slug === s));
+                // Use all returned cities — API handles slug resolution
+                const ordered = arr as City[];
+                const missing: string[] = [];
                 setNotFound(missing);
                 setCities(ordered);
             } catch {
