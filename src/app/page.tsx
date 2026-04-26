@@ -369,12 +369,12 @@ export default async function Home() {
                         <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Rankings</p>
                         <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Explore by category</h2>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
+                    <div className="rankings-categories-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.875rem' }}>
                         {RANKING_LINKS.map(r => (
                             <Link key={r.href + r.label} href={r.href}
                                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                                <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a' }}>{r.label}</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', wordBreak: 'break-word' }}>{r.label}</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginLeft: '0.5rem' }}>
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </Link>

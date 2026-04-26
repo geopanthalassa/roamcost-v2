@@ -335,3 +335,26 @@ h3, .city-name, [style*="fontWeight: 900"] {
   overflow-wrap: break-word;
   hyphens: auto;
 }
+
+/* ── RANKINGS CATEGORIES GRID MOBILE ── */
+@media (max-width: 768px) {
+  .rankings-categories-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .rankings-categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── CENTER ALL CONTENT ON MOBILE ── */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem !important;
+  }
+  section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
