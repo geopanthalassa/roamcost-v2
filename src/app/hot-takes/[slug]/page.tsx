@@ -102,7 +102,7 @@ const ARTICLES: Record<string, {
             intro: 'Las dos tienen el Atlántico cerca, buen clima, gastronomía increíble y un magnetismo que atrae expats de todo el mundo. Pero en 2026, sus precios cuentan historias muy distintas. Lisboa se encareció, pero sigue ganando a Barcelona. Barcelona se convirtió en una de las ciudades más caras de Europa Occidental. Acá van los números reales.',
             verdict: 'Lisboa es aproximadamente 25–30% más barata que Barcelona en general, con mejores índices de seguridad. La Visa Nómada Digital D8 también facilita la legalidad en Portugal. Barcelona gana en vida nocturna, playa y mercado laboral.',
         },
-        image: 'photo-1585208798174-6cedd4454069',
+        image: 'local-lisbon',
         tag: 'Europe', tagColor: GREEN,
         cities: ['Lisbon', 'Barcelona'],
         slugs: ['lisbon', 'barcelona'],
@@ -207,7 +207,7 @@ const ARTICLES: Record<string, {
             intro: 'Sudamérica tiene dos ciudades que compiten constantemente por el título de más habitable del continente: Buenos Aires con su arquitectura europeizada, cultura apasionada y asado de clase mundial. Lima con su revolución culinaria (regularmente entre las mejores del mundo), costa pacífica e infraestructura sorprendentemente moderna. El problema: la volatilidad económica de Argentina cambia la ecuación constantemente.',
             verdict: 'Lima ofrece más estabilidad y consistencia de valor. Buenos Aires puede ser un valor extraordinario para quienes ganan en dólares — pero el contexto económico requiere planificación financiera cuidadosa. Las dos ofrecen una calidad de vida excepcional por el precio.',
         },
-        image: 'photo-1589909202802-8f4aadce9d55',
+        image: 'local-buenos-aires',
         tag: 'LatAm', tagColor: '#ef4444',
         cities: ['Buenos Aires', 'Lima'],
         slugs: ['buenos-aires', 'lima'],
@@ -468,7 +468,7 @@ export default async function HotTakeArticle({ params }: Props) {
         <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
             {/* Hero */}
             <div style={{ position: 'relative', height: '380px', overflow: 'hidden' }}>
-                <img src={`https://images.unsplash.com/${a.image}?auto=format&fit=crop&w=1400&h=380&q=80`}
+                <img src={a.image.startsWith('local-') ? `/cities/${a.image.replace('local-', '')}.jpg` : `https://images.unsplash.com/${a.image}?auto=format&fit=crop&w=1400&h=380&q=80`}
                     alt={a.en.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 70%, transparent 100%)' }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem 2.5rem' }}>
