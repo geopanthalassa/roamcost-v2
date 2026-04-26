@@ -14,32 +14,26 @@ async function supaFetch(path: string) {
     return JSON.parse(text);
 }
 
-// Smart slug resolver - tries multiple strategies to find a city
-async function resolveSlug(slug: string): Promise<any | null> {
-    // 1. Exact slug match
+// Find city using multiple strategies
+async function findCity(slug: string): Promise<any | null> {
+    // 1. Exact slug
     const exact = await supaFetch(`cities_master?select=${FIELDS}&slug=eq.${encodeURIComponent(slug)}&limit=1`).catch(() => []);
     if (exact.length > 0) return exact[0];
 
-    // 2. Strip country suffix (barcelona-spain -> barcelona)
+    // 2. Slug without country suffix (barcelona-spain → barcelona)
     const parts = slug.split('-');
-    if (parts.length > 1) {
-        const stripped = parts.slice(0, -1).join('-');
-        const s2 = await supaFetch(`cities_master?select=${FIELDS}&slug=eq.${encodeURIComponent(stripped)}&limit=1`).catch(() => []);
-        if (s2.length > 0) return s2[0];
+    for (let i = parts.length - 1; i >= 1; i--) {
+        const shorter = parts.slice(0, i).join('-');
+        const found = await supaFetch(`cities_master?select=${FIELDS}&slug=eq.${encodeURIComponent(shorter)}&limit=1`).catch(() => []);
+        if (found.length > 0) return found[0];
     }
 
-    // 3. Search by city name (slug -> city name)
-    const cityName = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    // 3. Search by city name (slug with hyphens → spaces)
+    const cityName = slug.replace(/-/g, ' ');
     const byName = await supaFetch(
         `cities_master?select=${FIELDS}&city=ilike.${encodeURIComponent(cityName)}&order=population.desc&limit=1`
     ).catch(() => []);
     if (byName.length > 0) return byName[0];
-
-    // 4. Partial match
-    const partial = await supaFetch(
-        `cities_master?select=${FIELDS}&city=ilike.*${encodeURIComponent(parts[0])}*&order=population.desc&limit=1`
-    ).catch(() => []);
-    if (partial.length > 0) return partial[0];
 
     return null;
 }
@@ -53,18 +47,15 @@ export async function GET(req: NextRequest) {
     try {
         if (debugParam) {
             const data = await supaFetch(
-                `cities_master?select=slug,city,country,population&city=ilike.*${encodeURIComponent(debugParam)}*&order=population.desc&limit=10`
+                `cities_master?select=slug,city,country&city=ilike.*${encodeURIComponent(debugParam)}*&order=population.desc&limit=10`
             );
             return NextResponse.json(data);
         }
 
         if (slugsParam) {
             const slugList = slugsParam.split(',').filter(Boolean).slice(0, 4);
-            
-            // Resolve each slug independently with smart fallbacks
-            const results = await Promise.all(slugList.map(s => resolveSlug(s)));
+            const results = await Promise.all(slugList.map(findCity));
             const found = results.filter(Boolean);
-            
             return NextResponse.json(found);
         }
 
