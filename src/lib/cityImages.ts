@@ -283,7 +283,7 @@ const CITY_IMAGES: Record<string, string> = {
     'portland-united-states': 'photo-1559511260-b120d11350cf',
     'porto': 'photo-1555881400-74d7acaacd8b',
     'portsmouth': '/cities/portsmouth.jpg',
-    'prague': 'photo-1541849546-216549ae216d',
+    'prague': '/cities/prague.jpg',
     'prague-czech-republic': 'photo-1541849546-216549ae216d',
     'pristina-kosovo': 'photo-1558618666-fcd25c85cd64',
     'pune': '/cities/pune-india.jpg',
@@ -393,6 +393,7 @@ const CITY_IMAGES: Record<string, string> = {
     'zhengzhou-china': 'photo-1508804185872-d7badad00f7d',
     'zurich': 'photo-1515488764276-beab7607c1e6',
     'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
+    'prague-czechia': '/cities/prague.jpg',
 };
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
