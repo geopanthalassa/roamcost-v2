@@ -60,7 +60,7 @@ export default function ComparePage() {
     const [focusIdx, setFocusIdx] = useState<number | null>(null);
     const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
     const [loading, setLoading] = useState(false);
-    const debounceRef = useRef<NodeJS.Timeout>();
+    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const searchCities = async (q: string) => {
         if (!q || q.length < 1) {
@@ -84,7 +84,7 @@ export default function ComparePage() {
 
     const handleInput = (i: number, val: string) => {
         const ns = [...slots]; ns[i] = val; setSlots(ns);
-        clearTimeout(debounceRef.current);
+        clearTimeout(debounceRef.current ?? undefined);
         debounceRef.current = setTimeout(() => searchCities(val), 200);
     };
 
