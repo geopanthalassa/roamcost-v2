@@ -13,21 +13,21 @@ const supabase = createClient(
 
 // Known slugs map for fast resolution
 const CITY_SLUGS: Record<string, string> = {
-    'Bangkok': 'bangkok', 'Bali': 'denpasar', 'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
+    'Bangkok': 'bangkok', 'Bali': 'denpasar-indonesia', 'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
     'Berlin': 'berlin', 'Prague': 'prague', 'Tokyo': 'tokyo', 'Seoul': 'seoul',
     'Dubai': 'dubai', 'Singapore': 'singapore', 'New York': 'new-york',
     'Mexico City': 'mexico-city', 'Buenos Aires': 'buenos-aires', 'Lima': 'lima',
-    'Medellín': 'medellin', 'Amsterdam': 'amsterdam', 'Vienna': 'vienna',
+    'Medellín': 'medellin-colombia', 'Amsterdam': 'amsterdam', 'Vienna': 'vienna',
     'Madrid': 'madrid', 'Sydney': 'sydney', 'Melbourne': 'melbourne',
     'Toronto': 'toronto', 'Vancouver': 'vancouver', 'Miami': 'miami',
     'Los Angeles': 'los-angeles', 'Paris': 'paris', 'Rome': 'rome',
-    'Istanbul': 'istanbul', 'Tbilisi': 'tbilisi', 'Chiang Mai': 'chiang-mai',
-    'Ho Chi Minh City': 'ho-chi-minh-city', 'Hanoi': 'hanoi', 'London': 'london',
+    'Istanbul': 'istanbul', 'Tbilisi': 'tbilisi', 'Chiang Mai': 'chiang-mai-thailand',
+    'Ho Chi Minh City': 'ho-chi-minh-city-vietnam', 'Hanoi': 'hanoi', 'London': 'london',
     'Zurich': 'zurich', 'Geneva': 'geneva', 'Brussels': 'brussels', 'Munich': 'munich',
     'Hamburg': 'hamburg', 'Milan': 'milan', 'Florence': 'florence', 'Budapest': 'budapest',
     'Warsaw': 'warsaw', 'Stockholm': 'stockholm', 'Oslo': 'oslo', 'Copenhagen': 'copenhagen',
     'Athens': 'athens', 'Dublin': 'dublin', 'Bucharest': 'bucharest', 'Taipei': 'taipei',
-    'Manila': 'manila', 'Jakarta': 'jakarta', 'Osaka': 'osaka', 'Beijing': 'beijing',
+    'Manila': 'manila', 'Jakarta': 'jakarta-indonesia', 'Osaka': 'osaka', 'Beijing': 'beijing',
     'Shanghai': 'shanghai', 'Kuala Lumpur': 'kuala-lumpur', 'Abu Dhabi': 'abu-dhabi',
     'Tel Aviv': 'tel-aviv', 'Riyadh': 'riyadh', 'Doha': 'doha', 'Cairo': 'cairo',
     'Nairobi': 'nairobi', 'Cape Town': 'cape-town', 'Casablanca': 'casablanca',
@@ -35,21 +35,21 @@ const CITY_SLUGS: Record<string, string> = {
     'Seattle': 'seattle', 'Denver': 'denver', 'Atlanta': 'atlanta', 'Dallas': 'dallas',
     'Houston': 'houston', 'Montreal': 'montreal', 'Bogotá': 'bogota',
     'São Paulo': 'sao-paulo', 'Rio de Janeiro': 'rio-de-janeiro', 'Santiago': 'santiago',
-    'Montevideo': 'montevideo', 'Delhi': 'delhi', 'Mumbai': 'mumbai',
-    'Bangalore': 'bangalore', 'Kyiv': 'kyiv', 'Moscow': 'moscow', 'Sofia': 'sofia',
+    'Montevideo': 'montevideo', 'Delhi': 'delhi-india', 'Mumbai': 'mumbai-india',
+    'Bangalore': 'bangalore-india', 'Kyiv': 'kyiv', 'Moscow': 'moscow', 'Sofia': 'sofia',
     'Belgrade': 'belgrade', 'Edinburgh': 'edinburgh', 'Porto': 'porto',
     'Seville': 'seville', 'Valencia': 'valencia', 'Kraków': 'krakow',
     'Tallinn': 'tallinn', 'Riga': 'riga', 'Vilnius': 'vilnius', 'Auckland': 'auckland',
     'Amman': 'amman', 'Panama City': 'panama-city',
-    'Medellin': 'medellin', 'Quito': 'quito',
+    'Medellin': 'medellin-colombia', 'Quito': 'quito',
 };
 
 const POPULAR_COMPARISONS = [
-    ['bangkok', 'bali'], ['new-york', 'mexico-city'], ['lisbon', 'barcelona'],
+    ['bangkok', 'lisbon'], ['new-york', 'mexico-city'], ['lisbon', 'barcelona'],
     ['berlin', 'prague'], ['dubai', 'singapore'], ['tokyo', 'seoul'],
     ['buenos-aires', 'lima'], ['amsterdam', 'prague'], ['sydney', 'melbourne'],
-    ['miami', 'mexico-city'], ['london', 'berlin'], ['chiang-mai', 'medellin'],
-    ['lisbon', 'tbilisi'], ['paris', 'madrid'],
+    ['miami', 'mexico-city'], ['london', 'berlin'], ['lisbon', 'tbilisi'],
+    ['paris', 'madrid'], ['bangkok', 'ho-chi-minh-city-vietnam'],
 ];
 
 interface Suggestion { city: string; country: string; slug: string; }

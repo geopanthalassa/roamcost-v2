@@ -50,7 +50,32 @@ const CITY_IMAGES: Record<string, string> = {
     'melbourne': 'photo-1514395462421-22b2f9f6b81c',
 };
 
+// Local city photos map (uses uploaded photos first)
+const LOCAL_PHOTOS: Record<string, string> = {
+    'lisbon': '/cities/lisbon.jpg',
+    'buenos-aires': '/cities/buenos-aires.jpg',
+    'marseille': '/cities/marseille.jpg',
+    'barcelona': '/cities/barcelona.jpg',
+    'beijing': '/cities/beijing.jpg',
+    'milan': '/cities/milan.jpg',
+    'munich': '/cities/munich.jpg',
+    'montreal': '/cities/montreal.jpg',
+    'vancouver': '/cities/vancouver.jpg',
+    'naples': '/cities/naples.jpg',
+    'rotterdam': '/cities/rotterdam.jpg',
+    'tbilisi': '/cities/tbilisi.jpg',
+    'yokohama': '/cities/yokohama.jpg',
+    'shenzhen': '/cities/shenzhen.jpg',
+    'guadalajara': '/cities/guadalajara.jpg',
+    'monterrey': '/cities/monterrey.jpg',
+    'lima': '/cities/lima.jpg',
+    'jakarta': '/cities/jakarta.jpg',
+    'guangzhou': '/cities/guangzhou.jpg',
+};
+
 function getImg(slug: string, w = 800, h = 500) {
+    // Use local photo if available
+    if (LOCAL_PHOTOS[slug]) return LOCAL_PHOTOS[slug];
     const id = CITY_IMAGES[slug] || 'photo-1477959858617-67f85cf4f1df';
     return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 }
