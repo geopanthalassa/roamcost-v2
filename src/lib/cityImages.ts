@@ -398,6 +398,20 @@ const CITY_IMAGES: Record<string, string> = {
     'zhengzhou-china': 'photo-1508804185872-d7badad00f7d',
     'zurich': 'photo-1515488764276-beab7607c1e6',
     'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
+    'quetzaltenango': 'photo-1607427293702-036933bbf746',
+    'petapa': 'photo-1607427293702-036933bbf746',
+    'chichicastenango': 'photo-1607427293702-036933bbf746',
+    'belgrade-serbia': 'photo-1558618666-fcd25c85cd64',
+    'sofia-bulgaria': 'photo-1555993539-1732b0258235',
+    'denpasar-indonesia': 'photo-1537996194471-e657df975ab4',
+    'medellin-colombia': 'photo-1596422846543-75c6fc197f07',
+    'tallinn-estonia': 'photo-1509356843151-3e7d96241e11',
+    'san-miguel-de-allende-mexico': 'photo-1585464231875-d9ef1f5ad396',
+    'chapala-mexico': 'photo-1585464231875-d9ef1f5ad396',
+    'playa-del-carmen-mexico': 'photo-1534190760961-74e8c1c5c3da',
+    'ciudad-de-panama': 'photo-1534190760961-74e8c1c5c3da',
+    'malaysia': 'photo-1596422846543-75c6fc197f07',
+    'costa-rica': 'photo-1607427293702-036933bbf746',
 };
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);

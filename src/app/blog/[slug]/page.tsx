@@ -178,6 +178,7 @@ Do I need a visa to live in Southeast Asia? Each country has different rules. Th
     },
     'move-to-lisbon-2026': {
         title: 'Moving to Lisbon in 2026: Complete Cost of Living Guide',
+        image: 'photo-1585208798174-6cedd4454069',
         desc: 'Rent, food, transport, taxes and visas. Everything you need to know before moving to Lisbon, Portugal.',
         category: 'Europe', date: 'March 2026', readTime: '7 min',
         keywords: 'move to lisbon 2026, lisbon cost of living, portugal digital nomad visa, living in lisbon expat guide',
@@ -325,6 +326,7 @@ Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or
     'cheapest-cities-latin-america': {
         title: 'Cheapest Cities in Latin America for Expats in 2026',
         desc: 'Medellín, Mexico City, Buenos Aires — where to live well in Latin America without breaking the bank.',
+        image: 'photo-1619546813926-a78fa6372cd2',
         category: 'Latin America', date: 'February 2026', readTime: '8 min',
         keywords: 'cheapest cities latin america, cost of living latin america 2026, expat latin america, medellín cost of living, buenos aires expat',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Buenos_Aires_-_Argentina_%2838753855040%29.jpg/1280px-Buenos_Aires_-_Argentina_%2838753855040%29.jpg',
