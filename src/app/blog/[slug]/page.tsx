@@ -9,6 +9,7 @@ const POSTS: Record<string, {
     keywords: string; image: string; content: string;
 }> = {
     'cheapest-cities-europe-2026': {
+        image: 'photo-1513635269975-59663e0ac1ad',
         title: 'Cheapest Cities to Live in Europe in 2026',
         desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns for rent, food and transport.',
         category: 'Europe', date: 'April 2026', readTime: '8 min',
@@ -69,6 +70,7 @@ Can I live in Europe on $1,000/month? Yes, in cities like Tbilisi, Skopje, or sm
 Is Eastern Europe safe for expats? Generally yes. Cities like Warsaw, Prague, Budapest and Bucharest consistently score well on safety indexes and have established expat communities.`
     },
     'best-cities-digital-nomads-2026': {
+        image: 'photo-1525625293386-3f8f99389edd',
         title: 'Best Cities for Digital Nomads in 2026',
         desc: 'Fast internet, coworking spaces, visa options and affordability. The definitive nomad city guide for 2026.',
         category: 'Nomads', date: 'April 2026', readTime: '10 min',
@@ -123,6 +125,7 @@ What internet speed do I need to work remotely? For standard video calls (Zoom, 
 Is $2,000/month enough to be a digital nomad? Yes, comfortably in Southeast Asia, Eastern Europe or Latin America. In Western Europe or Japan, $2,000/month is possible but requires careful budgeting.`
     },
     'cost-of-living-southeast-asia': {
+        image: 'photo-1508009603885-50cf7c579365',
         title: 'Cost of Living in Southeast Asia: Complete 2026 Guide',
         desc: 'Bangkok, Bali, Hanoi, Chiang Mai — how much does it really cost to live in Southeast Asia? Real data for 2026.',
         category: 'Asia', date: 'March 2026', readTime: '9 min',
@@ -227,6 +230,7 @@ What is the best neighborhood to live in Lisbon? Mouraria and Intendente offer t
 How long does the D8 Digital Nomad Visa take? Typically 2-4 months from application to approval. Apply well in advance of your intended move date.`
     },
     'live-on-2000-month': {
+        image: 'photo-1477959858617-67f85cf4f1df',
         title: 'Best Cities to Live Comfortably on $2,000/Month in 2026',
         desc: 'Which cities give you a great lifestyle for $2,000/month? We analyzed real cost data across 45,000 cities.',
         category: 'Budget', date: 'March 2026', readTime: '6 min',
@@ -273,6 +277,7 @@ Can a couple live on $2,000/month abroad? In Southeast Asia and Eastern Europe, 
 Is $2,000/month enough to retire abroad? In most of Southeast Asia, Eastern Europe and Latin America, $2,000/month funds a comfortable retirement with healthcare. Countries like Thailand, Portugal and Colombia are popular retirement destinations at this budget.`
     },
     'bangkok-vs-bali': {
+        image: 'photo-1537996194471-e657df975ab4',
         title: 'Bangkok vs Bali: Cost of Living Comparison 2026',
         desc: "Two of Asia's top nomad destinations compared head to head. Which is cheaper, safer and better for remote work?",
         category: 'Asia', date: 'February 2026', readTime: '7 min',
@@ -368,6 +373,7 @@ Which Latin American country is easiest for visa? Colombia's Digital Nomad Visa 
     },
     'retire-abroad-cheap-countries': {
         title: 'Best Countries to Retire Abroad in 2026: Complete Budget Guide',
+        image: 'photo-1506973035872-a4ec16b8e8d9',
         desc: 'Retire early or stretch your pension further. The best affordable countries with quality healthcare for retirement abroad.',
         category: 'Retirement', date: 'January 2026', readTime: '9 min',
         keywords: 'retire abroad cheap countries, best countries retire 2026, retire on social security abroad, affordable retirement destinations',
@@ -406,6 +412,7 @@ What is the safest country to retire abroad? Portugal, Costa Rica and Panama con
 Do I still pay US taxes if I retire abroad? US citizens pay taxes on worldwide income regardless of residence. However, the Foreign Earned Income Exclusion and Foreign Tax Credit reduce double taxation. Consult a tax advisor specializing in international taxation.`
     },
     'digital-nomad-visa-guide': {
+        image: 'photo-1596422846543-75c6fc197f07',
         title: 'Digital Nomad Visa Guide 2026: Every Country Compared',
         desc: 'Which countries offer digital nomad visas? Requirements, costs and processing times compared for 2026.',
         category: 'Visas', date: 'January 2026', readTime: '11 min',
@@ -464,6 +471,7 @@ Do digital nomad visas allow working for local companies? Generally no — these
 Can I bring my family on a digital nomad visa? Most programs allow dependents (spouse and children) to be included, though income requirements may increase.`
     },
     'numbeo-vs-roamcost': {
+        image: 'photo-1560969184-10fe8719e047',
         title: 'RoamCost vs Numbeo: Which Cost of Living Tool Is Better?',
         desc: 'How do the leading cost of living comparison tools stack up? We compared features, data accuracy and usability.',
         category: 'Tools', date: 'December 2025', readTime: '5 min',
