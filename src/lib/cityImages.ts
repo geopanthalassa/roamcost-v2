@@ -137,7 +137,7 @@ const CITY_IMAGES: Record<string, string> = {
     'guangzhou-china': 'photo-1474181487882-5abf3f0ba6c2',
     'guatemala': '/cities/guatemala.jpg',
     'guatemala-city': '/cities/guatemala.jpg',
-    'guatemala-city-guatemala': 'photo-1585464231875-d9ef1f5ad396',
+    'guatemala-city-guatemala': '/cities/guatemala.jpg',
     'guayaquil': '/cities/guayaquil.jpg',
     'hamburg': 'photo-1558618666-fcd25c85cd64',
     'hamburg-germany': 'photo-1558618666-fcd25c85cd64',
