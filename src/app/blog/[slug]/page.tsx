@@ -14,7 +14,6 @@ const POSTS: Record<string, {
         desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns for rent, food and transport.',
         category: 'Europe', date: 'April 2026', readTime: '8 min',
         keywords: 'cheapest cities europe, affordable cities europe 2026, cheapest places to live europe, cheap european cities expats',
-        image: 'photo-1541849546-216549ae216d',
         content: `## The Most Affordable Cities in Europe for 2026
 
 Europe does not have to be expensive. While Paris averages over $3,000/month and Zurich even more, a growing number of European cities deliver excellent quality of life for under $1,200/month. We analyzed Numbeo data, Expatistan indexes and expat community reports to find the best-value destinations.
@@ -75,7 +74,6 @@ Is Eastern Europe safe for expats? Generally yes. Cities like Warsaw, Prague, Bu
         desc: 'Fast internet, coworking spaces, visa options and affordability. The definitive nomad city guide for 2026.',
         category: 'Nomads', date: 'April 2026', readTime: '10 min',
         keywords: 'best cities digital nomads 2026, digital nomad destinations, remote work cities, best places work remotely 2026',
-        image: 'photo-1525625293386-3f8f99389edd',
         content: `## Best Cities for Digital Nomads in 2026
 
 Remote work has permanently reshaped how millions of people choose where to live. Based on internet speed data from Ookla, visa policy research, Numbeo cost indexes and community size from Nomad List, these are the top cities for digital nomads in 2026.
@@ -130,7 +128,6 @@ Is $2,000/month enough to be a digital nomad? Yes, comfortably in Southeast Asia
         desc: 'Bangkok, Bali, Hanoi, Chiang Mai — how much does it really cost to live in Southeast Asia? Real data for 2026.',
         category: 'Asia', date: 'March 2026', readTime: '9 min',
         keywords: 'cost of living southeast asia 2026, live in bangkok, bali cost of living, chiang mai budget, vietnam expat costs',
-        image: 'photo-1508009603885-50cf7c579365',
         content: `## Cost of Living in Southeast Asia: 2026 Data
 
 Southeast Asia remains the world's top region for affordable international living. But costs vary dramatically — Singapore is as expensive as London, while Vietnam can be lived in for under $1,000/month. This guide uses current data from Numbeo, Expatistan and expat community surveys to give you real 2026 numbers.
@@ -180,8 +177,8 @@ What is the cheapest country in Southeast Asia to live in? Vietnam consistently 
 Do I need a visa to live in Southeast Asia? Each country has different rules. Thailand's DTV Visa, Vietnam's E-Visa and Malaysia's MM2H program are the most popular options for longer stays.`
     },
     'move-to-lisbon-2026': {
-        title: 'Moving to Lisbon in 2026: Complete Cost of Living Guide',
         image: 'photo-1585208798174-6cedd4454069',
+        title: 'Moving to Lisbon in 2026: Complete Cost of Living Guide',
         desc: 'Rent, food, transport, taxes and visas. Everything you need to know before moving to Lisbon, Portugal.',
         category: 'Europe', date: 'March 2026', readTime: '7 min',
         keywords: 'move to lisbon 2026, lisbon cost of living, portugal digital nomad visa, living in lisbon expat guide',
@@ -235,7 +232,6 @@ How long does the D8 Digital Nomad Visa take? Typically 2-4 months from applicat
         desc: 'Which cities give you a great lifestyle for $2,000/month? We analyzed real cost data across 45,000 cities.',
         category: 'Budget', date: 'March 2026', readTime: '6 min',
         keywords: 'live on 2000 a month, best cities 2000 month budget, affordable cities for expats, cheap cities good quality life',
-        image: 'photo-1477959858617-67f85cf4f1df',
         content: `## Best Cities to Live on $2,000/Month in 2026
 
 $2,000 per month — $24,000/year — is a budget that ranges from barely surviving to living exceptionally well, depending entirely on where you are. In San Francisco, it covers about 60% of a median rent. In Chiang Mai, it funds a premium lifestyle with money left over. Here is where $2,000/month goes furthest in 2026.
@@ -282,7 +278,6 @@ Is $2,000/month enough to retire abroad? In most of Southeast Asia, Eastern Euro
         desc: "Two of Asia's top nomad destinations compared head to head. Which is cheaper, safer and better for remote work?",
         category: 'Asia', date: 'February 2026', readTime: '7 min',
         keywords: 'bangkok vs bali, bangkok or bali cheaper, bali cost of living 2026, bangkok cost of living 2026, digital nomad asia',
-        image: 'photo-1537996194471-e657df975ab4',
         content: `## Bangkok vs Bali: Which Is Better for Expats in 2026?
 
 Bangkok and Bali represent two very different versions of the Southeast Asian expat experience — and choosing between them shapes your daily life significantly. Bangkok is a sprawling metropolis with world-class infrastructure. Bali is a tropical island with a village-meets-global-nomad atmosphere. Both are popular. But which makes more sense for your situation?
@@ -328,9 +323,9 @@ Is Bangkok or Bali better for digital nomads? Bangkok wins on cost, internet rel
 Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or Sanur, but Canggu — the main nomad hub — is difficult to do well below $1,800-2,000/month in 2026.`
     },
     'cheapest-cities-latin-america': {
+        image: 'photo-1619546813926-a78fa6372cd2',
         title: 'Cheapest Cities in Latin America for Expats in 2026',
         desc: 'Medellín, Mexico City, Buenos Aires — where to live well in Latin America without breaking the bank.',
-        image: 'photo-1619546813926-a78fa6372cd2',
         category: 'Latin America', date: 'February 2026', readTime: '8 min',
         keywords: 'cheapest cities latin america, cost of living latin america 2026, expat latin america, medellín cost of living, buenos aires expat',
         content: `## Cheapest Cities in Latin America for Expats in 2026
@@ -372,8 +367,8 @@ Is Latin America safe for expats? Safety varies dramatically by city and neighbo
 Which Latin American country is easiest for visa? Colombia's Digital Nomad Visa and Uruguay's Digital Nomad Visa are the most straightforward. Mexico allows 180-day tourist stays without a visa for most nationalities.`
     },
     'retire-abroad-cheap-countries': {
-        title: 'Best Countries to Retire Abroad in 2026: Complete Budget Guide',
         image: 'photo-1506973035872-a4ec16b8e8d9',
+        title: 'Best Countries to Retire Abroad in 2026: Complete Budget Guide',
         desc: 'Retire early or stretch your pension further. The best affordable countries with quality healthcare for retirement abroad.',
         category: 'Retirement', date: 'January 2026', readTime: '9 min',
         keywords: 'retire abroad cheap countries, best countries retire 2026, retire on social security abroad, affordable retirement destinations',
@@ -417,7 +412,6 @@ Do I still pay US taxes if I retire abroad? US citizens pay taxes on worldwide i
         desc: 'Which countries offer digital nomad visas? Requirements, costs and processing times compared for 2026.',
         category: 'Visas', date: 'January 2026', readTime: '11 min',
         keywords: 'digital nomad visa 2026, countries with digital nomad visa, remote work visa, nomad visa requirements',
-        image: 'photo-1560969184-10fe8719e047',
         content: `## Digital Nomad Visa Guide 2026
 
 More than 50 countries now offer some form of digital nomad or remote worker visa. The quality and accessibility of these programs varies enormously. This guide covers the most practical options for 2026, based on income requirements, cost, processing time and reported approval rates.
@@ -476,7 +470,6 @@ Can I bring my family on a digital nomad visa? Most programs allow dependents (s
         desc: 'How do the leading cost of living comparison tools stack up? We compared features, data accuracy and usability.',
         category: 'Tools', date: 'December 2025', readTime: '5 min',
         keywords: 'numbeo vs roamcost, cost of living comparison tools, best cost of living website, numbeo alternative',
-        image: 'photo-1486325212027-8081e485255e',
         content: `## RoamCost vs Numbeo: A Comparison for 2026
 
 When you're researching where to live, work or retire abroad, cost of living data is essential. Numbeo has been the dominant player in this space since 2009. RoamCost is a newer tool taking a different approach. Here is how they compare.
