@@ -182,7 +182,6 @@ Do I need a visa to live in Southeast Asia? Each country has different rules. Th
         desc: 'Rent, food, transport, taxes and visas. Everything you need to know before moving to Lisbon, Portugal.',
         category: 'Europe', date: 'March 2026', readTime: '7 min',
         keywords: 'move to lisbon 2026, lisbon cost of living, portugal digital nomad visa, living in lisbon expat guide',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Lisbon_%2836831344374%29.jpg/1280px-Lisbon_%2836831344374%29.jpg',
         content: `## Moving to Lisbon in 2026: What It Actually Costs
 
 Lisbon has become one of Europe's most sought-after cities for relocation — and for good reason. Mild Atlantic climate, a vibrant food scene, English widely spoken, and significantly lower costs than Northern European capitals. But Lisbon has changed. Rents have increased substantially since 2019, and the affordable-at-all-costs era is over. Here is what moving to Lisbon actually costs in 2026.
@@ -329,7 +328,6 @@ Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or
         image: 'photo-1619546813926-a78fa6372cd2',
         category: 'Latin America', date: 'February 2026', readTime: '8 min',
         keywords: 'cheapest cities latin america, cost of living latin america 2026, expat latin america, medellín cost of living, buenos aires expat',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Buenos_Aires_-_Argentina_%2838753855040%29.jpg/1280px-Buenos_Aires_-_Argentina_%2838753855040%29.jpg',
         content: `## Cheapest Cities in Latin America for Expats in 2026
 
 Latin America offers some of the best value for international residents anywhere in the world — combining a lower cost base with warm weather, vibrant culture and (in most cities) a welcoming attitude toward foreigners. Here are the most affordable cities for expats in 2026.
@@ -373,7 +371,6 @@ Which Latin American country is easiest for visa? Colombia's Digital Nomad Visa 
         desc: 'Retire early or stretch your pension further. The best affordable countries with quality healthcare for retirement abroad.',
         category: 'Retirement', date: 'January 2026', readTime: '9 min',
         keywords: 'retire abroad cheap countries, best countries retire 2026, retire on social security abroad, affordable retirement destinations',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Algarve_Coastline_Edit.jpg/1280px-Algarve_Coastline_Edit.jpg',
         content: `## Best Countries to Retire Abroad in 2026
 
 The arithmetic of international retirement is compelling: a monthly income that struggles to cover rent in a major Western city can fund a comfortable, enriching life in dozens of countries. Here are the best destinations for retirement abroad in 2026, evaluated on cost, healthcare quality, safety, climate and visa accessibility.
