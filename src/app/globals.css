@@ -358,3 +358,55 @@ h3, .city-name, [style*="fontWeight: 900"] {
     padding-right: 1rem !important;
   }
 }
+
+/* ── MOBILE CARRUSEL — horizontal scroll ── */
+@media (max-width: 768px) {
+  /* Things-to-do categories */
+  .things-categories-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .things-categories-grid::-webkit-scrollbar { display: none; }
+  .things-categories-grid > * {
+    flex: 0 0 75vw !important;
+    scroll-snap-align: start !important;
+    max-width: 280px !important;
+  }
+
+  /* Related cities carousel */
+  .related-cities-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 0.875rem !important;
+    padding-bottom: 0.75rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .related-cities-grid::-webkit-scrollbar { display: none; }
+  .related-cities-grid > * {
+    flex: 0 0 72vw !important;
+    scroll-snap-align: start !important;
+    max-width: 260px !important;
+  }
+
+  /* City page stats scroll */
+  .city-stats-scroll {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .city-stats-scroll::-webkit-scrollbar { display: none; }
+  .city-stats-scroll > * {
+    flex: 0 0 auto !important;
+    min-width: 130px !important;
+  }
+}

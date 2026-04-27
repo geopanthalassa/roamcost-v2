@@ -397,7 +397,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 {related && related.length > 0 && (
                     <div>
                         <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Other cities in {c.country}</h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                        <div className="related-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                             {related.map(rc => <CityCard key={rc.slug} city={rc} />)}
                         </div>
                     </div>

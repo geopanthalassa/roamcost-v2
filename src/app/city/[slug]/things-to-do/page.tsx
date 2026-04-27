@@ -165,7 +165,7 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', marginBottom: '1.25rem', letterSpacing: '-0.02em' }}>
                     Explore by category
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+                <div className="things-categories-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
                     {CATEGORIES.map(cat => (
                         <a key={cat.id}
                             href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat.searchTerm + ' ' + city.city)}&searchSource=1&partner_id=VVPTRVK`}
