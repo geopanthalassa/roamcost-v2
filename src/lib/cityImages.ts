@@ -210,7 +210,7 @@ const CITY_IMAGES: Record<string, string> = {
     'luanda-angola': 'photo-1611348586804-61bf6c080437',
     'lviv': 'photo-1577948000111-9c970dfe3743',
     'lyon': '/cities/lyon-francr.jpg',
-    'lyon-france': 'photo-1502602898657-3e91760cbb34',
+    'lyon-france': '/cities/lyon-francr.jpg',
     'madrid': 'photo-1539037116277-4db20889f2d4',
     'madrid-spain': 'photo-1539037116277-4db20889f2d4',
     'malang': '/cities/malang-indonesia.jpg',
@@ -222,7 +222,7 @@ const CITY_IMAGES: Record<string, string> = {
     'mar-del-plata': '/cities/mar-del-plata.jpg',
     'marrakech': 'photo-1597212720156-b0a6ae05e3aa',
     'marseille': '/cities/marseille.jpg',
-    'marseille-france': '/cities/marseille-france.jpg',
+    'marseille-france': '/cities/marseille.jpg',
     'medan': '/cities/medan-indonesia.jpg',
     'medellin': 'photo-1536431311719-398b6704d4cc',
     'melbourne': 'photo-1514395462421-22b2f9f6b81c',
@@ -408,4 +408,4 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     }
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
-},
+},,
