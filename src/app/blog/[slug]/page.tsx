@@ -177,7 +177,7 @@ What is the cheapest country in Southeast Asia to live in? Vietnam consistently 
 Do I need a visa to live in Southeast Asia? Each country has different rules. Thailand's DTV Visa, Vietnam's E-Visa and Malaysia's MM2H program are the most popular options for longer stays.`
     },
     'move-to-lisbon-2026': {
-        image: 'photo-1585208798174-6cedd4454069',
+        image: '/cities/lisbon.jpg',
         title: 'Moving to Lisbon in 2026: Complete Cost of Living Guide',
         desc: 'Rent, food, transport, taxes and visas. Everything you need to know before moving to Lisbon, Portugal.',
         category: 'Europe', date: 'March 2026', readTime: '7 min',
@@ -323,7 +323,7 @@ Is Bangkok or Bali better for digital nomads? Bangkok wins on cost, internet rel
 Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or Sanur, but Canggu — the main nomad hub — is difficult to do well below $1,800-2,000/month in 2026.`
     },
     'cheapest-cities-latin-america': {
-        image: 'photo-1619546813926-a78fa6372cd2',
+        image: '/cities/medellin.jpg',
         title: 'Cheapest Cities in Latin America for Expats in 2026',
         desc: 'Medellín, Mexico City, Buenos Aires — where to live well in Latin America without breaking the bank.',
         category: 'Latin America', date: 'February 2026', readTime: '8 min',
@@ -367,7 +367,7 @@ Is Latin America safe for expats? Safety varies dramatically by city and neighbo
 Which Latin American country is easiest for visa? Colombia's Digital Nomad Visa and Uruguay's Digital Nomad Visa are the most straightforward. Mexico allows 180-day tourist stays without a visa for most nationalities.`
     },
     'retire-abroad-cheap-countries': {
-        image: 'photo-1506973035872-a4ec16b8e8d9',
+        image: 'photo-1508009603885-50cf7c579365',
         title: 'Best Countries to Retire Abroad in 2026: Complete Budget Guide',
         desc: 'Retire early or stretch your pension further. The best affordable countries with quality healthcare for retirement abroad.',
         category: 'Retirement', date: 'January 2026', readTime: '9 min',
