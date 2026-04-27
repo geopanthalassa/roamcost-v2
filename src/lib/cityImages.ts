@@ -222,7 +222,7 @@ const CITY_IMAGES: Record<string, string> = {
     'mar-del-plata': '/cities/mar-del-plata.jpg',
     'marrakech': 'photo-1597212720156-b0a6ae05e3aa',
     'marseille': '/cities/marseille.jpg',
-    'marseille-france': 'photo-1558618666-fcd25c85cd64',
+    'marseille-france': '/cities/marseille-france.jpg',
     'medan': '/cities/medan-indonesia.jpg',
     'medellin': 'photo-1536431311719-398b6704d4cc',
     'melbourne': 'photo-1514395462421-22b2f9f6b81c',
@@ -394,7 +394,9 @@ const CITY_IMAGES: Record<string, string> = {
     'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
     'prague-czechia': '/cities/prague-czechia.jpg',
     'sevilla': '/cities/sevilla-spain.jpg',
-};
+    'chongqing-china': '/cities/chongqing-china.jpg',
+
+    'shenyang-china': '/cities/shenyang-china.jpg',};
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
 
@@ -406,4 +408,4 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     }
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
-}
+},

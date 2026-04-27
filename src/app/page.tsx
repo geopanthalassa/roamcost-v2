@@ -119,7 +119,7 @@ export default async function Home() {
                         <h1 style={{ fontSize: '3.75rem', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '1.25rem' }}>
                             Compare the{' '}
                             <span style={{ color: '#52B788' }}>cost of living</span>
-                            {' '}between any two cities
+                            {' '}across the world
                         </h1>
 
                         <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px', margin: '0 auto 2.5rem' }}>
