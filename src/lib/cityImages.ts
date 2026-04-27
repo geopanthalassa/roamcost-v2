@@ -92,6 +92,7 @@ const CITY_IMAGES: Record<string, string> = {
     'chisinau': '/cities/chisinau.jpg',
     'chisinau-moldova': 'photo-1560969184-10fe8719e047',
     'chongqing': '/cities/chongqing.jpg',
+    'chongqing-china': '/cities/chongqing-china.jpg',
     'cologne': 'photo-1585208798174-6cedd4454069',
     'colombo': 'photo-1578662996442-48f60103fc96',
     'colombo-sri-lanka': 'photo-1578662996442-48f60103fc96',
@@ -134,7 +135,8 @@ const CITY_IMAGES: Record<string, string> = {
     'guadalajara': '/cities/guadalajara.jpg',
     'guangzhou': '/cities/guangzhou.jpg',
     'guangzhou-china': 'photo-1474181487882-5abf3f0ba6c2',
-    'guatemala-city': 'photo-1585464231875-d9ef1f5ad396',
+    'guatemala': '/cities/guatemala.jpg',
+    'guatemala-city': '/cities/guatemala.jpg',
     'guatemala-city-guatemala': 'photo-1585464231875-d9ef1f5ad396',
     'guayaquil': '/cities/guayaquil.jpg',
     'hamburg': 'photo-1558618666-fcd25c85cd64',
@@ -211,6 +213,7 @@ const CITY_IMAGES: Record<string, string> = {
     'lviv': 'photo-1577948000111-9c970dfe3743',
     'lyon': '/cities/lyon-francr.jpg',
     'lyon-france': '/cities/lyon-francr.jpg',
+    'lyon-francr': '/cities/lyon-francr.jpg',
     'madrid': 'photo-1539037116277-4db20889f2d4',
     'madrid-spain': 'photo-1539037116277-4db20889f2d4',
     'malang': '/cities/malang-indonesia.jpg',
@@ -286,6 +289,7 @@ const CITY_IMAGES: Record<string, string> = {
     'portsmouth': '/cities/portsmouth.jpg',
     'prague': '/cities/prague-czechia.jpg',
     'prague-czech-republic': 'photo-1541849546-216549ae216d',
+    'prague-czechia': '/cities/prague-czechia.jpg',
     'pristina-kosovo': 'photo-1558618666-fcd25c85cd64',
     'pune': '/cities/pune-india.jpg',
     'quito': 'photo-1531968455001-5c5272a41129',
@@ -317,11 +321,13 @@ const CITY_IMAGES: Record<string, string> = {
     'seattle-united-states': 'photo-1534190760961-74e8c1c5c3da',
     'seoul': 'photo-1601621915196-2621bfb0cd6e',
     'seoul-south-korea': 'photo-1601621915196-2621bfb0cd6e',
+    'sevilla': '/cities/sevilla-spain.jpg',
     'seville': '/cities/sevilla-spain.jpg',
     'shanghai': '/cities/shangai.jpg',
     'shanghai-china': 'photo-1474181487882-5abf3f0ba6c2',
     'sharjah': '/cities/sharjah.jpg',
     'shenyang': '/cities/shenyang.jpg',
+    'shenyang-china': '/cities/shenyang-china.jpg',
     'shenzhen': '/cities/shenzhen.jpg',
     'singapore': 'photo-1525625293386-3f8f99389edd',
     'singapore-singapore': 'photo-1525625293386-3f8f99389edd',
@@ -392,11 +398,7 @@ const CITY_IMAGES: Record<string, string> = {
     'zhengzhou-china': 'photo-1508804185872-d7badad00f7d',
     'zurich': 'photo-1515488764276-beab7607c1e6',
     'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
-    'prague-czechia': '/cities/prague-czechia.jpg',
-    'sevilla': '/cities/sevilla-spain.jpg',
-    'chongqing-china': '/cities/chongqing-china.jpg',
-
-    'shenyang-china': '/cities/shenyang-china.jpg',};
+};
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
 
@@ -408,4 +410,4 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     }
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
-},,
+}
