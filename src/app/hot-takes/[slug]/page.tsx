@@ -614,7 +614,7 @@ export default async function HotTakeArticle({ params }: Props) {
                                     <div style={{ fontSize: '0.65rem', color: '#64748b' }}>via GetYourGuide</div>
                                 </div>
                             </a>
-                            <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + (a.cities[0] || ''))}`}
+                            <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/?pickUpName=' + (a.cities[0] || ''))}`}
                                 target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#F0FAF4', borderRadius: '0.75rem', textDecoration: 'none' }}>
                                 <span style={{ fontSize: '1.2rem' }}>🚗</span>

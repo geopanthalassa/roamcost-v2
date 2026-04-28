@@ -290,7 +290,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56db" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
                                 label: `Rent a Car in ${c.city}`, sub: 'RentalCars', color: '#1a56db', bg: '#eff6ff',
-                                href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}`
+                                href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/?pickUpName=' + c.city)}`
                             },
                         ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
@@ -420,7 +420,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                                     Explore the city
                                 </a>
-                                <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}`}
+                                <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/?pickUpName=' + c.city)}`}
                                     target="_blank" rel="noopener noreferrer"
                                     style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
