@@ -410,18 +410,21 @@ export default async function CityPage({ params }: CityPageProps) {
                             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                                 <a href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + c.city)}`}
                                     target="_blank" rel="noopener noreferrer"
-                                    style={{ backgroundColor: '#52B788', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                                    🏨 Find accommodation
+                                    style={{ backgroundColor: '#52B788', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    Find accommodation
                                 </a>
                                 <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
                                     target="_blank" rel="noopener noreferrer"
-                                    style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                                    🗺️ Explore the city
+                                    style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                    Explore the city
                                 </a>
                                 <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}`}
                                     target="_blank" rel="noopener noreferrer"
-                                    style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                                    🚗 Rent a car
+                                    style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                    Rent a car
                                 </a>
                             </div>
                         </div>
