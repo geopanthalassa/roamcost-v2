@@ -288,9 +288,9 @@ export default async function CityPage({ params }: CityPageProps) {
                                 href: `https://www.google.com/maps/search/${encodeURIComponent(c.city)}`
                             },
                             {
-                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>,
-                                label: 'Cost of Living', sub: 'Numbeo', color: '#52B788', bg: '#F0FAF4',
-                                href: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(c.city.replace(/ /g, '-'))}`
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56db" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
+                                label: \`Rent a Car in \${c.city}\`, sub: 'RentalCars', color: '#1a56db', bg: '#eff6ff',
+                                href: \`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=\${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}\`
                             },
                         ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
@@ -393,6 +393,40 @@ export default async function CityPage({ params }: CityPageProps) {
                         ))}
                     </div>
                 </div>
+
+                {/* PLAN YOUR MOVE — contextual CTA with real rent price */}
+                {c.rent_index > 0 && (
+                    <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', borderRadius: '1.25rem', padding: '2rem', marginBottom: '1.5rem', position: 'relative', overflow: 'hidden' }}>
+                        <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '120px', height: '120px', borderRadius: '50%', background: 'rgba(82,183,136,0.08)', border: '1px solid rgba(82,183,136,0.15)' }} />
+                        <div style={{ position: 'relative' }}>
+                            <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Ready to make the move?</div>
+                            <h2 style={{ fontSize: '1.35rem', fontWeight: 900, color: 'white', margin: '0 0 0.5rem', letterSpacing: '-0.03em' }}>
+                                Plan your life in {c.city}
+                            </h2>
+                            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', margin: '0 0 1.5rem', lineHeight: 1.6 }}>
+                                Average rent is <strong style={{ color: 'white' }}>${Math.round(c.rent_index).toLocaleString()}/mo</strong>. 
+                                Find your accommodation, explore the city, and get there first.
+                            </p>
+                            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                                <a href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + c.city)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ backgroundColor: '#52B788', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                                    🏨 Find accommodation
+                                </a>
+                                <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                                    🗺️ Explore the city
+                                </a>
+                                <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.65rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                                    🚗 Rent a car
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 {related && related.length > 0 && (
                     <div>

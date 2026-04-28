@@ -592,6 +592,40 @@ export default async function HotTakeArticle({ params }: Props) {
                         </Link>
                     </div>
 
+                    {/* Affiliate sidebar */}
+                    <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
+                        <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem' }}>Plan your trip</div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+                            <a href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + (a.cities[0] || ''))}`}
+                                target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#eff6ff', borderRadius: '0.75rem', textDecoration: 'none' }}>
+                                <span style={{ fontSize: '1.2rem' }}>🏨</span>
+                                <div>
+                                    <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a' }}>Hotels in {a.cities[0]}</div>
+                                    <div style={{ fontSize: '0.65rem', color: '#64748b' }}>Compare on Trivago</div>
+                                </div>
+                            </a>
+                            <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(a.cities[0] || '')}&searchSource=1&partner_id=VVPTRVK`}
+                                target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#fff8f0', borderRadius: '0.75rem', textDecoration: 'none' }}>
+                                <span style={{ fontSize: '1.2rem' }}>🗺️</span>
+                                <div>
+                                    <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a' }}>Tours & Experiences</div>
+                                    <div style={{ fontSize: '0.65rem', color: '#64748b' }}>via GetYourGuide</div>
+                                </div>
+                            </a>
+                            <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + (a.cities[0] || ''))}`}
+                                target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#F0FAF4', borderRadius: '0.75rem', textDecoration: 'none' }}>
+                                <span style={{ fontSize: '1.2rem' }}>🚗</span>
+                                <div>
+                                    <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a' }}>Rent a Car</div>
+                                    <div style={{ fontSize: '0.65rem', color: '#64748b' }}>via RentalCars</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
                     <div style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '1.5rem' }}>
                         <div style={{ fontSize: '0.72rem', fontWeight: 800, color: GREEN, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>Tools / Herramientas</div>
                         {[
