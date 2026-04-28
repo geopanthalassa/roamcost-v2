@@ -78,9 +78,17 @@ export default async function RankingPage({ params }: RankingPageProps) {
     let description = 'Discover top destinations based on your preferences.';
 
     if (topic === 'cheapest') {
-        query = query.gt('rent_index', 0).order('rent_index', { ascending: true });
+        // Exclude cities with rent < $100/mo (usually data issues or very small cities)
+        // and exclude Africa/Middle East from "cheapest" which is intended for nomad destinations
+        const EXCLUDED_COUNTRIES_CHEAPEST = ['Egypt','Morocco','Algeria','Tunisia','Libya','Sudan','Ethiopia','Kenya','Nigeria','Ghana','Tanzania','Uganda','Zimbabwe','Zambia','Mozambique','Angola','Cameroon','Senegal','Mali','Burkina Faso','Niger','Chad','South Sudan','Somalia','Rwanda','Burundi'];
+        query = query.gt('rent_index', 150).not('country', 'in', `(${EXCLUDED_COUNTRIES_CHEAPEST.map(c => `"${c}"`).join(',')})`).order('rent_index', { ascending: true });
         title = 'Value Leaders';
         description = 'Global hubs where your budget stretches the furthest.';
+    } else if (topic === 'cheapest-europe') {
+        const europeanCountries = ['Albania','Andorra','Austria','Belarus','Belgium','Bosnia and Herzegovina','Bulgaria','Croatia','Cyprus','Czech Republic','Czechia','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','Ireland','Italy','Kosovo','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Moldova','Monaco','Montenegro','Netherlands','North Macedonia','Norway','Poland','Portugal','Romania','Russia','San Marino','Serbia','Slovakia','Slovenia','Spain','Sweden','Switzerland','Turkey','Ukraine','United Kingdom','Vatican'];
+        query = query.gt('rent_index', 0).in('country', europeanCountries).order('rent_index', { ascending: true });
+        title = 'Cheapest in Europe';
+        description = 'The most affordable European cities for expats and digital nomads.';
     } else if (topic === 'nomads') {
         query = query.gt('internet', 0).gt('safety', 4).order('internet', { ascending: false });
         title = 'Connectivity Hubs';
