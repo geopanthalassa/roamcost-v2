@@ -412,13 +412,14 @@ h3, .city-name, [style*="fontWeight: 900"] {
 }
 
 /* ── THINGS-TO-DO CATEGORIES MOBILE/DESKTOP ── */
-.categories-desktop { display: grid; }
-.categories-mobile { display: none; }
+.categories-desktop { display: grid !important; }
+.categories-mobile { display: none !important; }
 
 @media (max-width: 768px) {
   .categories-desktop { display: none !important; }
   .categories-mobile { display: block !important; }
 }
 
-/* Hide scrollbar on carousel */
-.categories-mobile div::-webkit-scrollbar { display: none; }
+/* Hide scrollbar on mobile carousel */
+.categories-mobile > div:last-child { scrollbar-width: none; }
+.categories-mobile > div:last-child::-webkit-scrollbar { display: none; }

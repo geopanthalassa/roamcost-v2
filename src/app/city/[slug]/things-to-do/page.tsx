@@ -185,14 +185,14 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                 </h2>
                 {/* Desktop: 3-col grid. Mobile: 2 cards vertical + rest carousel */}
                 <div style={{ marginBottom: '3rem' }}>
-                    {/* Desktop grid - hidden on mobile */}
+                    {/* Desktop grid - hidden on mobile via CSS */}
                     <div className="categories-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {CATEGORIES.map(cat => (
                             <CategoryCard key={cat.id} cat={cat} city={city.city} />
                         ))}
                     </div>
-                    {/* Mobile layout - hidden on desktop */}
-                    <div className="categories-mobile">
+                    {/* Mobile layout */}
+                    <div className="categories-mobile" style={{ display: 'none' }}>
                         {/* First 2 - vertical stack */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '0.75rem' }}>
                             {CATEGORIES.slice(0, 2).map(cat => (
