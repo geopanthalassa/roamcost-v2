@@ -52,6 +52,15 @@ export default function RootLayout({
             <head>
                 <meta name="google-translate-customization" content="9f35768e67a71c1-f03e73ef93656214-gd98f869974204e30-10" />
                 <link rel="canonical" href="https://www.roamcost.com" />
+                {/* Google Analytics */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2QKKP0J0C"></script>
+                <script dangerouslySetInnerHTML={{ __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-J2QKKP0J0C');
+                `}} />
+                {/* Google AdSense */}
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6334611421204216" crossOrigin="anonymous"></script>
             </head>
             <body className={inter.className}>
