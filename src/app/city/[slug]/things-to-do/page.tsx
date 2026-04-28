@@ -86,6 +86,24 @@ const CATEGORIES = [
 
 export const dynamic = 'force-dynamic';
 
+function CategoryCard({ cat, city }: { cat: typeof CATEGORIES[0], city: string }) {
+    return (
+        <a
+            href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat.searchTerm + ' ' + city)}&searchSource=1&partner_id=VVPTRVK`}
+            target="_blank" rel="noopener noreferrer"
+            style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.25rem', backgroundColor: cat.bg, borderRadius: '1rem', border: `1px solid ${cat.color}22`, textDecoration: 'none', height: '100%' }}>
+            <div style={{ width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: cat.color, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
+                {cat.icon}
+            </div>
+            <div>
+                <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#0f172a', marginBottom: '0.2rem' }}>{cat.label}</div>
+                <div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{cat.desc}</div>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: cat.color, marginTop: '0.5rem' }}>Browse on GetYourGuide →</div>
+            </div>
+        </a>
+    );
+}
+
 export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
     const { slug } = await params;
 
@@ -165,22 +183,31 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', marginBottom: '1.25rem', letterSpacing: '-0.02em' }}>
                     Explore by category
                 </h2>
-                <div className="things-categories-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
-                    {CATEGORIES.map(cat => (
-                        <a key={cat.id}
-                            href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cat.searchTerm + ' ' + city.city)}&searchSource=1&partner_id=VVPTRVK`}
-                            target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.25rem', backgroundColor: cat.bg, borderRadius: '1rem', border: `1px solid ${cat.color}22`, textDecoration: 'none', transition: 'transform 0.15s' }}>
-                            <div style={{ width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: cat.color, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
-                                {cat.icon}
-                            </div>
-                            <div>
-                                <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#0f172a', marginBottom: '0.2rem' }}>{cat.label}</div>
-                                <div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.4 }}>{cat.desc}</div>
-                                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: cat.color, marginTop: '0.5rem' }}>Browse on GetYourGuide →</div>
-                            </div>
-                        </a>
-                    ))}
+                {/* Desktop: 3-col grid. Mobile: 2 cards vertical + rest carousel */}
+                <div style={{ marginBottom: '3rem' }}>
+                    {/* Desktop grid - hidden on mobile */}
+                    <div className="categories-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                        {CATEGORIES.map(cat => (
+                            <CategoryCard key={cat.id} cat={cat} city={city.city} />
+                        ))}
+                    </div>
+                    {/* Mobile layout - hidden on desktop */}
+                    <div className="categories-mobile">
+                        {/* First 2 - vertical stack */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                            {CATEGORIES.slice(0, 2).map(cat => (
+                                <CategoryCard key={cat.id} cat={cat} city={city.city} />
+                            ))}
+                        </div>
+                        {/* Rest - horizontal carousel */}
+                        <div style={{ display: 'flex', overflowX: 'auto', gap: '0.75rem', paddingBottom: '0.75rem', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+                            {CATEGORIES.slice(2).map(cat => (
+                                <div key={cat.id} style={{ flex: '0 0 80vw', maxWidth: '300px', scrollSnapAlign: 'start' }}>
+                                    <CategoryCard cat={cat} city={city.city} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
                 {/* Editorial content */}

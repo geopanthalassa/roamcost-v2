@@ -410,3 +410,15 @@ h3, .city-name, [style*="fontWeight: 900"] {
     min-width: 130px !important;
   }
 }
+
+/* ── THINGS-TO-DO CATEGORIES MOBILE/DESKTOP ── */
+.categories-desktop { display: grid; }
+.categories-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .categories-desktop { display: none !important; }
+  .categories-mobile { display: block !important; }
+}
+
+/* Hide scrollbar on carousel */
+.categories-mobile div::-webkit-scrollbar { display: none; }
