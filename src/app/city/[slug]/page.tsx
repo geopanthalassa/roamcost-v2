@@ -116,7 +116,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                 )}
                                 {!hasData && (
                                     <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.5rem 1.1rem', borderRadius: '2rem', fontWeight: 600, fontSize: '0.875rem', border: '1px solid rgba(255,255,255,0.25)' }}>
-                                        📍 Travel destination
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight:"0.3rem"}}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Travel destination
                                     </span>
                                 )}
                             </div>

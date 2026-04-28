@@ -32,7 +32,7 @@ export default async function CheapestCitiesInRegionPage({ params }: RegionalPag
     return (
         <div className="container section animate-fade-in">
             <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>💰 Cheapest Cities in {regionName}</h1>
+                <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Cheapest Cities in {regionName}</h1>
                 <p style={{ color: 'var(--muted)', fontSize: '1.25rem' }}>Most affordable destinations in {regionName} by monthly rent and cost of living.</p>
             </div>
 

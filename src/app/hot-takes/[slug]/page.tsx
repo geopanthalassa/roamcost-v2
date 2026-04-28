@@ -599,7 +599,7 @@ export default async function HotTakeArticle({ params }: Props) {
                             <a href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + (a.cities[0] || ''))}`}
                                 target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#eff6ff', borderRadius: '0.75rem', textDecoration: 'none' }}>
-                                <span style={{ fontSize: '1.2rem' }}>🏨</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                                 <div>
                                     <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a' }}>Hotels in {a.cities[0]}</div>
                                     <div style={{ fontSize: '0.65rem', color: '#64748b' }}>Compare on Trivago</div>
@@ -608,7 +608,7 @@ export default async function HotTakeArticle({ params }: Props) {
                             <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(a.cities[0] || '')}&searchSource=1&partner_id=VVPTRVK`}
                                 target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#fff8f0', borderRadius: '0.75rem', textDecoration: 'none' }}>
-                                <span style={{ fontSize: '1.2rem' }}>🗺️</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                                 <div>
                                     <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a' }}>Tours & Experiences</div>
                                     <div style={{ fontSize: '0.65rem', color: '#64748b' }}>via GetYourGuide</div>
@@ -617,7 +617,7 @@ export default async function HotTakeArticle({ params }: Props) {
                             <a href={`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/?pickUpName=' + (a.cities[0] || ''))}`}
                                 target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.875rem', backgroundColor: '#F0FAF4', borderRadius: '0.75rem', textDecoration: 'none' }}>
-                                <span style={{ fontSize: '1.2rem' }}>🚗</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                                 <div>
                                     <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#0f172a' }}>Rent a Car</div>
                                     <div style={{ fontSize: '0.65rem', color: '#64748b' }}>via RentalCars</div>

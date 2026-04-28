@@ -133,10 +133,10 @@ export default function WeatherWidget({ lat, long, city }: Props) {
                     </div>
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                         <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>
-                            💧 {cur.relative_humidity_2m}%
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight:"0.3rem"}}><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>{cur.relative_humidity_2m}%
                         </span>
                         <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>
-                            💨 {Math.round(cur.wind_speed_10m)} km/h
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight:"0.3rem"}}><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>{Math.round(cur.wind_speed_10m)} km/h
                         </span>
                     </div>
                 </div>

@@ -32,7 +32,7 @@ export default async function BestCitiesInRegionPage({ params }: RegionalPagePro
     return (
         <div className="container section animate-fade-in">
             <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>🏆 Best Cities in {regionName}</h1>
+                <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Best Cities in {regionName}</h1>
                 <p style={{ color: 'var(--muted)', fontSize: '1.25rem' }}>Top rated destinations in {regionName} based on quality of life and infrastructure.</p>
             </div>
 
