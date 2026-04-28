@@ -289,8 +289,8 @@ export default async function CityPage({ params }: CityPageProps) {
                             },
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56db" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
-                                label: \`Rent a Car in \${c.city}\`, sub: 'RentalCars', color: '#1a56db', bg: '#eff6ff',
-                                href: \`https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=\${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}\`
+                                label: `Rent a Car in ${c.city}`, sub: 'RentalCars', color: '#1a56db', bg: '#eff6ff',
+                                href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/country/search/?location=' + c.city)}`
                             },
                         ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
