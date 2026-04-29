@@ -161,20 +161,25 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
             <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '2.5rem 1.5rem' }}>
 
                 {/* Quick booking strip */}
-                <div style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '1.5rem', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+                <style>{`
+                  .booking-strip { background: #0f172a; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+                  .booking-btn { background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1.5rem; border-radius: 0.625rem; font-weight: 700; font-size: 0.9rem; text-decoration: none; white-space: nowrap; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2); }
+                  @media (max-width: 768px) {
+                    .booking-strip { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+                    .booking-btn { text-align: center; white-space: normal; }
+                  }
+                `}</style>
+                <div className="booking-strip">
                     <div style={{ flex: 1 }}>
                         <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Book instantly</div>
                         <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'white' }}>Find tours & activities in {city.city}</div>
                     </div>
-                    
                     <a href={`https://www.viator.com/search/${encodeURIComponent(city.city)}`}
-                        target="_blank" rel="noopener noreferrer"
-                        style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, border: '1px solid rgba(255,255,255,0.2)' }}>
+                        target="_blank" rel="noopener noreferrer" className="booking-btn">
                         Search Viator →
                     </a>
                     <a href={`https://affiliate.klook.com/redirect?aid=${KLOOK_ID}&k_site=${encodeURIComponent('https://www.klook.com/s/' + city.city)}`}
-                        target="_blank" rel="noopener noreferrer"
-                        style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, border: '1px solid rgba(255,255,255,0.2)' }}>
+                        target="_blank" rel="noopener noreferrer" className="booking-btn">
                         Search Klook →
                     </a>
                 </div>
