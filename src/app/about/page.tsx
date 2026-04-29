@@ -32,6 +32,9 @@ export default function AboutPage() {
                 <Link href="/compare" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontWeight: 800 }}>
                     Start Comparing →
                 </Link>
+                <a href="mailto:roamcost@gmail.com" style={{ padding: '1rem 2.5rem', fontWeight: 700, color: '#52B788', border: '2px solid #52B788', borderRadius: 'var(--radius-md)', textDecoration: 'none', display: 'inline-block', marginRight: '1rem' }}>
+                    roamcost@gmail.com
+                </a>
                 <Link href="/contact" style={{ padding: '1rem 2.5rem', fontWeight: 700, color: '#52B788', border: '2px solid #52B788', borderRadius: 'var(--radius-md)', textDecoration: 'none' }}>
                     Contact Us
                 </Link>

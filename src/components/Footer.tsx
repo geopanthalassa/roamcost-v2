@@ -36,6 +36,7 @@ export default function Footer() {
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         <li><Link href="/about" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>About Us</Link></li>
                         <li><Link href="/contact" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Contact</Link></li>
+                        <li><a href="mailto:roamcost@gmail.com" style={{ color: 'var(--muted)', fontSize: '0.9rem', textDecoration: 'none' }}>roamcost@gmail.com</a></li>
                         <li><Link href="/privacy" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Privacy Policy</Link></li>
                     </ul>
                 </div>
