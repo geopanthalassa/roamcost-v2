@@ -287,13 +287,12 @@ export default function CompareResultPage() {
                                 </div>
                                 {totals[i] > 0 && totals[i] !== minTotal && minTotal > 0 && (
                                     <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', marginTop: '0.15rem' }}>
-                                        +${(totals[i]-minTotal).toLocaleString()}/mo
+                                        {`+$${(totals[i]-minTotal).toLocaleString()}/mo`}
                                     </div>
                                 )}
                             </div>
                         ))}
                     </div>
-                </div>
                 </div>
                 </div>
 
