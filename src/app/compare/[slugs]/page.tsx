@@ -191,25 +191,22 @@ export default function CompareResultPage() {
                 {/* Comparison table */}
                 <style>{`
                   .cmp-table { background: white; border-radius: 1.25rem; border: 1px solid #e2e8f0; overflow: hidden; margin-bottom: 2rem; }
+                  :root { --cat-col: 185px; }
                   @media (max-width: 768px) {
-                    .cmp-cat-col { padding: 0.6rem 0.6rem !important; }
-                    .cmp-cat-label { font-size: 0.7rem !important; }
+                    :root { --cat-col: 80px; }
+                    .cmp-cat-col { padding: 0.6rem 0.5rem !important; }
+                    .cmp-cat-label { font-size: 0.65rem !important; }
                     .cmp-cat-desc { display: none !important; }
-                    .cmp-val-cell { padding: 0.6rem 0.3rem !important; }
-                    .cmp-val-cell span:first-child { font-size: 0.78rem !important; }
-                    .cmp-city-col { padding: 0.6rem 0.4rem !important; }
-                    .cmp-city-name { font-size: 0.75rem !important; }
+                    .cmp-city-col { padding: 0.5rem 0.4rem !important; }
+                    .cmp-city-name { font-size: 0.72rem !important; }
                     .cmp-country { display: none !important; }
-                    .cmp-total-val { font-size: 0.9rem !important; }
-                    .cmp-total-diff { font-size: 0.6rem !important; }
-                    .cmp-total-col { padding: 0.7rem 0.3rem !important; }
                   }
                 `}</style>
                 <div className="cmp-table">
                 <div>
 
                         {/* Table header */}
-                        <div style={{ display: 'grid', gridTemplateColumns: `185px repeat(${cols}, 1fr)`, backgroundColor: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: `var(--cat-col) repeat(${cols}, 1fr)`, backgroundColor: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
                             <div className="cmp-cat-col" style={{ padding: '0.875rem 1.25rem', fontSize: '0.68rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Category</div>
                             {cities.map(city => (
                                 <div key={city.slug} className="cmp-city-col" style={{ padding: '0.875rem 0.75rem', textAlign: 'center', borderLeft: '1px solid #e2e8f0' }}>
@@ -223,7 +220,7 @@ export default function CompareResultPage() {
                         {METRICS.map((m, mi) => {
                             const best = getBest(m.key, m.better, m.factor);
                             return (
-                                <div key={m.key} style={{ display: 'grid', gridTemplateColumns: `185px repeat(${cols}, 1fr)`, borderBottom: mi < METRICS.length - 1 ? '1px solid #f1f5f9' : 'none', backgroundColor: mi % 2 === 0 ? 'white' : '#fafbfc' }}>
+                                <div key={m.key} style={{ display: 'grid', gridTemplateColumns: `var(--cat-col) repeat(${cols}, 1fr)`, borderBottom: mi < METRICS.length - 1 ? '1px solid #f1f5f9' : 'none', backgroundColor: mi % 2 === 0 ? 'white' : '#fafbfc' }}>
                                     <div style={{ padding: '0.875rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                                         <div className="cmp-cat-label" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>{m.label}</div>
                                         <div className="cmp-cat-desc" style={{ fontSize: '0.63rem', color: '#94a3b8', marginTop: '0.1rem' }}>{m.desc}</div>
@@ -250,7 +247,7 @@ export default function CompareResultPage() {
                         })}
 
                         {/* Total row */}
-                        <div style={{ display: 'grid', gridTemplateColumns: `185px repeat(${cols}, 1fr)`, backgroundColor: '#0f172a' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: `var(--cat-col) repeat(${cols}, 1fr)`, backgroundColor: '#0f172a' }}>
                             <div style={{ padding: '1rem 1.25rem', display: 'flex', alignItems: 'center' }}>
                                 <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'rgba(255,255,255,0.6)' }}>Est. Monthly Total</span>
                             </div>
