@@ -295,7 +295,7 @@ export default function CompareResultPage() {
                         ))}
                     </div>
                 </div>
-                </div></div></div>{/* end cmp-wrap */}
+                </div></div>{/* end cmp-wrap */}
 
                 {/* CTA */}
                 <div style={{ backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2.5rem', textAlign: 'center' }}>
