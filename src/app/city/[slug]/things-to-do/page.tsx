@@ -313,26 +313,28 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                             </div>
                         )}
 
-                        {/* Book now CTAs */}
-                        <div style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '1.5rem' }}>
-                            <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Book tours</div>
-                            <div style={{ fontSize: '1rem', fontWeight: 800, color: 'white', marginBottom: '1.25rem' }}>Ready to explore {city.city}?</div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
+                        {/* Book now CTAs — compact */}
+                        <div style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '1.25rem' }}>
+                            <div style={{ fontSize: '0.68rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>Book tours in {city.city}</div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                 <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(city.city)}&searchSource=1&partner_id=VVPTRVK`}
                                     target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'block', textAlign: 'center', backgroundColor: '#F7831E', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none' }}>
-                                    Book on GetYourGuide
+                                    style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#F7831E', color: 'white', padding: '0.6rem 0.875rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.8rem', textDecoration: 'none' }}>
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                    GetYourGuide
                                 </a>
-                                <a href={`https://www.klook.com/s/${encodeURIComponent(city.city)}`}
-                                    target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    Book on Klook
-                                </a>
-                                <a href={`https://www.viator.com/search/${encodeURIComponent(city.city)}`}
-                                    target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'block', textAlign: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem', borderRadius: '0.625rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    Book on Viator
-                                </a>
+                                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                    <a href={`https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + city.city)}`}
+                                        target="_blank" rel="noopener noreferrer"
+                                        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.6rem 0.5rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.78rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)', textAlign: 'center' }}>
+                                        Klook
+                                    </a>
+                                    <a href={`https://www.viator.com/search/${encodeURIComponent(city.city)}`}
+                                        target="_blank" rel="noopener noreferrer"
+                                        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.6rem 0.5rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.78rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)', textAlign: 'center' }}>
+                                        Viator
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
