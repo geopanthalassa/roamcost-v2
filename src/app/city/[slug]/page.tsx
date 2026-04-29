@@ -315,70 +315,27 @@ export default async function CityPage({ params }: CityPageProps) {
                     </h2>
                     <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Tours, experiences and activities curated for travelers</p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
-                        {/* GetYourGuide */}
-                        <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`}
-                            target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
-                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via GetYourGuide</div>
-                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Skip-the-line, day trips & more</div>
-                            </div>
-                        </a>
-
-                        {/* Klook */}
-                        <a href={`https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`}
-                            target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#fff8f0', border: '2px solid #F7831E22', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#F7831E', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Tours & Experiences</div>
-                                <div style={{ fontSize: '0.75rem', color: '#F7831E', fontWeight: 700, marginTop: '2px' }}>via Klook</div>
-                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Activities & attractions</div>
-                            </div>
-                        </a>
-
-                        {/* Viator */}
-                        <a href={`https://www.viator.com/search/${encodeURIComponent(c.city)}`}
-                            target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#F0FAF4', border: '2px solid #52B78822', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#52B788', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Activities & Attractions</div>
-                                <div style={{ fontSize: '0.75rem', color: '#52B788', fontWeight: 700, marginTop: '2px' }}>via Viator</div>
-                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Powered by Tripadvisor</div>
-                            </div>
-                        </a>
-
-                        {/* Tripadvisor */}
-                        <a href={`https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`}
-                            target="_blank" rel="noopener noreferrer"
-                            style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', backgroundColor: '#F0FAF4', border: '2px solid #52B78822', borderRadius: '0.875rem', textDecoration: 'none' }}>
-                            <div style={{ width: '44px', height: '44px', backgroundColor: '#52B788', borderRadius: '0.625rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div style={{ fontWeight: 900, fontSize: '0.9rem', color: '#0f172a' }}>Things to Do</div>
-                                <div style={{ fontSize: '0.75rem', color: '#52B788', fontWeight: 700, marginTop: '2px' }}>via Tripadvisor</div>
-                                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '1px' }}>Reviews & recommendations</div>
-                            </div>
-                        </a>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
+                        {[
+                            { href: `https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`, label: 'Tours & Experiences', sub: 'GetYourGuide', color: '#F7831E', bg: '#fff8f0' },
+                            { href: `https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`, label: 'Activities & Attractions', sub: 'Klook', color: '#F7831E', bg: '#fff8f0' },
+                            { href: `https://www.viator.com/search/${encodeURIComponent(c.city)}`, label: 'Tours & Day Trips', sub: 'Viator', color: '#52B788', bg: '#F0FAF4' },
+                            { href: `https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`, label: 'Things to Do', sub: 'Tripadvisor', color: '#52B788', bg: '#F0FAF4' },
+                        ].map(link => (
+                            <a key={link.sub} href={link.href} target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', backgroundColor: link.bg, border: `1px solid ${link.color}22`, borderRadius: '0.75rem', textDecoration: 'none' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+                                    <div style={{ width: '32px', height: '32px', backgroundColor: link.color, borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style={{ fontWeight: 800, fontSize: '0.82rem', color: '#0f172a' }}>{link.label}</div>
+                                        <div style={{ fontSize: '0.68rem', color: link.color, fontWeight: 700 }}>via {link.sub}</div>
+                                    </div>
+                                </div>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={link.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        ))}
                     </div>
 
                     {/* Category quick links */}
