@@ -26,14 +26,14 @@ const METRICS = [
 
 // Curated city photos — correct images for popular cities
 const CITY_PHOTOS: Record<string, string> = {
-    'bangkok': 'photo-1508009603885-50cf7c579365',
-    'new-york': 'photo-1496442226666-8d4d0e62e6e9',
-    'tokyo': 'photo-1540959733332-eab4deabeeaf',
-    'seoul': 'photo-1601621915196-2621bfb0cd6e',
-    'dubai': 'photo-1512453979798-5ea266f8880c',
+    'bangkok': '/cities/bangkok.jpg',
+    'new-york': '/cities/new-york.jpg',
+    'tokyo': '/cities/tokyo.jpg',
+    'seoul': '/cities/seoul.jpg',
+    'dubai': '/cities/dubai.jpg',
     'singapore': 'photo-1525625293386-3f8f99389edd',
-    'london': 'photo-1513635269975-59663e0ac1ad',
-    'paris': 'photo-1502602898657-3e91760cbb34',
+    'london': '/cities/london.jpg',
+    'paris': '/cities/paris.jpg',
     'berlin': 'photo-1560969184-10fe8719e047',
     'amsterdam': 'photo-1512470876302-972faa2aa9a4',
     'rome': 'photo-1531572753322-ad063cecc140',
