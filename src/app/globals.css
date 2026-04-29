@@ -431,3 +431,14 @@ h3, .city-name, [style*="fontWeight: 900"] {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ── COMPARE TABLE MOBILE SCROLL ── */
+@media (max-width: 768px) {
+  .compare-table {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .compare-table > div {
+    min-width: 520px;
+  }
+}
