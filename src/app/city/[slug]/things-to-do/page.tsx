@@ -183,35 +183,40 @@ export default async function ThingsToDoPage({ params }: ThingsToDoProps) {
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', marginBottom: '1.25rem', letterSpacing: '-0.02em' }}>
                     Explore by category
                 </h2>
-                {/* Desktop: 3-col grid. Mobile: 2 cards vertical + rest carousel */}
-                <div style={{ marginBottom: '3rem' }}>
-                    {/* Desktop grid - hidden on mobile via CSS */}
-                    <div className="categories-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-                        {CATEGORIES.map(cat => (
+                {/* Categories — responsive via style tag */}
+                <style>{`
+                    .cat-desktop { display: grid !important; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 3rem; }
+                    .cat-mobile { display: none !important; margin-bottom: 3rem; }
+                    @media (max-width: 768px) {
+                        .cat-desktop { display: none !important; }
+                        .cat-mobile { display: block !important; }
+                        .cat-carousel { display: flex; overflow-x: auto; gap: 0.75rem; padding-bottom: 0.75rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+                        .cat-carousel::-webkit-scrollbar { display: none; }
+                        .cat-carousel-item { flex: 0 0 78vw; max-width: 290px; scroll-snap-align: start; }
+                    }
+                `}</style>
+                <div className="cat-desktop">
+                    {CATEGORIES.map(cat => (
+                        <CategoryCard key={cat.id} cat={cat} city={city.city} />
+                    ))}
+                </div>
+                <div className="cat-mobile">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        {CATEGORIES.slice(0, 2).map(cat => (
                             <CategoryCard key={cat.id} cat={cat} city={city.city} />
                         ))}
                     </div>
-                    {/* Mobile layout */}
-                    <div className="categories-mobile" style={{ display: 'none' }}>
-                        {/* First 2 - vertical stack */}
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                            {CATEGORIES.slice(0, 2).map(cat => (
-                                <CategoryCard key={cat.id} cat={cat} city={city.city} />
-                            ))}
-                        </div>
-                        {/* Rest - horizontal carousel */}
-                        <div style={{ display: 'flex', overflowX: 'auto', gap: '0.75rem', paddingBottom: '0.75rem', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
-                            {CATEGORIES.slice(2).map(cat => (
-                                <div key={cat.id} style={{ flex: '0 0 80vw', maxWidth: '300px', scrollSnapAlign: 'start' }}>
-                                    <CategoryCard cat={cat} city={city.city} />
-                                </div>
-                            ))}
-                        </div>
+                    <div className="cat-carousel">
+                        {CATEGORIES.slice(2).map(cat => (
+                            <div key={cat.id} className="cat-carousel-item">
+                                <CategoryCard cat={cat} city={city.city} />
+                            </div>
+                        ))}
                     </div>
                 </div>
 
                 {/* Editorial content */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '2rem', alignItems: 'start' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '2rem', alignItems: 'start' }} className="editorial-grid">
                     <div>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
                             About {city.city}

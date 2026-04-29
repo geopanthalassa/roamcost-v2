@@ -423,3 +423,10 @@ h3, .city-name, [style*="fontWeight: 900"] {
 /* Hide scrollbar on mobile carousel */
 .categories-mobile > div:last-child { scrollbar-width: none; }
 .categories-mobile > div:last-child::-webkit-scrollbar { display: none; }
+
+/* ── THINGS-TO-DO EDITORIAL GRID MOBILE ── */
+@media (max-width: 768px) {
+  .editorial-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
