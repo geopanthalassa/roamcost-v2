@@ -188,45 +188,33 @@ export default function CompareResultPage() {
                     ))}
                 </div>
 
-                {/* Affiliate CTAs */}
-                {cities.length >= 2 && (
-                    <div style={{ backgroundColor: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', padding: '1.5rem', marginBottom: '1.5rem' }}>
-                        <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem' }}>
-                            Ready to visit or move?
-                        </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
-                            {cities.slice(0, 2).map((city) => (
-                                <a key={`hotel-${city.slug}`}
-                                    href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + city.city)}`}
-                                    target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #e2e8f0', gap: '0.25rem' }}>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Hotels in {city.city}</span>
-                                    <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>Compare on Trivago</span>
-                                </a>
-                            ))}
-                            <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cities[0]?.city || '')}&searchSource=1&partner_id=VVPTRVK`}
-                                target="_blank" rel="noopener noreferrer"
-                                style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#fff8f0', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #F7831E22', gap: '0.25rem' }}>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Tours and Activities</span>
-                                <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>via GetYourGuide</span>
-                            </a>
-                        </div>
-                    </div>
-                )}
-
-                {/* Comparison table with horizontal scroll on mobile */}
-                <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginBottom: '2rem', borderRadius: '1.25rem', border: '1px solid #e2e8f0' }}>
-                    <div style={{ minWidth: '520px', backgroundColor: 'white', borderRadius: '1.25rem', overflow: 'hidden' }}>
+                {/* Comparison table */}
+                <style>{`
+                  .cmp-table { background: white; border-radius: 1.25rem; border: 1px solid #e2e8f0; overflow: hidden; margin-bottom: 2rem; }
+                  @media (max-width: 768px) {
+                    .cmp-cat-col { padding: 0.6rem 0.6rem !important; }
+                    .cmp-cat-label { font-size: 0.7rem !important; }
+                    .cmp-cat-desc { display: none !important; }
+                    .cmp-val-cell { padding: 0.6rem 0.3rem !important; }
+                    .cmp-val-cell span:first-child { font-size: 0.78rem !important; }
+                    .cmp-city-col { padding: 0.6rem 0.4rem !important; }
+                    .cmp-city-name { font-size: 0.75rem !important; }
+                    .cmp-country { display: none !important; }
+                    .cmp-total-val { font-size: 0.9rem !important; }
+                    .cmp-total-diff { font-size: 0.6rem !important; }
+                    .cmp-total-col { padding: 0.7rem 0.3rem !important; }
+                  }
+                `}</style>
+                <div className="cmp-table">
+                <div>
 
                         {/* Table header */}
                         <div style={{ display: 'grid', gridTemplateColumns: `185px repeat(${cols}, 1fr)`, backgroundColor: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
-                            <div style={{ padding: '0.875rem 1.25rem', fontSize: '0.68rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Category</div>
+                            <div className="cmp-cat-col" style={{ padding: '0.875rem 1.25rem', fontSize: '0.68rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Category</div>
                             {cities.map(city => (
-                                <div key={city.slug} style={{ padding: '0.875rem 0.75rem', textAlign: 'center', borderLeft: '1px solid #e2e8f0' }}>
-                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{city.city}</div>
-                                    <div style={{ fontSize: '0.62rem', color: '#94a3b8', marginTop: '0.1rem' }}>{city.country}</div>
+                                <div key={city.slug} className="cmp-city-col" style={{ padding: '0.875rem 0.75rem', textAlign: 'center', borderLeft: '1px solid #e2e8f0' }}>
+                                    <div className="cmp-city-name" style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{city.city}</div>
+                                    <div className="cmp-country" style={{ fontSize: '0.62rem', color: '#94a3b8', marginTop: '0.1rem' }}>{city.country}</div>
                                 </div>
                             ))}
                         </div>
@@ -237,8 +225,8 @@ export default function CompareResultPage() {
                             return (
                                 <div key={m.key} style={{ display: 'grid', gridTemplateColumns: `185px repeat(${cols}, 1fr)`, borderBottom: mi < METRICS.length - 1 ? '1px solid #f1f5f9' : 'none', backgroundColor: mi % 2 === 0 ? 'white' : '#fafbfc' }}>
                                     <div style={{ padding: '0.875rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                        <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>{m.label}</div>
-                                        <div style={{ fontSize: '0.63rem', color: '#94a3b8', marginTop: '0.1rem' }}>{m.desc}</div>
+                                        <div className="cmp-cat-label" style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>{m.label}</div>
+                                        <div className="cmp-cat-desc" style={{ fontSize: '0.63rem', color: '#94a3b8', marginTop: '0.1rem' }}>{m.desc}</div>
                                     </div>
                                     {cities.map((city, i) => {
                                         const val = getVal(city, m.key);
@@ -282,6 +270,34 @@ export default function CompareResultPage() {
 
                     </div>
                 </div>
+
+                {/* Affiliate CTAs */}
+                {cities.length >= 2 && (
+                    <div style={{ backgroundColor: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', padding: '1.5rem', marginBottom: '1.5rem' }}>
+                        <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem' }}>
+                            Ready to visit or move?
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+                            {cities.slice(0, 2).map((city) => (
+                                <a key={`hotel-${city.slug}`}
+                                    href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + city.city)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #e2e8f0', gap: '0.25rem' }}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Hotels in {city.city}</span>
+                                    <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>Compare on Trivago</span>
+                                </a>
+                            ))}
+                            <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cities[0]?.city || '')}&searchSource=1&partner_id=VVPTRVK`}
+                                target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#fff8f0', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #F7831E22', gap: '0.25rem' }}>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Tours and Activities</span>
+                                <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>via GetYourGuide</span>
+                            </a>
+                        </div>
+                    </div>
+                )}
 
                 {/* CTA */}
                 <div style={{ backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2.5rem', textAlign: 'center' }}>
