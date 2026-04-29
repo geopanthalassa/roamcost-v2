@@ -80,13 +80,18 @@ export default function Header() {
 
             {/* Mobile menu */}
             {menuOpen && (
-                <div style={{ borderTop: '1px solid #f1f5f9', padding: '1rem 1.5rem', backgroundColor: '#fff' }}>
+                <div style={{ borderTop: '1px solid #f1f5f9', padding: '0.5rem 1.5rem 1rem', backgroundColor: '#fff', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
                     {NAV_LINKS.map(l => {
                         const active = isActive(l);
+                        const isHot = l.href === '/hot-takes';
                         return (
                             <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
-                                style={{ display: 'block', padding: '0.875rem 0', fontWeight: 700, color: active ? '#52B788' : '#0f172a', fontSize: '1rem', borderBottom: '1px solid #f1f5f9', textDecoration: 'none' }}>
-                                {l.label}
+                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.875rem 0', fontWeight: 700, color: isHot ? '#F7831E' : active ? '#52B788' : '#0f172a', fontSize: '0.95rem', borderBottom: '1px solid #f8fafc', textDecoration: 'none' }}>
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    {l.label}
+                                    {isHot && <span style={{ fontSize: '0.5rem', backgroundColor: '#F7831E', color: 'white', padding: '0.1rem 0.35rem', borderRadius: '2rem', fontWeight: 900 }}>NEW</span>}
+                                </span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.3 }}><path d="M9 18l6-6-6-6"/></svg>
                             </Link>
                         );
                     })}
