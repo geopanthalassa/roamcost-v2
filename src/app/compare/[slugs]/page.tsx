@@ -24,18 +24,89 @@ const METRICS = [
     { label: 'Quality of Life', key: 'cost_index', better: 'higher', format: 'score', factor: 1, desc: 'Overall quality score' },
 ];
 
+// Curated city photos — correct images for popular cities
+const CITY_PHOTOS: Record<string, string> = {
+    'bangkok': 'photo-1508009603885-50cf7c579365',
+    'new-york': 'photo-1496442226666-8d4d0e62e6e9',
+    'tokyo': 'photo-1540959733332-eab4deabeeaf',
+    'seoul': 'photo-1601621915196-2621bfb0cd6e',
+    'dubai': 'photo-1512453979798-5ea266f8880c',
+    'singapore': 'photo-1525625293386-3f8f99389edd',
+    'london': 'photo-1513635269975-59663e0ac1ad',
+    'paris': 'photo-1502602898657-3e91760cbb34',
+    'berlin': 'photo-1560969184-10fe8719e047',
+    'amsterdam': 'photo-1512470876302-972faa2aa9a4',
+    'rome': 'photo-1531572753322-ad063cecc140',
+    'madrid': 'photo-1539037116277-4db20889f2d4',
+    'vienna': 'photo-1516550135131-fe3dcdd41517',
+    'sydney-australia': 'photo-1506973035872-a4ec16b8e8d9',
+    'melbourne-australia': 'photo-1514395462421-22b2f9f6b81c',
+    'toronto': 'photo-1517090186835-e348b621c9ca',
+    'chicago': 'photo-1477959858617-67f85cf4f1df',
+    'miami': 'photo-1534190760961-74e8c1c5c3da',
+    'los-angeles': 'photo-1534190760961-74e8c1c5c3da',
+    'san-francisco': 'photo-1501594907352-04cda38ebc29',
+    'istanbul': 'photo-1524231757912-21f4fe3a7200',
+    'prague-czechia': 'photo-1541849546-216549ae216d',
+    'prague': 'photo-1541849546-216549ae216d',
+    'budapest-hungary': 'photo-1565538420870-da08ff96a207',
+    'vienna-austria': 'photo-1516550135131-fe3dcdd41517',
+    'ho-chi-minh-city-vietnam': 'photo-1583417319070-4a69db38a482',
+    'taipei-taiwan': 'photo-1470219556762-1771e7f9427d',
+    'osaka-japan': 'photo-1590559899731-a382839e5549',
+    'beijing': 'photo-1508804185872-d7badad00f7d',
+    'shanghai': 'photo-1538428494232-9c0d8a3ab403',
+    'kuala-lumpur-malaysia': 'photo-1596422846543-75c6fc197f07',
+    'mexico-city': 'photo-1585464231875-d9ef1f5ad396',
+    'bogota-colombia': 'photo-1589923188900-85dae523342b',
+    'buenos-aires-argentina': 'photo-1589909202802-8f4aadce9d55',
+    'buenos-aires': 'photo-1589909202802-8f4aadce9d55',
+    'lima-peru': 'photo-1619946794135-5bc917a27793',
+    'lima': 'photo-1619946794135-5bc917a27793',
+    'santiago-chile': 'photo-1476231682828-37e571bc172f',
+    'chiang-mai-thailand': 'photo-1569843916545-37d7073a7438',
+    'tbilisi-georgia': 'photo-1565008576549-57569a49371d',
+    'tbilisi': 'photo-1565008576549-57569a49371d',
+    'athens-greece': 'photo-1555993539-1732b0258235',
+    'stockholm-sweden': 'photo-1509356843151-3e7d96241e11',
+    'oslo-norway': 'photo-1474690870753-1b92efa1f2d8',
+    'copenhagen-denmark': 'photo-1513622470522-26c3c8a854bc',
+    'zurich-switzerland': 'photo-1515488042361-ee00e0ddd4e4',
+    'brussels-belgium': 'photo-1559113202-c916b8e44373',
+    'lisbon': 'photo-1585208798174-6cedd4454069',
+    'barcelona': 'photo-1583422409516-2895a77efded',
+    'doha-qatar': 'photo-1548991934-b5d655a0ea84',
+    'abu-dhabi': 'photo-1532274402911-5a369e4c4bb5',
+    'riyadh-saudi-arabia': 'photo-1578895101408-1a36b834405b',
+    'cairo-egypt': 'photo-1572252009286-268acec5ca0a',
+    'cape-town-south-africa': 'photo-1580060839134-75a5edca2e99',
+    'nairobi-kenya': 'photo-1611348586804-61bf6c080437',
+    'medellin-colombia': 'photo-1596422846543-75c6fc197f07',
+    'medellin': 'photo-1596422846543-75c6fc197f07',
+    'edinburgh-united-kingdom': 'photo-1534190760961-74e8c1c5c3da',
+    'dublin-ireland': 'photo-1564959130747-897fb406b9af',
+    'warsaw-poland': 'photo-1519197924294-4ba991a11128',
+    'krakow-poland': 'photo-1544620347-c4fd4a3d5957',
+    'bucharest-romania': 'photo-1558618047-f4e58f39cf65',
+    'belgrade-serbia': 'photo-1558618666-fcd25c85cd64',
+    'sofia-bulgaria': 'photo-1555993539-1732b0258235',
+    'tallinn-estonia': 'photo-1509356843151-3e7d96241e11',
+    'riga-latvia': 'photo-1513622470522-26c3c8a854bc',
+    'vilnius-lithuania': 'photo-1544620347-c4fd4a3d5957',
+};
+
 const POOL = [
     'photo-1477959858617-67f85cf4f1df','photo-1502602898657-3e91760cbb34',
     'photo-1513635269975-59663e0ac1ad','photo-1512470876302-972faa2aa9a4',
     'photo-1540959733332-eab4deabeeaf','photo-1508009603885-50cf7c579365',
-    'photo-1512453979798-5ea266f8880c','photo-1506973035872-a4ec16b8e8d9',
-    'photo-1585208798174-6cedd4454069','photo-1589909202802-8f4aadce9d55',
-    'photo-1496442226666-8d4d0e62e6e9','photo-1534190760961-74e8c1c5c3da',
-    'photo-1560969184-10fe8719e047','photo-1524231757912-21f4fe3a7200',
-    'photo-1541849546-216549ae216d','photo-1525625293386-3f8f99389edd',
 ];
 
 function poolImg(slug: string) {
+    // Use curated photo if available
+    if (CITY_PHOTOS[slug]) {
+        return `https://images.unsplash.com/${CITY_PHOTOS[slug]}?auto=format&fit=crop&w=800&h=500&q=80`;
+    }
+    // Deterministic fallback
     const h = Math.abs(slug.split('').reduce((a, c) => ((a << 5) - a) + c.charCodeAt(0), 0));
     return `https://images.unsplash.com/${POOL[h % POOL.length]}?auto=format&fit=crop&w=800&h=500&q=80`;
 }
