@@ -195,6 +195,43 @@ export default function CompareResultPage() {
                     </div>
                 )}
 
+                {/* ── CITY CARDS WITH PHOTOS — at the bottom ── */}
+                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: '1rem', marginBottom: '2rem' }}>
+                    {cities.map((city, i) => (
+                        <CityCard key={city.slug} city={city} total={totals[i]} isWinner={totals[i] === minTotal && totals[i] > 0} />
+                    ))}
+                </div>
+
+
+                {/* ── AFFILIATE CTAs — after seeing the data, user is ready to act ── */}
+                {cities.length >= 2 && (
+                    <div style={{ backgroundColor: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', padding: '1.5rem', marginBottom: '1.5rem' }}>
+                        <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem' }}>
+                            Ready to visit or move? — find the best deals
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+                            {cities.slice(0, 2).map((city, i) => (
+                                <a key={`hotel-${city.slug}`}
+                                    href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + city.city)}`}
+                                    target="_blank" rel="noopener noreferrer"
+                                    style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #e2e8f0', gap: '0.25rem' }}>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Hotels in {city.city}</span>
+                                    <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>Compare prices on Trivago</span>
+                                </a>
+                            ))}
+                            <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cities[0]?.city || '')}&searchSource=1&partner_id=VVPTRVK`}
+                                target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#fff8f0', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #F7831E22', gap: '0.25rem' }}>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Tours & Activities</span>
+                                <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>via GetYourGuide</span>
+                            </a>
+                        </div>
+                    </div>
+                )}
+
+
                 {/* ── COMPARISON TABLE ── */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '2rem' }}>
                     {/* Header */}
@@ -256,41 +293,6 @@ export default function CompareResultPage() {
                             </div>
                         ))}
                     </div>
-                </div>
-
-                {/* ── AFFILIATE CTAs — after seeing the data, user is ready to act ── */}
-                {cities.length >= 2 && (
-                    <div style={{ backgroundColor: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', padding: '1.5rem', marginBottom: '1.5rem' }}>
-                        <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem' }}>
-                            Ready to visit or move? — find the best deals
-                        </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
-                            {cities.slice(0, 2).map((city, i) => (
-                                <a key={`hotel-${city.slug}`}
-                                    href={`https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/?aDateless=1&search/200-' + city.city)}`}
-                                    target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #e2e8f0', gap: '0.25rem' }}>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Hotels in {city.city}</span>
-                                    <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>Compare prices on Trivago</span>
-                                </a>
-                            ))}
-                            <a href={`https://www.getyourguide.com/s/?q=${encodeURIComponent(cities[0]?.city || '')}&searchSource=1&partner_id=VVPTRVK`}
-                                target="_blank" rel="noopener noreferrer"
-                                style={{ display: 'flex', flexDirection: 'column', padding: '1rem', backgroundColor: '#fff8f0', borderRadius: '0.875rem', textDecoration: 'none', border: '1px solid #F7831E22', gap: '0.25rem' }}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                                <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#0f172a' }}>Tours & Activities</span>
-                                <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>via GetYourGuide</span>
-                            </a>
-                        </div>
-                    </div>
-                )}
-
-                {/* ── CITY CARDS WITH PHOTOS — at the bottom ── */}
-                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: '1rem', marginBottom: '2rem' }}>
-                    {cities.map((city, i) => (
-                        <CityCard key={city.slug} city={city} total={totals[i]} isWinner={totals[i] === minTotal && totals[i] > 0} />
-                    ))}
                 </div>
 
                 {/* CTA */}
