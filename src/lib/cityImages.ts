@@ -426,6 +426,8 @@ const CITY_IMAGES: Record<string, string> = {
     'zhengzhou-china': 'photo-1508804185872-d7badad00f7d',
     'zurich': 'photo-1515488764276-beab7607c1e6',
     'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
+    'douala': '/cities/douala.jpg',
+    'douala-cameroon': '/cities/douala.jpg',
 };
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
