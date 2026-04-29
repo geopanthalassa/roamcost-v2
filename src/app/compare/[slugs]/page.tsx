@@ -233,7 +233,8 @@ export default function CompareResultPage() {
 
 
                 {/* ── COMPARISON TABLE ── */}
-                <div style={{ backgroundColor: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '2rem' }}>
+                <style>{`.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:1.25rem;border:1px solid #e2e8f0;margin-bottom:2rem}.cmp-inner{min-width:520px;background:white;border-radius:1.25rem;overflow:hidden}`}</style>
+                <div className="cmp-wrap"><div className="cmp-inner">
                     {/* Header */}
                     <div style={{ display: 'grid', gridTemplateColumns: `185px repeat(${cols}, 1fr)`, backgroundColor: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
                         <div style={{ padding: '0.875rem 1.25rem', fontSize: '0.68rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Category</div>
@@ -294,6 +295,7 @@ export default function CompareResultPage() {
                         ))}
                     </div>
                 </div>
+                </div></div></div>{/* end cmp-wrap */}
 
                 {/* CTA */}
                 <div style={{ backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2.5rem', textAlign: 'center' }}>
