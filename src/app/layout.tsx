@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CurrencyProvider } from "@/context/CurrencyContext";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,23 +13,17 @@ export const metadata: Metadata = {
     description: "Compare rent, food, safety, internet speed and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers. Find the cheapest cities to live, work and travel.",
     keywords: "cost of living comparison, digital nomad cities, cheapest cities to live, expat guide, city comparison, where to live abroad, best cities for remote work, cost of living calculator, move abroad, retire abroad, cheapest countries to live, best travel destinations cost",
     openGraph: {
-        title: "RoamCost — Compare Cost of Living Worldwide",
+        title: "RoamCost – Compare Cost of Living Worldwide",
         description: "Data-driven city comparisons for digital nomads and expats. Find your perfect global base.",
         url: "https://www.roamcost.com",
         siteName: "RoamCost",
         type: "website",
-        images: [{ 
-            url: "https://www.roamcost.com/og-image.png", 
-            width: 1200, 
-            height: 630, 
-            alt: "RoamCost - Compare Cost of Living Between Cities Worldwide" 
-        }],
+        images: [{ url: "https://www.roamcost.com/favicon_512.png", width: 512, height: 512, alt: "RoamCost" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "RoamCost — Compare Cost of Living Worldwide",
+        title: "RoamCost – Compare Cost of Living Worldwide",
         description: "Find your perfect city. Compare rent, safety, internet and more.",
-        images: ["https://www.roamcost.com/og-image.png"],
     },
     robots: {
         index: true,
@@ -52,18 +47,14 @@ export default function RootLayout({
             <head>
                 <meta name="google-translate-customization" content="9f35768e67a71c1-f03e73ef93656214-gd98f869974204e30-10" />
                 <link rel="canonical" href="https://www.roamcost.com" />
-                {/* Google Analytics */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2QKKP0J0C"></script>
-                <script dangerouslySetInnerHTML={{ __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'G-J2QKKP0J0C');
-                `}} />
-                {/* Google AdSense */}
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6334611421204216" crossOrigin="anonymous"></script>
+                <script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6334611421204216"
+                    crossOrigin="anonymous"
+                />
             </head>
             <body className={inter.className}>
+                <GoogleAnalytics />
                 <CurrencyProvider>
                     <Header />
                     <main>{children}</main>
