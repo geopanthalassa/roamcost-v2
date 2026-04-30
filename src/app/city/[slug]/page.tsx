@@ -151,6 +151,18 @@ export default async function CityPage({ params }: CityPageProps) {
                             ))}
                         </div>
 
+                        {/* Descriptive paragraph for SEO and AdSense */}
+                        {hasData && (
+                            <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem', lineHeight: 1.75 }}>
+                                <p style={{ fontSize: '0.92rem', color: '#475569', margin: 0 }}>
+                                    <strong style={{ color: '#0f172a' }}>{c.city}</strong> is one of the {(c.cost_index ?? 0) < 50 ? 'most affordable' : (c.cost_index ?? 0) < 80 ? 'moderately priced' : 'higher-cost'} cities in {c.country} for expats and digital nomads.
+                                    {' '}Monthly rent for a 1-bedroom apartment averages <strong>${Math.round(c.rent_index ?? 0).toLocaleString()}</strong>, making it {(c.rent_index ?? 0) < 600 ? 'very accessible for remote workers on a budget' : (c.rent_index ?? 0) < 1200 ? 'competitive compared to major Western cities' : 'a premium destination with high living standards'}.
+                                    {' '}{c.city} scores <strong>{c.safety ?? 'N/A'}/10 on safety</strong> and offers <strong>{c.internet ?? 'N/A'} Mbps</strong> average internet speed{(c.internet ?? 0) >= 50 ? ' — excellent for remote work' : (c.internet ?? 0) >= 20 ? ' — suitable for most remote work needs' : ''}.
+                                    {' '}Whether you are planning a short stay or a long-term relocation, {c.city} offers a {(c.cost_index ?? 0) < 60 ? 'low cost of living with strong quality of life indicators' : 'well-rounded lifestyle with access to international amenities'}.
+                                </p>
+                            </div>
+                        )}
+
                         <div className="city-data-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                             <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', border: '1px solid #e2e8f0' }}>
                                 <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem' }}>Monthly Living Costs</h2>
