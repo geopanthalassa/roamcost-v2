@@ -260,7 +260,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
                                 label: `Hotels in ${c.city}`, sub: 'Booking.com', color: '#003580', bg: '#eff6ff',
-                                href: `https://www.awin1.com/cread.php?awinmid=13453&awinaffid=2865959&ued=${encodeURIComponent('https://www.booking.com/searchresults.html?ss=' + c.city + ', ' + c.country)}`
+                                href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=${encodeURIComponent('https://www.booking.com/searchresults.html?ss=' + c.city + ', ' + c.country)}`
                             },
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e83e3e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
