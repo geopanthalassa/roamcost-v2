@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { City } from '@/types/database';
@@ -52,14 +52,14 @@ function getImageUrl(slug: string, cityName: string, countryName: string): strin
             if (url) return url;
         }
     }
-    // 3. Deterministic pool — guaranteed city skyline
+    // 3. Deterministic pool â€” guaranteed city skyline
     const hash = Math.abs(`${cityName}-${countryName}`.split('').reduce((a, c) => ((a << 5) - a) + c.charCodeAt(0), 0));
     return `https://images.unsplash.com/${URBAN_POOL[hash % URBAN_POOL.length]}?auto=format&fit=crop&w=800&h=500&q=80`;
 }
 
 export default function CityCard({ city, preloadedImage }: CityCardProps) {
     const { formatValue } = useCurrency();
-    const estimatedMonthly = (city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0);
+    const estimatedMonthly = (city as any).total_usd ?? ((city.rent_index ?? 0) + ((city.food_index ?? 0) * 30) + (city.transport_index ?? 0) + (city.utilities_index ?? 0));
     const hasData = estimatedMonthly > 0;
     const imageUrl = preloadedImage || getImageUrl(city.slug, city.city, city.country);
     const safetyColor = (city.safety ?? 0) >= 7 ? '#40916C' : (city.safety ?? 0) >= 5 ? '#d97706' : '#dc2626';
@@ -71,7 +71,7 @@ export default function CityCard({ city, preloadedImage }: CityCardProps) {
             border: '1px solid #e2e8f0', boxShadow: 'none', background: '#ffffff',
             borderRadius: 'var(--radius-md)', textDecoration: 'none'
         }}>
-            {/* Use <img> tag instead of background-image — works correctly with Unsplash */}
+            {/* Use <img> tag instead of background-image â€” works correctly with Unsplash */}
             <div style={{ height: '200px', overflow: 'hidden', position: 'relative', backgroundColor: '#e2e8f0' }}>
                 <img
                     src={imageUrl}
@@ -122,3 +122,4 @@ export default function CityCard({ city, preloadedImage }: CityCardProps) {
         </Link>
     );
 }
+
