@@ -1,25 +1,20 @@
 'use client';
 
 import Script from 'next/script';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, Suspense } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 
 const GA_ID = 'G-J2QKKP0J0C';
 
-function GATracker() {
+export default function GoogleAnalytics() {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
 
     useEffect(() => {
-        if (typeof window.gtag !== 'function') return;
-        const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '');
-        window.gtag('config', GA_ID, { page_path: url });
-    }, [pathname, searchParams]);
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('config', GA_ID, { page_path: pathname });
+        }
+    }, [pathname]);
 
-    return null;
-}
-
-export default function GoogleAnalytics() {
     return (
         <>
             <Script
@@ -31,12 +26,9 @@ export default function GoogleAnalytics() {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-                    gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+                    gtag('config', '${GA_ID}');
                 `}
             </Script>
-            <Suspense fallback={null}>
-                <GATracker />
-            </Suspense>
         </>
     );
 }
