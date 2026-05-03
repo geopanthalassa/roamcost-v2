@@ -100,7 +100,7 @@ export default async function CityPage({ params }: CityPageProps) {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1.5rem' }}>
                         <div>
                             <p style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.75)', marginBottom: '0.5rem' }}>
-                                {c.country}{c.population ? ` â€¢ ${c.population.toLocaleString()} inhabitants` : ''}
+                                {c.country}{c.population ? ` • ${c.population.toLocaleString()} inhabitants` : ''}
                             </p>
                             <h1 style={{ fontSize: '3.5rem', fontWeight: 900, color: 'white', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '1rem' }}>{c.city}</h1>
                             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -157,7 +157,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ fontSize: '0.92rem', color: '#475569', margin: 0 }}>
                                     <strong style={{ color: '#0f172a' }}>{c.city}</strong> is one of the {(c.cost_index ?? 0) < 50 ? 'most affordable' : (c.cost_index ?? 0) < 80 ? 'moderately priced' : 'higher-cost'} cities in {c.country} for expats and digital nomads.
                                     {' '}Monthly rent for a 1-bedroom apartment averages <strong>${Math.round((c as any).rent_usd ?? c.rent_index ?? 0).toLocaleString()}</strong>, making it {(c.rent_index ?? 0) < 600 ? 'very accessible for remote workers on a budget' : (c.rent_index ?? 0) < 1200 ? 'competitive compared to major Western cities' : 'a premium destination with high living standards'}.
-                                    {' '}{c.city} scores <strong>{c.safety ?? 'N/A'}/10 on safety</strong> and offers <strong>{c.internet ?? 'N/A'} Mbps</strong> average internet speed{(c.internet ?? 0) >= 50 ? ' â€” excellent for remote work' : (c.internet ?? 0) >= 20 ? ' â€” suitable for most remote work needs' : ''}.
+                                    {' '}{c.city} scores <strong>{c.safety ?? 'N/A'}/10 on safety</strong> and offers <strong>{c.internet ?? 'N/A'} Mbps</strong> average internet speed{(c.internet ?? 0) >= 50 ? ' "” excellent for remote work' : (c.internet ?? 0) >= 20 ? ' "” suitable for most remote work needs' : ''}.
                                     {' '}Whether you are planning a short stay or a long-term relocation, {c.city} offers a {(c.cost_index ?? 0) < 60 ? 'low cost of living with strong quality of life indicators' : 'well-rounded lifestyle with access to international amenities'}.
                                 </p>
                             </div>
@@ -216,7 +216,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                             <div key={m.label} style={{ padding: '1rem', backgroundColor: good ? '#F0FAF4' : '#fafafa', border: `1px solid ${good ? '#D8F3DC' : '#e2e8f0'}`, borderRadius: '0.75rem', textAlign: 'center' }}>
                                                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.3rem', color: iconColor }}>{m.svg}</div>
                                                 <div style={{ fontSize: '1.25rem', fontWeight: 900, color: good ? '#40916C' : '#94a3b8' }}>
-                                                    {m.value != null ? m.value : 'â€”'}{m.unit ? ` ${m.unit}` : ''}
+                                                    {m.value != null ? m.value : '"”'}{m.unit ? ` ${m.unit}` : ''}
                                                 </div>
                                                 <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{m.label}</div>
                                             </div>
@@ -260,7 +260,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 {/* WEATHER */}
                 <WeatherWidget lat={c.lat} long={c.long} city={c.city} />
 
-                {/* TRAVEL â€” always visible */}
+                {/* TRAVEL "” always visible */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
                     <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 16z"/></svg>
@@ -363,7 +363,7 @@ export default async function CityPage({ params }: CityPageProps) {
                     </div>
                 </div>
 
-                {/* PLAN YOUR MOVE â€” contextual CTA with real rent price */}
+                {/* PLAN YOUR MOVE "” contextual CTA with real rent price */}
                 {((c as any).rent_usd ?? c.rent_index ?? 0) > 0 && (
                     <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', borderRadius: '1.25rem', padding: '2rem', marginBottom: '1.5rem', position: 'relative', overflow: 'hidden' }}>
                         <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '120px', height: '120px', borderRadius: '50%', background: 'rgba(82,183,136,0.08)', border: '1px solid rgba(82,183,136,0.15)' }} />
