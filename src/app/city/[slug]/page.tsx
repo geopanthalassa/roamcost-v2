@@ -40,7 +40,7 @@ export default async function CityPage({ params }: CityPageProps) {
     const { slug } = await params;
 
     const { data } = await supabase
-        .from('cities_master').select('*')
+        .from('cities_master').select('*, rent_usd, food_usd, transport_usd, total_usd')
         .eq('slug', slug)
         .order('cost_index', { ascending: false })
         .limit(1)
@@ -53,7 +53,7 @@ export default async function CityPage({ params }: CityPageProps) {
     const heroImage = await getCityImageServer(c.slug, c.city, c.country, 1400);
 
     const { data: related } = await supabase
-        .from('cities_master').select('*')
+        .from('cities_master').select('*, rent_usd, food_usd, transport_usd, total_usd')
         .eq('country', c.country)
         .neq('slug', slug)
         .gt('cost_index', 0)
@@ -373,7 +373,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                 Plan your life in {c.city}
                             </h2>
                             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', margin: '0 0 1.5rem', lineHeight: 1.6 }}>
-                                Average rent is <strong style={{ color: 'white' }}>${Math.round(c.rent_index).toLocaleString()}/mo</strong>. 
+                                Average rent is <strong style={{ color: 'white' }}>${Math.round((c as any).rent_usd ?? c.rent_index ?? 0).toLocaleString()}/mo</strong>. 
                                 Find your accommodation, explore the city, and get there first.
                             </p>
                             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -412,4 +412,5 @@ export default async function CityPage({ params }: CityPageProps) {
         </div>
     );
 }
+
 
