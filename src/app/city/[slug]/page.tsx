@@ -89,9 +89,9 @@ export default async function CityPage({ params }: CityPageProps) {
                 <div style={{ position: 'absolute', top: '1.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: '1200px', padding: '0 1.5rem' }}>
                     <nav style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>
                         <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
-                        <span style={{ margin: '0 0.5rem' }}>â†’</span>
+                        <span style={{ margin: '0 0.5rem' }}>→</span>
                         <Link href="/rankings/quality" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Cities</Link>
-                        <span style={{ margin: '0 0.5rem' }}>â†’</span>
+                        <span style={{ margin: '0 0.5rem' }}>→</span>
                         <span style={{ color: 'white', fontWeight: 600 }}>{c.city}</span>
                     </nav>
                 </div>
@@ -123,7 +123,7 @@ export default async function CityPage({ params }: CityPageProps) {
                         </div>
                         <div style={{ display: 'flex', gap: '0.75rem' }}>
                             {hasData && (
-                                <Link href={`/compare?city1=${c.slug}`} style={{ backgroundColor: 'white', color: '#0f172a', padding: '0.75rem 1.25rem', borderRadius: '0.75rem', fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none' }}>Compare â†’</Link>
+                                <Link href={`/compare?city1=${c.slug}`} style={{ backgroundColor: 'white', color: '#0f172a', padding: '0.75rem 1.25rem', borderRadius: '0.75rem', fontWeight: 800, fontSize: '0.875rem', textDecoration: 'none' }}>Compare →</Link>
                             )}
                             <Link href={`/city/${c.slug}/things-to-do`} style={{ backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', color: 'white', padding: '0.75rem 1.25rem', borderRadius: '0.75rem', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.3)' }}>Things to do</Link>
                         </div>
@@ -241,7 +241,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             We're working on adding detailed cost of living data for this city. Meanwhile, explore hotels, flights and local experiences below.
                         </p>
                         <Link href="/rankings/quality" style={{ display: 'inline-block', backgroundColor: '#52B788', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>
-                            See cities with full data â†’
+                            See cities with full data →
                         </Link>
                     </div>
                 )}
