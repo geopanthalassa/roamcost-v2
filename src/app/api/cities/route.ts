@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+﻿import { NextRequest, NextResponse } from 'next/server';
 
 const SUPA_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPA_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const FIELDS = 'slug,city,country,rent_index,food_index,transport_index,utilities_index,safety,internet,healthcare,cost_index,population';
+const FIELDS = 'slug,city,country,rent_index,food_index,transport_index,utilities_index,safety,internet,healthcare,cost_index,population,rent_usd,food_usd,transport_usd,total_usd';
 
 async function supaFetch(path: string) {
     const res = await fetch(`${SUPA_URL}/rest/v1/${path}`, {
@@ -22,7 +22,7 @@ async function findCity(slug: string): Promise<any | null> {
     ).catch(() => []);
     if (exact.length > 0) return exact[0];
 
-    // 2. Search by city name (convert slug to name: prague → prague, new-york → new york)
+    // 2. Search by city name (convert slug to name: prague â†’ prague, new-york â†’ new york)
     const cityName = slug.replace(/-/g, ' ');
     const byName = await supaFetch(
         `cities_master?select=${FIELDS}&city=ilike.${encodeURIComponent(cityName)}&order=population.desc&limit=1`
@@ -78,3 +78,4 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ error: err.message }, { status: 500 });
     }
 }
+

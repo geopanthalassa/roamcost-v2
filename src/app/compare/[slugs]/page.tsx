@@ -14,9 +14,9 @@ interface City {
 }
 
 const METRICS = [
-    { label: 'Monthly Rent', key: 'rent_index', better: 'lower', format: 'money', factor: 1, desc: '1BR apartment, city center' },
-    { label: 'Food (monthly)', key: 'food_index', better: 'lower', format: 'money', factor: 30, desc: 'Daily cost x 30 days' },
-    { label: 'Transport', key: 'transport_index', better: 'lower', format: 'money', factor: 1, desc: 'Monthly public pass' },
+    { label: 'Monthly Rent', key: 'rent_usd', better: 'lower', format: 'money', factor: 1, desc: '1BR apartment, city center' },
+    { label: 'Food (monthly)', key: 'food_usd', better: 'lower', format: 'money', factor: 1, desc: 'Monthly food estimate' },
+    { label: 'Transport', key: 'transport_usd', better: 'lower', format: 'money', factor: 1, desc: 'Monthly public pass' },
     { label: 'Utilities', key: 'utilities_index', better: 'lower', format: 'money', factor: 1, desc: 'Electricity + water + internet' },
     { label: 'Safety', key: 'safety', better: 'higher', format: 'score', factor: 1, desc: 'Safety index / 10' },
     { label: 'Internet Speed', key: 'internet', better: 'higher', format: 'mbps', factor: 1, desc: 'Average Mbps' },
@@ -208,7 +208,7 @@ export default function CompareResultPage() {
         if (!vals.length) return null;
         return better === 'lower' ? Math.min(...vals) : Math.max(...vals);
     };
-    const totalCost = (c: City) => Math.round((c.rent_index || 0) + (c.food_index || 0) * 30 + (c.transport_index || 0) + (c.utilities_index || 0));
+    const totalCost = (c: City) => c.total_usd ? Math.round(c.total_usd) : Math.round((c.rent_index || 0) + (c.food_index || 0) * 30 + (c.transport_index || 0) + (c.utilities_index || 0));
     const totals = cities.map(totalCost);
     const minTotal = Math.min(...totals.filter(t => t > 0));
     const cols = cities.length;
