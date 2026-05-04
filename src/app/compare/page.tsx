@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useCallback, useRef, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
 const GREEN = '#52B788';
@@ -54,9 +54,30 @@ const POPULAR_COMPARISONS = [
 
 interface Suggestion { city: string; country: string; slug: string; }
 
-export default function ComparePage() {
+function ComparePageInner() {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const city1 = searchParams.get('city1');
+    const [initialized, setInitialized] = useState(false);
     const [slots, setSlots] = useState(['', '']);
+
+    useEffect(() => {
+        if (city1 && !initialized) {
+            setInitialized(true);
+            // Buscar el nombre de la ciudad por slug
+            fetch(`/api/cities?slugs=${city1}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (Array.isArray(data) && data[0]) {
+                        setSlots([data[0].city, '']);
+                    }
+                })
+                .catch(() => {
+                    // Fallback: usar slug como texto
+                    setSlots([city1.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), '']);
+                });
+        }
+    }, [city1, initialized]);
     const [focusIdx, setFocusIdx] = useState<number | null>(null);
     const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
     const [loading, setLoading] = useState(false);
@@ -211,5 +232,14 @@ export default function ComparePage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+
+export default function ComparePage() {
+    return (
+        <Suspense fallback={<div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }} />}>
+            <ComparePageInner />
+        </Suspense>
     );
 }
