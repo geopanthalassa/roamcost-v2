@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ const GREEN = '#52B788';
 interface City {
     slug: string; city: string; country: string;
     rent_index: number; food_index: number; transport_index: number;
-    utilities_index: number; safety: number; internet: number;
+    utilities_index: number; rent_usd?: number; food_usd?: number; transport_usd?: number; total_usd?: number; safety: number; internet: number;
     healthcare: number; cost_index: number; population: number;
 }
 
@@ -24,7 +24,7 @@ const METRICS = [
     { label: 'Quality of Life', key: 'cost_index', better: 'higher', format: 'score', factor: 1, desc: 'Overall quality score' },
 ];
 
-// Curated city photos — correct images for popular cities
+// Curated city photos â€” correct images for popular cities
 const CITY_PHOTOS: Record<string, string> = {
     'bangkok': '/cities/bangkok.jpg',
     'new-york': '/cities/new-york.jpg',
@@ -137,7 +137,7 @@ function CityCard({ city, total, isWinner }: { city: City; total: number; isWinn
                     <div>
                         <div style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: 600, marginBottom: '0.1rem' }}>Est. monthly cost</div>
                         <div style={{ fontSize: '1.25rem', fontWeight: 900, color: isWinner ? GREEN : '#0f172a' }}>
-                            {total > 0 ? `$${total.toLocaleString()}` : '—'}
+                            {total > 0 ? `$${total.toLocaleString()}` : 'â€”'}
                         </div>
                     </div>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={GREEN} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -150,7 +150,7 @@ function CityCard({ city, total, isWinner }: { city: City; total: number; isWinn
 }
 
 function fmt(val: number | null, format: string, factor = 1): string {
-    if (!val) return '—';
+    if (!val) return 'â€”';
     const v = val * factor;
     if (format === 'money') return `$${Math.round(v).toLocaleString()}`;
     if (format === 'mbps') return `${Math.round(v)} Mbps`;
@@ -208,7 +208,7 @@ export default function CompareResultPage() {
         if (!vals.length) return null;
         return better === 'lower' ? Math.min(...vals) : Math.max(...vals);
     };
-    const totalCost = (c: City) => c.total_usd ? Math.round(c.total_usd) : Math.round((c.rent_index || 0) + (c.food_index || 0) * 30 + (c.transport_index || 0) + (c.utilities_index || 0));
+    const totalCost = (c: City) => (c as any).total_usd ? Math.round((c as any).total_usd) : Math.round((c.rent_index || 0) + (c.food_index || 0) * 30 + (c.transport_index || 0) + (c.utilities_index || 0));
     const totals = cities.map(totalCost);
     const minTotal = Math.min(...totals.filter(t => t > 0));
     const cols = cities.length;
@@ -221,9 +221,9 @@ export default function CompareResultPage() {
                 <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1.25rem', fontSize: '0.72rem' }}>
                         <Link href="/" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Home</Link>
-                        <span style={{ color: 'rgba(255,255,255,0.2)' }}>→</span>
+                        <span style={{ color: 'rgba(255,255,255,0.2)' }}>â†’</span>
                         <Link href="/compare" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Compare</Link>
-                        <span style={{ color: 'rgba(255,255,255,0.2)' }}>→</span>
+                        <span style={{ color: 'rgba(255,255,255,0.2)' }}>â†’</span>
                         <span style={{ color: 'rgba(255,255,255,0.6)' }}>{cities.map(c => c.city).join(' vs ')}</span>
                     </div>
                     <h1 style={{ fontSize: '2.25rem', fontWeight: 900, color: 'white', margin: '0 0 0.4rem', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
@@ -235,7 +235,7 @@ export default function CompareResultPage() {
                         ))}
                     </h1>
                     <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', margin: 0 }}>
-                        Cost of living comparison 2026 · Updated monthly
+                        Cost of living comparison 2026 Â· Updated monthly
                     </p>
                 </div>
             </div>
@@ -252,7 +252,7 @@ export default function CompareResultPage() {
                     </div>
                 )}
 
-                {/* City cards with photos — FIRST */}
+                {/* City cards with photos â€” FIRST */}
                 <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: '1rem', marginBottom: '1.5rem' }}>
                     {cities.map((city, i) => (
                         <CityCard key={city.slug} city={city} total={totals[i]} isWinner={totals[i] === minTotal && totals[i] > 0} />
@@ -325,7 +325,7 @@ export default function CompareResultPage() {
                             {cities.map((city, i) => (
                                 <div key={city.slug} style={{ padding: '1rem 0.75rem', textAlign: 'center', borderLeft: '1px solid #1e293b' }}>
                                     <div style={{ fontSize: '1.15rem', fontWeight: 900, color: totals[i] === minTotal ? GREEN : 'white' }}>
-                                        {totals[i] > 0 ? `$${totals[i].toLocaleString()}` : '—'}
+                                        {totals[i] > 0 ? `$${totals[i].toLocaleString()}` : 'â€”'}
                                     </div>
                                     {totals[i] > 0 && totals[i] !== minTotal && minTotal > 0 && (
                                         <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', marginTop: '0.15rem' }}>
@@ -385,3 +385,4 @@ export default function CompareResultPage() {
         </div>
     );
 }
+
