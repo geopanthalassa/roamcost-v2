@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import CityCard from '@/components/CityCard';
 import WorldMap from '@/components/WorldMap';
@@ -17,7 +17,7 @@ const POPULAR_COMPARISONS = [
     { a: 'new-york', b: 'london', labelA: 'New York', labelB: 'London' },
     { a: 'bangkok', b: 'singapore', labelA: 'Bangkok', labelB: 'Singapore' },
     { a: 'berlin', b: 'amsterdam', labelA: 'Berlin', labelB: 'Amsterdam' },
-    { a: 'buenos-aires', b: 'bogota', labelA: 'Buenos Aires', labelB: 'Bogotá' },
+    { a: 'buenos-aires', b: 'bogota', labelA: 'Buenos Aires', labelB: 'BogotÃ¡' },
     { a: 'dubai', b: 'singapore', labelA: 'Dubai', labelB: 'Singapore' },
 ];
 
@@ -79,7 +79,7 @@ export default async function Home() {
         .order('internet', { ascending: false })
         .limit(4) as unknown as { data: City[] };
 
-    // Map cities — well-known cities with lat/long
+    // Map cities â€” well-known cities with lat/long
     const { data: mapCities } = await supabase
         .from('cities_master')
         .select('city, country, slug, lat, long, cost_index, rent_index')
@@ -92,10 +92,21 @@ export default async function Home() {
     return (
         <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
 
-            {/* ── HERO WITH VIDEO ── */}
+            {/* â”€â”€ HERO WITH VIDEO â”€â”€ */}
             <section style={{ position: 'relative', overflow: 'hidden', minHeight: '620px', display: 'flex', alignItems: 'center', backgroundColor: '#0f172a' }}>
                 {/* Video background */}
-                <video
+                      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "RoamCost - Compare Cost of Living Between Cities Worldwide",
+        "description": "Compare rent, food, safety and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers.",
+        "thumbnailUrl": "https://www.roamcost.com/favicon_512.png",
+        "uploadDate": "2026-01-01",
+        "contentUrl": "https://www.roamcost.com/hero-video.mp4",
+        "embedUrl": "https://www.roamcost.com",
+        "publisher": { "@type": "Organization", "name": "RoamCost", "url": "https://www.roamcost.com" }
+      }) }} />
+            <video
                     autoPlay muted loop playsInline
                     style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65 }}
                 >
@@ -123,7 +134,7 @@ export default async function Home() {
                         </h1>
 
                         <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px', margin: '0 auto 2.5rem' }}>
-                            Rent, food, safety, internet speed and quality of life — all in one place.
+                            Rent, food, safety, internet speed and quality of life â€” all in one place.
                             Make informed decisions about where to live, work or travel.
                         </p>
 
@@ -145,7 +156,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── STATS BAR ── */}
+            {/* â”€â”€ STATS BAR â”€â”€ */}
             <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div className="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
@@ -164,7 +175,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── POPULAR COMPARISONS ── */}
+            {/* â”€â”€ POPULAR COMPARISONS â”€â”€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
@@ -172,7 +183,7 @@ export default async function Home() {
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Comparisons</h2>
                             <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                Compare any city →
+                                Compare any city â†’
                             </Link>
                         </div>
                     </div>
@@ -185,20 +196,20 @@ export default async function Home() {
                                 <p style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
                                     {labelA} vs {labelB}
                                 </p>
-                                <p style={{ fontSize: '0.75rem', color: '#52B788', margin: 0, fontWeight: 600 }}>Compare costs →</p>
+                                <p style={{ fontSize: '0.75rem', color: '#52B788', margin: 0, fontWeight: 600 }}>Compare costs â†’</p>
                             </Link>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ── PROFILE FILTER ── */}
+            {/* â”€â”€ PROFILE FILTER â”€â”€ */}
             <ProfileFilter />
 
-            {/* ── QUICK CONVERTER ── */}
+            {/* â”€â”€ QUICK CONVERTER â”€â”€ */}
             <QuickConverter />
 
-            {/* ── POPULAR CITIES ── */}
+            {/* â”€â”€ POPULAR CITIES â”€â”€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
@@ -206,7 +217,7 @@ export default async function Home() {
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Cities</h2>
                             <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                View all rankings →
+                                View all rankings â†’
                             </Link>
                         </div>
                     </div>
@@ -274,7 +285,7 @@ export default async function Home() {
                                                 <div key={stat.label} style={{ padding: '0.4rem 0.25rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem' }}>
                                                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.2rem' }}>{stat.icon}</div>
                                                     <div style={{ fontSize: '0.55rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.1rem' }}>{stat.label}</div>
-                                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? '—'}</div>
+                                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? 'â€”'}</div>
                                                 </div>
                                             ))}
                                         </div>
@@ -286,7 +297,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── HOW IT WORKS ── */}
+            {/* â”€â”€ HOW IT WORKS â”€â”€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
@@ -341,17 +352,17 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── WORLD MAP ── */}
+            {/* â”€â”€ WORLD MAP â”€â”€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2rem' }}>
                         <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Interactive</p>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
-                                Cost of living — world map
+                                Cost of living â€” world map
                             </h2>
                             <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                See rankings →
+                                See rankings â†’
                             </Link>
                         </div>
                         <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '0.5rem' }}>
@@ -362,7 +373,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── RANKINGS ── */}
+            {/* â”€â”€ RANKINGS â”€â”€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
@@ -383,7 +394,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* ── CTA ── */}
+            {/* â”€â”€ CTA â”€â”€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#0f172a' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
                     <h2 style={{ fontSize: '2.25rem', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.03em', marginBottom: '1rem' }}>
@@ -406,3 +417,4 @@ export default async function Home() {
         </div>
     );
 }
+
