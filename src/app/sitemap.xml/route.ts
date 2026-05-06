@@ -1,6 +1,32 @@
-import { supabase } from '@/lib/supabase';
+﻿import { supabase } from '@/lib/supabase';
 
 const BASE = 'https://www.roamcost.com';
+
+const CURRENCIES = ['USD','EUR','GBP','JPY','AUD','CAD','CHF','CNY','INR','BRL','MXN','ARS','COP','CLP','KRW','SGD','THB','TRY','PLN','ZAR','AED','IDR','MYR','PHP','VND','HKD','NZD','NOK','SEK','DKK','UAH','UYU','PEN','SAR'];
+
+const POPULAR_CONVERT_PAIRS = [
+    'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
+    'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
+    'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
+    'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
+];
+
+const CURRENCIES = ['USD','EUR','GBP','JPY','AUD','CAD','CHF','CNY','INR','BRL','MXN','ARS','COP','CLP','KRW','SGD','THB','TRY','PLN','ZAR','AED','IDR','MYR','PHP','VND','HKD','NZD','NOK','SEK','DKK','UAH','UYU','PEN','SAR'];
+
+const POPULAR_CONVERT_PAIRS = [
+    'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
+    'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
+    'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
+    'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
+];
+
+
+    const POPULAR_CONVERT_PAIRS = [
+        'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
+        'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
+        'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
+        'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
+    ];
 
 const POPULAR_PAIRS = [
     'paris-vs-london', 'tokyo-vs-seoul', 'barcelona-vs-lisbon',
@@ -36,7 +62,12 @@ function generateSiteMap(cities: any[]) {
         ];
     });
 
-    const allUrls = [...staticUrls, ...compareUrls, ...cityUrls];
+    
+    const convertUrls = POPULAR_CONVERT_PAIRS.map(pair => ({
+        loc: `${BASE}/convert/${pair}`, priority: '0.8', changefreq: 'daily'
+    }));
+
+    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...cityUrls];
 
     return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -58,3 +89,5 @@ export async function GET() {
     const sitemap = generateSiteMap(cities || []);
     return new Response(sitemap, { headers: { 'Content-Type': 'application/xml' } });
 }
+
+
