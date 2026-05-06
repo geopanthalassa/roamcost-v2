@@ -1,4 +1,4 @@
-const CITY_IMAGES: Record<string, string> = {
+﻿const CITY_IMAGES: Record<string, string> = {
     'abidjan': 'photo-1580060839134-75a5edca2e99',
     'abidjan-cote-divoire': 'photo-1580060839134-75a5edca2e99',
     'abu-dhabi': '/cities/abu-dhabi.jpg',
@@ -429,7 +429,11 @@ const CITY_IMAGES: Record<string, string> = {
     'zhengzhou': 'photo-1508804185872-d7badad00f7d',
     'zhengzhou-china': 'photo-1508804185872-d7badad00f7d',
     'zurich': 'photo-1515488764276-beab7607c1e6',
-    'zurich-switzerland': 'photo-1515488764276-beab7607c1e6',
+    'zurich-switzerland': '/cities/zurich-switzerland.jpg',
+    'geneva-switzerland': '/cities/geneva-switzerland.jpg',
+    'bern-switzerland': '/cities/bern-switzerland.jpg',
+    'lausanne-switzerland': '/cities/lausanne-switzerland.jpg',
+    'basel-switzerland': '/cities/basel-switzerland.jpg',
 };
 
 export const CITY_IMAGES_KEYS = Object.keys(CITY_IMAGES);
@@ -443,3 +447,4 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
 }
+
