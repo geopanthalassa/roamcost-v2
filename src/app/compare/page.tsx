@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useCallback, useRef, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -13,11 +13,11 @@ const supabase = createClient(
 
 // Known slugs map for fast resolution
 const CITY_SLUGS: Record<string, string> = {
-    'Bangkok': 'bangkok', 'Bali': 'denpasar-indonesia', 'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
+    'Bangkok': 'bangkok-thailand', 'Bali': 'denpasar-indonesia', 'Bali Island': 'denpasar-indonesia',  'Lisbon': 'lisbon', 'Barcelona': 'barcelona',
     'Berlin': 'berlin', 'Prague': 'prague', 'Tokyo': 'tokyo', 'Seoul': 'seoul',
     'Dubai': 'dubai', 'Singapore': 'singapore', 'New York': 'new-york',
     'Mexico City': 'mexico-city', 'Buenos Aires': 'buenos-aires', 'Lima': 'lima',
-    'Medellín': 'medellin-colombia', 'Amsterdam': 'amsterdam', 'Vienna': 'vienna',
+    'MedellÃ­n': 'medellin-colombia', 'Amsterdam': 'amsterdam', 'Vienna': 'vienna',
     'Madrid': 'madrid', 'Sydney': 'sydney', 'Melbourne': 'melbourne',
     'Toronto': 'toronto', 'Vancouver': 'vancouver', 'Miami': 'miami',
     'Los Angeles': 'los-angeles', 'Paris': 'paris', 'Rome': 'rome',
@@ -33,12 +33,12 @@ const CITY_SLUGS: Record<string, string> = {
     'Nairobi': 'nairobi', 'Cape Town': 'cape-town', 'Casablanca': 'casablanca',
     'Chicago': 'chicago', 'San Francisco': 'san-francisco', 'Boston': 'boston',
     'Seattle': 'seattle', 'Denver': 'denver', 'Atlanta': 'atlanta', 'Dallas': 'dallas',
-    'Houston': 'houston', 'Montreal': 'montreal', 'Bogotá': 'bogota',
-    'São Paulo': 'sao-paulo', 'Rio de Janeiro': 'rio-de-janeiro', 'Santiago': 'santiago',
+    'Houston': 'houston', 'Montreal': 'montreal', 'BogotÃ¡': 'bogota',
+    'SÃ£o Paulo': 'sao-paulo', 'Rio de Janeiro': 'rio-de-janeiro', 'Santiago': 'santiago',
     'Montevideo': 'montevideo', 'Delhi': 'delhi-india', 'Mumbai': 'mumbai-india',
     'Bangalore': 'bangalore-india', 'Kyiv': 'kyiv', 'Moscow': 'moscow', 'Sofia': 'sofia',
     'Belgrade': 'belgrade', 'Edinburgh': 'edinburgh', 'Porto': 'porto',
-    'Seville': 'seville', 'Valencia': 'valencia', 'Kraków': 'krakow',
+    'Seville': 'seville', 'Valencia': 'valencia', 'KrakÃ³w': 'krakow',
     'Tallinn': 'tallinn', 'Riga': 'riga', 'Vilnius': 'vilnius', 'Auckland': 'auckland',
     'Amman': 'amman', 'Panama City': 'panama-city',
     'Medellin': 'medellin-colombia', 'Quito': 'quito',
@@ -156,7 +156,7 @@ function ComparePageInner() {
                                     <div style={{ flex: 1, position: 'relative' }}>
                                         <input
                                             type="text"
-                                            placeholder={i === 0 ? 'First city — e.g. Bangkok' : i === 1 ? 'Second city — e.g. Lisbon' : `City ${i + 1}`}
+                                            placeholder={i === 0 ? 'First city â€” e.g. Bangkok' : i === 1 ? 'Second city â€” e.g. Lisbon' : `City ${i + 1}`}
                                             value={slot}
                                             onChange={e => handleInput(i, e.target.value)}
                                             onFocus={() => { setFocusIdx(i); searchCities(slot); }}
@@ -183,7 +183,7 @@ function ComparePageInner() {
 
                                     {/* Remove */}
                                     {slots.length > 2 && (
-                                        <button onClick={() => removeSlot(i)} style={{ width: '30px', height: '30px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: 'none', cursor: 'pointer', color: '#94a3b8', fontSize: '1.1rem', fontWeight: 700, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
+                                        <button onClick={() => removeSlot(i)} style={{ width: '30px', height: '30px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: 'none', cursor: 'pointer', color: '#94a3b8', fontSize: '1.1rem', fontWeight: 700, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Ã—</button>
                                     )}
                                 </div>
 
@@ -214,7 +214,7 @@ function ComparePageInner() {
                     {/* Compare button */}
                     <button onClick={handleCompare} disabled={validCount < 2}
                         style={{ width: '100%', marginTop: '1.5rem', padding: '1rem', borderRadius: '0.875rem', backgroundColor: validCount >= 2 ? GREEN : '#e2e8f0', color: validCount >= 2 ? 'white' : '#94a3b8', fontSize: '1rem', fontWeight: 800, border: 'none', cursor: validCount >= 2 ? 'pointer' : 'default', transition: 'all 0.2s', letterSpacing: '-0.01em' }}>
-                        {validCount >= 2 ? `Compare ${validCount} ${validCount === 1 ? 'city' : 'cities'} →` : 'Select at least 2 cities'}
+                        {validCount >= 2 ? `Compare ${validCount} ${validCount === 1 ? 'city' : 'cities'} â†’` : 'Select at least 2 cities'}
                     </button>
                 </div>
 
@@ -243,3 +243,4 @@ export default function ComparePage() {
         </Suspense>
     );
 }
+
