@@ -183,7 +183,7 @@ function ComparePageInner() {
 
                                     {/* Remove */}
                                     {slots.length > 2 && (
-                                        <button onClick={() => removeSlot(i)} style={{ width: '30px', height: '30px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: 'none', cursor: 'pointer', color: '#94a3b8', fontSize: '1.1rem', fontWeight: 700, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Ã—</button>
+                                        <button onClick={() => removeSlot(i)} style={{ width: '30px', height: '30px', borderRadius: '50%', backgroundColor: '#f1f5f9', border: 'none', cursor: 'pointer', color: '#94a3b8', fontSize: '1.1rem', fontWeight: 700, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
                                     )}
                                 </div>
 

@@ -235,7 +235,7 @@ export default function CompareResultPage() {
                         ))}
                     </h1>
                     <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', margin: 0 }}>
-                        Cost of living comparison 2026 Â· Updated monthly
+                        Cost of living comparison 2026 · Updated monthly
                     </p>
                 </div>
             </div>
