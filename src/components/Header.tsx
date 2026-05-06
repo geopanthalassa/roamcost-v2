@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,6 +13,7 @@ const NAV_LINKS = [
     { href: '/hot-takes', label: 'Hot Takes', match: '/hot-takes' },
     { href: '/blog', label: 'Blog', match: '/blog' },
     { href: '/about', label: 'About', match: '/about' },
+    { href: '/calculator', label: 'Converter', match: '/calculator' },
 ];
 
 const CURRENCIES = ['USD','EUR','GBP','JPY','ARS','BRL','MXN','COP','CLP','CAD','AUD','CHF','CNY','INR','SGD','HKD','KRW','TRY','ZAR','AED'];
@@ -100,3 +101,4 @@ export default function Header() {
         </header>
     );
 }
+
