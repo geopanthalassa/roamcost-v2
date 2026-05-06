@@ -79,7 +79,7 @@ export default async function Home() {
         .order('internet', { ascending: false })
         .limit(4) as unknown as { data: City[] };
 
-    // Map cities â€" well-known cities with lat/long
+    // Map cities – well-known cities with lat/long
     const { data: mapCities } = await supabase
         .from('cities_master')
         .select('city, country, slug, lat, long, cost_index, rent_index')
@@ -134,7 +134,7 @@ export default async function Home() {
                         </h1>
 
                         <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px', margin: '0 auto 2.5rem' }}>
-                            Rent, food, safety, internet speed and quality of life â€" all in one place.
+                            Rent, food, safety, internet speed and quality of life – all in one place.
                             Make informed decisions about where to live, work or travel.
                         </p>
 
@@ -183,7 +183,7 @@ export default async function Home() {
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Comparisons</h2>
                             <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                Compare any city â†'
+                                Compare any city →
                             </Link>
                         </div>
                     </div>
@@ -196,7 +196,7 @@ export default async function Home() {
                                 <p style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
                                     {labelA} vs {labelB}
                                 </p>
-                                <p style={{ fontSize: '0.75rem', color: '#52B788', margin: 0, fontWeight: 600 }}>Compare costs â†'</p>
+                                <p style={{ fontSize: '0.75rem', color: '#52B788', margin: 0, fontWeight: 600 }}>Compare costs →</p>
                             </Link>
                         ))}
                     </div>
@@ -217,7 +217,7 @@ export default async function Home() {
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Cities</h2>
                             <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                View all rankings â†'
+                                View all rankings →
                             </Link>
                         </div>
                     </div>
@@ -285,7 +285,7 @@ export default async function Home() {
                                                 <div key={stat.label} style={{ padding: '0.4rem 0.25rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem' }}>
                                                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.2rem' }}>{stat.icon}</div>
                                                     <div style={{ fontSize: '0.55rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.1rem' }}>{stat.label}</div>
-                                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? 'â€"'}</div>
+                                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? '–'}</div>
                                                 </div>
                                             ))}
                                         </div>
@@ -359,10 +359,10 @@ export default async function Home() {
                         <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Interactive</p>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
-                                Cost of living â€" world map
+                                Cost of living – world map
                             </h2>
                             <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                See rankings â†'
+                                See rankings →
                             </Link>
                         </div>
                         <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '0.5rem' }}>
