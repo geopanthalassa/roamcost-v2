@@ -275,6 +275,21 @@ export default async function CityPage({ params }: CityPageProps) {
                                 href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=${encodeURIComponent('https://www.booking.com/searchresults.html?ss=' + c.city + ', ' + c.country)}`
                             },
                             {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 16z"/></svg>,
+                                label: `Flights to ${c.city}`, sub: 'Booking.com', color: '#003580', bg: '#eff6ff',
+                                href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=${encodeURIComponent('https://www.booking.com/flights/index.en-us.html?to=' + c.city)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
+                                label: `Car Rental in ${c.city}`, sub: 'Booking.com', color: '#003580', bg: '#eff6ff',
+                                href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=${encodeURIComponent('https://www.booking.com/cars/index.en-us.html?pickup_city=' + c.city)}`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4046CA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>,
+                                label: `Stay secure in ${c.city}`, sub: 'NordVPN', color: '#4046CA', bg: '#f0f0ff',
+                                href: `https://www.awin1.com/cread.php?awinmid=9399&awinaffid=2865959&ued=https%3A%2F%2Fnordvpn.com`
+                            },
+                            {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e83e3e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
                                 label: `Compare Hotels`, sub: 'Trivago', color: '#e83e3e', bg: '#fff1f1',
                                 href: `https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/en-US/srl/hotels?search=200-' + encodeURIComponent(c.city))}`
