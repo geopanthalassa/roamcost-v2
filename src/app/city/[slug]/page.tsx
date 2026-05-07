@@ -332,52 +332,6 @@ export default async function CityPage({ params }: CityPageProps) {
                     </div>
                 </div>
 
-                {/* THINGS TO DO */}
-                <div style={{ backgroundColor: '#ffffff', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
-                    <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                        Things to do in {c.city}
-                    </h2>
-                    <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1.5rem' }}>Tours, experiences and activities curated for travelers</p>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
-                        {[
-                            { href: `https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`, label: 'Tours & Experiences', sub: 'GetYourGuide', color: '#F7831E', bg: '#fff8f0' },
-                            { href: `https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`, label: 'Activities & Attractions', sub: 'Klook', color: '#F7831E', bg: '#fff8f0' },
-                            { href: `https://www.viator.com/search/${encodeURIComponent(c.city)}`, label: 'Tours & Day Trips', sub: 'Viator', color: '#52B788', bg: '#F0FAF4' },
-                            { href: `https://www.tripadvisor.com/Search?q=${encodeURIComponent(c.city)}`, label: 'Things to Do', sub: 'Tripadvisor', color: '#52B788', bg: '#F0FAF4' },
-                        ].map(link => (
-                            <a key={link.sub} href={link.href} target="_blank" rel="noopener noreferrer"
-                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', backgroundColor: link.bg, border: `1px solid ${link.color}22`, borderRadius: '0.75rem', textDecoration: 'none' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-                                    <div style={{ width: '32px', height: '32px', backgroundColor: link.color, borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                                    </div>
-                                    <div>
-                                        <div style={{ fontWeight: 800, fontSize: '0.82rem', color: '#0f172a' }}>{link.label}</div>
-                                        <div style={{ fontSize: '0.68rem', color: link.color, fontWeight: 700 }}>via {link.sub}</div>
-                                    </div>
-                                </div>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={link.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        ))}
-                    </div>
-
-                    {/* Category quick links */}
-                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                        {['Walking Tours', 'Food Tours', 'Day Trips', 'Museums', 'Night Life', 'Outdoor'].map(cat => (
-                            <a key={cat}
-                                href={`https://www.klook.com/s/${encodeURIComponent(cat + ' ' + c.city)}`}
-                                target="_blank" rel="noopener noreferrer"
-                                style={{ fontSize: '0.75rem', fontWeight: 700, color: '#52B788', backgroundColor: '#F0FAF4', border: '1px solid #D8F3DC', borderRadius: '2rem', padding: '0.3rem 0.75rem', textDecoration: 'none' }}>
-                                {cat}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-
                 {/* PLAN YOUR MOVE "” contextual CTA with real rent price */}
                 {((c as any).rent_usd ?? c.rent_index ?? 0) > 0 && (
                     <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', borderRadius: '1.25rem', padding: '2rem', marginBottom: '1.5rem', position: 'relative', overflow: 'hidden' }}>
