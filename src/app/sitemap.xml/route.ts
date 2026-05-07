@@ -1,38 +1,19 @@
-﻿import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 const BASE = 'https://www.roamcost.com';
-
-const CURRENCIES = ['USD','EUR','GBP','JPY','AUD','CAD','CHF','CNY','INR','BRL','MXN','ARS','COP','CLP','KRW','SGD','THB','TRY','PLN','ZAR','AED','IDR','MYR','PHP','VND','HKD','NZD','NOK','SEK','DKK','UAH','UYU','PEN','SAR'];
-
-const POPULAR_CONVERT_PAIRS = [
-    'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
-    'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
-    'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
-    'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
-];
-
-const CURRENCIES = ['USD','EUR','GBP','JPY','AUD','CAD','CHF','CNY','INR','BRL','MXN','ARS','COP','CLP','KRW','SGD','THB','TRY','PLN','ZAR','AED','IDR','MYR','PHP','VND','HKD','NZD','NOK','SEK','DKK','UAH','UYU','PEN','SAR'];
-
-const POPULAR_CONVERT_PAIRS = [
-    'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
-    'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
-    'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
-    'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
-];
-
-
-    const POPULAR_CONVERT_PAIRS = [
-        'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
-        'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
-        'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
-        'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
-    ];
 
 const POPULAR_PAIRS = [
     'paris-vs-london', 'tokyo-vs-seoul', 'barcelona-vs-lisbon',
     'new-york-vs-london', 'bangkok-vs-singapore', 'berlin-vs-amsterdam',
     'buenos-aires-vs-bogota', 'dubai-vs-singapore', 'miami-vs-barcelona',
     'tokyo-vs-bangkok', 'london-vs-amsterdam', 'paris-vs-berlin',
+];
+
+const POPULAR_CONVERT_PAIRS = [
+    'usd-to-ars','usd-to-eur','usd-to-gbp','usd-to-brl','usd-to-mxn',
+    'usd-to-cop','usd-to-clp','usd-to-thb','usd-to-vnd','usd-to-inr',
+    'eur-to-gbp','eur-to-brl','eur-to-ars','gbp-to-eur','eur-to-usd',
+    'usd-to-jpy','usd-to-krw','usd-to-sgd','usd-to-aed','usd-to-try',
 ];
 
 function generateSiteMap(cities: any[]) {
@@ -51,6 +32,10 @@ function generateSiteMap(cities: any[]) {
         loc: `${BASE}/compare/${pair}`, priority: '0.8', changefreq: 'weekly'
     }));
 
+    const convertUrls = POPULAR_CONVERT_PAIRS.map(pair => ({
+        loc: `${BASE}/convert/${pair}`, priority: '0.8', changefreq: 'daily'
+    }));
+
     const cityUrls = cities.flatMap(({ slug, city, country }) => {
         const citySlug = (city || '').toLowerCase().replace(/ /g, '-');
         const regionSlug = (country || '').toLowerCase().replace(/ /g, '-');
@@ -61,11 +46,6 @@ function generateSiteMap(cities: any[]) {
             { loc: `${BASE}/cheapest-cities-in-${regionSlug}`, priority: '0.5', changefreq: 'monthly' },
         ];
     });
-
-    
-    const convertUrls = POPULAR_CONVERT_PAIRS.map(pair => ({
-        loc: `${BASE}/convert/${pair}`, priority: '0.8', changefreq: 'daily'
-    }));
 
     const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...cityUrls];
 
@@ -89,5 +69,3 @@ export async function GET() {
     const sitemap = generateSiteMap(cities || []);
     return new Response(sitemap, { headers: { 'Content-Type': 'application/xml' } });
 }
-
-
