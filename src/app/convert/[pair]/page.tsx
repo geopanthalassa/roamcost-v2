@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ pair: str
     description,
     openGraph: { title, description, url: `https://www.roamcost.com/convert/${pair}` },
     alternates: { canonical: `https://www.roamcost.com/convert/${pair}` },
-    keywords: `${from} to ${to}, ${from} ${to} converter, ${fromName} to ${toName}, ${from} ${to} exchange rate, convert ${FROM} to ${to} today`.replace('${FROM}', from),
+    keywords: `${from} to ${to}, ${from} ${to} converter, ${fromName} to ${toName}, ${from} ${to} exchange rate, convert ${from} to ${to} today`,
   };
 }
 
@@ -75,7 +75,6 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
   const fromCurr = CURRENCIES[from];
   const toCurr = CURRENCIES[to];
 
-  // Popular pairs for this currency
   const relatedPairs = Object.keys(CURRENCIES)
     .filter(c => c !== from && c !== to)
     .slice(0, 8)
@@ -83,7 +82,6 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
 
   return (
     <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
-      {/* Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
@@ -94,7 +92,6 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       })}} />
 
-      {/* Hero */}
       <section style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '3rem 0 2.5rem' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
           <nav style={{ fontSize: '0.75rem', color: '#94a3b8', marginBottom: '1.5rem' }}>
@@ -108,38 +105,27 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
             {from} to {to} Converter
           </h1>
           <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.6 }}>
-            Convert {fromCurr.name} to {toCurr.name} with live exchange rates.
-            Updated daily for travelers, expats and digital nomads.
+            Convert {fromCurr.name} to {toCurr.name} with live exchange rates. Updated daily for travelers, expats and digital nomads.
           </p>
         </div>
       </section>
 
-      {/* Converter client component */}
       <ConvertClient from={from} to={to} currencies={CURRENCIES} />
 
-      {/* SEO text */}
       <section style={{ maxWidth: '720px', margin: '0 auto', padding: '0 1.5rem 3rem' }}>
         <div style={{ backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid #e2e8f0', padding: '2rem', marginBottom: '1.5rem' }}>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>
             About {from} to {to} conversion
           </h2>
           <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.75 }}>
-            The {fromCurr.name} ({from}) and the {toCurr.name} ({to}) are two of the most traded currencies in the world.
+            The {fromCurr.name} ({from}) and the {toCurr.name} ({to}) are widely traded currencies used by travelers, expats and investors worldwide.
             Exchange rates fluctuate daily based on economic conditions, interest rates, and market sentiment.
             RoamCost uses live rates updated daily to give you the most accurate {from}/{to} conversion.
           </p>
-          <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.75, marginTop: '1rem' }}>
-            Whether you are traveling, sending money abroad, or comparing the cost of living between countries,
-            knowing the {from} to {to} exchange rate is essential. Use our converter above to get the latest rate
-            and calculate any amount instantly.
-          </p>
         </div>
 
-        {/* Related conversions */}
         <div style={{ backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid #e2e8f0', padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>
-            Other {from} conversions
-          </h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Other {from} conversions</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {relatedPairs.map(p => (
               <Link key={p.to} href={`/convert/${p.from.toLowerCase()}-to-${p.to.toLowerCase()}`}
@@ -150,7 +136,6 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
           </div>
         </div>
 
-        {/* CTA */}
         <div style={{ backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2rem', textAlign: 'center' }}>
           <h3 style={{ color: '#ffffff', fontWeight: 900, fontSize: '1.3rem', margin: '0 0 0.5rem' }}>
             Going somewhere that uses {to}?
