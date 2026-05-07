@@ -100,7 +100,7 @@ export default async function Home() {
         "@type": "VideoObject",
         "name": "RoamCost - Compare Cost of Living Between Cities Worldwide",
         "description": "Compare rent, food, safety and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers.",
-        "thumbnailUrl": "https://www.roamcost.com/favicon_512.png",
+        "thumbnailUrl": "https://www.roamcost.com/og-image.jpg",
         "uploadDate": "2026-01-01T00:00:00+00:00",
         "contentUrl": "https://www.roamcost.com/hero-video.mp4",
         "embedUrl": "https://www.roamcost.com",
@@ -419,4 +419,6 @@ export default async function Home() {
 }
 
  
+
+
 
