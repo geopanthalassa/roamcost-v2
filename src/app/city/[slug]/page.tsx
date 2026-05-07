@@ -311,18 +311,7 @@ export default async function CityPage({ params }: CityPageProps) {
                             },
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4285f4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>,
-                                
-                            {
-                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
-                                label: `Tours in ${c.city}`, sub: 'GetYourGuide', color: '#F7831E', bg: '#fff8f0',
-                                href: `https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`
-                            },
-                            {
-                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
-                                label: `Activities in ${c.city}`, sub: 'Klook', color: '#FF6B35', bg: '#fff5f0',
-                                href: `https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`
-                            },
-                            label: `Explore ${c.city}`, sub: 'Google Maps', color: '#4285f4', bg: '#eff6ff',
+                                label: `Explore ${c.city}`, sub: 'Google Maps', color: '#4285f4', bg: '#eff6ff',
                                 href: `https://www.google.com/maps/search/${encodeURIComponent(c.city)}`
                             },
                             {
