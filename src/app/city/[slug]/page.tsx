@@ -319,6 +319,16 @@ export default async function CityPage({ params }: CityPageProps) {
                                 label: `Rent a Car in ${c.city}`, sub: 'RentalCars', color: '#1a56db', bg: '#eff6ff',
                                 href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=${encodeURIComponent('https://www.rentalcars.com/en/search/?pickUpName=' + encodeURIComponent(c.city) + '&dropOffName=' + encodeURIComponent(c.city))}`
                             },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
+                                label: `Tours in ${c.city}`, sub: 'GetYourGuide', color: '#F7831E', bg: '#fff8f0',
+                                href: `https://www.getyourguide.com/s/?q=${encodeURIComponent(c.city)}&searchSource=1&partner_id=VVPTRVK`
+                            },
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
+                                label: `Activities in ${c.city}`, sub: 'Klook', color: '#FF6B35', bg: '#fff5f0',
+                                href: `https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`
+                            },
                         ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.25rem', backgroundColor: link.bg, borderRadius: '0.875rem', textDecoration: 'none', color: '#0f172a', border: `1px solid ${link.color}22` }}>
