@@ -404,7 +404,7 @@
     'ulaanbaatar': 'photo-1508804185872-d7badad00f7d',
     'utrecht': '/cities/utrecht-holanda.jpg',
     'valencia': '/cities/valencia-spain.jpg',
-    'valencia-spain': 'photo-1558618047-f4e58f39cf65',
+    'valencia-spain': '/cities/valencia-spain.jpg',
     'valencia-venezuela': 'photo-1589923188900-85dae523342b',
     'vancouver': '/cities/vancouver.jpg',
     'vancouver-canada': 'photo-1559511260-b120d11350cf',
@@ -447,4 +447,5 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
 }
+
 
