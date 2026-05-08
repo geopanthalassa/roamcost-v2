@@ -11,9 +11,10 @@ const NAV_LINKS = [
     { href: '/rankings/quality', label: 'Rankings', match: '/rankings' },
     { href: '/compare', label: 'Compare', match: '/compare' },
     { href: '/hot-takes', label: 'Hot Takes', match: '/hot-takes' },
+    { href: '/calculator', label: 'Converter', match: '/calculator' },
     { href: '/blog', label: 'Blog', match: '/blog' },
     { href: '/about', label: 'About', match: '/about' },
-    { href: '/calculator', label: 'Converter', match: '/calculator' },
+
 ];
 
 const CURRENCIES = ['USD','EUR','GBP','JPY','ARS','BRL','MXN','COP','CLP','CAD','AUD','CHF','CNY','INR','SGD','HKD','KRW','TRY','ZAR','AED'];
