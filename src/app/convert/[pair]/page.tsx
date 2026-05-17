@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ pair: str
   const { from, to } = parsed;
   const fromName = CURRENCIES[from].name;
   const toName = CURRENCIES[to].name;
-  const title = `${from} to ${to} Converter – ${fromName} to ${toName} | RoamCost`;
+  const title = `${from} to ${to} Converter  ${fromName} to ${toName} | RoamCost`;
   const description = `Convert ${fromName} to ${toName} with live exchange rates. How much is 1 ${from} in ${to} today? Free ${from}/${to} currency converter updated daily.`;
   return {
     title,
@@ -96,9 +96,9 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
         <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
           <nav style={{ fontSize: '0.75rem', color: '#94a3b8', marginBottom: '1.5rem' }}>
             <Link href="/" style={{ color: '#94a3b8', textDecoration: 'none' }}>Home</Link>
-            <span style={{ margin: '0 0.5rem' }}>→</span>
+            <span style={{ margin: '0 0.5rem' }}>�</span>
             <Link href="/calculator" style={{ color: '#94a3b8', textDecoration: 'none' }}>Currency Converter</Link>
-            <span style={{ margin: '0 0.5rem' }}>→</span>
+            <span style={{ margin: '0 0.5rem' }}>�</span>
             <span style={{ color: '#0f172a' }}>{from} to {to}</span>
           </nav>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.04em', marginBottom: '0.75rem' }}>
@@ -130,10 +130,23 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
             {relatedPairs.map(p => (
               <Link key={p.to} href={`/convert/${p.from.toLowerCase()}-to-${p.to.toLowerCase()}`}
                 style={{ fontSize: '0.8rem', fontWeight: 700, padding: '0.35rem 0.875rem', borderRadius: '2rem', backgroundColor: '#f8fafc', color: '#475569', textDecoration: 'none', border: '1px solid #e2e8f0' }}>
-                {p.from} → {p.to}
+                {p.from} � {p.to}
               </Link>
             ))}
           </div>
+        </div>
+
+
+        <div style={{ backgroundColor: '#f0fbff', borderRadius: '1rem', border: '1px solid #00B9FF22', padding: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#00B9FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Send money abroad</div>
+            <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>Transfer with real exchange rates</div>
+            <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.25rem' }}>No hidden fees · Up to 8x cheaper than banks</div>
+          </div>
+          <a href="https://wise.prf.hn/click/camref:1110lFqtW" target="_blank" rel="noopener noreferrer"
+            style={{ backgroundColor: '#00B9FF', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+            Send with Wise →
+          </a>
         </div>
 
         <div style={{ backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2rem', textAlign: 'center' }}>
@@ -144,7 +157,7 @@ export default async function ConvertPage({ params }: { params: Promise<{ pair: 
             Compare the full cost of living — rent, food, safety and internet — not just the exchange rate.
           </p>
           <Link href="/compare" style={{ backgroundColor: '#52B788', color: '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.9rem' }}>
-            Compare cities →
+            Compare cities �
           </Link>
         </div>
       </section>
