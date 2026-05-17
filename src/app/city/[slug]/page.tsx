@@ -329,6 +329,12 @@ export default async function CityPage({ params }: CityPageProps) {
                                 label: `Activities in ${c.city}`, sub: 'Klook', color: '#FF6B35', bg: '#fff5f0',
                                 href: `https://affiliate.klook.com/redirect?aid=119390&k_site=${encodeURIComponent('https://www.klook.com/s/' + c.city)}`
                             },
+                        
+                            {
+                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B9FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>,
+                                label: `Send money to ${c.city}`, sub: 'Wise', color: '#00B9FF', bg: '#f0fbff',
+                                href: `https://wise.prf.hn/click/camref:1110lFqtW`
+                            },
                         ].map(link => (
                             <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                                 style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.25rem', backgroundColor: link.bg, borderRadius: '0.875rem', textDecoration: 'none', color: '#0f172a', border: `1px solid ${link.color}22` }}>
