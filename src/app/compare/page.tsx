@@ -156,7 +156,7 @@ function ComparePageInner() {
                                     <div style={{ flex: 1, position: 'relative' }}>
                                         <input
                                             type="text"
-                                            placeholder={i === 0 ? 'First city â€” e.g. Bangkok' : i === 1 ? 'Second city â€” e.g. Lisbon' : `City ${i + 1}`}
+                                            placeholder={i === 0 ? 'First city ”” e.g. Bangkok' : i === 1 ? 'Second city ”” e.g. Lisbon' : `City ${i + 1}`}
                                             value={slot}
                                             onChange={e => handleInput(i, e.target.value)}
                                             onFocus={() => { setFocusIdx(i); searchCities(slot); }}
