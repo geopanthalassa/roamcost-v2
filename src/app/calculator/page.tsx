@@ -249,6 +249,20 @@ export default function CalculatorPage() {
                     </div>
                 </div>
 
+
+                {/* Wise CTA */}
+                <div style={{ marginTop: '1.5rem', backgroundColor: '#f0fbff', borderRadius: '1rem', border: '1px solid #00B9FF22', padding: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#00B9FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Send money abroad</div>
+                        <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a' }}>Transfer with real exchange rates</div>
+                        <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.25rem' }}>No hidden fees · Up to 8x cheaper than banks</div>
+                    </div>
+                    <a href="https://wise.prf.hn/click/camref:1110lFqtW" target="_blank" rel="noopener noreferrer"
+                        style={{ backgroundColor: '#00B9FF', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.75rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                        Send with Wise →
+                    </a>
+                </div>
+
                 {/* CTA */}
                 <div style={{ marginTop: '2.5rem', backgroundColor: '#0f172a', borderRadius: '1.25rem', padding: '2rem', textAlign: 'center' }}>
                     <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Going somewhere?</div>
