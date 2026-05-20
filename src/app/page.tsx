@@ -414,6 +414,36 @@ export default async function Home() {
                 </div>
             </section>
 
+
+            {/* SEO Content Section */}
+            <section style={{ padding: '5rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+                        <div>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '1rem' }}>What is RoamCost?</h2>
+                            <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '0.95rem', marginBottom: '1rem' }}>RoamCost is a free cost of living comparison platform designed for digital nomads, expats, remote workers and curious travelers. We aggregate real data on rent, food, transport, internet speed, safety and quality of life across thousands of cities worldwide.</p>
+                            <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '0.95rem', marginBottom: '1rem' }}>Whether you are planning to relocate abroad, looking for the cheapest cities to live comfortably, or simply curious about how your city compares to others, RoamCost gives you the data you need to make informed decisions.</p>
+                            <p style={{ color: '#475569', lineHeight: 1.8, fontSize: '0.95rem' }}>Our database covers over 45,000 cities across every continent, from major global hubs like New York and London to emerging nomad destinations like Tbilisi and Chiang Mai. All data is updated regularly to reflect current market conditions.</p>
+                        </div>
+                        <div>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>Frequently Asked Questions</h2>
+                            {[
+                                { q: 'Which is the cheapest city to live in the world?', a: 'Cities like Tbilisi (Georgia), Skopje (North Macedonia) and Asuncion (Paraguay) consistently rank among the most affordable, with monthly budgets under $800 for a comfortable lifestyle.' },
+                                { q: 'Can I live abroad on $1,000 per month?', a: 'Yes - in many cities across Southeast Asia, Eastern Europe and Latin America, $1,000/month covers rent, food, transport and entertainment. Bangkok, Chiang Mai, Medellin and Bucharest are popular choices.' },
+                                { q: 'How accurate is the cost of living data?', a: 'Our data is sourced from Numbeo, World Bank and community reports, updated regularly. Prices reflect averages and may vary depending on lifestyle and neighborhood.' },
+                                { q: 'What is a digital nomad?', a: 'A digital nomad is someone who works remotely while living and traveling in different countries. They typically look for cities with fast internet, affordable rent and good quality of life.' },
+                                { q: 'How do I compare cities on RoamCost?', a: 'Use the Compare tool to select up to 4 cities and see a side-by-side breakdown of rent, food, transport, safety and internet speed. You can also use the Currency Converter to see costs in your local currency.' },
+                            ].map((item, i) => (
+                                <div key={i} style={{ marginBottom: '1.25rem', paddingBottom: '1.25rem', borderBottom: i < 4 ? '1px solid #f1f5f9' : 'none' }}>
+                                    <h3 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.4rem' }}>{item.q}</h3>
+                                    <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>{item.a}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 }
