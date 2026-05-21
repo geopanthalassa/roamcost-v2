@@ -298,59 +298,7 @@ export default async function Home() {
             </section>
 
             {/* â"€â"€ HOW IT WORKS â"€â"€ */}
-            <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>How it works</p>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em' }}>Data-driven decisions</h2>
-                    </div>
-                    <div className="how-it-works-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
-                        {[
-                            {
-                                num: '01',
-                                title: 'Search any city',
-                                desc: 'Access data for over 45,000 cities worldwide including rent, food, transport, safety and internet speed.',
-                                icon: (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
-                                    </svg>
-                                )
-                            },
-                            {
-                                num: '02',
-                                title: 'Compare side by side',
-                                desc: 'Select any two cities and get a detailed breakdown of every cost category to make an informed comparison.',
-                                icon: (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
-                                    </svg>
-                                )
-                            },
-                            {
-                                num: '03',
-                                title: 'Plan your move',
-                                desc: 'Use our currency calculator and travel tools to plan your relocation or trip with real, up-to-date data.',
-                                icon: (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#52B788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-                                    </svg>
-                                )
-                            },
-                        ].map(item => (
-                            <div key={item.num} style={{ padding: '2rem', backgroundColor: '#f8fafc', borderRadius: '1rem', border: '1px solid #e2e8f0' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
-                                    <div style={{ width: '44px', height: '44px', backgroundColor: '#F0FAF4', border: '1px solid #D8F3DC', borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                        {item.icon}
-                                    </div>
-                                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', letterSpacing: '0.05em' }}>{item.num}</span>
-                                </div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>{item.title}</h3>
-                                <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            
 
             {/* â"€â"€ WORLD MAP â"€â"€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
