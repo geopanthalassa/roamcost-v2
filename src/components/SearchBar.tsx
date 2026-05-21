@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 interface SearchBarProps {
-    preloadedCity?: string; // slug de ciudad pre-cargada para comparar
+    preloadedCity?: string;
 }
 
 export default function SearchBar({ preloadedCity }: SearchBarProps = {}) {
@@ -43,7 +43,7 @@ export default function SearchBar({ preloadedCity }: SearchBarProps = {}) {
     };
 
     return (
-        <div className="search-container" style={{ position: 'relative', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+        <div className="search-container" style={{ position: 'relative', width: '100%', maxWidth: '600px', margin: '0 auto', zIndex: 99999 }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                 <input
                     type="text"
@@ -93,12 +93,12 @@ export default function SearchBar({ preloadedCity }: SearchBarProps = {}) {
             </div>
 
             {results.length > 0 && (
-                <div className="search-results card" style={{
+                <div style={{
                     position: 'absolute',
                     top: 'calc(100% + 8px)',
                     left: 0,
-right: 'auto',
-                    zIndex: 999999,
+                    width: 'calc(100% - 60px)',
+                    zIndex: 99999,
                     padding: '0.5rem',
                     maxHeight: '320px',
                     overflowY: 'auto',
@@ -124,18 +124,13 @@ right: 'auto',
                         >
                             <Link
                                 href={`/city/${city.slug}`}
-                                style={{ flex: 1, textDecoration: 'none' }}
+                                style={{ flex: 1, textDecoration: 'none', textAlign: 'left' }}
                                 onClick={() => { setQuery(''); setResults([]); }}
                             >
                                 <span style={{ fontWeight: 800, color: '#0f172a' }}>{city.city}</span>
                                 <span style={{ color: '#64748b', marginLeft: '0.5rem', fontSize: '0.85rem' }}>{city.country}</span>
                             </Link>
                             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexShrink: 0 }}>
-                                {city.cost_index > 0 && (
-                                    <span style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600 }}>
-                                        Score {city.cost_index}
-                                    </span>
-                                )}
                                 <button
                                     onClick={() => handleCompare(city.slug)}
                                     style={{
@@ -160,6 +155,3 @@ right: 'auto',
         </div>
     );
 }
-
-
-
