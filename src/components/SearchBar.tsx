@@ -98,7 +98,7 @@ export default function SearchBar({ preloadedCity }: SearchBarProps = {}) {
                     top: 'calc(100% + 8px)',
                     left: 0,
                     right: 0,
-                    zIndex: 9999,
+                    zIndex: 99999,
                     padding: '0.5rem',
                     maxHeight: '320px',
                     overflowY: 'auto',
@@ -160,4 +160,5 @@ export default function SearchBar({ preloadedCity }: SearchBarProps = {}) {
         </div>
     );
 }
+
 

@@ -157,7 +157,7 @@ export default async function Home() {
             </section>
 
             {/* â"€â"€ STATS BAR â"€â"€ */}
-            <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0' }}>
+            <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0', position: 'relative', zIndex: 1 }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div className="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
                         {[
@@ -397,6 +397,7 @@ export default async function Home() {
 }
 
  
+
 
 
 
