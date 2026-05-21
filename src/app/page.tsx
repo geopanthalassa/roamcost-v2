@@ -17,7 +17,7 @@ const POPULAR_COMPARISONS = [
     { a: 'new-york', b: 'london', labelA: 'New York', labelB: 'London' },
     { a: 'bangkok', b: 'singapore', labelA: 'Bangkok', labelB: 'Singapore' },
     { a: 'berlin', b: 'amsterdam', labelA: 'Berlin', labelB: 'Amsterdam' },
-    { a: 'buenos-aires', b: 'bogota', labelA: 'Buenos Aires', labelB: 'BogotÃ¡' },
+    { a: 'buenos-aires', b: 'bogota', labelA: 'Buenos Aires', labelB: 'Bogotá' },
     { a: 'dubai', b: 'singapore', labelA: 'Dubai', labelB: 'Singapore' },
 ];
 
@@ -397,6 +397,8 @@ export default async function Home() {
 }
 
  
+
+
 
 
 
