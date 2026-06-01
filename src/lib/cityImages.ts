@@ -241,8 +241,8 @@
     'medan': '/cities/medan-indonesia.jpg',
     'medellin': '/cities/medellin.jpg',
     'medellin-colombia': '/cities/medellin.jpg',
-    'melbourne': 'photo-1514395462421-22b2f9f6b81c',
-    'melbourne-australia': 'photo-1514395462421-22b2f9f6b81c',
+    'melbourne': '/cities/melbourne-australia.jpg',
+    'melbourne-australia': '/cities/melbourne-australia.jpg',
     'mexico-city': '/cities/mexico-city.jpg',
     'mexico-city-mexico': '/cities/mexico-city.jpg',
     'miami': 'photo-1506905925346-21bda4d32df4',
@@ -447,5 +447,6 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
 }
+
 
 
