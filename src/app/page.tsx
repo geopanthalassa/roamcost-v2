@@ -189,6 +189,62 @@ export default async function Home() {
             <div style={{ backgroundColor: '#f8fafc', padding: '0.5rem 0' }}><QuickConverter /></div>
 
             {/* BLOG PREVIEW */}
+            
+            {/* AFFILIATES BAR */}
+            <section style={{ padding: '2.5rem 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <p style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem', textAlign: 'center' }}>Plan your trip</p>
+                    <div className="affiliates-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+                        {[
+                            {
+                                href: 'https://wise.prf.hn/click/camref:1110lFqtW',
+                                bg: '#e8fcd4', border: '#9FE870', iconColor: '#5a9e2f',
+                                label: 'Send money abroad',
+                                sub: 'Wise',
+                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5a9e2f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            },
+                            {
+                                href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=https%3A%2F%2Fwww.booking.com`,
+                                bg: '#e8eeff', border: '#003580', iconColor: '#003580',
+                                label: 'Find your hotel',
+                                sub: 'Booking.com',
+                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            },
+                            {
+                                href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=https%3A%2F%2Fwww.rentalcars.com`,
+                                bg: '#fff0e8', border: '#FF6600', iconColor: '#FF6600',
+                                label: 'Rent a car',
+                                sub: 'RentalCars',
+                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            },
+                            {
+                                href: 'https://www.getyourguide.com/?partner_id=VVPTRVK',
+                                bg: '#fff3f0', border: '#FF5533', iconColor: '#FF5533',
+                                label: 'Book experiences',
+                                sub: 'GetYourGuide',
+                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF5533" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                            },
+                        ].map(item => (
+                            <a key={item.sub} href={item.href} target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem',
+                                    backgroundColor: item.bg, borderRadius: '1rem',
+                                    border: `1.5px solid ${item.border}33`,
+                                    textDecoration: 'none', transition: 'transform 0.15s, box-shadow 0.15s' }}>
+                                <div style={{ flexShrink: 0, width: '52px', height: '52px', borderRadius: '0.875rem',
+                                    backgroundColor: 'white', display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <div style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', marginBottom: '0.1rem' }}>{item.label}</div>
+                                    <div style={{ fontSize: '0.75rem', fontWeight: 600, color: item.iconColor }}>{item.sub}</div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section style={{ padding: '3rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '1.5rem' }}>
