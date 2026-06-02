@@ -157,6 +157,33 @@ export default async function Home() {
             </section>
 
             {/* â"€â"€ STATS BAR â"€â"€ */}
+            
+            {/* HOT TAKES PREVIEW */}
+            <section style={{ padding: '3rem 0', backgroundColor: '#fff7ed', borderBottom: '1px solid #fed7aa' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                        <div>
+                            <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Hot Takes</p>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>City comparisons that will surprise you</h2>
+                        </div>
+                        <a href="/hot-takes" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#F7831E', textDecoration: 'none', whiteSpace: 'nowrap' }}>See all →</a>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                        {[
+                            { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia' },
+                            { href: '/hot-takes/new-york-vs-mexico-city', title: 'New York vs Mexico City', desc: 'Same continent, completely different cost reality.', tag: 'Americas' },
+                            { href: '/hot-takes/lisbon-vs-barcelona', title: 'Lisbon vs Barcelona', desc: 'Two Iberian gems — but only one fits a $2,000 budget.', tag: 'Europe' },
+                        ].map((item) => (
+                            <a key={item.href} href={item.href} style={{ display: 'block', backgroundColor: 'white', borderRadius: '1rem', padding: '1.5rem', textDecoration: 'none', border: '1px solid #fed7aa', transition: 'border-color 0.15s' }}>
+                                <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: '#fff7ed', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.75rem' }}>{item.tag}</span>
+                                <h3 style={{ fontSize: '1rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.5rem' }}>{item.title}</h3>
+                                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0', position: 'relative', zIndex: 1 }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div className="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
