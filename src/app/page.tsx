@@ -170,14 +170,18 @@ export default async function Home() {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {[
-                            { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia' },
-                            { href: '/hot-takes/new-york-vs-mexico-city', title: 'New York vs Mexico City', desc: 'Same continent, completely different cost reality.', tag: 'Americas' },
-                            { href: '/hot-takes/lisbon-vs-barcelona', title: 'Lisbon vs Barcelona', desc: 'Two Iberian gems — but only one fits a $2,000 budget.', tag: 'Europe' },
+                            { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/hot-takes/new-york-vs-mexico-city', title: 'New York vs Mexico City', desc: 'Same continent, completely different cost reality.', tag: 'Americas', img: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/hot-takes/lisbon-vs-barcelona', title: 'Lisbon vs Barcelona', desc: 'Two Iberian gems — but only one fits a $2,000 budget.', tag: 'Europe', img: 'https://images.unsplash.com/photo-1585208798174-6cedd4454069?auto=format&fit=crop&w=600&h=300&q=80' },
                         ].map((item) => (
-                            <a key={item.href} href={item.href} style={{ display: 'block', backgroundColor: 'white', borderRadius: '1rem', padding: '1.5rem', textDecoration: 'none', border: '1px solid #fed7aa', transition: 'border-color 0.15s' }}>
-                                <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: '#fff7ed', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.75rem' }}>{item.tag}</span>
-                                <h3 style={{ fontSize: '1rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.5rem' }}>{item.title}</h3>
-                                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                            <a key={item.href} href={item.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', position: 'relative', minHeight: '200px' }}>
+                                <img src={item.img} alt={item.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
+                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
+                                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem' }}>
+                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: 'rgba(255,255,255,0.15)', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{item.tag}</span>
+                                    <h3 style={{ fontSize: '1rem', fontWeight: 900, color: 'white', margin: '0 0 0.25rem' }}>{item.title}</h3>
+                                    <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+                                </div>
                             </a>
                         ))}
                     </div>
