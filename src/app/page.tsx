@@ -172,7 +172,7 @@ export default async function Home() {
                         {[
                             { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&h=300&q=80' },
                             { href: '/hot-takes/new-york-vs-mexico-city', title: 'New York vs Mexico City', desc: 'Same continent, completely different cost reality.', tag: 'Americas', img: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/hot-takes/lisbon-vs-barcelona', title: 'Lisbon vs Barcelona', desc: 'Two Iberian gems — but only one fits a $2,000 budget.', tag: 'Europe', img: 'https://images.unsplash.com/photo-1585208798174-6cedd4454069?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/hot-takes/lisbon-vs-barcelona', title: 'Lisbon vs Barcelona', desc: 'Two Iberian gems — but only one fits a $2,000 budget.', tag: 'Europe', img: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=600&h=300&q=80' },
                         ].map((item) => (
                             <a key={item.href} href={item.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', position: 'relative', minHeight: '200px' }}>
                                 <img src={item.img} alt={item.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
@@ -428,6 +428,7 @@ export default async function Home() {
 }
 
  
+
 
 
 
