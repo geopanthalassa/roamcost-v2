@@ -452,3 +452,11 @@ h3, .city-name, [style*="fontWeight: 900"] {
   .stats-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .rankings-categories-grid { grid-template-columns: 1fr !important; }
 }
+
+/* QUICK CONVERTER MOBILE */
+@media (max-width: 640px) {
+  .quick-converter-inner {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+}
