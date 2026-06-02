@@ -8,7 +8,7 @@ import { supabase } from '@/lib/supabase';
 import { getCityImage } from '@/lib/cityImages';
 import { City } from '@/types/database';
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const POPULAR_COMPARISONS = [
     { a: 'paris', b: 'london', labelA: 'Paris', labelB: 'London' },
@@ -396,6 +396,7 @@ export default async function Home() {
 }
 
  
+
 
 
 
