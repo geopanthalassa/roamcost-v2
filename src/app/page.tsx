@@ -245,6 +245,59 @@ export default async function Home() {
                 </div>
             </section>
 
+            
+            {/* AFFILIATES BAR */}
+            <section style={{ padding: '2.5rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <p style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem', textAlign: 'center' }}>Plan your trip</p>
+                    <div className="affiliates-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+                        {[
+                            {
+                                href: 'https://wise.prf.hn/click/camref:1110lFqtW',
+                                bg: '#e8fcd4', color: '#3d7a0a',
+                                name: 'Wise', desc: 'Send money abroad',
+                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a0a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            },
+                            {
+                                href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=https%3A%2F%2Fwww.booking.com`,
+                                bg: '#e8eeff', color: '#003580',
+                                name: 'Booking.com', desc: 'Hotels & stays',
+                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            },
+                            {
+                                href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=https%3A%2F%2Fwww.rentalcars.com`,
+                                bg: '#fff0e8', color: '#d45500',
+                                name: 'RentalCars', desc: 'Car rental worldwide',
+                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d45500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            },
+                            {
+                                href: 'https://www.getyourguide.com/?partner_id=VVPTRVK',
+                                bg: '#fff3f0', color: '#cc3300',
+                                name: 'GetYourGuide', desc: 'Tours & experiences',
+                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cc3300" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                            },
+                        ].map(item => (
+                            <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                                    gap: '0.75rem', padding: '1.75rem 1rem',
+                                    backgroundColor: item.bg, borderRadius: '1rem',
+                                    border: `1.5px solid ${item.color}22`,
+                                    textDecoration: 'none', textAlign: 'center' }}>
+                                <div style={{ width: '60px', height: '60px', borderRadius: '1rem',
+                                    backgroundColor: 'white', display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <div style={{ fontSize: '1.1rem', fontWeight: 900, color: item.color, letterSpacing: '-0.02em' }}>{item.name}</div>
+                                    <div style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 500, marginTop: '0.15rem' }}>{item.desc}</div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section style={{ padding: '3rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '1.5rem' }}>
