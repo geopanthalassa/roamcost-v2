@@ -188,7 +188,36 @@ export default async function Home() {
 
 
             {/* â"€â"€ QUICK CONVERTER â"€â"€ */}
-            <QuickConverter />
+            <div style={{ backgroundColor: '#f8fafc', padding: '0.5rem 0' }}><QuickConverter /></div>
+
+            {/* BLOG PREVIEW */}
+            <section style={{ padding: '3rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                        <div>
+                            <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Blog</p>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Cost of living guides</h2>
+                        </div>
+                        <a href="/blog" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none', whiteSpace: 'nowrap' }}>See all →</a>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                        {[
+                            { href: '/blog/cheapest-cities-europe-2026', title: 'Cheapest Cities in Europe 2026', desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns.', category: 'Europe', img: 'https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/blog/best-cities-digital-nomads-2026', title: 'Best Cities for Digital Nomads', desc: 'Fast internet, coworking spaces, visa options and affordability. The definitive nomad guide.', category: 'Nomads', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/blog/internet-speed-cities-digital-nomads-2026', title: 'Best Cities for Internet Speed', desc: 'The cities with the fastest internet for remote workers — and how much they cost to live in.', category: 'Remote Work', img: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=600&h=300&q=80' },
+                        ].map((post) => (
+                            <a key={post.href} href={post.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
+                                <img src={post.img} alt={post.title} style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
+                                <div style={{ padding: '1.25rem' }}>
+                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: '#F0FAF4', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{post.category}</span>
+                                    <h3 style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.4rem', lineHeight: 1.3 }}>{post.title}</h3>
+                                    <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{post.desc}</p>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
             
 
             {/* â"€â"€ STATS BAR â"€â"€ */}
