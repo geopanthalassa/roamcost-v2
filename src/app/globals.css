@@ -442,3 +442,13 @@ h3, .city-name, [style*="fontWeight: 900"] {
     min-width: 520px;
   }
 }
+
+/* HOME MOBILE GRIDS */
+@media (max-width: 640px) {
+  .hot-takes-grid { grid-template-columns: 1fr !important; }
+  .blog-grid { grid-template-columns: 1fr !important; }
+  .popular-cities-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .rankings-grid { grid-template-columns: 1fr !important; }
+  .stats-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .rankings-categories-grid { grid-template-columns: 1fr !important; }
+}
