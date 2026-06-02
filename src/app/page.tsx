@@ -164,7 +164,7 @@ export default async function Home() {
                             <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>City comparisons that will surprise you</h2>
                             <a href="/hot-takes" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#F7831E', textDecoration: 'none' }}>See all →</a>
                         </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                    <div className="hot-takes-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {[
                             { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&h=300&q=80' },
                             { href: '/hot-takes/new-york-vs-mexico-city', title: 'New York vs Mexico City', desc: 'Same continent, completely different cost reality.', tag: 'Americas', img: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&h=300&q=80' },
@@ -196,11 +196,11 @@ export default async function Home() {
                             <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>Cost of living guides</h2>
                             <a href="/blog" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>See all →</a>
                         </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                    <div className="blog-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {[
-                            { href: '/blog/cheapest-cities-europe-2026', title: 'Cheapest Cities in Europe 2026', desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns.', category: 'Europe', img: 'https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/blog/best-cities-digital-nomads-2026', title: 'Best Cities for Digital Nomads', desc: 'Fast internet, coworking spaces, visa options and affordability. The definitive nomad guide.', category: 'Nomads', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/blog/internet-speed-cities-digital-nomads-2026', title: 'Best Cities for Internet Speed', desc: 'The cities with the fastest internet for remote workers — and how much they cost to live in.', category: 'Remote Work', img: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/blog/cheapest-cities-europe-2026', title: 'Cheapest Cities in Europe 2026', desc: 'The most affordable European cities with real cost data.', category: 'Europe', img: 'https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/blog/best-cities-digital-nomads-2026', title: 'Best Cities for Digital Nomads', desc: 'Fast internet, affordable rent and great communities.', category: 'Nomads', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/blog/internet-speed-cities-digital-nomads-2026', title: 'Best Cities for Internet Speed', desc: 'Fast internet cities that are actually affordable.', category: 'Remote Work', img: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=600&h=300&q=80' },
                         ].map((post) => (
                             <a key={post.href} href={post.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                                 <img src={post.img} alt={post.title} style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
