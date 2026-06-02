@@ -159,13 +159,11 @@ export default async function Home() {
             {/* HOT TAKES PREVIEW */}
             <section style={{ padding: '3rem 0', backgroundColor: '#fff7ed', borderBottom: '1px solid #fed7aa' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                        <div>
+                    <div style={{ marginBottom: '1.5rem' }}>
                             <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Hot Takes</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>City comparisons that will surprise you</h2>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>City comparisons that will surprise you</h2>
+                            <a href="/hot-takes" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#F7831E', textDecoration: 'none' }}>See all →</a>
                         </div>
-                        <a href="/hot-takes" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#F7831E', textDecoration: 'none', whiteSpace: 'nowrap' }}>See all →</a>
-                    </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {[
                             { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&h=300&q=80' },
@@ -177,7 +175,7 @@ export default async function Home() {
                                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
                                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem' }}>
                                     <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: 'rgba(255,255,255,0.15)', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{item.tag}</span>
-                                    <h3 style={{ fontSize: '1rem', fontWeight: 900, color: 'white', margin: '0 0 0.25rem' }}>{item.title}</h3>
+                                    <h3 style={{ fontSize: '1rem', fontWeight: 900, color: 'white', margin: '0 0 0.25rem', wordBreak: 'keep-all', overflowWrap: 'break-word', hyphens: 'none' }}>{item.title}</h3>
                                     <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
                                 </div>
                             </a>
@@ -193,13 +191,11 @@ export default async function Home() {
             {/* BLOG PREVIEW */}
             <section style={{ padding: '3rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                        <div>
+                    <div style={{ marginBottom: '1.5rem' }}>
                             <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Blog</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Cost of living guides</h2>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>Cost of living guides</h2>
+                            <a href="/blog" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>See all →</a>
                         </div>
-                        <a href="/blog" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none', whiteSpace: 'nowrap' }}>See all →</a>
-                    </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {[
                             { href: '/blog/cheapest-cities-europe-2026', title: 'Cheapest Cities in Europe 2026', desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns.', category: 'Europe', img: 'https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=600&h=300&q=80' },
@@ -210,7 +206,7 @@ export default async function Home() {
                                 <img src={post.img} alt={post.title} style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
                                 <div style={{ padding: '1.25rem' }}>
                                     <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: '#F0FAF4', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{post.category}</span>
-                                    <h3 style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.4rem', lineHeight: 1.3 }}>{post.title}</h3>
+                                    <h3 style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.4rem', lineHeight: 1.3, wordBreak: 'keep-all', hyphens: 'none' }}>{post.title}</h3>
                                     <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{post.desc}</p>
                                 </div>
                             </a>
