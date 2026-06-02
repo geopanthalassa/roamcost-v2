@@ -93,204 +93,52 @@ export default async function Home() {
         <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
 
             {/* â"€â"€ HERO WITH VIDEO â"€â"€ */}
-            <section style={{ position: 'relative', overflow: 'hidden', minHeight: '620px', display: 'flex', alignItems: 'center', backgroundColor: '#0f172a' }}>
-                {/* Video background */}
-                      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": "RoamCost - Compare Cost of Living Between Cities Worldwide",
-        "description": "Compare rent, food, safety and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers.",
-        "thumbnailUrl": "https://www.roamcost.com/og-image.jpg",
-        "uploadDate": "2026-01-01T00:00:00+00:00",
-        "contentUrl": "https://www.roamcost.com/hero-video.mp4",
-        "embedUrl": "https://www.roamcost.com",
-        "publisher": { "@type": "Organization", "name": "RoamCost", "url": "https://www.roamcost.com" }
-      }) }} />
-            <video
-                    autoPlay muted loop playsInline
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65 }}
-                >
-                    <source src="/hero-video.mp4" type="video/mp4" />
-                </video>
-                {/* Gradient overlay - lighter to show more video */}
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.35) 100%)' }} />
-
-                {/* Content */}
-                <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '6rem 1.5rem 5rem', width: '100%' }}>
-                    <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-
-                        {/* Eyebrow */}
-                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'rgba(82,183,136,0.15)', border: '1px solid rgba(82,183,136,0.4)', borderRadius: '2rem', padding: '0.35rem 1rem', marginBottom: '2rem' }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#52B788' }} />
-                            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                                Global Cost of Living Data
-                            </span>
-                        </div>
-
-                        <h1 style={{ fontSize: '3.75rem', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.04em', lineHeight: 1.05, marginBottom: '1.25rem' }}>
-                            Compare the{' '}
-                            <span style={{ color: '#52B788' }}>cost of living</span>
-                            {' '}across the world
-                        </h1>
-
-                        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '580px', margin: '0 auto 2.5rem' }}>
-                            Rent, food, safety, internet speed and quality of life – all in one place.
-                            Make informed decisions about where to live, work or travel.
-                        </p>
-
-                        {/* Search */}
-                        <div style={{ maxWidth: '600px', margin: '0 auto 2rem' }}>
-                            <SearchBar />
-                        </div>
-
-                        {/* Quick links */}
-                        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            {['Tokyo', 'Paris', 'Barcelona', 'Dubai', 'Bangkok', 'Berlin'].map(city => (
-                                <Link key={city} href={`/city/${city.toLowerCase()}`}
-                                    style={{ fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)', backgroundColor: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.875rem', borderRadius: '2rem', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                    {city}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* HOT TAKES PREVIEW */}
-            <section style={{ padding: '3rem 0', backgroundColor: '#fff7ed', borderBottom: '1px solid #fed7aa' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ marginBottom: '1.5rem' }}>
-                            <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Hot Takes</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>City comparisons that will surprise you</h2>
-                            <a href="/hot-takes" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#F7831E', textDecoration: 'none' }}>See all →</a>
-                        </div>
-                    <div className="hot-takes-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-                        {[
-                            { href: '/hot-takes/bangkok-vs-bali', title: 'Bangkok vs Bali', desc: 'Which is cheaper for long-term living? The answer might surprise you.', tag: 'Asia', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/hot-takes/new-york-vs-mexico-city', title: 'New York vs Mexico City', desc: 'Same continent, completely different cost reality.', tag: 'Americas', img: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/hot-takes/lisbon-vs-barcelona', title: 'Lisbon vs Barcelona', desc: 'Two Iberian gems — but only one fits a $2,000 budget.', tag: 'Europe', img: 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=600&h=300&q=80' },
-                        ].map((item) => (
-                            <a key={item.href} href={item.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', position: 'relative', minHeight: '200px' }}>
-                                <img src={item.img} alt={item.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
-                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
-                                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem' }}>
-                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#F7831E', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: 'rgba(255,255,255,0.15)', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{item.tag}</span>
-                                    <h3 style={{ fontSize: '1rem', fontWeight: 900, color: 'white', margin: '0 0 0.25rem', wordBreak: 'keep-all', overflowWrap: 'break-word', hyphens: 'none' }}>{item.title}</h3>
-                                    <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-
-            {/* â"€â"€ QUICK CONVERTER â"€â"€ */}
-            <div style={{ backgroundColor: '#f8fafc', padding: '0.5rem 0' }}><QuickConverter /></div>
-
-            {/* BLOG PREVIEW */}
             
-            {/* AFFILIATES BAR */}
-            <section style={{ padding: '2.5rem 0', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <p style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem', textAlign: 'center' }}>Plan your trip</p>
-                    <div className="affiliates-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
-                        {[
-                            {
-                                href: 'https://wise.prf.hn/click/camref:1110lFqtW',
-                                bg: '#e8fcd4', border: '#9FE870', iconColor: '#5a9e2f',
-                                label: 'Send money abroad',
-                                sub: 'Wise',
-                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5a9e2f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                            },
-                            {
-                                href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=https%3A%2F%2Fwww.booking.com`,
-                                bg: '#e8eeff', border: '#003580', iconColor: '#003580',
-                                label: 'Find your hotel',
-                                sub: 'Booking.com',
-                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            },
-                            {
-                                href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=https%3A%2F%2Fwww.rentalcars.com`,
-                                bg: '#fff0e8', border: '#FF6600', iconColor: '#FF6600',
-                                label: 'Rent a car',
-                                sub: 'RentalCars',
-                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                            },
-                            {
-                                href: 'https://www.getyourguide.com/?partner_id=VVPTRVK',
-                                bg: '#fff3f0', border: '#FF5533', iconColor: '#FF5533',
-                                label: 'Book experiences',
-                                sub: 'GetYourGuide',
-                                icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF5533" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                            },
-                        ].map(item => (
-                            <a key={item.sub} href={item.href} target="_blank" rel="noopener noreferrer"
-                                style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem',
-                                    backgroundColor: item.bg, borderRadius: '1rem',
-                                    border: `1.5px solid ${item.border}33`,
-                                    textDecoration: 'none', transition: 'transform 0.15s, box-shadow 0.15s' }}>
-                                <div style={{ flexShrink: 0, width: '52px', height: '52px', borderRadius: '0.875rem',
-                                    backgroundColor: 'white', display: 'flex', alignItems: 'center',
-                                    justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-                                    {item.icon}
-                                </div>
-                                <div>
-                                    <div style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', marginBottom: '0.1rem' }}>{item.label}</div>
-                                    <div style={{ fontSize: '0.75rem', fontWeight: 600, color: item.iconColor }}>{item.sub}</div>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             
             {/* AFFILIATES BAR */}
-            <section style={{ padding: '2.5rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+            <section style={{ padding: '1.5rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <p style={{ fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem', textAlign: 'center' }}>Plan your trip</p>
-                    <div className="affiliates-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+                    <div className="affiliates-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.875rem' }}>
                         {[
                             {
                                 href: 'https://wise.prf.hn/click/camref:1110lFqtW',
                                 bg: '#e8fcd4', color: '#3d7a0a',
                                 name: 'Wise', desc: 'Send money abroad',
-                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3d7a0a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d7a0a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                             },
                             {
                                 href: `https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959&ued=https%3A%2F%2Fwww.booking.com`,
                                 bg: '#e8eeff', color: '#003580',
                                 name: 'Booking.com', desc: 'Hotels & stays',
-                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003580" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                             },
                             {
                                 href: `https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959&ued=https%3A%2F%2Fwww.rentalcars.com`,
                                 bg: '#fff0e8', color: '#d45500',
                                 name: 'RentalCars', desc: 'Car rental worldwide',
-                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d45500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d45500" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                             },
                             {
                                 href: 'https://www.getyourguide.com/?partner_id=VVPTRVK',
                                 bg: '#fff3f0', color: '#cc3300',
                                 name: 'GetYourGuide', desc: 'Tours & experiences',
-                                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cc3300" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc3300" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                             },
                         ].map(item => (
                             <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer"
-                                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                                    gap: '0.75rem', padding: '1.75rem 1rem',
-                                    backgroundColor: item.bg, borderRadius: '1rem',
-                                    border: `1.5px solid ${item.color}22`,
-                                    textDecoration: 'none', textAlign: 'center' }}>
-                                <div style={{ width: '60px', height: '60px', borderRadius: '1rem',
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '1rem 1.25rem',
+                                    backgroundColor: item.bg, borderRadius: '0.875rem',
+                                    border: `1px solid ${item.color}22`, textDecoration: 'none' }}>
+                                <div style={{ width: '44px', height: '44px', borderRadius: '0.75rem',
                                     backgroundColor: 'white', display: 'flex', alignItems: 'center',
-                                    justifyContent: 'center', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
+                                    justifyContent: 'center', flexShrink: 0,
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <div style={{ fontSize: '1.1rem', fontWeight: 900, color: item.color, letterSpacing: '-0.02em' }}>{item.name}</div>
-                                    <div style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 500, marginTop: '0.15rem' }}>{item.desc}</div>
+                                    <div style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a' }}>{item.name}</div>
+                                    <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500, marginTop: '0.1rem' }}>{item.desc}</div>
                                 </div>
                             </a>
                         ))}
