@@ -236,7 +236,7 @@ export default async function Home() {
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <div style={{ fontSize: '1rem', fontWeight: 900, color: item.color, letterSpacing: '-0.01em' }}>{item.label}</div>
+                                    <div style={{ fontSize: '1rem', fontWeight: 900, color: item.iconColor, letterSpacing: '-0.01em' }}>{item.label}</div>
                                     <div style={{ fontSize: '0.75rem', fontWeight: 600, color: item.iconColor }}>{item.sub}</div>
                                 </div>
                             </a>
@@ -481,6 +481,7 @@ export default async function Home() {
 }
 
  
+
 
 
 
