@@ -271,10 +271,10 @@ export default async function Home() {
                         <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Global hubs</p>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Cities</h2>
-                            <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                View all rankings →
-                            </Link>
                         </div>
+                        <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none', display: 'block', marginBottom: '1.5rem' }}>
+                            View all rankings →
+                        </Link>
                     </div>
                     {/* Desktop grid / Mobile carousel */}
                     <div className="popular-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
@@ -364,10 +364,10 @@ export default async function Home() {
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>
                                 Cost of living – world map
                             </h2>
-                            <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                See rankings →
-                            </Link>
                         </div>
+                        <Link href="/rankings/cheapest" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none', display: 'block', marginBottom: '1rem' }}>
+                            See rankings →
+                        </Link>
                         <p style={{ color: '#64748b', fontSize: '0.9rem', marginTop: '0.5rem' }}>
                             Click any city to explore costs. Colors indicate affordability.
                         </p>
