@@ -236,8 +236,8 @@ export default async function Home() {
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <div style={{ fontSize: '1rem', fontWeight: 900, color: item.iconColor, letterSpacing: '-0.01em' }}>{item.label}</div>
-                                    <div style={{ fontSize: '0.75rem', fontWeight: 600, color: item.iconColor }}>{item.sub}</div>
+                                    <div style={{ fontSize: '1rem', fontWeight: 900, color: item.iconColor, letterSpacing: '-0.01em' }}>{item.sub}</div>
+                                    <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500 }}>{item.label}</div>
                                 </div>
                             </a>
                         ))}
