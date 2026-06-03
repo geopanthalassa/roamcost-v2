@@ -276,6 +276,52 @@ export default async function Home() {
 
             {/* â"€â"€ STATS BAR â"€â"€ */}
             
+            {/* â"€â"€ POPULAR COMPARISONS â"€â"€ */}
+            <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0', position: 'relative', zIndex: 1 }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div className="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
+                        {[
+                            { value: '45,000+', label: 'Cities covered' },
+                            { value: '4,000+', label: 'With full cost data' },
+                            { value: '180+', label: 'Countries' },
+                            { value: 'Free', label: 'Always' },
+                        ].map((s, i) => (
+                            <div key={s.label} style={{ padding: '0.5rem 1rem', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}>
+                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#52B788' }}>{s.value}</div>
+                                <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.2rem', fontWeight: 500 }}>{s.label}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ marginBottom: '2.5rem' }}>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Side-by-side analysis</p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Comparisons</h2>
+                            <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
+                                Compare any city →
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="rankings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.875rem' }}>
+                        {POPULAR_COMPARISONS.map(({ a, b, labelA, labelB }) => (
+                            <Link key={`${a}-${b}`} href={`/compare/${a}-vs-${b}`}
+                                style={{ display: 'block', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0.875rem', padding: '1.25rem', textDecoration: 'none', transition: 'border-color 0.15s, background 0.15s' }}
+                               
+                            >
+                                <p style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
+                                    {labelA} vs {labelB}
+                                </p>
+                                <p style={{ fontSize: '0.75rem', color: '#52B788', margin: 0, fontWeight: 600 }}>Compare costs →</p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* â"€â"€ POPULAR CITIES â"€â"€ */}
             <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
@@ -360,52 +406,6 @@ export default async function Home() {
                                 </Link>
                             );
                         })}
-                    </div>
-                </div>
-            </section>
-
-            <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ marginBottom: '2.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Side-by-side analysis</p>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Comparisons</h2>
-                            <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
-                                Compare any city →
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="rankings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.875rem' }}>
-                        {POPULAR_COMPARISONS.map(({ a, b, labelA, labelB }) => (
-                            <Link key={`${a}-${b}`} href={`/compare/${a}-vs-${b}`}
-                                style={{ display: 'block', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0.875rem', padding: '1.25rem', textDecoration: 'none', transition: 'border-color 0.15s, background 0.15s' }}
-                               
-                            >
-                                <p style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.25rem' }}>
-                                    {labelA} vs {labelB}
-                                </p>
-                                <p style={{ fontSize: '0.75rem', color: '#52B788', margin: 0, fontWeight: 600 }}>Compare costs →</p>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* â"€â"€ POPULAR COMPARISONS â"€â"€ */}
-            <section style={{ backgroundColor: '#0f172a', padding: '1.75rem 0', position: 'relative', zIndex: 1 }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div className="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0', textAlign: 'center' }}>
-                        {[
-                            { value: '45,000+', label: 'Cities covered' },
-                            { value: '4,000+', label: 'With full cost data' },
-                            { value: '180+', label: 'Countries' },
-                            { value: 'Free', label: 'Always' },
-                        ].map((s, i) => (
-                            <div key={s.label} style={{ padding: '0.5rem 1rem', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}>
-                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#52B788' }}>{s.value}</div>
-                                <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.2rem', fontWeight: 500 }}>{s.label}</div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
