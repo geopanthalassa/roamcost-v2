@@ -273,7 +273,96 @@ export default async function Home() {
                 </div>
             </section>
             
-
+
+            {/* â"€â"€ STATS BAR â"€â"€ */}
+            
+            {/* â"€â"€ POPULAR CITIES â"€â"€ */}
+            <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ marginBottom: '2.5rem' }}>
+                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Global hubs</p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Cities</h2>
+                        </div>
+                        <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none', display: 'block', marginBottom: '1.5rem' }}>
+                            View all rankings →
+                        </Link>
+                    </div>
+                    {/* Desktop grid / Mobile carousel */}
+                    <div className="popular-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+                        {sortedPopular.map(city => {
+                            const currency = CURRENCY_MAP[city.country] || 'USD';
+                            const cost = city.cost_index > 0 ? Math.round(city.cost_index) : null;
+                            const safety = city.safety > 0 ? Math.round(city.safety * 10) : null;
+                            const climate = city.environment > 0 ? Math.round(city.environment * 10) : null;
+                            const imgUrl = getCityImage(city.slug, 400, 200, city.city);
+                            return (
+                                <Link key={city.slug} href={`/city/${city.slug}`} style={{ textDecoration: 'none' }}>
+                                    <div style={{
+                                        backgroundColor: '#ffffff', border: '1px solid #e2e8f0',
+                                        borderRadius: '1rem', overflow: 'hidden',
+                                        transition: 'transform 0.2s, box-shadow 0.2s',
+                                    }}>
+                                        {/* City image */}
+                                        <div style={{
+                                            height: '120px',
+                                            backgroundImage: `url(${imgUrl})`,
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center',
+                                            backgroundColor: '#e2e8f0',
+                                            position: 'relative',
+                                        }}>
+                                            {/* Gradient overlay */}
+                                            <div style={{
+                                                position: 'absolute', inset: 0,
+                                                background: 'linear-gradient(to top, rgba(15,23,42,0.6) 0%, transparent 60%)',
+                                            }} />
+                                            {/* Currency badge */}
+                                            <span style={{
+                                                position: 'absolute', top: '10px', right: '10px',
+                                                fontSize: '0.65rem', fontWeight: 800, color: '#ffffff',
+                                                backgroundColor: 'rgba(15,23,42,0.7)',
+                                                borderRadius: '0.375rem', padding: '0.15rem 0.4rem',
+                                                backdropFilter: 'blur(4px)',
+                                            }}>
+                                                {currency}
+                                            </span>
+                                            {/* City name on image */}
+                                            <div style={{ position: 'absolute', bottom: '10px', left: '12px' }}>
+                                                <div style={{ fontSize: '0.95rem', fontWeight: 900, color: '#ffffff', lineHeight: 1.1 }}>{city.city}</div>
+                                                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>{city.country}</div>
+                                            </div>
+                                        </div>
+                                        {/* Stats */}
+                                        <div style={{ padding: '0.875rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.4rem', textAlign: 'center' }}>
+                                            {[
+                                                {
+                                                    label: 'Cost', value: cost,
+                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                                },
+                                                {
+                                                    label: 'Safety', value: safety,
+                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                                },
+                                                {
+                                                    label: 'Climate', value: climate,
+                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                                                },
+                                            ].map(stat => (
+                                                <div key={stat.label} style={{ padding: '0.4rem 0.25rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem' }}>
+                                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.2rem' }}>{stat.icon}</div>
+                                                    <div style={{ fontSize: '0.55rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.1rem' }}>{stat.label}</div>
+                                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? '–'}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
 
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
@@ -401,92 +490,3 @@ export default async function Home() {
 
 
 
-            {/* â"€â"€ STATS BAR â"€â"€ */}
-            
-            {/* â"€â"€ POPULAR CITIES â"€â"€ */}
-            <section style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ marginBottom: '2.5rem' }}>
-                        <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Global hubs</p>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                            <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Cities</h2>
-                        </div>
-                        <Link href="/rankings/quality" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none', display: 'block', marginBottom: '1.5rem' }}>
-                            View all rankings →
-                        </Link>
-                    </div>
-                    {/* Desktop grid / Mobile carousel */}
-                    <div className="popular-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
-                        {sortedPopular.map(city => {
-                            const currency = CURRENCY_MAP[city.country] || 'USD';
-                            const cost = city.cost_index > 0 ? Math.round(city.cost_index) : null;
-                            const safety = city.safety > 0 ? Math.round(city.safety * 10) : null;
-                            const climate = city.environment > 0 ? Math.round(city.environment * 10) : null;
-                            const imgUrl = getCityImage(city.slug, 400, 200, city.city);
-                            return (
-                                <Link key={city.slug} href={`/city/${city.slug}`} style={{ textDecoration: 'none' }}>
-                                    <div style={{
-                                        backgroundColor: '#ffffff', border: '1px solid #e2e8f0',
-                                        borderRadius: '1rem', overflow: 'hidden',
-                                        transition: 'transform 0.2s, box-shadow 0.2s',
-                                    }}>
-                                        {/* City image */}
-                                        <div style={{
-                                            height: '120px',
-                                            backgroundImage: `url(${imgUrl})`,
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center',
-                                            backgroundColor: '#e2e8f0',
-                                            position: 'relative',
-                                        }}>
-                                            {/* Gradient overlay */}
-                                            <div style={{
-                                                position: 'absolute', inset: 0,
-                                                background: 'linear-gradient(to top, rgba(15,23,42,0.6) 0%, transparent 60%)',
-                                            }} />
-                                            {/* Currency badge */}
-                                            <span style={{
-                                                position: 'absolute', top: '10px', right: '10px',
-                                                fontSize: '0.65rem', fontWeight: 800, color: '#ffffff',
-                                                backgroundColor: 'rgba(15,23,42,0.7)',
-                                                borderRadius: '0.375rem', padding: '0.15rem 0.4rem',
-                                                backdropFilter: 'blur(4px)',
-                                            }}>
-                                                {currency}
-                                            </span>
-                                            {/* City name on image */}
-                                            <div style={{ position: 'absolute', bottom: '10px', left: '12px' }}>
-                                                <div style={{ fontSize: '0.95rem', fontWeight: 900, color: '#ffffff', lineHeight: 1.1 }}>{city.city}</div>
-                                                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}>{city.country}</div>
-                                            </div>
-                                        </div>
-                                        {/* Stats */}
-                                        <div style={{ padding: '0.875rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.4rem', textAlign: 'center' }}>
-                                            {[
-                                                {
-                                                    label: 'Cost', value: cost,
-                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                                                },
-                                                {
-                                                    label: 'Safety', value: safety,
-                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                                },
-                                                {
-                                                    label: 'Climate', value: climate,
-                                                    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                                                },
-                                            ].map(stat => (
-                                                <div key={stat.label} style={{ padding: '0.4rem 0.25rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem' }}>
-                                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.2rem' }}>{stat.icon}</div>
-                                                    <div style={{ fontSize: '0.55rem', color: '#94a3b8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.1rem' }}>{stat.label}</div>
-                                                    <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#0f172a' }}>{stat.value ?? '–'}</div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </Link>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
