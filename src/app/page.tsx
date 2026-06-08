@@ -156,6 +156,96 @@ export default async function Home() {
                 </div>
             </section>
 
+            {/* WORLD CUP 2026 */}
+            <section style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0f2d1a 100%)', padding: '2.5rem 0' }}>
+                <style>{`
+                    @keyframes wcBounce { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-10px) rotate(180deg)} }
+                    @keyframes wcWave { 0%{transform:rotate(-8deg)} 50%{transform:rotate(8deg)} 100%{transform:rotate(-8deg)} }
+                    @keyframes wcStreak { 0%{left:-60px;opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{left:calc(100% + 60px);opacity:0} }
+                    .wc-ball { animation: wcBounce 2s ease-in-out infinite; display:inline-block; }
+                    .wc-ball-2 { animation: wcBounce 2s ease-in-out infinite; animation-delay:0.4s; display:inline-block; }
+                    .wc-ball-3 { animation: wcBounce 2s ease-in-out infinite; animation-delay:0.8s; display:inline-block; }
+                    .wc-flag { animation: wcWave 1.5s ease-in-out infinite; transform-origin: left center; display:inline-block; }
+                    .wc-flag-2 { animation: wcWave 1.5s ease-in-out infinite; animation-delay:0.3s; transform-origin: left center; display:inline-block; }
+                    .wc-flag-3 { animation: wcWave 1.5s ease-in-out infinite; animation-delay:0.6s; transform-origin: left center; display:inline-block; }
+                    .wc-streak-1 { position:absolute; height:2px; width:60px; border-radius:2px; background:#FFD700; top:30%; animation: wcStreak 3s linear infinite; }
+                    .wc-streak-2 { position:absolute; height:2px; width:60px; border-radius:2px; background:#52B788; top:60%; animation: wcStreak 3s linear infinite; animation-delay:1.2s; }
+                    .wc-streak-3 { position:absolute; height:2px; width:60px; border-radius:2px; background:#E63946; top:20%; animation: wcStreak 3s linear infinite; animation-delay:2.1s; }
+                    .wc-card { transition: transform 0.2s; cursor: pointer; }
+                    .wc-card:hover { transform: translateY(-3px); }
+                `}</style>
+                <div className="wc-streak-1" />
+                <div className="wc-streak-2" />
+                <div className="wc-streak-3" />
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                            <div>
+                                <span className="wc-ball" style={{ fontSize: '1.5rem' }}>⚽</span>
+                                <span className="wc-ball-2" style={{ fontSize: '1.1rem' }}>⚽</span>
+                                <span className="wc-ball-3" style={{ fontSize: '1.3rem' }}>⚽</span>
+                            </div>
+                            <div>
+                                <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#FFD700', textTransform: 'uppercase', letterSpacing: '0.15em' }}>FIFA World Cup</div>
+                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1.1 }}>2026 Travel Guide</div>
+                            </div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.4rem' }}>
+                            <span className="wc-flag" style={{ fontSize: '1.5rem' }}>🇺🇸</span>
+                            <span className="wc-flag-2" style={{ fontSize: '1.5rem' }}>🇲🇽</span>
+                            <span className="wc-flag-3" style={{ fontSize: '1.5rem' }}>🇨🇦</span>
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+                        {[['48 teams','#FFD700'],['104 matches','#52B788'],['16 host cities','rgba(255,255,255,0.8)'],['3 countries','#E63946']].map(([label, color]) => (
+                            <span key={label} style={{ background: 'rgba(255,255,255,0.08)', border: `1px solid ${color}44`, color, fontSize: '0.72rem', fontWeight: 700, padding: '3px 10px', borderRadius: '20px' }}>{label}</span>
+                        ))}
+                    </div>
+                    <div className="wc-cities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem', marginBottom: '1.25rem' }}>
+                        {[
+                            { city: 'New York', flag: '🇺🇸', cost: '$$$$$', budget: '$2,800/wk', color: '#4A90D9', slug: 'new-york' },
+                            { city: 'Los Angeles', flag: '🇺🇸', cost: '$$$$', budget: '$2,200/wk', color: '#4A90D9', slug: 'los-angeles' },
+                            { city: 'Miami', flag: '🇺🇸', cost: '$$$$', budget: '$1,680/wk', color: '#4A90D9', slug: 'miami' },
+                            { city: 'Dallas', flag: '🇺🇸', cost: '$$$', budget: '$1,295/wk', color: '#4A90D9', slug: 'dallas' },
+                            { city: 'Houston', flag: '🇺🇸', cost: '$$$', budget: '$1,365/wk', color: '#4A90D9', slug: 'houston-united-states' },
+                            { city: 'Seattle', flag: '🇺🇸', cost: '$$$', budget: '$1,500/wk', color: '#4A90D9', slug: 'seattle-united-states' },
+                            { city: 'San Francisco', flag: '🇺🇸', cost: '$$$$', budget: '$2,100/wk', color: '#4A90D9', slug: 'san-francisco-united-states' },
+                            { city: 'Boston', flag: '🇺🇸', cost: '$$$', budget: '$1,600/wk', color: '#4A90D9', slug: 'boston-united-states' },
+                            { city: 'Kansas City', flag: '🇺🇸', cost: '$$', budget: '$1,190/wk', color: '#52B788', slug: 'kansas-city-united-states' },
+                            { city: 'Philadelphia', flag: '🇺🇸', cost: '$$$', budget: '$1,500/wk', color: '#4A90D9', slug: 'philadelphia-united-states' },
+                            { city: 'Mexico City', flag: '🇲🇽', cost: '$', budget: '$840/wk', color: '#52B788', slug: 'mexico-city' },
+                            { city: 'Guadalajara', flag: '🇲🇽', cost: '$', budget: '$750/wk', color: '#52B788', slug: 'guadalajara-mexico' },
+                            { city: 'Monterrey', flag: '🇲🇽', cost: '$', budget: '$780/wk', color: '#52B788', slug: 'monterrey-mexico' },
+                            { city: 'Toronto', flag: '🇨🇦', cost: '$$$', budget: '$1,600/wk', color: '#E63946', slug: 'toronto-canada' },
+                            { city: 'Vancouver', flag: '🇨🇦', cost: '$$$$', budget: '$1,900/wk', color: '#E63946', slug: 'vancouver-canada' },
+                        ].map(item => (
+                            <a key={item.slug} href={`/city/${item.slug}`} className="wc-card"
+                                style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '0.625rem', padding: '0.625rem 0.75rem', textDecoration: 'none', display: 'block' }}>
+                                <div style={{ fontSize: '1.1rem', marginBottom: '0.2rem' }}>{item.flag}</div>
+                                <div style={{ fontSize: '0.78rem', fontWeight: 900, color: '#ffffff', lineHeight: 1.2, marginBottom: '0.2rem' }}>{item.city}</div>
+                                <div style={{ fontSize: '0.65rem', color: item.color, fontWeight: 700 }}>{item.cost}</div>
+                                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)' }}>{item.budget}</div>
+                            </a>
+                        ))}
+                    </div>
+                    <div className="wc-affiliates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
+                        {[
+                            { href: 'https://wise.prf.hn/click/camref:1110lFqtW', color: '#52B788', bg: 'rgba(82,183,136,0.15)', border: 'rgba(82,183,136,0.35)', label: 'Wise', desc: 'Exchange currency' },
+                            { href: 'https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959', color: '#4A90D9', bg: 'rgba(74,144,217,0.15)', border: 'rgba(74,144,217,0.35)', label: 'Booking.com', desc: 'Find hotels' },
+                            { href: 'https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959', color: '#E63946', bg: 'rgba(230,57,70,0.15)', border: 'rgba(230,57,70,0.35)', label: 'RentalCars', desc: 'Rent a car' },
+                            { href: 'https://www.getyourguide.com/?partner_id=VVPTRVK', color: '#FF9800', bg: 'rgba(255,152,0,0.15)', border: 'rgba(255,152,0,0.35)', label: 'GetYourGuide', desc: 'Book experiences' },
+                        ].map(item => (
+                            <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: item.bg, border: `1px solid ${item.border}`, borderRadius: '0.5rem', padding: '0.625rem 0.875rem', textDecoration: 'none' }}>
+                                <div>
+                                    <div style={{ fontSize: '0.8rem', fontWeight: 900, color: item.color }}>{item.label}</div>
+                                    <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)' }}>{item.desc}</div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
             {/* HOT TAKES PREVIEW */}
             <section style={{ padding: '3rem 0', backgroundColor: '#fff7ed', borderBottom: '1px solid #fed7aa' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
