@@ -218,7 +218,7 @@
     'london': '/cities/london.jpg',
     'london-united-kingdom': '/cities/london.jpg',
     'los-angeles': 'photo-1534190760961-74e8c1c5c3da',
-    'los-angeles-united-states': 'photo-1534190760961-74e8c1c5c3da',
+    'los-angeles-united-states': '/cities/los-angeles.jpg',
     'luanda': 'photo-1611348586804-61bf6c080437',
     'luanda-angola': 'photo-1611348586804-61bf6c080437',
     'lviv': 'photo-1577948000111-9c970dfe3743',
@@ -330,7 +330,7 @@
     'san-diego': 'photo-1541849546-216549ae216d',
     'san-diego-united-states': 'photo-1506905925346-21bda4d32df4',
     'san-francisco': 'photo-1516550135131-fe3dcdd41517',
-    'san-francisco-united-states': 'photo-1534190760961-74e8c1c5c3da',
+    'san-francisco-united-states': '/cities/san-francisco-united-states.jpg',
     'san-jose': 'photo-1578662996442-48f60103fc96',
     'san-jose-costa-rica': '/cities/costa-rica.jpg',
     'san-miguel-de-allende': '/cities/San-Miguel-de-Allende.jpg',
@@ -447,6 +447,7 @@ export function getCityImage(slug: string, width = 800, height = 600, cityName?:
     const query = encodeURIComponent((cityName || slug.replace(/-/g, ' ')) + ' city skyline');
     return `https://source.unsplash.com/${width}x${height}/?${query}`;
 }
+
 
 
 
