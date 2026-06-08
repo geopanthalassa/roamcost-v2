@@ -808,6 +808,197 @@ Tbilisi is consistently rated one of the safest cities in Eastern Europe. The ci
 
 **Is Tbilisi safe?** Yes. Tbilisi is one of the safest cities in the region and Georgia consistently scores well on global safety indexes.`
     },
+
+    'world-cup-2026-travel-guide': {
+        image: 'photo-1431324155629-1a6deb1dec8d',
+        title: 'FIFA World Cup 2026 Travel Guide: Costs, Hotels and Tips for Every Host City',
+        desc: 'Complete travel cost guide for the FIFA World Cup 2026 in USA, Mexico and Canada. Cheapest cities, budget neighborhoods and money-saving tips.',
+        category: 'World Cup 2026', date: 'June 2026', readTime: '12 min',
+        keywords: 'world cup 2026 travel guide, fifa world cup 2026 cost, world cup 2026 hotels, cheapest world cup 2026 city, world cup 2026 budget',
+        content: `## FIFA World Cup 2026 Travel Guide
+
+The FIFA World Cup 2026 is the biggest sporting event in history — happening NOW across 16 cities in the United States, Mexico and Canada. With 48 teams and 104 matches, it is the first World Cup to span three countries.
+
+## Host Cities Overview
+
+### USA
+**New York** — Most expensive. Hotels $250-400/night. Stay in Newark or Jersey City for savings. [Find hotels](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+
+**Los Angeles** — Stay in Inglewood or Long Beach at $120-180/night. [Rent a car](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) — essential in LA.
+
+**Miami** — Stay in Hialeah or Fort Lauderdale at $100-160/night. [Find hotels](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+
+**Dallas** — Best US value. Hotels in Irving $90-140/night. [Rent a car](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959)
+
+**Houston** — Affordable. NRG area hotels $110-170/night.
+
+**Seattle** — Stay in Bellevue or Renton $120-180/night.
+
+**San Francisco** — Stay in Oakland or San Jose $100-160/night.
+
+**Boston** — Stay in Cambridge or Somerville for savings.
+
+**Kansas City** — Best overall US value. Hotels $80-130/night.
+
+**Philadelphia** — Stay in South Jersey 30-40% cheaper.
+
+### Mexico
+**Mexico City** — Extraordinary value. Hotels $60-90/night. Food $5-12/meal. [Convert currency with Wise](https://wise.prf.hn/click/camref:1110lFqtW) before traveling.
+
+**Guadalajara** — Hotels $50-90/night. Hidden gem.
+
+**Monterrey** — Hotels $55-95/night. Great infrastructure.
+
+### Canada
+**Toronto** — Stay in Mississauga $130-200/night. [Convert to CAD with Wise](https://wise.prf.hn/click/camref:1110lFqtW)
+
+**Vancouver** — Stay in Burnaby or Surrey $120-180/night.
+
+## Budget Tips
+
+1. Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) for currency exchange — save 3-5% on every transaction
+2. Book rental cars NOW through [RentalCars](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) — prices triple closer to the event
+3. Mexican cities cost 60% less than US cities
+4. Book tours with [GetYourGuide](https://www.getyourguide.com/?partner_id=VVPTRVK) in advance
+
+## Budget by City (7 nights)
+
+City | Hotel/night | Daily food | 7-day total
+Kansas City | $110 | $60 | $1,190
+Mexico City | $90 | $30 | $840
+Dallas | $120 | $65 | $1,295
+Miami | $160 | $80 | $1,680
+New York | $300 | $100 | $2,800`
+    },
+    'cheapest-world-cup-2026-cities': {
+        image: 'photo-1506905925346-21bda4d32df4',
+        title: 'Cheapest FIFA World Cup 2026 Host Cities: Budget Guide',
+        desc: 'Which World Cup 2026 host city is cheapest? Full cost comparison of all 16 cities with budget neighborhoods and money-saving tips.',
+        category: 'World Cup 2026', date: 'June 2026', readTime: '10 min',
+        keywords: 'cheapest world cup 2026 city, world cup 2026 budget, affordable world cup 2026, cheap hotels world cup 2026',
+        content: `## Cheapest FIFA World Cup 2026 Host Cities
+
+With 16 host cities across three countries, World Cup 2026 offers options for every budget. Here is our complete ranking from cheapest to most expensive.
+
+## Tier 1: Budget (under $100/night)
+
+### 1. Mexico City — Best Value Overall
+Hotels in Roma Norte: $60-90/night. Food: $5-12/meal. Metro: $0.25/ride.
+
+**7-night budget: $800-1,200 USD**
+
+Budget neighborhoods: Coyoacán, Del Valle, Tlalpan
+
+[Hotels in Mexico City](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959) | [Convert USD to MXN with Wise](https://wise.prf.hn/click/camref:1110lFqtW) | [City tours](https://www.getyourguide.com/?partner_id=VVPTRVK)
+
+### 2. Guadalajara — Hidden Gem
+Hotels near Estadio Akron: $50-90/night.
+
+**7-night budget: $750-1,100 USD**
+
+Budget neighborhoods: Zapopan, Tonalá, Tlaquepaque
+
+### 3. Monterrey — Industrial Value
+Hotels near Estadio BBVA: $55-95/night.
+
+**7-night budget: $780-1,150 USD**
+
+## Tier 2: Affordable US Cities
+
+### 4. Kansas City — Best US Value
+Hotels near Arrowhead: $90-140/night. Excellent BBQ food.
+
+**7-night budget: $1,200-1,600 USD**
+
+Budget neighborhoods: Independence, Lee's Summit, Olathe
+
+[Rent a car in Kansas City](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959)
+
+### 5. Dallas — Good Texas Value
+Hotels in Irving/Arlington: $90-140/night.
+
+**7-night budget: $1,300-1,700 USD**
+
+Budget neighborhoods: Irving, Garland, Grand Prairie
+
+### 6. Houston — Underrated Value
+NRG Stadium area: $100-150/night.
+
+**7-night budget: $1,350-1,800 USD**
+
+Budget neighborhoods: Stafford, Pearland, Missouri City
+
+## Tier 3: Mid-Range
+
+### Philadelphia, Toronto, Seattle, Boston
+$1,500-2,300 USD for 7 nights. Stay in suburbs for savings.
+
+[Convert to CAD with Wise](https://wise.prf.hn/click/camref:1110lFqtW) for Canadian cities.
+
+## Tier 4: Expensive
+
+### Los Angeles, San Francisco, Miami, New York, Vancouver
+$200-400/night. Budget $2,000-3,500 for 7 nights.
+
+## The Smart Strategy
+
+Build your itinerary around Mexican cities — attend matches in Mexico City or Guadalajara where your entire week costs less than one night in New York.
+
+Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) for all currency conversions and [RentalCars](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) for US cities where driving is essential.`
+    },
+    'world-cup-2026-mexico-city-guide': {
+        image: 'photo-1518105779142-d975f22f1b0a',
+        title: 'World Cup 2026 Mexico City: Complete Travel and Budget Guide',
+        desc: 'Everything you need for the FIFA World Cup 2026 in Mexico City — costs, neighborhoods, transport and budget tips for Estadio Azteca.',
+        category: 'World Cup 2026', date: 'June 2026', readTime: '10 min',
+        keywords: 'world cup 2026 mexico city, estadio azteca world cup 2026, mexico city world cup hotels, cdmx world cup 2026',
+        content: `## FIFA World Cup 2026 in Mexico City
+
+Mexico City hosts World Cup 2026 at the legendary Estadio Azteca — the only stadium to have hosted two World Cup Finals (1970 and 1986). At under $100/day for hotel and food combined, it is the best value World Cup destination in the entire tournament.
+
+## Getting There
+
+Fly into Benito Juárez International Airport (MEX). Uber to city center: $12-20 USD.
+
+**Currency tip:** Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) to convert to Mexican pesos at the real rate — save 3-6% vs airport exchange booths.
+
+## Where to Stay
+
+**Roma Norte / Condesa** — Most popular for international visitors. Hotels $70-120/night. Safe, beautiful, great restaurants.
+
+**Coyoacán** — Bohemian and authentic. Hotels $50-90/night. 30 min from Azteca by metro. Home of Frida Kahlo museum.
+
+**Del Valle** — Residential, safe, great value. Hotels $45-80/night.
+
+**Polanco** — Upscale. Hotels $120-200/night. Very safe.
+
+[Find hotels in Mexico City](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+
+## Getting to Estadio Azteca
+
+Metro Line 2 to Tasqueña station, then Tren Ligero to Estadio Azteca. Total cost: $0.50 USD. Journey from Roma Norte: ~40 minutes.
+
+Uber: $5-10 USD from central neighborhoods.
+
+## Food Guide
+
+Street tacos: $0.80-1.50 USD each. Full meal at local restaurant: $5-10 USD. Craft beer: $3-5 USD. The Mercado de Medellín and Mercado Roma are excellent for pre-match food.
+
+## 7-Day Budget
+
+Category | Budget | Mid-range
+Hotel (7 nights) | $350 | $630
+Food (7 days) | $140 | $280
+Transport | $30 | $60
+Tours | $50 | $150
+**Total** | **$570** | **$1,120**
+
+[Book city tours and Azteca experiences](https://www.getyourguide.com/?partner_id=VVPTRVK) | [Hotels in CDMX](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+
+## Safety
+
+Roma Norte, Condesa, Polanco and Coyoacán are safe for tourists. Use Uber, avoid displaying expensive items and be aware of surroundings. Mexico City has improved dramatically in safety in recent years.`
+    },
     'cost-of-living-buenos-aires-2026': {
         image: 'photo-1589909202802-8f4aadce9d55',
         title: 'Cost of Living in Buenos Aires in 2026: Complete Expat Guide',
