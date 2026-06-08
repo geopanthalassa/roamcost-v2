@@ -465,6 +465,349 @@ Do digital nomad visas allow working for local companies? Generally no — these
 Can I bring my family on a digital nomad visa? Most programs allow dependents (spouse and children) to be included, though income requirements may increase.`
     },
 
+
+    'cost-of-living-berlin-2026': {
+        image: 'photo-1528360983277-13d401cdc186',
+        title: 'Cost of Living in Berlin, Germany 2026: Complete Expat Guide',
+        desc: 'How much does it cost to live in Berlin in 2026? Real rent, food, transport and lifestyle costs for expats and digital nomads.',
+        category: 'Europe', date: 'June 2026', readTime: '10 min',
+        keywords: 'cost of living berlin 2026, berlin expat, living in berlin, berlin monthly budget, germany cost of living',
+        content: `## Cost of Living in Berlin in 2026
+
+Berlin remains one of Europe's most exciting cities for expats and digital nomads in 2026. Germany's capital combines world-class culture, excellent public transport, a thriving startup ecosystem and — compared to London, Paris or Amsterdam — a relatively affordable cost of living. A comfortable monthly budget in Berlin ranges from $1,800 to $2,800 USD depending on neighborhood and lifestyle.
+
+## Monthly Budget Breakdown
+
+### Rent
+
+Berlin's rental market has tightened significantly in recent years, but remains more affordable than other major European capitals. A furnished one-bedroom apartment in popular expat neighborhoods like Mitte, Prenzlauer Berg or Friedrichshain costs between $1,200 and $1,800 USD per month. More affordable options exist in Neukölln, Wedding and Lichtenberg, where one-bedroom apartments run $900 to $1,300 USD.
+
+Shared apartments (WG - Wohngemeinschaft) are popular and affordable, with rooms running $600 to $900 USD per month including utilities.
+
+### Food and Dining
+
+Berlin's food scene is diverse and affordable. A meal at a mid-range restaurant costs $12 to $20 USD per person. Berlin's famous street food — döner kebab, currywurst — costs $4 to $7 USD. Weekly groceries at supermarkets like Lidl, Aldi or Rewe run $50 to $80 USD for one person.
+
+Berlin has an excellent café culture and specialty coffee scene. A coffee costs $3 to $5 USD. The city's Turkish markets, particularly the Türkenmarkt in Kreuzberg, offer excellent fresh produce at low prices.
+
+### Transport
+
+Berlin's BVG public transport network — U-Bahn, S-Bahn, trams and buses — is comprehensive and affordable. A monthly transit pass costs approximately $90 USD. The Germany-wide Deutschlandticket at $58 USD per month covers all regional and local transport across the country, making Berlin an excellent base for exploring Germany and neighboring countries.
+
+Cycling is extremely popular in Berlin, with an excellent network of bike lanes. A second-hand bike costs $100 to $300 USD and is often the fastest way to get around the city.
+
+### Internet and Utilities
+
+Germany has excellent fiber internet infrastructure. A high-speed fiber connection costs $25 to $40 USD per month. Utilities including heating, electricity and water for a one-bedroom apartment average $120 to $180 USD per month — note that German heating costs can be significant in winter.
+
+Average internet speeds in Berlin reach 100 to 200 Mbps on fiber connections.
+
+### Healthcare
+
+Germany has one of the world's best healthcare systems. EU citizens can use the public health system with a European Health Insurance Card. Non-EU expats must either join the public system (approximately $280 to $380 USD per month for statutory insurance) or take out private insurance.
+
+## Best Neighborhoods for Expats
+
+**Mitte** — Berlin's historic center. Excellent location, close to museums, galleries and the startup scene. Higher rents but very convenient.
+
+**Prenzlauer Berg** — The most popular neighborhood for young professionals and expat families. Beautiful Altbau apartments, excellent cafés and restaurants, and a strong community feel.
+
+**Friedrichshain** — Lively and youthful. Close to the East Side Gallery, excellent nightlife and a growing tech and creative community. More affordable than Prenzlauer Berg.
+
+**Kreuzberg** — Berlin's most multicultural neighborhood. Excellent food, vibrant arts scene and strong community. Very popular with creatives and digital nomads.
+
+**Neukölln** — Up-and-coming and increasingly popular. More affordable than central neighborhoods with an excellent café and restaurant scene.
+
+## Berlin for Digital Nomads
+
+Berlin is consistently ranked among Europe's top cities for digital nomads. The city has a massive co-working scene — spaces like WeWork, Betahaus, Mindspace and Factory Berlin offer excellent facilities. A hot desk at a co-working space costs $150 to $300 USD per month.
+
+The startup and tech ecosystem is one of Europe's largest, making Berlin excellent for networking. Regular meetups, conferences and events happen every week.
+
+## Visas
+
+EU citizens can live and work in Berlin without any visa requirements. Non-EU nationals typically need a Freiberufler (freelancer) visa or an Aufenthaltstitel (residence permit). Germany's Chancenkarte (Opportunity Card) launched in 2024 allows skilled workers to come to Germany for up to one year to look for work.
+
+## FAQ
+
+**Is Berlin cheap for expats?** Compared to London, Paris and Amsterdam, yes. Berlin is significantly more affordable than other major Western European capitals, though costs have risen in recent years.
+
+**What is the average rent in Berlin in 2026?** A furnished one-bedroom apartment in central neighborhoods like Prenzlauer Berg or Friedrichshain costs $1,200 to $1,800 USD per month.
+
+**Is Berlin good for digital nomads?** Berlin is one of Europe's top digital nomad destinations, with excellent co-working infrastructure, a large international community and good internet speeds.`
+    },
+    'cost-of-living-new-york-2026': {
+        image: 'photo-1496442226666-8d4d0e62e6e9',
+        title: 'Cost of Living in New York City 2026: The Real Numbers',
+        desc: 'How much does it actually cost to live in New York City in 2026? Honest rent, food and lifestyle costs for newcomers and expats.',
+        category: 'North America', date: 'June 2026', readTime: '10 min',
+        keywords: 'cost of living new york 2026, nyc cost of living, living in new york, new york monthly budget, nyc expat',
+        content: `## Cost of Living in New York City in 2026
+
+New York City remains one of the world's most expensive cities in 2026. But for those who can make it work financially, NYC offers unmatched career opportunities, cultural richness and energy. A comfortable monthly budget in Manhattan starts at $4,500 USD, while outer boroughs like Brooklyn and Queens offer more affordable options starting at $3,000 USD per month.
+
+## Monthly Budget Breakdown
+
+### Rent
+
+Rent is by far the largest expense in NYC. In Manhattan, a one-bedroom apartment averages $3,500 to $5,000 USD per month. In Brooklyn's popular neighborhoods like Williamsburg, Park Slope and Brooklyn Heights, expect $2,800 to $4,000 USD. Queens neighborhoods like Astoria and Long Island City offer more affordable options at $2,200 to $3,000 USD.
+
+Shared apartments significantly reduce costs. A room in a shared apartment in Brooklyn runs $1,200 to $1,800 USD per month — the most common arrangement for young professionals new to the city.
+
+### Food and Dining
+
+NYC's food scene is legendary, with options for every budget. A meal at a mid-range restaurant costs $20 to $40 USD per person. A slice of pizza (a New York staple) costs $3 to $5 USD. Lunch at a deli or fast-casual spot runs $12 to $18 USD. Weekly groceries at supermarkets like Trader Joe's or Fairway run $80 to $120 USD for one person.
+
+Eating out frequently adds up quickly. Many NYC residents save money by cooking at home on weekdays and dining out on weekends.
+
+### Transport
+
+NYC's MTA subway and bus system is extensive. A monthly unlimited MetroCard costs $132 USD — one of the best transport values in the city given how comprehensive the system is. Taxis and Uber/Lyft add $15 to $35 per trip for most Manhattan journeys.
+
+Many residents walk or cycle. NYC's Citi Bike membership costs $185 USD per year and is excellent for commutes under 45 minutes.
+
+### Utilities and Internet
+
+Utilities including electricity and internet for a one-bedroom apartment average $120 to $200 USD per month. High-speed fiber internet from providers like Verizon Fios or Optimum costs $40 to $70 USD per month with speeds of 300 to 1000 Mbps.
+
+### Healthcare
+
+Healthcare in the US is expensive without employer coverage. Individual health insurance plans on the NY State marketplace cost $400 to $700 USD per month for comprehensive coverage. Many NYC employers offer health insurance as part of compensation packages.
+
+## Best Neighborhoods for Newcomers
+
+**Astoria, Queens** — One of NYC's most diverse and affordable neighborhoods. Excellent food scene, easy subway access to Manhattan, and a strong community feel. Best value for money.
+
+**Williamsburg, Brooklyn** — Trendy and vibrant. Excellent restaurants, bars and cultural events. Higher rents but very popular with young professionals.
+
+**Upper Manhattan (Washington Heights, Inwood)** — Affordable Manhattan living. Predominantly Latino neighborhoods with excellent food and strong community character.
+
+**Bushwick, Brooklyn** — Creative and affordable. Large arts community, excellent street art, and lower rents than other Brooklyn neighborhoods.
+
+**Jersey City, NJ** — Technically not NYC but a 10-minute PATH train ride to Manhattan. Significantly cheaper rents with easy access to the city.
+
+## Is NYC Worth It?
+
+NYC makes financial sense if you are earning a high salary — typically $120,000+ USD per year for comfortable single living. The career opportunities, networking and professional growth available in NYC are unmatched in the US.
+
+For those earning remotely or on lower salaries, the math often doesn't work. Cities like Austin, Denver or Miami offer similar energy at significantly lower costs.
+
+## FAQ
+
+**How much do you need to earn to live comfortably in NYC in 2026?** A comfortable single lifestyle in NYC requires a take-home salary of at least $6,000 to $8,000 USD per month.
+
+**What is the cheapest borough to live in NYC?** The Bronx and parts of Queens offer the most affordable rents in NYC, with one-bedroom apartments starting at $1,800 to $2,200 USD per month.
+
+**Is NYC cheaper than London?** They are comparable in cost. NYC is slightly cheaper for rent in outer boroughs, but London has lower healthcare costs for EU/UK citizens.`
+    },
+    'cost-of-living-lisbon-2026': {
+        image: 'photo-1513622470522-26c3c8a854bc',
+        title: 'Cost of Living in Lisbon, Portugal 2026: Expat Guide',
+        desc: 'Complete guide to living in Lisbon in 2026 — real rent prices, food costs, transport and the lifestyle that made Lisbon a top nomad destination.',
+        category: 'Europe', date: 'June 2026', readTime: '10 min',
+        keywords: 'cost of living lisbon 2026, lisbon expat, living in lisbon, lisbon monthly budget, portugal digital nomad',
+        content: `## Cost of Living in Lisbon, Portugal in 2026
+
+Lisbon has transformed from a hidden gem to one of Europe's most sought-after expat destinations over the past decade. Portugal's capital combines Atlantic coastline, year-round mild weather, excellent food and wine, a growing tech scene and — despite rising costs — a quality of life that is difficult to match anywhere in Western Europe. A comfortable monthly budget in Lisbon ranges from $2,000 to $3,000 USD in 2026.
+
+## Monthly Budget Breakdown
+
+### Rent
+
+Lisbon's rental market has risen significantly since 2018, driven by tourism and expat demand. In central neighborhoods like Chiado, Bairro Alto and Príncipe Real, a furnished one-bedroom apartment costs $1,800 to $2,800 USD per month. More affordable neighborhoods like Mouraria, Intendente and Campo de Ourique offer one-bedroom apartments at $1,200 to $1,800 USD.
+
+Slightly outside the center — in Almada, Almada or Setúbal, accessible by ferry or train — rents drop significantly to $800 to $1,200 USD for a one-bedroom.
+
+### Food and Dining
+
+Lisbon's food scene is exceptional. A meal at a traditional tasca (local restaurant) costs $10 to $15 USD for a full meal with wine. A pastel de nata (custard tart) costs $1.50 USD. Weekly groceries at supermarkets like Pingo Doce or Continente run $50 to $70 USD for one person.
+
+Lisbon has excellent seafood — grilled sardines, bacalhau (salt cod) and percebes (barnacles) are staples. Wine is extremely affordable, with excellent Portuguese wines available for $5 to $10 USD per bottle in supermarkets.
+
+### Transport
+
+Lisbon's Carris network of trams, buses and the Metro is affordable. A monthly transport pass (Navegante) costs approximately $45 USD and covers all public transport in the Lisbon metropolitan area. The iconic tram 28 is a tourist attraction but also a genuine local transport option.
+
+Cycling infrastructure has improved significantly in recent years. Gira bike-sharing costs $15 USD per month for unlimited 45-minute rides.
+
+### Internet and Utilities
+
+Portugal has excellent internet infrastructure. A fiber broadband connection costs $30 to $45 USD per month with speeds of 200 to 1000 Mbps. Utilities including electricity and water for a one-bedroom apartment average $80 to $120 USD per month.
+
+### Healthcare
+
+Portugal has an excellent National Health Service (SNS) accessible to residents. EU citizens have full access. Non-EU expats can access the SNS after registering as residents. Private health insurance costs $50 to $120 USD per month and provides access to private hospitals and clinics without waiting times.
+
+## Best Neighborhoods for Expats
+
+**Chiado and Bairro Alto** — The most central and cosmopolitan areas. Excellent restaurants, boutiques and cultural life. Highest rents but very convenient.
+
+**Mouraria** — Lisbon's oldest neighborhood, currently undergoing a creative renaissance. More affordable with authentic local character and excellent food.
+
+**Príncipe Real** — Upscale and beautiful. Tree-lined streets, antique shops and excellent restaurants. Popular with creative professionals.
+
+**Almada** — Across the Tagus River via ferry. Significantly more affordable than central Lisbon with stunning river views and easy ferry access to the center.
+
+**Cascais** — Beautiful coastal town 40 minutes from Lisbon by train. Very popular with families and remote workers who want beach access without central Lisbon prices.
+
+## Portugal's Digital Nomad Visa
+
+Portugal offers a D8 Digital Nomad Visa for remote workers earning at least $3,480 USD per month (4x the Portuguese minimum wage). The visa provides legal residency and a pathway to permanent residency and citizenship after 5 years.
+
+Portugal's NHR (Non-Habitual Resident) tax regime historically offered significant tax advantages for new residents — though this was modified in 2024. Consult a local tax advisor for current details.
+
+## FAQ
+
+**Is Lisbon still affordable in 2026?** Lisbon has become more expensive due to expat demand, but remains significantly cheaper than London, Paris or Amsterdam. It offers excellent value compared to other Western European capitals.
+
+**What is the average rent in Lisbon in 2026?** A furnished one-bedroom apartment in central Lisbon costs $1,800 to $2,800 USD per month. More affordable options exist in outer neighborhoods and surrounding towns.
+
+**Is Lisbon good for digital nomads?** Yes. Lisbon has excellent co-working infrastructure, fast internet, a large international community and Portugal's D8 visa makes long-term stays straightforward.`
+    },
+    'cost-of-living-medellin-2026': {
+        image: 'photo-1596422846543-75c6fc197f07',
+        title: 'Cost of Living in Medellín, Colombia 2026: The Real Guide',
+        desc: 'How much does it cost to live in Medellín in 2026? Complete breakdown of rent, food, transport and lifestyle costs for expats and nomads.',
+        category: 'Latin America', date: 'June 2026', readTime: '10 min',
+        keywords: 'cost of living medellin 2026, medellin expat, living in medellin, medellin monthly budget, colombia digital nomad',
+        content: `## Cost of Living in Medellín, Colombia in 2026
+
+Medellín's transformation from one of the world's most dangerous cities to one of its most innovative and attractive expat destinations is one of the great urban stories of the 21st century. The City of Eternal Spring — named for its year-round perfect climate of 22 to 28°C — has become a top destination for digital nomads, remote workers and expats seeking affordable, high-quality Latin American living. A comfortable monthly budget in Medellín runs $800 to $1,400 USD in 2026.
+
+## Monthly Budget Breakdown
+
+### Rent
+
+Medellín offers excellent value for money in accommodation. In El Poblado, the most popular expat neighborhood, a furnished one-bedroom apartment costs $600 to $900 USD per month. In Laureles, increasingly popular with expats and more local in character, expect $500 to $750 USD. Envigado, a quieter suburb adjacent to El Poblado, offers similar quality at $400 to $650 USD.
+
+Serviced apartments and Airbnbs are widely available for month-to-month stays at $800 to $1,200 USD per month for a modern furnished one-bedroom with amenities.
+
+### Food and Dining
+
+Medellín's food scene has exploded in quality and variety. A meal at a mid-range restaurant in El Poblado costs $8 to $15 USD. Local Colombian restaurants (typical) offer filling meals with soup, main course and juice for $4 to $7 USD. A coffee at a specialty café costs $2 to $4 USD.
+
+Fresh fruit and vegetables are extraordinarily cheap and high quality. Weekly groceries at supermarkets like Éxito or Jumbo run $40 to $60 USD for one person.
+
+Medellín has a vibrant craft beer and cocktail scene. A craft beer costs $3 to $5 USD at a bar in El Poblado.
+
+### Transport
+
+Medellín's Metro system is clean, safe and affordable. A single ride costs $0.80 USD. The Metrocable — gondola systems connecting hillside neighborhoods to the Metro — is included in the integrated fare system. A monthly transport card costs approximately $25 to $35 USD covering unlimited Metro and Metroplus rides.
+
+Uber and InDriver operate extensively and are affordable — most rides within El Poblado cost $2 to $5 USD. Taxis are similarly priced.
+
+### Internet and Co-working
+
+Medellín has significantly improved its internet infrastructure. Average speeds in modern apartments reach 80 to 150 Mbps. A fiber connection costs $20 to $35 USD per month.
+
+Co-working spaces are excellent. Selina El Poblado, Atom House, La Maquinista and numerous others offer quality workspaces at $100 to $200 USD per month for a hot desk.
+
+### Healthcare
+
+Colombia has a good healthcare system. Expats typically join EPS (the public health system) for approximately $50 to $80 USD per month, or take out private health insurance for $80 to $150 USD per month covering private clinics with no waiting times.
+
+## Best Neighborhoods for Expats
+
+**El Poblado** — The main expat hub. Safe, modern, excellent restaurants, bars and infrastructure. Higher rents than other areas but the most convenient option for first-time visitors.
+
+**Laureles** — More local character than El Poblado, increasingly popular with expats. Excellent restaurants, quieter streets and slightly lower rents.
+
+**Envigado** — Quiet, family-friendly and more affordable. Great local food scene and easy Metro access to El Poblado.
+
+**Sabaneta** — Further south, very affordable and authentic. Best for longer-term residents who want to immerse in local culture.
+
+## Safety
+
+Medellín's safety has improved dramatically since the 1990s. El Poblado and Laureles are considered very safe for expats. Standard precautions apply — avoid displaying expensive items publicly, use Uber rather than hailing taxis, and avoid certain neighborhoods particularly at night.
+
+The Medellín expat Facebook group has over 50,000 members and is an excellent resource for safety updates and neighborhood recommendations.
+
+## Visa Options
+
+Most nationalities can enter Colombia visa-free for 90 days, renewable for another 90 days. Colombia launched a Digital Nomad Visa in 2022 for remote workers earning $684 USD or more per month, allowing stays of up to 2 years.
+
+## FAQ
+
+**Is Medellín safe for expats in 2026?** El Poblado and Laureles are considered safe neighborhoods with standard urban precautions. Medellín has undergone dramatic security improvements since the 1990s.
+
+**What is the average rent in Medellín in 2026?** A furnished one-bedroom in El Poblado costs $600 to $900 USD per month. More affordable options exist in Laureles and Envigado.
+
+**Why do digital nomads love Medellín?** Perfect climate, low cost, fast internet, excellent food, large expat community and easy visa access make Medellín one of Latin America's top nomad destinations.`
+    },
+    'cost-of-living-tbilisi-2026': {
+        image: 'photo-1565008576549-57569a49f3d5',
+        title: 'Cost of Living in Tbilisi, Georgia 2026: The Budget Nomad Capital',
+        desc: 'Tbilisi is the most affordable city in Europe for digital nomads in 2026. Complete guide to rent, food, visa and lifestyle costs.',
+        category: 'Europe', date: 'June 2026', readTime: '9 min',
+        keywords: 'cost of living tbilisi 2026, tbilisi georgia expat, living in tbilisi, tbilisi monthly budget, georgia digital nomad visa',
+        content: `## Cost of Living in Tbilisi, Georgia in 2026
+
+Tbilisi has emerged as arguably the world's best value city for digital nomads in 2026. Georgia's ancient capital combines extraordinary history, remarkable cuisine, a welcoming culture, fast internet and one of the world's most generous visa policies — most nationalities can stay visa-free for up to 365 days. A very comfortable monthly budget in Tbilisi runs $700 to $1,100 USD.
+
+## Monthly Budget Breakdown
+
+### Rent
+
+Tbilisi offers exceptional value in accommodation. A furnished one-bedroom apartment in popular neighborhoods like Vera, Vake or Saburtalo costs $400 to $700 USD per month. More central neighborhoods like the Old Town (Kala) or Marjanishvili run $500 to $800 USD. Budget options in slightly less central areas start at $250 to $350 USD for a decent furnished apartment.
+
+Airbnb and short-term furnished rentals are well-developed and competitively priced, with quality one-bedroom apartments available for $600 to $900 USD per month.
+
+### Food and Dining
+
+Georgian cuisine is one of the world's great undiscovered food traditions — and extraordinarily affordable. A full meal at a local Georgian restaurant (khinkali, khachapuri, grilled meats, local wine) costs $8 to $15 USD per person. Street food is plentiful — khinkali (dumplings) cost $0.30 USD each. A coffee at a specialty café costs $2 to $3 USD.
+
+Tbilisi's covered markets — Dezerter Bazaar in particular — offer fresh produce, spices, cheese and churchkhela (traditional walnut candy) at very low prices. Weekly groceries run $30 to $50 USD for one person.
+
+Georgian wine is world-class and extraordinarily cheap. A bottle of excellent natural wine from the Kakheti region costs $5 to $12 USD in a restaurant.
+
+### Transport
+
+Tbilisi's metro and bus system is affordable. A single ride costs $0.25 USD. A monthly transport card runs approximately $15 USD. Bolt (the regional Uber equivalent) is very affordable — most rides within the city center cost $2 to $4 USD.
+
+### Internet and Co-working
+
+Tbilisi has made significant infrastructure investments in recent years. Average internet speeds in modern apartments reach 80 to 120 Mbps on fiber connections. A dedicated fiber connection costs $15 to $25 USD per month.
+
+Co-working spaces have grown rapidly. Fabrika — a converted Soviet-era factory that houses co-working, cafés, bars and shops — is the most famous and costs $100 to $150 USD per month for a hot desk. Impact Hub Tbilisi and several other quality spaces offer alternatives.
+
+### Utilities
+
+Utilities including electricity, water and gas for a one-bedroom apartment average $40 to $70 USD per month. Georgia has low electricity costs due to extensive hydropower infrastructure.
+
+### Healthcare
+
+Georgia has a public and private healthcare system. Private healthcare is excellent quality and very affordable — a consultation with a specialist costs $20 to $40 USD. Comprehensive private health insurance costs $50 to $100 USD per month.
+
+## Best Neighborhoods for Expats
+
+**Vera** — The most popular neighborhood for expats. Quiet, leafy streets, excellent cafés and restaurants, and a strong international community. Best all-around choice.
+
+**Vake** — Upscale and residential. Beautiful parks, excellent facilities and a slightly more Georgian feel than Vera.
+
+**Saburtalo** — Practical and affordable. Good transport links, local shops and restaurants. Less aesthetic than Vera but very livable.
+
+**Old Town (Kala)** — Beautiful and atmospheric but heavily touristic. Best for short stays; longer-term residents often prefer quieter neighborhoods.
+
+**Marjanishvili** — Up-and-coming area with excellent cafés, a strong creative community and slightly lower rents.
+
+## The 365-Day Visa Advantage
+
+Georgia's visa policy is remarkable — citizens of most countries (including US, EU, UK, Australia and many others) can enter and stay for up to 365 days without a visa. This makes Tbilisi uniquely accessible for long-term stays without any bureaucratic hassle.
+
+After 183 days of residency, individuals may be subject to Georgian tax rules — consult a local accountant if staying long-term.
+
+## Safety
+
+Tbilisi is consistently rated one of the safest cities in Eastern Europe. The city has very low rates of petty crime, and the Georgian culture of hospitality (known as "Tamada") means foreigners are generally welcomed warmly.
+
+## FAQ
+
+**Why is Tbilisi so popular with digital nomads?** The combination of visa-free 365-day stays, very low cost of living ($700 to $1,000 per month), fast internet, excellent food and wine, and unique culture makes Tbilisi unbeatable for budget-conscious nomads.
+
+**What is the average rent in Tbilisi in 2026?** A furnished one-bedroom apartment in a popular expat neighborhood like Vera or Vake costs $400 to $700 USD per month.
+
+**Is Tbilisi safe?** Yes. Tbilisi is one of the safest cities in the region and Georgia consistently scores well on global safety indexes.`
+    },
     'cost-of-living-buenos-aires-2026': {
         image: 'photo-1589909202802-8f4aadce9d55',
         title: 'Cost of Living in Buenos Aires in 2026: Complete Expat Guide',
