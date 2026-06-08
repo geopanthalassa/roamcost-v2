@@ -102,7 +102,7 @@ export default async function Home() {
         "description": "Compare rent, food, safety and quality of life between hundreds of cities worldwide. Free data for digital nomads, expats and travelers.",
         "thumbnailUrl": "https://www.roamcost.com/og-image.jpg",
         "uploadDate": "2026-01-01T00:00:00+00:00",
-        "contentUrl": "https://www.roamcost.com/hero-video.mp4",
+        "contentUrl": "https://www.roamcost.com/cities/world-cup-hero.mp4",
         "embedUrl": "https://www.roamcost.com",
         "publisher": { "@type": "Organization", "name": "RoamCost", "url": "https://www.roamcost.com" }
       }) }} />
@@ -110,7 +110,7 @@ export default async function Home() {
                     autoPlay muted loop playsInline
                     style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65 }}
                 >
-                    <source src="/hero-video.mp4" type="video/mp4" />
+                    <source src="/cities/world-cup-hero.mp4" type="video/mp4" />
                 </video>
                 {/* Gradient overlay - lighter to show more video */}
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.35) 100%)' }} />
@@ -571,6 +571,7 @@ export default async function Home() {
 }
 
  
+
 
 
 
