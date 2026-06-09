@@ -9,6 +9,21 @@ export const metadata: Metadata = {
 };
 
 const POSTS = [
+
+    { slug: 'world-cup-2026-currency-guide', title: 'World Cup 2026 Currency Guide', desc: 'How to exchange USD, MXN and CAD for World Cup 2026. Best rates and money-saving tips for every host country.', category: 'World Cup 2026', date: 'June 2026', readTime: '10 min' },
+    { slug: 'world-cup-2026-travel-guide', title: 'FIFA World Cup 2026 Travel Guide', desc: 'Complete travel cost guide for all 16 host cities in USA, Mexico and Canada. Cheapest cities and budget tips.', category: 'World Cup 2026', date: 'June 2026', readTime: '12 min' },
+    { slug: 'cheapest-world-cup-2026-cities', title: 'Cheapest World Cup 2026 Host Cities', desc: 'Which FIFA World Cup 2026 host city is cheapest? Complete cost comparison of all 16 cities.', category: 'World Cup 2026', date: 'June 2026', readTime: '10 min' },
+    { slug: 'world-cup-2026-mexico-city-guide', title: 'World Cup 2026 Mexico City Guide', desc: 'Everything you need for the FIFA World Cup 2026 in Mexico City — costs, neighborhoods and budget tips.', category: 'World Cup 2026', date: 'June 2026', readTime: '10 min' },
+    { slug: 'cost-of-living-berlin-2026', title: 'Cost of Living in Berlin 2026', desc: 'Complete expat guide to Berlin — real rent, food, transport and lifestyle costs for 2026.', category: 'Europe', date: 'June 2026', readTime: '10 min' },
+    { slug: 'cost-of-living-new-york-2026', title: 'Cost of Living in New York 2026', desc: 'The real numbers for living in NYC in 2026. Honest rent, food and lifestyle costs for newcomers.', category: 'North America', date: 'June 2026', readTime: '10 min' },
+    { slug: 'cost-of-living-lisbon-2026', title: 'Cost of Living in Lisbon 2026', desc: 'Complete expat guide to Lisbon — real rent prices, food costs and the D8 digital nomad visa.', category: 'Europe', date: 'June 2026', readTime: '10 min' },
+    { slug: 'cost-of-living-medellin-2026', title: 'Cost of Living in Medellin 2026', desc: 'How much does it cost to live in Medellin? Complete breakdown for expats and digital nomads.', category: 'Latin America', date: 'June 2026', readTime: '10 min' },
+    { slug: 'cost-of-living-tbilisi-2026', title: 'Cost of Living in Tbilisi 2026', desc: 'The budget nomad capital — visa-free 365 days, $700/month living and incredible food.', category: 'Europe', date: 'June 2026', readTime: '9 min' },
+    { slug: 'internet-speed-cities-digital-nomads-2026', title: 'Best Cities for Internet Speed 2026', desc: 'The cities with the fastest internet for remote workers and how much they cost to live in.', category: 'Nomads', date: 'May 2026', readTime: '8 min' },
+    { slug: 'best-cities-remote-workers-latin-america-2026', title: 'Best Cities for Remote Workers in Latin America', desc: 'Top Latin American cities for digital nomads — fast internet, affordable rent and great communities.', category: 'Latin America', date: 'May 2026', readTime: '9 min' },
+    { slug: 'cheapest-cities-eastern-europe-digital-nomads-2026', title: 'Cheapest Eastern Europe Cities for Nomads', desc: 'Tbilisi, Bucharest, Belgrade — the most affordable Eastern European cities with fast internet.', category: 'Europe', date: 'May 2026', readTime: '9 min' },
+    { slug: 'cost-of-living-buenos-aires-2026', title: 'Cost of Living in Buenos Aires 2026', desc: 'Complete expat guide to Buenos Aires — rent, food, the dollar advantage and neighborhood guide.', category: 'Latin America', date: 'May 2026', readTime: '10 min' },
+    { slug: 'cost-of-living-bangkok-2026', title: 'Cost of Living in Bangkok 2026', desc: 'How much does it really cost to live in Bangkok? Real costs for expats and digital nomads.', category: 'Asia', date: 'May 2026', readTime: '10 min' },
     { slug: 'cheapest-cities-europe-2026', title: 'Cheapest Cities to Live in Europe in 2026', desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns for rent, food and transport.', category: 'Europe', date: 'April 2026', readTime: '8 min' },
     { slug: 'best-cities-digital-nomads-2026', title: 'Best Cities for Digital Nomads in 2026', desc: 'Fast internet, coworking spaces, visa options and affordability. The definitive nomad city guide for 2026.', category: 'Nomads', date: 'April 2026', readTime: '10 min' },
     { slug: 'cost-of-living-southeast-asia', title: 'Cost of Living in Southeast Asia: Complete Guide', desc: 'Bangkok, Bali, Hanoi, Chiang Mai — how much does it really cost to live in Southeast Asia in 2026?', category: 'Asia', date: 'March 2026', readTime: '9 min' },
@@ -25,6 +40,8 @@ const CATEGORY_COLORS: Record<string, string> = {
     Europe: '#52B788', Asia: '#3b82f6', Nomads: '#8b5cf6',
     Budget: '#F7831E', 'Latin America': '#ef4444', Retirement: '#f59e0b',
     Visas: '#06b6d4', Tools: '#64748b',
+    'World Cup 2026': '#FFD700',
+    'North America': '#3b82f6',
 };
 
 export default function BlogPage() {
