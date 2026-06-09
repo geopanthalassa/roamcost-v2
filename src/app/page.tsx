@@ -211,7 +211,7 @@ export default async function Home() {
                             { city:'New York', flag:'🇺🇸', cost:'$$$$$', budget:'$2,800/wk', slug:'new-york', img:'photo-1496442226666-8d4d0e62e6e9', border:'rgba(60,120,255,0.6)' },
                             { city:'Los Angeles', flag:'🇺🇸', cost:'$$$$', budget:'$2,200/wk', slug:'los-angeles', img:'photo-1534190760961-74e8c1c5c3da', border:'rgba(60,120,255,0.5)' },
                             { city:'Miami', flag:'🇺🇸', cost:'$$$$', budget:'$1,680/wk', slug:'miami', img:'photo-1506905925346-21bda4d32df4', border:'rgba(60,120,255,0.5)' },
-                            { city:'Dallas', flag:'🇺🇸', cost:'$$$', budget:'$1,295/wk', slug:'dallas', img:'photo-1516550135131-fe3dcdd41517', border:'rgba(60,120,255,0.4)' },
+                            { city:'Dallas', flag:'🇺🇸', cost:'$$$', budget:'$1,295/wk', slug:'dallas', img:'photo-1534190760961-74e8c1c5c3da', border:'rgba(60,120,255,0.4)' },
                             { city:'Houston', flag:'🇺🇸', cost:'$$$', budget:'$1,365/wk', slug:'houston-united-states', img:'photo-1507699622108-4be3abd695ad', border:'rgba(60,120,255,0.4)' },
                             { city:'Seattle', flag:'🇺🇸', cost:'$$$', budget:'$1,500/wk', slug:'seattle-united-states', img:'photo-1577948000111-9c970dfe3743', border:'rgba(60,120,255,0.4)' },
                             { city:'San Francisco', flag:'🇺🇸', cost:'$$$$', budget:'$2,100/wk', slug:'san-francisco-united-states', img:'photo-1501594907352-04cda38ebc29', border:'rgba(60,120,255,0.5)' },
@@ -222,7 +222,7 @@ export default async function Home() {
                             { city:'Guadalajara', flag:'🇲🇽', cost:'$', budget:'$750/wk', slug:'guadalajara-mexico', img:'photo-1596422846543-75c6fc197f07', border:'rgba(0,180,0,0.6)' },
                             { city:'Monterrey', flag:'🇲🇽', cost:'$', budget:'$780/wk', slug:'monterrey-mexico', img:'photo-1518105779142-d975f22f1b0a', border:'rgba(0,180,0,0.6)' },
                             { city:'Toronto', flag:'🇨🇦', cost:'$$$', budget:'$1,600/wk', slug:'toronto-canada', img:'photo-1517935706615-2717063c2225', border:'rgba(230,57,70,0.6)' },
-                            { city:'Vancouver', flag:'🇨🇦', cost:'$$$$', budget:'$1,900/wk', slug:'vancouver-canada', img:'photo-1559511260-b120d11350cf', border:'rgba(230,57,70,0.5)' },
+                            { city:'Vancouver', flag:'🇨🇦', cost:'$$$$', budget:'$1,900/wk', slug:'vancouver-canada', img:'photo-1477959858617-67f85cf4f1df', border:'rgba(230,57,70,0.5)' },
                         ].map(item => (
                             <a key={item.slug} href={`/city/${item.slug}`} className="wc-card"
                                 style={{ borderRadius:'0.75rem', textDecoration:'none', display:'block',
@@ -230,7 +230,7 @@ export default async function Home() {
                                     background:`linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.65)), url(https://images.unsplash.com/${item.img}?auto=format&fit=crop&w=300&h=200&q=60) center/cover`,
                                     minHeight:'100px' }}>
                                 <div style={{ padding:'0.75rem', textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', minHeight:'100px' }}>
-                                    <div style={{ fontSize:'1.25rem', marginBottom:'0.2rem' }}>{item.flag}</div>
+                                    <div style={{ fontSize:'1.5rem', marginBottom:'0.15rem', filter:'drop-shadow(0 1px 2px rgba(0,0,0,0.8))' }}>{item.flag}</div>
                                     <div style={{ fontSize:'0.8rem', fontWeight:900, color:'#ffffff', lineHeight:1.2, marginBottom:'0.2rem', textShadow:'0 1px 3px rgba(0,0,0,0.8)' }}>{item.city}</div>
                                     <div style={{ fontSize:'0.65rem', color:'#FFD700', fontWeight:800 }}>{item.cost}</div>
                                     <div style={{ fontSize:'0.6rem', color:'rgba(255,255,255,0.7)' }}>{item.budget}</div>
@@ -241,10 +241,10 @@ export default async function Home() {
 
                     <div className="wc-affiliates-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'0.5rem' }}>
                         {[
-                            { href:'https://wise.prf.hn/click/camref:1110lFqtW', color:'#9FE870', bg:'rgba(159,232,112,0.12)', border:'rgba(159,232,112,0.4)', label:'Wise', desc:'Exchange currency', icon:'💸' },
-                            { href:'https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959', color:'#4A90D9', bg:'rgba(74,144,217,0.12)', border:'rgba(74,144,217,0.4)', label:'Booking.com', desc:'Find hotels', icon:'🏨' },
-                            { href:'https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959', color:'#FF6600', bg:'rgba(255,102,0,0.12)', border:'rgba(255,102,0,0.4)', label:'RentalCars', desc:'Rent a car', icon:'🚗' },
-                            { href:'https://www.getyourguide.com/?partner_id=VVPTRVK', color:'#FF5533', bg:'rgba(255,85,51,0.12)', border:'rgba(255,85,51,0.4)', label:'GetYourGuide', desc:'Experiences', icon:'🎯' },
+                            { href:'https://wise.prf.hn/click/camref:1110lFqtW', color:'#9FE870', bg:'rgba(159,232,112,0.12)', border:'rgba(159,232,112,0.4)', label:'Wise', desc:'Exchange currency', icon:<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9FE870" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> },
+                            { href:'https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959', color:'#4A90D9', bg:'rgba(74,144,217,0.12)', border:'rgba(74,144,217,0.4)', label:'Booking.com', desc:'Find hotels', icon:<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
+                            { href:'https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959', color:'#FF6600', bg:'rgba(255,102,0,0.12)', border:'rgba(255,102,0,0.4)', label:'RentalCars', desc:'Rent a car', icon:<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> },
+                            { href:'https://www.getyourguide.com/?partner_id=VVPTRVK', color:'#FF5533', bg:'rgba(255,85,51,0.12)', border:'rgba(255,85,51,0.4)', label:'GetYourGuide', desc:'Experiences', icon:<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF5533" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> },
                         ].map(item => (
                             <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
                                 style={{ display:'flex', alignItems:'center', gap:'0.625rem',
