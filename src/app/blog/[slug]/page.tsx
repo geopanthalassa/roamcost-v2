@@ -823,32 +823,32 @@ The FIFA World Cup 2026 spans three countries — the United States, Mexico and 
 ## The Three World Cup Currencies
 
 ### US Dollar (USD)
-Used in 11 host cities. Exchange with [Wise](https://wise.prf.hn/click/camref:1110lFqtW) for the best rates.
+Used in 11 host cities. Exchange with Wise for the best rates.
 
 ### Mexican Peso (MXN)
-1 USD = approximately 17-18 MXN. Mexico offers extraordinary value. [Convert USD to MXN](https://wise.prf.hn/click/camref:1110lFqtW)
+1 USD = approximately 17-18 MXN. Mexico offers extraordinary value. Convert USD to MXN
 
 ### Canadian Dollar (CAD)
-1 CAD = approximately 0.73 USD. [Convert USD to CAD](https://wise.prf.hn/click/camref:1110lFqtW)
+1 CAD = approximately 0.73 USD. Convert USD to CAD
 
 ## Team Currencies
 
-**Brazil (BRL)** — 1 USD = 5.0 BRL. [Convert BRL to USD](https://wise.prf.hn/click/camref:1110lFqtW)
+Brazil (BRL) — 1 USD = 5.0 BRL. Convert BRL to USD
 
-**Argentina (ARS)** — 1 USD = 1,050 ARS. [Convert ARS to USD](https://wise.prf.hn/click/camref:1110lFqtW)
+Argentina (ARS) — 1 USD = 1,050 ARS. Convert ARS to USD
 
-**Colombia (COP)** — 1 USD = 4,100 COP. [Convert COP to USD](https://wise.prf.hn/click/camref:1110lFqtW)
+Colombia (COP) — 1 USD = 4,100 COP. Convert COP to USD
 
-**England/Europe (GBP/EUR)** — 1 EUR = 1.08 USD. [Convert EUR to USD](https://wise.prf.hn/click/camref:1110lFqtW)
+**England/Europe (GBP/EUR)** — 1 EUR = 1.08 USD. Convert EUR to USD
 
-**Japan (JPY)** — 1 USD = 155 JPY. [Convert JPY to USD](https://wise.prf.hn/click/camref:1110lFqtW)
+Japan (JPY) — 1 USD = 155 JPY. Convert JPY to USD
 
-**Morocco (MAD)** — 1 USD = 10 MAD.
+Morocco (MAD) — 1 USD = 10 MAD.
 
 ## Best Ways to Exchange Currency
 
 ### 1. Wise — Best Overall
-[Wise](https://wise.prf.hn/click/camref:1110lFqtW) offers the real mid-market exchange rate with minimal fees (0.4-1.5%). Best option for fans attending matches in multiple countries.
+Wise offers the real mid-market exchange rate with minimal fees (0.4-1.5%). Best option for fans attending matches in multiple countries.
 
 Savings: On a $3,000 travel budget, Wise saves $90-150 vs airport exchange booths.
 
@@ -870,15 +870,15 @@ Canada | $150-220 CAD | $110-160
 
 ## Multi-Country Tips
 
-1. Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) multi-currency account
+1. Use Wise multi-currency account
 2. Convert only what you need to MXN — harder to convert back
 3. Mexico accepts USD but pesos give better value
-4. Book hotels with [Booking.com](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959) to pay in advance and avoid currency surprises
-5. Rent a car with [RentalCars](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) — pay upfront in your currency
+4. Book hotels with Booking.com to pay in advance and avoid currency surprises
+5. Rent a car with RentalCars — pay upfront in your currency
 
 ## FAQ
 
-**Best app for currency exchange World Cup 2026?** [Wise](https://wise.prf.hn/click/camref:1110lFqtW) — real exchange rates, minimal fees, works in all three countries.
+**Best app for currency exchange World Cup 2026?** Wise — real exchange rates, minimal fees, works in all three countries.
 
 **Does Mexico City accept USD?** Yes but always pay in pesos for better value.
 
@@ -897,44 +897,44 @@ The FIFA World Cup 2026 is the biggest sporting event in history — happening N
 ## Host Cities Overview
 
 ### USA
-**New York** — Most expensive. Hotels $250-400/night. Stay in Newark or Jersey City for savings. [Find hotels](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+New York — Most expensive. Hotels $250-400/night. Stay in Newark or Jersey City for savings. Find hotels
 
-**Los Angeles** — Stay in Inglewood or Long Beach at $120-180/night. [Rent a car](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) — essential in LA.
+Los Angeles — Stay in Inglewood or Long Beach at $120-180/night. Rent a car — essential in LA.
 
-**Miami** — Stay in Hialeah or Fort Lauderdale at $100-160/night. [Find hotels](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+Miami — Stay in Hialeah or Fort Lauderdale at $100-160/night. Find hotels
 
-**Dallas** — Best US value. Hotels in Irving $90-140/night. [Rent a car](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959)
+Dallas — Best US value. Hotels in Irving $90-140/night. Rent a car
 
-**Houston** — Affordable. NRG area hotels $110-170/night.
+Houston — Affordable. NRG area hotels $110-170/night.
 
-**Seattle** — Stay in Bellevue or Renton $120-180/night.
+Seattle — Stay in Bellevue or Renton $120-180/night.
 
-**San Francisco** — Stay in Oakland or San Jose $100-160/night.
+San Francisco — Stay in Oakland or San Jose $100-160/night.
 
-**Boston** — Stay in Cambridge or Somerville for savings.
+Boston — Stay in Cambridge or Somerville for savings.
 
-**Kansas City** — Best overall US value. Hotels $80-130/night.
+Kansas City — Best overall US value. Hotels $80-130/night.
 
-**Philadelphia** — Stay in South Jersey 30-40% cheaper.
+Philadelphia — Stay in South Jersey 30-40% cheaper.
 
 ### Mexico
-**Mexico City** — Extraordinary value. Hotels $60-90/night. Food $5-12/meal. [Convert currency with Wise](https://wise.prf.hn/click/camref:1110lFqtW) before traveling.
+**Mexico City** — Extraordinary value. Hotels $60-90/night. Food $5-12/meal. Convert currency with Wise before traveling.
 
 **Guadalajara** — Hotels $50-90/night. Hidden gem.
 
 **Monterrey** — Hotels $55-95/night. Great infrastructure.
 
 ### Canada
-**Toronto** — Stay in Mississauga $130-200/night. [Convert to CAD with Wise](https://wise.prf.hn/click/camref:1110lFqtW)
+**Toronto** — Stay in Mississauga $130-200/night. Convert to CAD with Wise
 
 **Vancouver** — Stay in Burnaby or Surrey $120-180/night.
 
 ## Budget Tips
 
-1. Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) for currency exchange — save 3-5% on every transaction
-2. Book rental cars NOW through [RentalCars](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) — prices triple closer to the event
+1. Use Wise for currency exchange — save 3-5% on every transaction
+2. Book rental cars NOW through RentalCars — prices triple closer to the event
 3. Mexican cities cost 60% less than US cities
-4. Book tours with [GetYourGuide](https://www.getyourguide.com/?partner_id=VVPTRVK) in advance
+4. Book tours with GetYourGuide in advance
 
 ## Budget by City (7 nights)
 
@@ -960,46 +960,46 @@ With 16 host cities across three countries, World Cup 2026 offers options for ev
 ### 1. Mexico City — Best Value Overall
 Hotels in Roma Norte: $60-90/night. Food: $5-12/meal. Metro: $0.25/ride.
 
-**7-night budget: $800-1,200 USD**
+7-night budget: $800-1,200 USD
 
 Budget neighborhoods: Coyoacán, Del Valle, Tlalpan
 
-[Hotels in Mexico City](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959) | [Convert USD to MXN with Wise](https://wise.prf.hn/click/camref:1110lFqtW) | [City tours](https://www.getyourguide.com/?partner_id=VVPTRVK)
+Hotels in Mexico City | Convert USD to MXN with Wise | City tours
 
 ### 2. Guadalajara — Hidden Gem
 Hotels near Estadio Akron: $50-90/night.
 
-**7-night budget: $750-1,100 USD**
+7-night budget: $750-1,100 USD
 
 Budget neighborhoods: Zapopan, Tonalá, Tlaquepaque
 
 ### 3. Monterrey — Industrial Value
 Hotels near Estadio BBVA: $55-95/night.
 
-**7-night budget: $780-1,150 USD**
+7-night budget: $780-1,150 USD
 
 ## Tier 2: Affordable US Cities
 
 ### 4. Kansas City — Best US Value
 Hotels near Arrowhead: $90-140/night. Excellent BBQ food.
 
-**7-night budget: $1,200-1,600 USD**
+7-night budget: $1,200-1,600 USD
 
 Budget neighborhoods: Independence, Lee's Summit, Olathe
 
-[Rent a car in Kansas City](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959)
+Rent a car in Kansas City
 
 ### 5. Dallas — Good Texas Value
 Hotels in Irving/Arlington: $90-140/night.
 
-**7-night budget: $1,300-1,700 USD**
+7-night budget: $1,300-1,700 USD
 
 Budget neighborhoods: Irving, Garland, Grand Prairie
 
 ### 6. Houston — Underrated Value
 NRG Stadium area: $100-150/night.
 
-**7-night budget: $1,350-1,800 USD**
+7-night budget: $1,350-1,800 USD
 
 Budget neighborhoods: Stafford, Pearland, Missouri City
 
@@ -1008,7 +1008,7 @@ Budget neighborhoods: Stafford, Pearland, Missouri City
 ### Philadelphia, Toronto, Seattle, Boston
 $1,500-2,300 USD for 7 nights. Stay in suburbs for savings.
 
-[Convert to CAD with Wise](https://wise.prf.hn/click/camref:1110lFqtW) for Canadian cities.
+Convert to CAD with Wise for Canadian cities.
 
 ## Tier 4: Expensive
 
@@ -1019,7 +1019,7 @@ $200-400/night. Budget $2,000-3,500 for 7 nights.
 
 Build your itinerary around Mexican cities — attend matches in Mexico City or Guadalajara where your entire week costs less than one night in New York.
 
-Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) for all currency conversions and [RentalCars](https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959) for US cities where driving is essential.`
+Use Wise for all currency conversions and RentalCars for US cities where driving is essential.`
     },
     'world-cup-2026-mexico-city-guide': {
         image: 'photo-1518105779142-d975f22f1b0a',
@@ -1035,7 +1035,7 @@ Mexico City hosts World Cup 2026 at the legendary Estadio Azteca — the only st
 
 Fly into Benito Juárez International Airport (MEX). Uber to city center: $12-20 USD.
 
-**Currency tip:** Use [Wise](https://wise.prf.hn/click/camref:1110lFqtW) to convert to Mexican pesos at the real rate — save 3-6% vs airport exchange booths.
+**Currency tip:** Use Wise to convert to Mexican pesos at the real rate — save 3-6% vs airport exchange booths.
 
 ## Where to Stay
 
@@ -1047,7 +1047,7 @@ Fly into Benito Juárez International Airport (MEX). Uber to city center: $12-20
 
 **Polanco** — Upscale. Hotels $120-200/night. Very safe.
 
-[Find hotels in Mexico City](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+Find hotels in Mexico City
 
 ## Getting to Estadio Azteca
 
@@ -1068,7 +1068,7 @@ Transport | $30 | $60
 Tours | $50 | $150
 **Total** | **$570** | **$1,120**
 
-[Book city tours and Azteca experiences](https://www.getyourguide.com/?partner_id=VVPTRVK) | [Hotels in CDMX](https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959)
+Book city tours and Azteca experiences | Hotels in CDMX
 
 ## Safety
 
