@@ -247,9 +247,7 @@ export default async function Home() {
                             { href:'https://www.getyourguide.com/?partner_id=VVPTRVK', color:'#FF5533', bg:'rgba(255,85,51,0.12)', border:'rgba(255,85,51,0.4)', label:'GetYourGuide', desc:'Experiences', icon:<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF5533" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> },
                         ].map(item => (
                             <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
-                                style={{ display:'flex', alignItems:'center', gap:'0.625rem',
-                                    background:item.bg, border:`1px solid ${item.border}`,
-                                    borderRadius:'0.625rem', padding:'0.75rem 1rem', textDecoration:'none' }}>
+                                style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.625rem', background:item.bg, border:`1px solid ${item.border}`, borderRadius:'0.625rem', padding:'0.75rem 1rem', textDecoration:'none', textAlign:'center' }}>
                                 <span style={{ fontSize:'1.25rem' }}>{item.icon}</span>
                                 <div>
                                     <div style={{ fontSize:'0.85rem', fontWeight:900, color:item.color }}>{item.label}</div>
