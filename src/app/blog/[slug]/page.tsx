@@ -1604,7 +1604,8 @@ export default async function BlogPost({ params }: Props) {
                             return html
                                 ? <p key={i} style={{ fontSize:'0.95rem', lineHeight:1.8, color:'#374151', margin:'0.5rem 0' }} dangerouslySetInnerHTML={{ __html: boldLine }} />
                                 : <p key={i} style={{ fontSize:'0.95rem', lineHeight:1.8, color:'#374151', margin:'0.5rem 0' }}>{line}</p>;
-                        })m 'next';
+                        })
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
