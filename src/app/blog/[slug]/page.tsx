@@ -916,6 +916,7 @@ Boston — Stay in Cambridge or Somerville for savings.
 Kansas City — Best overall US value. Hotels $80-130/night.
 
 Philadelphia — Stay in South Jersey 30-40% cheaper.
+---CTA-BOOKING---
 
 ### Mexico
 **Mexico City** — Extraordinary value. Hotels $60-90/night. Food $5-12/meal. Convert currency with Wise before traveling.
@@ -928,6 +929,7 @@ Philadelphia — Stay in South Jersey 30-40% cheaper.
 **Toronto** — Stay in Mississauga $130-200/night. Convert to CAD with Wise
 
 **Vancouver** — Stay in Burnaby or Surrey $120-180/night.
+---CTA-WISE---
 
 ## Budget Tips
 
@@ -935,6 +937,8 @@ Philadelphia — Stay in South Jersey 30-40% cheaper.
 2. Book rental cars NOW through RentalCars — prices triple closer to the event
 3. Mexican cities cost 60% less than US cities
 4. Book tours with GetYourGuide in advance
+---CTA-RENTALCARS---
+---CTA-GYG---
 
 ## Budget by City (7 nights)
 
@@ -988,6 +992,7 @@ Hotels near Arrowhead: $90-140/night. Excellent BBQ food.
 Budget neighborhoods: Independence, Lee's Summit, Olathe
 
 Rent a car in Kansas City
+---CTA-RENTALCARS---
 
 ### 5. Dallas — Good Texas Value
 Hotels in Irving/Arlington: $90-140/night.
@@ -1009,6 +1014,7 @@ Budget neighborhoods: Stafford, Pearland, Missouri City
 $1,500-2,300 USD for 7 nights. Stay in suburbs for savings.
 
 Convert to CAD with Wise for Canadian cities.
+---CTA-WISE---
 
 ## Tier 4: Expensive
 
