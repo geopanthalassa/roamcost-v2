@@ -237,7 +237,7 @@ function ComparePageInner() {
                     <p style={{ margin: '0 0 0.75rem', fontSize: '0.8rem', color: '#64748b' }}>Compare host cities</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                         {FIFA_COMPARISONS.map(([a, b]) => (
-                            <button key={a+b} onClick={() => { setCity1(a.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())); setCity2(b.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())); }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0.75rem', background: 'linear-gradient(135deg,rgba(255,215,0,0.08),rgba(82,183,136,0.08))', border: '1px solid rgba(255,215,0,0.3)', borderRadius: '0.5rem', cursor: 'pointer', fontSize: '0.78rem', fontWeight: 600, color: '#0f172a', textAlign: 'left', width: '100%' }}>
+                            <button key={a+b} onClick={() => { const na=a.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase()); const nb=b.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase()); setSlots([na,nb]); }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0.75rem', background: 'linear-gradient(135deg,rgba(255,215,0,0.08),rgba(82,183,136,0.08))', border: '1px solid rgba(255,215,0,0.3)', borderRadius: '0.5rem', cursor: 'pointer', fontSize: '0.78rem', fontWeight: 600, color: '#0f172a', textAlign: 'left', width: '100%' }}>
                                 <span>{a.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())}</span>
                                 <span style={{ color: '#FFD700', fontWeight: 900 }}>vs</span>
                                 <span>{b.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())}</span>
