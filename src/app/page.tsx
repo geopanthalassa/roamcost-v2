@@ -318,6 +318,34 @@ export default async function Home() {
                 </div>
             </section>
             {/* HOT TAKES PREVIEW */}
+            <section style={{ padding: '3rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ marginBottom: '1.5rem' }}>
+                            <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Blog</p>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>Cost of living guides</h2>
+                            <a href="/blog" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>See all →</a>
+                        </div>
+                    <div className="blog-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                        {[
+                            { href: '/blog/world-cup-2026-travel-guide', title: 'FIFA World Cup 2026 Travel Guide', desc: 'Costs, hotels and tips for all 16 host cities.', category: 'World Cup 2026', img: '/cities/world-cup-travel.jpg' },
+                            { href: '/blog/cheapest-world-cup-2026-cities', title: 'Cheapest World Cup 2026 Cities', desc: 'Which host city is cheapest? Full cost comparison.', category: 'World Cup 2026', img: '/cities/world-cup-cities.jpg' },
+                            { href: '/blog/world-cup-2026-currency-guide', title: 'World Cup 2026 Currency Guide', desc: 'Exchange USD, MXN and CAD — save money on every transaction.', category: 'World Cup 2026', img: '/cities/world-cup-currency.jpg' },
+                        ].map((post) => (
+                            <a key={post.href} href={post.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
+                                <img src={post.img} alt={post.title} style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
+                                <div style={{ padding: '1.25rem' }}>
+                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: '#F0FAF4', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{post.category}</span>
+                                    <h3 style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.4rem', lineHeight: 1.3, wordBreak: 'keep-all', hyphens: 'none' }}>{post.title}</h3>
+                                    <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{post.desc}</p>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            
+
+
             <section style={{ padding: '3rem 0', backgroundColor: '#fff7ed', borderBottom: '1px solid #fed7aa' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '1.5rem' }}>
@@ -348,34 +376,6 @@ export default async function Home() {
 
 
             
-
-            <section style={{ padding: '3rem 0', backgroundColor: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-                    <div style={{ marginBottom: '1.5rem' }}>
-                            <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>Blog</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>Cost of living guides</h2>
-                            <a href="/blog" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>See all →</a>
-                        </div>
-                    <div className="blog-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-                        {[
-                            { href: '/blog/world-cup-2026-travel-guide', title: 'FIFA World Cup 2026 Travel Guide', desc: 'Costs, hotels and tips for all 16 host cities.', category: 'World Cup 2026', img: '/cities/world-cup-travel.jpg' },
-                            { href: '/blog/cheapest-world-cup-2026-cities', title: 'Cheapest World Cup 2026 Cities', desc: 'Which host city is cheapest? Full cost comparison.', category: 'World Cup 2026', img: '/cities/world-cup-cities.jpg' },
-                            { href: '/blog/world-cup-2026-currency-guide', title: 'World Cup 2026 Currency Guide', desc: 'Exchange USD, MXN and CAD — save money on every transaction.', category: 'World Cup 2026', img: '/cities/world-cup-currency.jpg' },
-                        ].map((post) => (
-                            <a key={post.href} href={post.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
-                                <img src={post.img} alt={post.title} style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
-                                <div style={{ padding: '1.25rem' }}>
-                                    <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.06em', backgroundColor: '#F0FAF4', padding: '0.2rem 0.6rem', borderRadius: '2rem', display: 'inline-block', marginBottom: '0.5rem' }}>{post.category}</span>
-                                    <h3 style={{ fontSize: '0.95rem', fontWeight: 900, color: '#0f172a', margin: '0 0 0.4rem', lineHeight: 1.3, wordBreak: 'keep-all', hyphens: 'none' }}>{post.title}</h3>
-                                    <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{post.desc}</p>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            
-
 
             <section style={{ padding: '5rem 0', backgroundColor: '#ffffff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
