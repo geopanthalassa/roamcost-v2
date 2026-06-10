@@ -358,9 +358,9 @@ export default async function Home() {
                         </div>
                     <div className="blog-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {[
-                            { href: '/blog/world-cup-2026-travel-guide', title: 'FIFA World Cup 2026 Travel Guide', desc: 'Costs, hotels and tips for all 16 host cities.', category: 'World Cup 2026', img: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/blog/cheapest-world-cup-2026-cities', title: 'Cheapest World Cup 2026 Cities', desc: 'Which host city is cheapest? Full cost comparison.', category: 'World Cup 2026', img: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=600&h=300&q=80' },
-                            { href: '/blog/world-cup-2026-currency-guide', title: 'World Cup 2026 Currency Guide', desc: 'Exchange USD, MXN and CAD — save money on every transaction.', category: 'World Cup 2026', img: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?auto=format&fit=crop&w=600&h=300&q=80' },
+                            { href: '/blog/world-cup-2026-travel-guide', title: 'FIFA World Cup 2026 Travel Guide', desc: 'Costs, hotels and tips for all 16 host cities.', category: 'World Cup 2026', img: '/cities/world-cup-travel.jpg' },
+                            { href: '/blog/cheapest-world-cup-2026-cities', title: 'Cheapest World Cup 2026 Cities', desc: 'Which host city is cheapest? Full cost comparison.', category: 'World Cup 2026', img: '/cities/world-cup-cities.jpg' },
+                            { href: '/blog/world-cup-2026-currency-guide', title: 'World Cup 2026 Currency Guide', desc: 'Exchange USD, MXN and CAD — save money on every transaction.', category: 'World Cup 2026', img: '/cities/world-cup-currency.jpg' },
                         ].map((post) => (
                             <a key={post.href} href={post.href} style={{ display: 'block', borderRadius: '1rem', textDecoration: 'none', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                                 <img src={post.img} alt={post.title} style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
@@ -583,6 +583,7 @@ export default async function Home() {
 }
 
  
+
 
 
 
