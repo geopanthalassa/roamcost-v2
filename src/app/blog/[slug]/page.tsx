@@ -1072,7 +1072,10 @@ Book city tours and Azteca experiences | Hotels in CDMX
 
 ## Safety
 
-Roma Norte, Condesa, Polanco and Coyoacán are safe for tourists. Use Uber, avoid displaying expensive items and be aware of surroundings. Mexico City has improved dramatically in safety in recent years.`
+Roma Norte, Condesa, Polanco and Coyoacán are safe for tourists. Use Uber, avoid displaying expensive items and be aware of surroundings. Mexico City has improved dramatically in safety in recent years.
+---CTA-BOOKING---
+---CTA-WISE---
+---CTA-GYG---`
     },
     'cost-of-living-buenos-aires-2026': {
         image: 'photo-1589909202802-8f4aadce9d55',
