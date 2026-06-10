@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -11,42 +11,42 @@ const POSTS: Record<string, {
     'cheapest-cities-europe-2026': {
         image: 'photo-1513635269975-59663e0ac1ad',
         title: 'Cheapest Cities to Live in Europe in 2026',
-        desc: 'From Lisbon to Tbilisi — the most affordable European cities with full cost breakdowns for rent, food and transport.',
+        desc: 'From Lisbon to Tbilisi â€” the most affordable European cities with full cost breakdowns for rent, food and transport.',
         category: 'Europe', date: 'April 2026', readTime: '8 min',
         keywords: 'cheapest cities europe, affordable cities europe 2026, cheapest places to live europe, cheap european cities expats',
         content: `## The Most Affordable Cities in Europe for 2026
 
 Europe does not have to be expensive. While Paris averages over $3,000/month and Zurich even more, a growing number of European cities deliver excellent quality of life for under $1,200/month. We analyzed Numbeo data, Expatistan indexes and expat community reports to find the best-value destinations.
 
-## 1. Tbilisi, Georgia — ~$800/month
+## 1. Tbilisi, Georgia â€” ~$800/month
 
-Georgia's capital is the standout budget destination for 2026. According to Numbeo, Tbilisi's cost of living index sits at 28.4 — roughly one-third of London's. Rent for a one-bedroom apartment in the center averages $400-500/month, and a restaurant meal costs $3-6. Georgia offers visa-free stays of up to 365 days for most nationalities, making it exceptionally accessible.
+Georgia's capital is the standout budget destination for 2026. According to Numbeo, Tbilisi's cost of living index sits at 28.4 â€” roughly one-third of London's. Rent for a one-bedroom apartment in the center averages $400-500/month, and a restaurant meal costs $3-6. Georgia offers visa-free stays of up to 365 days for most nationalities, making it exceptionally accessible.
 
-## 2. Skopje, North Macedonia — ~$750/month
+## 2. Skopje, North Macedonia â€” ~$750/month
 
 Skopje offers one of the lowest costs in the region. Rent averages $350/month for a central apartment. North Macedonia is not in the EU, which keeps costs low while offering proximity to EU neighbors.
 
-## 3. Belgrade, Serbia — ~$900/month
+## 3. Belgrade, Serbia â€” ~$900/month
 
-Serbia's capital has emerged as a major hub for remote workers. Rent in popular Savamala or Vračar neighborhoods runs $500-600/month. Serbia has no income tax on foreign remote earnings for the first year, which attracts digital professionals.
+Serbia's capital has emerged as a major hub for remote workers. Rent in popular Savamala or VraÄar neighborhoods runs $500-600/month. Serbia has no income tax on foreign remote earnings for the first year, which attracts digital professionals.
 
-## 4. Bucharest, Romania — ~$1,000/month
+## 4. Bucharest, Romania â€” ~$1,000/month
 
 Romania combines EU membership with costs well below Western Europe. Bucharest has some of the fastest internet in the world (average 200+ Mbps) and a growing tech sector. A one-bedroom apartment in a good neighborhood costs $600-700/month.
 
-## 5. Sofia, Bulgaria — ~$950/month
+## 5. Sofia, Bulgaria â€” ~$950/month
 
 Bulgaria is the EU's most affordable member state. Sofia's cost of living index on Numbeo stands at 36.8. Rent averages $550-650/month in central areas, and local restaurant meals cost $5-8.
 
-## 6. Warsaw, Poland — ~$1,200/month
+## 6. Warsaw, Poland â€” ~$1,200/month
 
 Poland's capital offers modern infrastructure, EU membership and significantly lower costs than Berlin or Amsterdam. Rent in Warsaw averages $800-1,000/month for a central one-bedroom apartment.
 
-## 7. Budapest, Hungary — ~$1,100/month
+## 7. Budapest, Hungary â€” ~$1,100/month
 
 Budapest combines stunning architecture with competitive costs. The cost of living is approximately 52% lower than New York. Rent averages $700-900/month in central districts like District VII or District VIII.
 
-## 8. Lisbon, Portugal — ~$1,900/month
+## 8. Lisbon, Portugal â€” ~$1,900/month
 
 Lisbon has risen in price over the past five years due to demand, but still undercuts Western European capitals significantly. The NHR tax regime and D8 Digital Nomad Visa continue to attract international residents.
 
@@ -87,15 +87,15 @@ The ideal nomad city delivers reliable internet above 50 Mbps, a cost of living 
 
 ## 1. Lisbon, Portugal
 
-Lisbon remains Europe's top digital nomad hub. Portugal's D8 Digital Nomad Visa, launched in 2022, allows stays of up to two years for remote workers earning at least €3,040/month. Average internet speed exceeds 100 Mbps. The city has over 50 coworking spaces. Monthly budget: $1,900-2,400.
+Lisbon remains Europe's top digital nomad hub. Portugal's D8 Digital Nomad Visa, launched in 2022, allows stays of up to two years for remote workers earning at least â‚¬3,040/month. Average internet speed exceeds 100 Mbps. The city has over 50 coworking spaces. Monthly budget: $1,900-2,400.
 
 ## 2. Chiang Mai, Thailand
 
 According to data from Nomad List, Chiang Mai has hosted more digital nomads than any other city over the past decade. Coworking spaces like CAMP at Maya Mall offer free WiFi with coffee purchases. A comfortable remote worker lifestyle costs $1,100-1,700/month. Thailand's DTV Visa allows 180-day stays for remote workers.
 
-## 3. Medellín, Colombia
+## 3. MedellÃ­n, Colombia
 
-Medellín has transformed from a troubled past into one of Latin America's most dynamic cities. El Poblado and Laureles neighborhoods offer dense concentrations of coworking spaces, cafes and restaurants. The cost of living averages $1,200-1,600/month. Colombia offers a Digital Nomad Visa for stays up to 2 years.
+MedellÃ­n has transformed from a troubled past into one of Latin America's most dynamic cities. El Poblado and Laureles neighborhoods offer dense concentrations of coworking spaces, cafes and restaurants. The cost of living averages $1,200-1,600/month. Colombia offers a Digital Nomad Visa for stays up to 2 years.
 
 ## 4. Tbilisi, Georgia
 
@@ -115,7 +115,7 @@ Canggu remains Southeast Asia's most established nomad enclave. Indonesia's Seco
 
 ## 8. Tallinn, Estonia
 
-Estonia's e-Residency program and official Digital Nomad Visa make it the EU's most nomad-forward country. The visa allows 12-month stays for remote workers earning at least €3,504/month gross. Tallinn's compact, walkable old city and reliable internet (average 100+ Mbps) make it highly practical.
+Estonia's e-Residency program and official Digital Nomad Visa make it the EU's most nomad-forward country. The visa allows 12-month stays for remote workers earning at least â‚¬3,504/month gross. Tallinn's compact, walkable old city and reliable internet (average 100+ Mbps) make it highly practical.
 
 ## FAQ
 
@@ -132,16 +132,16 @@ Is $2,000/month enough to be a digital nomad? Yes, comfortably in Southeast Asia
     'cost-of-living-southeast-asia': {
         image: 'photo-1508009603885-50cf7c579365',
         title: 'Cost of Living in Southeast Asia: Complete 2026 Guide',
-        desc: 'Bangkok, Bali, Hanoi, Chiang Mai — how much does it really cost to live in Southeast Asia? Real data for 2026.',
+        desc: 'Bangkok, Bali, Hanoi, Chiang Mai â€” how much does it really cost to live in Southeast Asia? Real data for 2026.',
         category: 'Asia', date: 'March 2026', readTime: '9 min',
         keywords: 'cost of living southeast asia 2026, live in bangkok, bali cost of living, chiang mai budget, vietnam expat costs',
         content: `## Cost of Living in Southeast Asia: 2026 Data
 
-Southeast Asia remains the world's top region for affordable international living. But costs vary dramatically — Singapore is as expensive as London, while Vietnam can be lived in for under $1,000/month. This guide uses current data from Numbeo, Expatistan and expat community surveys to give you real 2026 numbers.
+Southeast Asia remains the world's top region for affordable international living. But costs vary dramatically â€” Singapore is as expensive as London, while Vietnam can be lived in for under $1,000/month. This guide uses current data from Numbeo, Expatistan and expat community surveys to give you real 2026 numbers.
 
 ## Thailand
 
-Thailand sits at a cost of living index of 41.6 on Numbeo's 2026 rankings — roughly 58% cheaper than the United States overall. However, costs have risen 30-50% since 2019 due to post-COVID tourism recovery and inflation.
+Thailand sits at a cost of living index of 41.6 on Numbeo's 2026 rankings â€” roughly 58% cheaper than the United States overall. However, costs have risen 30-50% since 2019 due to post-COVID tourism recovery and inflation.
 
 Chiang Mai is Thailand's best-value major city. According to recent surveys of long-term residents, a single remote worker lives comfortably for $1,100-1,700/month, covering a one-bedroom apartment ($400-600), food mixing local and Western options ($350-500), transport by motorbike or Grab ($100-150), and coworking access ($80-150).
 
@@ -151,7 +151,7 @@ Thailand's DTV Digital Nomad Visa, launched in 2024, allows 180-day stays with o
 
 ## Bali, Indonesia
 
-Bali's Canggu and Seminyak neighborhoods have become among the world's most concentrated nomad zones — and costs reflect that. A villa in Canggu averages 15-20 million IDR/month ($950-1,250). Add coworking, Western restaurant meals and motorbike rental, and $2,000-2,500/month is the realistic baseline for a comfortable nomad lifestyle.
+Bali's Canggu and Seminyak neighborhoods have become among the world's most concentrated nomad zones â€” and costs reflect that. A villa in Canggu averages 15-20 million IDR/month ($950-1,250). Add coworking, Western restaurant meals and motorbike rental, and $2,000-2,500/month is the realistic baseline for a comfortable nomad lifestyle.
 
 Budget travelers sharing houses or staying further from Canggu center can get down to $1,200-1,500/month.
 
@@ -191,25 +191,25 @@ Do I need a visa to live in Southeast Asia? Each country has different rules. Th
         keywords: 'move to lisbon 2026, lisbon cost of living, portugal digital nomad visa, living in lisbon expat guide',
         content: `## Moving to Lisbon in 2026: What It Actually Costs
 
-Lisbon has become one of Europe's most sought-after cities for relocation — and for good reason. Mild Atlantic climate, a vibrant food scene, English widely spoken, and significantly lower costs than Northern European capitals. But Lisbon has changed. Rents have increased substantially since 2019, and the affordable-at-all-costs era is over. Here is what moving to Lisbon actually costs in 2026.
+Lisbon has become one of Europe's most sought-after cities for relocation â€” and for good reason. Mild Atlantic climate, a vibrant food scene, English widely spoken, and significantly lower costs than Northern European capitals. But Lisbon has changed. Rents have increased substantially since 2019, and the affordable-at-all-costs era is over. Here is what moving to Lisbon actually costs in 2026.
 
 ## Rent in Lisbon
 
-Lisbon's rental market has tightened considerably. According to Idealista and Uniplaces data, a one-bedroom apartment in central neighborhoods (Chiado, Príncipe Real, Alfama) now costs €1,200-1,800/month ($1,300-1,950). More affordable neighborhoods like Mouraria, Intendente or Beato offer similar apartments for €900-1,200/month.
+Lisbon's rental market has tightened considerably. According to Idealista and Uniplaces data, a one-bedroom apartment in central neighborhoods (Chiado, PrÃ­ncipe Real, Alfama) now costs â‚¬1,200-1,800/month ($1,300-1,950). More affordable neighborhoods like Mouraria, Intendente or Beato offer similar apartments for â‚¬900-1,200/month.
 
-For a two-bedroom apartment suitable for a couple or small family, expect €1,500-2,500/month in central Lisbon, or €1,100-1,800 in residential outer neighborhoods like Benfica or Odivelas.
+For a two-bedroom apartment suitable for a couple or small family, expect â‚¬1,500-2,500/month in central Lisbon, or â‚¬1,100-1,800 in residential outer neighborhoods like Benfica or Odivelas.
 
 ## Food and Dining
 
-Lisbon remains good value for food relative to Northern Europe. A lunch menu (prato do dia) at a local restaurant costs €8-12 including a drink. A coffee costs €0.70-1.00. Monthly grocery spending for one person eating mostly at home averages €200-300. Eating out regularly (5+ times/week) adds €400-600/month.
+Lisbon remains good value for food relative to Northern Europe. A lunch menu (prato do dia) at a local restaurant costs â‚¬8-12 including a drink. A coffee costs â‚¬0.70-1.00. Monthly grocery spending for one person eating mostly at home averages â‚¬200-300. Eating out regularly (5+ times/week) adds â‚¬400-600/month.
 
 ## Transport
 
-Lisbon's Carris/Metro network offers a monthly pass for €40/month covering all urban transport. Taxis and Bolt rides within the city average €5-10 per trip. Owning a car adds €200-400/month (insurance, fuel, parking).
+Lisbon's Carris/Metro network offers a monthly pass for â‚¬40/month covering all urban transport. Taxis and Bolt rides within the city average â‚¬5-10 per trip. Owning a car adds â‚¬200-400/month (insurance, fuel, parking).
 
 ## The D8 Digital Nomad Visa
 
-Portugal's Digital Nomad Visa (D8), launched in 2022, allows remote workers to live legally in Portugal for up to 2 years, renewable. Requirements include proof of remote employment or freelance income of at least €3,040/month (4x Portugal's minimum wage). The application is processed through Portuguese consulates and typically takes 2-3 months.
+Portugal's Digital Nomad Visa (D8), launched in 2022, allows remote workers to live legally in Portugal for up to 2 years, renewable. Requirements include proof of remote employment or freelance income of at least â‚¬3,040/month (4x Portugal's minimum wage). The application is processed through Portuguese consulates and typically takes 2-3 months.
 
 ## Tax Considerations
 
@@ -218,18 +218,18 @@ Portugal's Non-Habitual Resident (NHR) tax regime offered significant benefits f
 ## Complete Monthly Budget
 
 Expense | Budget | Mid-range | Comfortable
-Rent (1BR) | €900 | €1,300 | €1,700
-Food | €300 | €500 | €700
-Transport | €40 | €100 | €200
-Utilities | €80 | €100 | €120
-Health insurance | €50 | €100 | €200
-Total | ~€1,500 | ~€2,200 | ~€3,000
+Rent (1BR) | â‚¬900 | â‚¬1,300 | â‚¬1,700
+Food | â‚¬300 | â‚¬500 | â‚¬700
+Transport | â‚¬40 | â‚¬100 | â‚¬200
+Utilities | â‚¬80 | â‚¬100 | â‚¬120
+Health insurance | â‚¬50 | â‚¬100 | â‚¬200
+Total | ~â‚¬1,500 | ~â‚¬2,200 | ~â‚¬3,000
 
 ## FAQ
 
-Is Lisbon still affordable in 2026? Relative to London, Paris or Amsterdam, yes. Compared to 2019, no — rents have risen 40-60% in many neighborhoods. Budget at least €1,800/month for a comfortable single lifestyle.
+Is Lisbon still affordable in 2026? Relative to London, Paris or Amsterdam, yes. Compared to 2019, no â€” rents have risen 40-60% in many neighborhoods. Budget at least â‚¬1,800/month for a comfortable single lifestyle.
 
-What is the best neighborhood to live in Lisbon? Mouraria and Intendente offer the best value close to the center. Alfama is atmospheric but inconvenient for daily life. Príncipe Real is the most desirable but expensive.
+What is the best neighborhood to live in Lisbon? Mouraria and Intendente offer the best value close to the center. Alfama is atmospheric but inconvenient for daily life. PrÃ­ncipe Real is the most desirable but expensive.
 
 How long does the D8 Digital Nomad Visa take? Typically 2-4 months from application to approval. Apply well in advance of your intended move date.
 ---CTA-COMPARE---
@@ -245,13 +245,13 @@ How long does the D8 Digital Nomad Visa take? Typically 2-4 months from applicat
         keywords: 'live on 2000 a month, best cities 2000 month budget, affordable cities for expats, cheap cities good quality life',
         content: `## Best Cities to Live on $2,000/Month in 2026
 
-$2,000 per month — $24,000/year — is a budget that ranges from barely surviving to living exceptionally well, depending entirely on where you are. In San Francisco, it covers about 60% of a median rent. In Chiang Mai, it funds a premium lifestyle with money left over. Here is where $2,000/month goes furthest in 2026.
+$2,000 per month â€” $24,000/year â€” is a budget that ranges from barely surviving to living exceptionally well, depending entirely on where you are. In San Francisco, it covers about 60% of a median rent. In Chiang Mai, it funds a premium lifestyle with money left over. Here is where $2,000/month goes furthest in 2026.
 
 ## Excellent Value: $2,000 Buys a Premium Lifestyle
 
-Chiang Mai, Thailand is the global benchmark for remote workers on this budget. At $1,100-1,700/month for a comfortable single lifestyle, $2,000 covers a good apartment, daily restaurant meals, gym membership, regular travel and private health insurance — with $300-500 remaining as savings.
+Chiang Mai, Thailand is the global benchmark for remote workers on this budget. At $1,100-1,700/month for a comfortable single lifestyle, $2,000 covers a good apartment, daily restaurant meals, gym membership, regular travel and private health insurance â€” with $300-500 remaining as savings.
 
-Medellín, Colombia averages $1,200-1,600/month for a comfortable expat life in El Poblado. $2,000 covers higher-end accommodation, frequent dining and social activities.
+MedellÃ­n, Colombia averages $1,200-1,600/month for a comfortable expat life in El Poblado. $2,000 covers higher-end accommodation, frequent dining and social activities.
 
 Tbilisi, Georgia averages $800-1,000/month. $2,000 is more than double what you need for a comfortable life, enabling premium housing and regular travel.
 
@@ -259,7 +259,7 @@ Ho Chi Minh City, Vietnam averages $900-1,300/month. $2,000 delivers an excellen
 
 ## Good Value: $2,000 Is Comfortable
 
-Lisbon, Portugal averages $1,900-2,400/month. $2,000 is tight but possible with careful choices — cook at home most days, avoid the most expensive neighborhoods.
+Lisbon, Portugal averages $1,900-2,400/month. $2,000 is tight but possible with careful choices â€” cook at home most days, avoid the most expensive neighborhoods.
 
 Mexico City averages $1,500-2,000/month in desirable neighborhoods. $2,000 covers a solid lifestyle in Roma or Condesa.
 
@@ -279,7 +279,7 @@ The cities where $2,000/month works best share three traits: affordable rent (un
 
 ## FAQ
 
-Can a couple live on $2,000/month abroad? In Southeast Asia and Eastern Europe, yes — cities like Chiang Mai, Medellín or Bucharest are very feasible for two people on $2,000-2,500 combined, especially sharing accommodation.
+Can a couple live on $2,000/month abroad? In Southeast Asia and Eastern Europe, yes â€” cities like Chiang Mai, MedellÃ­n or Bucharest are very feasible for two people on $2,000-2,500 combined, especially sharing accommodation.
 
 Is $2,000/month enough to retire abroad? In most of Southeast Asia, Eastern Europe and Latin America, $2,000/month funds a comfortable retirement with healthcare. Countries like Thailand, Portugal and Colombia are popular retirement destinations at this budget.`
     },
@@ -291,7 +291,7 @@ Is $2,000/month enough to retire abroad? In most of Southeast Asia, Eastern Euro
         keywords: 'bangkok vs bali, bangkok or bali cheaper, bali cost of living 2026, bangkok cost of living 2026, digital nomad asia',
         content: `## Bangkok vs Bali: Which Is Better for Expats in 2026?
 
-Bangkok and Bali represent two very different versions of the Southeast Asian expat experience — and choosing between them shapes your daily life significantly. Bangkok is a sprawling metropolis with world-class infrastructure. Bali is a tropical island with a village-meets-global-nomad atmosphere. Both are popular. But which makes more sense for your situation?
+Bangkok and Bali represent two very different versions of the Southeast Asian expat experience â€” and choosing between them shapes your daily life significantly. Bangkok is a sprawling metropolis with world-class infrastructure. Bali is a tropical island with a village-meets-global-nomad atmosphere. Both are popular. But which makes more sense for your situation?
 
 ## Cost Comparison
 
@@ -299,7 +299,7 @@ The numbers favor Bangkok, particularly for accommodation.
 
 Bangkok: A modern one-bedroom condo in a good neighborhood (Thonglor, Ekkamai, On Nut) costs 15,000-25,000 THB/month ($420-700). Transport via BTS Skytrain is efficient and cheap. Total monthly budget for a comfortable single lifestyle: $1,400-1,900.
 
-Bali (Canggu): A one-bedroom villa with pool in Canggu costs 15-20 million IDR/month ($950-1,250). Bali has no public transport — a motorbike rental adds $50-70/month. Total monthly budget: $1,800-2,500.
+Bali (Canggu): A one-bedroom villa with pool in Canggu costs 15-20 million IDR/month ($950-1,250). Bali has no public transport â€” a motorbike rental adds $50-70/month. Total monthly budget: $1,800-2,500.
 
 Bangkok is approximately 25-35% cheaper overall.
 
@@ -317,7 +317,7 @@ Bali/Indonesia: The Second Home Visa offers 5-10 year stays for qualifying appli
 
 ## Lifestyle and Culture
 
-Bangkok offers unmatched urban convenience — hospitals, malls, nightlife, international restaurants and domestic flight connections throughout Asia, all at low cost. The city of 11 million can feel overwhelming.
+Bangkok offers unmatched urban convenience â€” hospitals, malls, nightlife, international restaurants and domestic flight connections throughout Asia, all at low cost. The city of 11 million can feel overwhelming.
 
 Bali offers a slower pace, stunning natural scenery, a strong yoga and wellness culture, and a uniquely international village atmosphere in Canggu. The island's Hindu culture gives it a distinct spiritual character.
 
@@ -325,55 +325,55 @@ Bali offers a slower pace, stunning natural scenery, a strong yoga and wellness 
 
 Choose Bangkok if you prioritize lower cost, urban infrastructure, reliable internet and ease of travel connections.
 
-Choose Bali if you prioritize tropical lifestyle, natural beauty, a tight-knit expat community and the island's unique atmosphere — and can absorb the higher cost.
+Choose Bali if you prioritize tropical lifestyle, natural beauty, a tight-knit expat community and the island's unique atmosphere â€” and can absorb the higher cost.
 
 ## FAQ
 
 Is Bangkok or Bali better for digital nomads? Bangkok wins on cost, internet reliability and infrastructure. Bali wins on lifestyle, community and natural environment. Both have strong nomad communities.
 
-Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or Sanur, but Canggu — the main nomad hub — is difficult to do well below $1,800-2,000/month in 2026.`
+Can you live in Bali for $1,500/month? Possibly in lower-cost areas like Ubud or Sanur, but Canggu â€” the main nomad hub â€” is difficult to do well below $1,800-2,000/month in 2026.`
     },
     'cheapest-cities-latin-america': {
         image: '/cities/medellin.jpg',
         title: 'Cheapest Cities in Latin America for Expats in 2026',
-        desc: 'Medellín, Mexico City, Buenos Aires — where to live well in Latin America without breaking the bank.',
+        desc: 'MedellÃ­n, Mexico City, Buenos Aires â€” where to live well in Latin America without breaking the bank.',
         category: 'Latin America', date: 'February 2026', readTime: '8 min',
-        keywords: 'cheapest cities latin america, cost of living latin america 2026, expat latin america, medellín cost of living, buenos aires expat',
+        keywords: 'cheapest cities latin america, cost of living latin america 2026, expat latin america, medellÃ­n cost of living, buenos aires expat',
         content: `## Cheapest Cities in Latin America for Expats in 2026
 
-Latin America offers some of the best value for international residents anywhere in the world — combining a lower cost base with warm weather, vibrant culture and (in most cities) a welcoming attitude toward foreigners. Here are the most affordable cities for expats in 2026.
+Latin America offers some of the best value for international residents anywhere in the world â€” combining a lower cost base with warm weather, vibrant culture and (in most cities) a welcoming attitude toward foreigners. Here are the most affordable cities for expats in 2026.
 
-## 1. Medellín, Colombia — $1,200-1,600/month
+## 1. MedellÃ­n, Colombia â€” $1,200-1,600/month
 
-Medellín has undergone a remarkable transformation over the past two decades and is now one of Latin America's top destinations for remote workers. The El Poblado and Laureles neighborhoods offer dense concentrations of cafes, coworking spaces, restaurants and gyms. Rent for a good one-bedroom apartment runs $600-900/month. Colombia's Digital Nomad Visa allows stays up to 2 years for remote workers. Year-round spring climate (average 72°F/22°C) eliminates the need for heating or heavy cooling.
+MedellÃ­n has undergone a remarkable transformation over the past two decades and is now one of Latin America's top destinations for remote workers. The El Poblado and Laureles neighborhoods offer dense concentrations of cafes, coworking spaces, restaurants and gyms. Rent for a good one-bedroom apartment runs $600-900/month. Colombia's Digital Nomad Visa allows stays up to 2 years for remote workers. Year-round spring climate (average 72Â°F/22Â°C) eliminates the need for heating or heavy cooling.
 
-## 2. Mexico City — $1,500-2,000/month
+## 2. Mexico City â€” $1,500-2,000/month
 
-CDMX is a world-class metropolis at moderate cost. The Roma Norte and Condesa neighborhoods are among the most desirable urban neighborhoods in the Americas, with tree-lined streets, excellent restaurants and reliable fiber internet — at about half the cost of equivalent neighborhoods in New York or London. Rent for a quality one-bedroom: $800-1,200/month.
+CDMX is a world-class metropolis at moderate cost. The Roma Norte and Condesa neighborhoods are among the most desirable urban neighborhoods in the Americas, with tree-lined streets, excellent restaurants and reliable fiber internet â€” at about half the cost of equivalent neighborhoods in New York or London. Rent for a quality one-bedroom: $800-1,200/month.
 
-## 3. Buenos Aires, Argentina — $800-1,200/month at blue rate
+## 3. Buenos Aires, Argentina â€” $800-1,200/month at blue rate
 
 Argentina's complex currency situation creates unique opportunities. Using the unofficial (but widely used) parallel exchange rate, Buenos Aires is among the cheapest major cities globally. A good apartment can be found for $400-700/month, and restaurant meals cost $3-8. However, Argentina's economic instability requires careful financial planning and the situation changes rapidly.
 
-## 4. Bogotá, Colombia — $1,000-1,400/month
+## 4. BogotÃ¡, Colombia â€” $1,000-1,400/month
 
-Colombia's capital offers lower costs than Medellín in some respects, particularly for rent in residential neighborhoods. Chapinero and Usaquén are expat-friendly areas with good infrastructure.
+Colombia's capital offers lower costs than MedellÃ­n in some respects, particularly for rent in residential neighborhoods. Chapinero and UsaquÃ©n are expat-friendly areas with good infrastructure.
 
-## 5. Santiago, Chile — $1,400-1,800/month
+## 5. Santiago, Chile â€” $1,400-1,800/month
 
 Santiago is Latin America's most stable and developed major city. Costs are higher than Colombia but significantly below the US, with excellent infrastructure and safety for the region.
 
-## 6. Lima, Peru — $1,000-1,400/month
+## 6. Lima, Peru â€” $1,000-1,400/month
 
 Lima has a world-class food scene (regularly cited among the world's best culinary cities) at a fraction of comparable Western prices. Miraflores and San Isidro are safe, walkable neighborhoods popular with expats.
 
-## 7. Montevideo, Uruguay — $1,200-1,600/month
+## 7. Montevideo, Uruguay â€” $1,200-1,600/month
 
 Uruguay is Latin America's most stable democracy and offers a Digital Nomad Visa. Montevideo is a compact, safe, European-influenced city with reliable infrastructure and a high quality of life.
 
 ## FAQ
 
-Is Latin America safe for expats? Safety varies dramatically by city and neighborhood. Within expat-focused neighborhoods, cities like Medellín, Mexico City, Lima and Santiago are generally safe. Research specific neighborhoods carefully.
+Is Latin America safe for expats? Safety varies dramatically by city and neighborhood. Within expat-focused neighborhoods, cities like MedellÃ­n, Mexico City, Lima and Santiago are generally safe. Research specific neighborhoods carefully.
 
 Which Latin American country is easiest for visa? Colombia's Digital Nomad Visa and Uruguay's Digital Nomad Visa are the most straightforward. Mexico allows 180-day tourist stays without a visa for most nationalities.`
     },
@@ -389,9 +389,9 @@ The arithmetic of international retirement is compelling: a monthly income that 
 
 ## Portugal
 
-Portugal's Non-Habitual Resident (NHR) regime — now modified as IFICI for new applicants — has attracted tens of thousands of retirees over the past decade. Portugal's D7 Passive Income Visa is designed specifically for retirees, requiring proof of pension or passive income of approximately €760/month (minimum wage). Healthcare through the National Health Service (SNS) is accessible to legal residents after a waiting period, and private health insurance costs €100-200/month for comprehensive coverage.
+Portugal's Non-Habitual Resident (NHR) regime â€” now modified as IFICI for new applicants â€” has attracted tens of thousands of retirees over the past decade. Portugal's D7 Passive Income Visa is designed specifically for retirees, requiring proof of pension or passive income of approximately â‚¬760/month (minimum wage). Healthcare through the National Health Service (SNS) is accessible to legal residents after a waiting period, and private health insurance costs â‚¬100-200/month for comprehensive coverage.
 
-Monthly retirement budget: €1,500-2,500, depending on lifestyle and location. Cities like Porto and Braga offer lower costs than Lisbon.
+Monthly retirement budget: â‚¬1,500-2,500, depending on lifestyle and location. Cities like Porto and Braga offer lower costs than Lisbon.
 
 ## Panama
 
@@ -399,7 +399,7 @@ Panama uses the US dollar, has no exit tax on foreign pension income, and offers
 
 ## Thailand
 
-Thailand's Thailand LTR (Long-Term Resident) Visa for retirees over 50 requires proof of $80,000 in assets or $40,000/year income. The standard Non-Immigrant O-A Visa for retirees requires $27,000 in a Thai bank account. Healthcare quality at private hospitals in Bangkok and Chiang Mai is excellent — JCI-accredited hospitals charge a fraction of US prices. Budget: $1,500-2,500/month.
+Thailand's Thailand LTR (Long-Term Resident) Visa for retirees over 50 requires proof of $80,000 in assets or $40,000/year income. The standard Non-Immigrant O-A Visa for retirees requires $27,000 in a Thai bank account. Healthcare quality at private hospitals in Bangkok and Chiang Mai is excellent â€” JCI-accredited hospitals charge a fraction of US prices. Budget: $1,500-2,500/month.
 
 ## Mexico
 
@@ -429,13 +429,13 @@ More than 50 countries now offer some form of digital nomad or remote worker vis
 
 ## Europe
 
-Portugal D8 Digital Nomad Visa: Income requirement €3,040/month. Duration: 1 year renewable to 2 years, with path to residency. Processing: 2-4 months at consulate. Cost: ~€180 application fee. One of the most established and sought-after programs.
+Portugal D8 Digital Nomad Visa: Income requirement â‚¬3,040/month. Duration: 1 year renewable to 2 years, with path to residency. Processing: 2-4 months at consulate. Cost: ~â‚¬180 application fee. One of the most established and sought-after programs.
 
-Estonia Digital Nomad Visa: Income requirement €3,504/month gross. Duration: 1 year. Processing: 30 days. Available at Estonian embassies. Best for those wanting EU base with access to Schengen Area.
+Estonia Digital Nomad Visa: Income requirement â‚¬3,504/month gross. Duration: 1 year. Processing: 30 days. Available at Estonian embassies. Best for those wanting EU base with access to Schengen Area.
 
-Spain Digital Nomad Visa: Income requirement €2,646/month (200% of minimum wage). Duration: 1 year renewable to 5 years. Processing: 20 working days in Spain, up to 3 months at consulate. Spain's NHR-equivalent Beckham Law offers preferential 24% tax rate.
+Spain Digital Nomad Visa: Income requirement â‚¬2,646/month (200% of minimum wage). Duration: 1 year renewable to 5 years. Processing: 20 working days in Spain, up to 3 months at consulate. Spain's NHR-equivalent Beckham Law offers preferential 24% tax rate.
 
-Greece Digital Nomad Visa: Income requirement €3,500/month. Duration: 1 year renewable. Greece offers 50% income tax reduction for the first 7 years for qualifying remote workers.
+Greece Digital Nomad Visa: Income requirement â‚¬3,500/month. Duration: 1 year renewable. Greece offers 50% income tax reduction for the first 7 years for qualifying remote workers.
 
 Germany Freelance Visa (Freiberufler): No specific income minimum but proof of contracts required. Duration: 3 months to 3 years. Requires German-language appointment at embassy.
 
@@ -443,7 +443,7 @@ Germany Freelance Visa (Freiberufler): No specific income minimum but proof of c
 
 Costa Rica Digital Nomad Visa: Income requirement $3,000/month (or $4,000 for families). Duration: 1 year renewable. Processing: 30-60 days. Exemption from Costa Rican income tax on foreign-sourced income.
 
-Colombia Digital Nomad Visa (V Nómada Digital): Income requirement 3x Colombia's minimum wage (~$2,400/month). Duration: 2 years. One of Latin America's most accessible programs.
+Colombia Digital Nomad Visa (V NÃ³mada Digital): Income requirement 3x Colombia's minimum wage (~$2,400/month). Duration: 2 years. One of Latin America's most accessible programs.
 
 Mexico Temporary Resident Visa: No remote work-specific visa, but Temporary Resident allows up to 4 years. Required income varies by consulate but typically $1,500-2,000/month.
 
@@ -460,9 +460,9 @@ Malaysia DE Rantau Nomad Pass: Income requirement $24,000/year. Duration: 1 year
 ## Key Comparisons
 
 Country | Min Income | Duration | Processing | Cost
-Portugal | €3,040/mo | 2 years | 2-4 months | ~€200
-Estonia | €3,504/mo | 1 year | 30 days | ~€100
-Spain | €2,646/mo | 5 years | 3 months | ~€150
+Portugal | â‚¬3,040/mo | 2 years | 2-4 months | ~â‚¬200
+Estonia | â‚¬3,504/mo | 1 year | 30 days | ~â‚¬100
+Spain | â‚¬2,646/mo | 5 years | 3 months | ~â‚¬150
 Costa Rica | $3,000/mo | 2 years | 60 days | ~$250
 Colombia | ~$2,400/mo | 2 years | 30 days | ~$250
 Thailand DTV | $14,500 savings | 1 year | 2-4 weeks | ~$150
@@ -471,7 +471,7 @@ Thailand DTV | $14,500 savings | 1 year | 2-4 weeks | ~$150
 
 Which digital nomad visa is easiest to get? Thailand's DTV Visa and Estonia's Digital Nomad Visa have the most straightforward application processes. Colombia's visa is also considered accessible.
 
-Do digital nomad visas allow working for local companies? Generally no — these visas specifically require income from foreign sources. Working for local companies typically requires a standard work permit.
+Do digital nomad visas allow working for local companies? Generally no â€” these visas specifically require income from foreign sources. Working for local companies typically requires a standard work permit.
 
 Can I bring my family on a digital nomad visa? Most programs allow dependents (spouse and children) to be included, though income requirements may increase.`
     },
@@ -485,31 +485,31 @@ Can I bring my family on a digital nomad visa? Most programs allow dependents (s
         keywords: 'cost of living berlin 2026, berlin expat, living in berlin, berlin monthly budget, germany cost of living',
         content: `## Cost of Living in Berlin in 2026
 
-Berlin remains one of Europe's most exciting cities for expats and digital nomads in 2026. Germany's capital combines world-class culture, excellent public transport, a thriving startup ecosystem and — compared to London, Paris or Amsterdam — a relatively affordable cost of living. A comfortable monthly budget in Berlin ranges from $1,800 to $2,800 USD depending on neighborhood and lifestyle.
+Berlin remains one of Europe's most exciting cities for expats and digital nomads in 2026. Germany's capital combines world-class culture, excellent public transport, a thriving startup ecosystem and â€” compared to London, Paris or Amsterdam â€” a relatively affordable cost of living. A comfortable monthly budget in Berlin ranges from $1,800 to $2,800 USD depending on neighborhood and lifestyle.
 
 ## Monthly Budget Breakdown
 
 ### Rent
 
-Berlin's rental market has tightened significantly in recent years, but remains more affordable than other major European capitals. A furnished one-bedroom apartment in popular expat neighborhoods like Mitte, Prenzlauer Berg or Friedrichshain costs between $1,200 and $1,800 USD per month. More affordable options exist in Neukölln, Wedding and Lichtenberg, where one-bedroom apartments run $900 to $1,300 USD.
+Berlin's rental market has tightened significantly in recent years, but remains more affordable than other major European capitals. A furnished one-bedroom apartment in popular expat neighborhoods like Mitte, Prenzlauer Berg or Friedrichshain costs between $1,200 and $1,800 USD per month. More affordable options exist in NeukÃ¶lln, Wedding and Lichtenberg, where one-bedroom apartments run $900 to $1,300 USD.
 
 Shared apartments (WG - Wohngemeinschaft) are popular and affordable, with rooms running $600 to $900 USD per month including utilities.
 
 ### Food and Dining
 
-Berlin's food scene is diverse and affordable. A meal at a mid-range restaurant costs $12 to $20 USD per person. Berlin's famous street food — döner kebab, currywurst — costs $4 to $7 USD. Weekly groceries at supermarkets like Lidl, Aldi or Rewe run $50 to $80 USD for one person.
+Berlin's food scene is diverse and affordable. A meal at a mid-range restaurant costs $12 to $20 USD per person. Berlin's famous street food â€” dÃ¶ner kebab, currywurst â€” costs $4 to $7 USD. Weekly groceries at supermarkets like Lidl, Aldi or Rewe run $50 to $80 USD for one person.
 
-Berlin has an excellent café culture and specialty coffee scene. A coffee costs $3 to $5 USD. The city's Turkish markets, particularly the Türkenmarkt in Kreuzberg, offer excellent fresh produce at low prices.
+Berlin has an excellent cafÃ© culture and specialty coffee scene. A coffee costs $3 to $5 USD. The city's Turkish markets, particularly the TÃ¼rkenmarkt in Kreuzberg, offer excellent fresh produce at low prices.
 
 ### Transport
 
-Berlin's BVG public transport network — U-Bahn, S-Bahn, trams and buses — is comprehensive and affordable. A monthly transit pass costs approximately $90 USD. The Germany-wide Deutschlandticket at $58 USD per month covers all regional and local transport across the country, making Berlin an excellent base for exploring Germany and neighboring countries.
+Berlin's BVG public transport network â€” U-Bahn, S-Bahn, trams and buses â€” is comprehensive and affordable. A monthly transit pass costs approximately $90 USD. The Germany-wide Deutschlandticket at $58 USD per month covers all regional and local transport across the country, making Berlin an excellent base for exploring Germany and neighboring countries.
 
 Cycling is extremely popular in Berlin, with an excellent network of bike lanes. A second-hand bike costs $100 to $300 USD and is often the fastest way to get around the city.
 
 ### Internet and Utilities
 
-Germany has excellent fiber internet infrastructure. A high-speed fiber connection costs $25 to $40 USD per month. Utilities including heating, electricity and water for a one-bedroom apartment average $120 to $180 USD per month — note that German heating costs can be significant in winter.
+Germany has excellent fiber internet infrastructure. A high-speed fiber connection costs $25 to $40 USD per month. Utilities including heating, electricity and water for a one-bedroom apartment average $120 to $180 USD per month â€” note that German heating costs can be significant in winter.
 
 Average internet speeds in Berlin reach 100 to 200 Mbps on fiber connections.
 
@@ -519,19 +519,19 @@ Germany has one of the world's best healthcare systems. EU citizens can use the 
 
 ## Best Neighborhoods for Expats
 
-**Mitte** — Berlin's historic center. Excellent location, close to museums, galleries and the startup scene. Higher rents but very convenient.
+**Mitte** â€” Berlin's historic center. Excellent location, close to museums, galleries and the startup scene. Higher rents but very convenient.
 
-**Prenzlauer Berg** — The most popular neighborhood for young professionals and expat families. Beautiful Altbau apartments, excellent cafés and restaurants, and a strong community feel.
+**Prenzlauer Berg** â€” The most popular neighborhood for young professionals and expat families. Beautiful Altbau apartments, excellent cafÃ©s and restaurants, and a strong community feel.
 
-**Friedrichshain** — Lively and youthful. Close to the East Side Gallery, excellent nightlife and a growing tech and creative community. More affordable than Prenzlauer Berg.
+**Friedrichshain** â€” Lively and youthful. Close to the East Side Gallery, excellent nightlife and a growing tech and creative community. More affordable than Prenzlauer Berg.
 
-**Kreuzberg** — Berlin's most multicultural neighborhood. Excellent food, vibrant arts scene and strong community. Very popular with creatives and digital nomads.
+**Kreuzberg** â€” Berlin's most multicultural neighborhood. Excellent food, vibrant arts scene and strong community. Very popular with creatives and digital nomads.
 
-**Neukölln** — Up-and-coming and increasingly popular. More affordable than central neighborhoods with an excellent café and restaurant scene.
+**NeukÃ¶lln** â€” Up-and-coming and increasingly popular. More affordable than central neighborhoods with an excellent cafÃ© and restaurant scene.
 
 ## Berlin for Digital Nomads
 
-Berlin is consistently ranked among Europe's top cities for digital nomads. The city has a massive co-working scene — spaces like WeWork, Betahaus, Mindspace and Factory Berlin offer excellent facilities. A hot desk at a co-working space costs $150 to $300 USD per month.
+Berlin is consistently ranked among Europe's top cities for digital nomads. The city has a massive co-working scene â€” spaces like WeWork, Betahaus, Mindspace and Factory Berlin offer excellent facilities. A hot desk at a co-working space costs $150 to $300 USD per month.
 
 The startup and tech ecosystem is one of Europe's largest, making Berlin excellent for networking. Regular meetups, conferences and events happen every week.
 
@@ -567,7 +567,7 @@ New York City remains one of the world's most expensive cities in 2026. But for 
 
 Rent is by far the largest expense in NYC. In Manhattan, a one-bedroom apartment averages $3,500 to $5,000 USD per month. In Brooklyn's popular neighborhoods like Williamsburg, Park Slope and Brooklyn Heights, expect $2,800 to $4,000 USD. Queens neighborhoods like Astoria and Long Island City offer more affordable options at $2,200 to $3,000 USD.
 
-Shared apartments significantly reduce costs. A room in a shared apartment in Brooklyn runs $1,200 to $1,800 USD per month — the most common arrangement for young professionals new to the city.
+Shared apartments significantly reduce costs. A room in a shared apartment in Brooklyn runs $1,200 to $1,800 USD per month â€” the most common arrangement for young professionals new to the city.
 
 ### Food and Dining
 
@@ -577,7 +577,7 @@ Eating out frequently adds up quickly. Many NYC residents save money by cooking 
 
 ### Transport
 
-NYC's MTA subway and bus system is extensive. A monthly unlimited MetroCard costs $132 USD — one of the best transport values in the city given how comprehensive the system is. Taxis and Uber/Lyft add $15 to $35 per trip for most Manhattan journeys.
+NYC's MTA subway and bus system is extensive. A monthly unlimited MetroCard costs $132 USD â€” one of the best transport values in the city given how comprehensive the system is. Taxis and Uber/Lyft add $15 to $35 per trip for most Manhattan journeys.
 
 Many residents walk or cycle. NYC's Citi Bike membership costs $185 USD per year and is excellent for commutes under 45 minutes.
 
@@ -591,19 +591,19 @@ Healthcare in the US is expensive without employer coverage. Individual health i
 
 ## Best Neighborhoods for Newcomers
 
-**Astoria, Queens** — One of NYC's most diverse and affordable neighborhoods. Excellent food scene, easy subway access to Manhattan, and a strong community feel. Best value for money.
+**Astoria, Queens** â€” One of NYC's most diverse and affordable neighborhoods. Excellent food scene, easy subway access to Manhattan, and a strong community feel. Best value for money.
 
-**Williamsburg, Brooklyn** — Trendy and vibrant. Excellent restaurants, bars and cultural events. Higher rents but very popular with young professionals.
+**Williamsburg, Brooklyn** â€” Trendy and vibrant. Excellent restaurants, bars and cultural events. Higher rents but very popular with young professionals.
 
-**Upper Manhattan (Washington Heights, Inwood)** — Affordable Manhattan living. Predominantly Latino neighborhoods with excellent food and strong community character.
+**Upper Manhattan (Washington Heights, Inwood)** â€” Affordable Manhattan living. Predominantly Latino neighborhoods with excellent food and strong community character.
 
-**Bushwick, Brooklyn** — Creative and affordable. Large arts community, excellent street art, and lower rents than other Brooklyn neighborhoods.
+**Bushwick, Brooklyn** â€” Creative and affordable. Large arts community, excellent street art, and lower rents than other Brooklyn neighborhoods.
 
-**Jersey City, NJ** — Technically not NYC but a 10-minute PATH train ride to Manhattan. Significantly cheaper rents with easy access to the city.
+**Jersey City, NJ** â€” Technically not NYC but a 10-minute PATH train ride to Manhattan. Significantly cheaper rents with easy access to the city.
 
 ## Is NYC Worth It?
 
-NYC makes financial sense if you are earning a high salary — typically $120,000+ USD per year for comfortable single living. The career opportunities, networking and professional growth available in NYC are unmatched in the US.
+NYC makes financial sense if you are earning a high salary â€” typically $120,000+ USD per year for comfortable single living. The career opportunities, networking and professional growth available in NYC are unmatched in the US.
 
 For those earning remotely or on lower salaries, the math often doesn't work. Cities like Austin, Denver or Miami offer similar energy at significantly lower costs.
 
@@ -622,26 +622,26 @@ For those earning remotely or on lower salaries, the math often doesn't work. Ci
     'cost-of-living-lisbon-2026': {
         image: 'photo-1513622470522-26c3c8a854bc',
         title: 'Cost of Living in Lisbon, Portugal 2026: Expat Guide',
-        desc: 'Complete guide to living in Lisbon in 2026 — real rent prices, food costs, transport and the lifestyle that made Lisbon a top nomad destination.',
+        desc: 'Complete guide to living in Lisbon in 2026 â€” real rent prices, food costs, transport and the lifestyle that made Lisbon a top nomad destination.',
         category: 'Europe', date: 'June 2026', readTime: '10 min',
         keywords: 'cost of living lisbon 2026, lisbon expat, living in lisbon, lisbon monthly budget, portugal digital nomad',
         content: `## Cost of Living in Lisbon, Portugal in 2026
 
-Lisbon has transformed from a hidden gem to one of Europe's most sought-after expat destinations over the past decade. Portugal's capital combines Atlantic coastline, year-round mild weather, excellent food and wine, a growing tech scene and — despite rising costs — a quality of life that is difficult to match anywhere in Western Europe. A comfortable monthly budget in Lisbon ranges from $2,000 to $3,000 USD in 2026.
+Lisbon has transformed from a hidden gem to one of Europe's most sought-after expat destinations over the past decade. Portugal's capital combines Atlantic coastline, year-round mild weather, excellent food and wine, a growing tech scene and â€” despite rising costs â€” a quality of life that is difficult to match anywhere in Western Europe. A comfortable monthly budget in Lisbon ranges from $2,000 to $3,000 USD in 2026.
 
 ## Monthly Budget Breakdown
 
 ### Rent
 
-Lisbon's rental market has risen significantly since 2018, driven by tourism and expat demand. In central neighborhoods like Chiado, Bairro Alto and Príncipe Real, a furnished one-bedroom apartment costs $1,800 to $2,800 USD per month. More affordable neighborhoods like Mouraria, Intendente and Campo de Ourique offer one-bedroom apartments at $1,200 to $1,800 USD.
+Lisbon's rental market has risen significantly since 2018, driven by tourism and expat demand. In central neighborhoods like Chiado, Bairro Alto and PrÃ­ncipe Real, a furnished one-bedroom apartment costs $1,800 to $2,800 USD per month. More affordable neighborhoods like Mouraria, Intendente and Campo de Ourique offer one-bedroom apartments at $1,200 to $1,800 USD.
 
-Slightly outside the center — in Almada, Almada or Setúbal, accessible by ferry or train — rents drop significantly to $800 to $1,200 USD for a one-bedroom.
+Slightly outside the center â€” in Almada, Almada or SetÃºbal, accessible by ferry or train â€” rents drop significantly to $800 to $1,200 USD for a one-bedroom.
 
 ### Food and Dining
 
 Lisbon's food scene is exceptional. A meal at a traditional tasca (local restaurant) costs $10 to $15 USD for a full meal with wine. A pastel de nata (custard tart) costs $1.50 USD. Weekly groceries at supermarkets like Pingo Doce or Continente run $50 to $70 USD for one person.
 
-Lisbon has excellent seafood — grilled sardines, bacalhau (salt cod) and percebes (barnacles) are staples. Wine is extremely affordable, with excellent Portuguese wines available for $5 to $10 USD per bottle in supermarkets.
+Lisbon has excellent seafood â€” grilled sardines, bacalhau (salt cod) and percebes (barnacles) are staples. Wine is extremely affordable, with excellent Portuguese wines available for $5 to $10 USD per bottle in supermarkets.
 
 ### Transport
 
@@ -659,21 +659,21 @@ Portugal has an excellent National Health Service (SNS) accessible to residents.
 
 ## Best Neighborhoods for Expats
 
-**Chiado and Bairro Alto** — The most central and cosmopolitan areas. Excellent restaurants, boutiques and cultural life. Highest rents but very convenient.
+**Chiado and Bairro Alto** â€” The most central and cosmopolitan areas. Excellent restaurants, boutiques and cultural life. Highest rents but very convenient.
 
-**Mouraria** — Lisbon's oldest neighborhood, currently undergoing a creative renaissance. More affordable with authentic local character and excellent food.
+**Mouraria** â€” Lisbon's oldest neighborhood, currently undergoing a creative renaissance. More affordable with authentic local character and excellent food.
 
-**Príncipe Real** — Upscale and beautiful. Tree-lined streets, antique shops and excellent restaurants. Popular with creative professionals.
+**PrÃ­ncipe Real** â€” Upscale and beautiful. Tree-lined streets, antique shops and excellent restaurants. Popular with creative professionals.
 
-**Almada** — Across the Tagus River via ferry. Significantly more affordable than central Lisbon with stunning river views and easy ferry access to the center.
+**Almada** â€” Across the Tagus River via ferry. Significantly more affordable than central Lisbon with stunning river views and easy ferry access to the center.
 
-**Cascais** — Beautiful coastal town 40 minutes from Lisbon by train. Very popular with families and remote workers who want beach access without central Lisbon prices.
+**Cascais** â€” Beautiful coastal town 40 minutes from Lisbon by train. Very popular with families and remote workers who want beach access without central Lisbon prices.
 
 ## Portugal's Digital Nomad Visa
 
 Portugal offers a D8 Digital Nomad Visa for remote workers earning at least $3,480 USD per month (4x the Portuguese minimum wage). The visa provides legal residency and a pathway to permanent residency and citizenship after 5 years.
 
-Portugal's NHR (Non-Habitual Resident) tax regime historically offered significant tax advantages for new residents — though this was modified in 2024. Consult a local tax advisor for current details.
+Portugal's NHR (Non-Habitual Resident) tax regime historically offered significant tax advantages for new residents â€” though this was modified in 2024. Consult a local tax advisor for current details.
 
 ## FAQ
 
@@ -685,39 +685,39 @@ Portugal's NHR (Non-Habitual Resident) tax regime historically offered significa
     },
     'cost-of-living-medellin-2026': {
         image: 'photo-1596422846543-75c6fc197f07',
-        title: 'Cost of Living in Medellín, Colombia 2026: The Real Guide',
-        desc: 'How much does it cost to live in Medellín in 2026? Complete breakdown of rent, food, transport and lifestyle costs for expats and nomads.',
+        title: 'Cost of Living in MedellÃ­n, Colombia 2026: The Real Guide',
+        desc: 'How much does it cost to live in MedellÃ­n in 2026? Complete breakdown of rent, food, transport and lifestyle costs for expats and nomads.',
         category: 'Latin America', date: 'June 2026', readTime: '10 min',
         keywords: 'cost of living medellin 2026, medellin expat, living in medellin, medellin monthly budget, colombia digital nomad',
-        content: `## Cost of Living in Medellín, Colombia in 2026
+        content: `## Cost of Living in MedellÃ­n, Colombia in 2026
 
-Medellín's transformation from one of the world's most dangerous cities to one of its most innovative and attractive expat destinations is one of the great urban stories of the 21st century. The City of Eternal Spring — named for its year-round perfect climate of 22 to 28°C — has become a top destination for digital nomads, remote workers and expats seeking affordable, high-quality Latin American living. A comfortable monthly budget in Medellín runs $800 to $1,400 USD in 2026.
+MedellÃ­n's transformation from one of the world's most dangerous cities to one of its most innovative and attractive expat destinations is one of the great urban stories of the 21st century. The City of Eternal Spring â€” named for its year-round perfect climate of 22 to 28Â°C â€” has become a top destination for digital nomads, remote workers and expats seeking affordable, high-quality Latin American living. A comfortable monthly budget in MedellÃ­n runs $800 to $1,400 USD in 2026.
 
 ## Monthly Budget Breakdown
 
 ### Rent
 
-Medellín offers excellent value for money in accommodation. In El Poblado, the most popular expat neighborhood, a furnished one-bedroom apartment costs $600 to $900 USD per month. In Laureles, increasingly popular with expats and more local in character, expect $500 to $750 USD. Envigado, a quieter suburb adjacent to El Poblado, offers similar quality at $400 to $650 USD.
+MedellÃ­n offers excellent value for money in accommodation. In El Poblado, the most popular expat neighborhood, a furnished one-bedroom apartment costs $600 to $900 USD per month. In Laureles, increasingly popular with expats and more local in character, expect $500 to $750 USD. Envigado, a quieter suburb adjacent to El Poblado, offers similar quality at $400 to $650 USD.
 
 Serviced apartments and Airbnbs are widely available for month-to-month stays at $800 to $1,200 USD per month for a modern furnished one-bedroom with amenities.
 
 ### Food and Dining
 
-Medellín's food scene has exploded in quality and variety. A meal at a mid-range restaurant in El Poblado costs $8 to $15 USD. Local Colombian restaurants (typical) offer filling meals with soup, main course and juice for $4 to $7 USD. A coffee at a specialty café costs $2 to $4 USD.
+MedellÃ­n's food scene has exploded in quality and variety. A meal at a mid-range restaurant in El Poblado costs $8 to $15 USD. Local Colombian restaurants (typical) offer filling meals with soup, main course and juice for $4 to $7 USD. A coffee at a specialty cafÃ© costs $2 to $4 USD.
 
-Fresh fruit and vegetables are extraordinarily cheap and high quality. Weekly groceries at supermarkets like Éxito or Jumbo run $40 to $60 USD for one person.
+Fresh fruit and vegetables are extraordinarily cheap and high quality. Weekly groceries at supermarkets like Ã‰xito or Jumbo run $40 to $60 USD for one person.
 
-Medellín has a vibrant craft beer and cocktail scene. A craft beer costs $3 to $5 USD at a bar in El Poblado.
+MedellÃ­n has a vibrant craft beer and cocktail scene. A craft beer costs $3 to $5 USD at a bar in El Poblado.
 
 ### Transport
 
-Medellín's Metro system is clean, safe and affordable. A single ride costs $0.80 USD. The Metrocable — gondola systems connecting hillside neighborhoods to the Metro — is included in the integrated fare system. A monthly transport card costs approximately $25 to $35 USD covering unlimited Metro and Metroplus rides.
+MedellÃ­n's Metro system is clean, safe and affordable. A single ride costs $0.80 USD. The Metrocable â€” gondola systems connecting hillside neighborhoods to the Metro â€” is included in the integrated fare system. A monthly transport card costs approximately $25 to $35 USD covering unlimited Metro and Metroplus rides.
 
-Uber and InDriver operate extensively and are affordable — most rides within El Poblado cost $2 to $5 USD. Taxis are similarly priced.
+Uber and InDriver operate extensively and are affordable â€” most rides within El Poblado cost $2 to $5 USD. Taxis are similarly priced.
 
 ### Internet and Co-working
 
-Medellín has significantly improved its internet infrastructure. Average speeds in modern apartments reach 80 to 150 Mbps. A fiber connection costs $20 to $35 USD per month.
+MedellÃ­n has significantly improved its internet infrastructure. Average speeds in modern apartments reach 80 to 150 Mbps. A fiber connection costs $20 to $35 USD per month.
 
 Co-working spaces are excellent. Selina El Poblado, Atom House, La Maquinista and numerous others offer quality workspaces at $100 to $200 USD per month for a hot desk.
 
@@ -727,19 +727,19 @@ Colombia has a good healthcare system. Expats typically join EPS (the public hea
 
 ## Best Neighborhoods for Expats
 
-**El Poblado** — The main expat hub. Safe, modern, excellent restaurants, bars and infrastructure. Higher rents than other areas but the most convenient option for first-time visitors.
+**El Poblado** â€” The main expat hub. Safe, modern, excellent restaurants, bars and infrastructure. Higher rents than other areas but the most convenient option for first-time visitors.
 
-**Laureles** — More local character than El Poblado, increasingly popular with expats. Excellent restaurants, quieter streets and slightly lower rents.
+**Laureles** â€” More local character than El Poblado, increasingly popular with expats. Excellent restaurants, quieter streets and slightly lower rents.
 
-**Envigado** — Quiet, family-friendly and more affordable. Great local food scene and easy Metro access to El Poblado.
+**Envigado** â€” Quiet, family-friendly and more affordable. Great local food scene and easy Metro access to El Poblado.
 
-**Sabaneta** — Further south, very affordable and authentic. Best for longer-term residents who want to immerse in local culture.
+**Sabaneta** â€” Further south, very affordable and authentic. Best for longer-term residents who want to immerse in local culture.
 
 ## Safety
 
-Medellín's safety has improved dramatically since the 1990s. El Poblado and Laureles are considered very safe for expats. Standard precautions apply — avoid displaying expensive items publicly, use Uber rather than hailing taxis, and avoid certain neighborhoods particularly at night.
+MedellÃ­n's safety has improved dramatically since the 1990s. El Poblado and Laureles are considered very safe for expats. Standard precautions apply â€” avoid displaying expensive items publicly, use Uber rather than hailing taxis, and avoid certain neighborhoods particularly at night.
 
-The Medellín expat Facebook group has over 50,000 members and is an excellent resource for safety updates and neighborhood recommendations.
+The MedellÃ­n expat Facebook group has over 50,000 members and is an excellent resource for safety updates and neighborhood recommendations.
 
 ## Visa Options
 
@@ -747,11 +747,11 @@ Most nationalities can enter Colombia visa-free for 90 days, renewable for anoth
 
 ## FAQ
 
-**Is Medellín safe for expats in 2026?** El Poblado and Laureles are considered safe neighborhoods with standard urban precautions. Medellín has undergone dramatic security improvements since the 1990s.
+**Is MedellÃ­n safe for expats in 2026?** El Poblado and Laureles are considered safe neighborhoods with standard urban precautions. MedellÃ­n has undergone dramatic security improvements since the 1990s.
 
-**What is the average rent in Medellín in 2026?** A furnished one-bedroom in El Poblado costs $600 to $900 USD per month. More affordable options exist in Laureles and Envigado.
+**What is the average rent in MedellÃ­n in 2026?** A furnished one-bedroom in El Poblado costs $600 to $900 USD per month. More affordable options exist in Laureles and Envigado.
 
-**Why do digital nomads love Medellín?** Perfect climate, low cost, fast internet, excellent food, large expat community and easy visa access make Medellín one of Latin America's top nomad destinations.
+**Why do digital nomads love MedellÃ­n?** Perfect climate, low cost, fast internet, excellent food, large expat community and easy visa access make MedellÃ­n one of Latin America's top nomad destinations.
 ---CTA-COMPARE---
 ---CTA-WISE---
 ---CTA-BOOKING---
@@ -765,7 +765,7 @@ Most nationalities can enter Colombia visa-free for 90 days, renewable for anoth
         keywords: 'cost of living tbilisi 2026, tbilisi georgia expat, living in tbilisi, tbilisi monthly budget, georgia digital nomad visa',
         content: `## Cost of Living in Tbilisi, Georgia in 2026
 
-Tbilisi has emerged as arguably the world's best value city for digital nomads in 2026. Georgia's ancient capital combines extraordinary history, remarkable cuisine, a welcoming culture, fast internet and one of the world's most generous visa policies — most nationalities can stay visa-free for up to 365 days. A very comfortable monthly budget in Tbilisi runs $700 to $1,100 USD.
+Tbilisi has emerged as arguably the world's best value city for digital nomads in 2026. Georgia's ancient capital combines extraordinary history, remarkable cuisine, a welcoming culture, fast internet and one of the world's most generous visa policies â€” most nationalities can stay visa-free for up to 365 days. A very comfortable monthly budget in Tbilisi runs $700 to $1,100 USD.
 
 ## Monthly Budget Breakdown
 
@@ -777,21 +777,21 @@ Airbnb and short-term furnished rentals are well-developed and competitively pri
 
 ### Food and Dining
 
-Georgian cuisine is one of the world's great undiscovered food traditions — and extraordinarily affordable. A full meal at a local Georgian restaurant (khinkali, khachapuri, grilled meats, local wine) costs $8 to $15 USD per person. Street food is plentiful — khinkali (dumplings) cost $0.30 USD each. A coffee at a specialty café costs $2 to $3 USD.
+Georgian cuisine is one of the world's great undiscovered food traditions â€” and extraordinarily affordable. A full meal at a local Georgian restaurant (khinkali, khachapuri, grilled meats, local wine) costs $8 to $15 USD per person. Street food is plentiful â€” khinkali (dumplings) cost $0.30 USD each. A coffee at a specialty cafÃ© costs $2 to $3 USD.
 
-Tbilisi's covered markets — Dezerter Bazaar in particular — offer fresh produce, spices, cheese and churchkhela (traditional walnut candy) at very low prices. Weekly groceries run $30 to $50 USD for one person.
+Tbilisi's covered markets â€” Dezerter Bazaar in particular â€” offer fresh produce, spices, cheese and churchkhela (traditional walnut candy) at very low prices. Weekly groceries run $30 to $50 USD for one person.
 
 Georgian wine is world-class and extraordinarily cheap. A bottle of excellent natural wine from the Kakheti region costs $5 to $12 USD in a restaurant.
 
 ### Transport
 
-Tbilisi's metro and bus system is affordable. A single ride costs $0.25 USD. A monthly transport card runs approximately $15 USD. Bolt (the regional Uber equivalent) is very affordable — most rides within the city center cost $2 to $4 USD.
+Tbilisi's metro and bus system is affordable. A single ride costs $0.25 USD. A monthly transport card runs approximately $15 USD. Bolt (the regional Uber equivalent) is very affordable â€” most rides within the city center cost $2 to $4 USD.
 
 ### Internet and Co-working
 
 Tbilisi has made significant infrastructure investments in recent years. Average internet speeds in modern apartments reach 80 to 120 Mbps on fiber connections. A dedicated fiber connection costs $15 to $25 USD per month.
 
-Co-working spaces have grown rapidly. Fabrika — a converted Soviet-era factory that houses co-working, cafés, bars and shops — is the most famous and costs $100 to $150 USD per month for a hot desk. Impact Hub Tbilisi and several other quality spaces offer alternatives.
+Co-working spaces have grown rapidly. Fabrika â€” a converted Soviet-era factory that houses co-working, cafÃ©s, bars and shops â€” is the most famous and costs $100 to $150 USD per month for a hot desk. Impact Hub Tbilisi and several other quality spaces offer alternatives.
 
 ### Utilities
 
@@ -799,25 +799,25 @@ Utilities including electricity, water and gas for a one-bedroom apartment avera
 
 ### Healthcare
 
-Georgia has a public and private healthcare system. Private healthcare is excellent quality and very affordable — a consultation with a specialist costs $20 to $40 USD. Comprehensive private health insurance costs $50 to $100 USD per month.
+Georgia has a public and private healthcare system. Private healthcare is excellent quality and very affordable â€” a consultation with a specialist costs $20 to $40 USD. Comprehensive private health insurance costs $50 to $100 USD per month.
 
 ## Best Neighborhoods for Expats
 
-**Vera** — The most popular neighborhood for expats. Quiet, leafy streets, excellent cafés and restaurants, and a strong international community. Best all-around choice.
+**Vera** â€” The most popular neighborhood for expats. Quiet, leafy streets, excellent cafÃ©s and restaurants, and a strong international community. Best all-around choice.
 
-**Vake** — Upscale and residential. Beautiful parks, excellent facilities and a slightly more Georgian feel than Vera.
+**Vake** â€” Upscale and residential. Beautiful parks, excellent facilities and a slightly more Georgian feel than Vera.
 
-**Saburtalo** — Practical and affordable. Good transport links, local shops and restaurants. Less aesthetic than Vera but very livable.
+**Saburtalo** â€” Practical and affordable. Good transport links, local shops and restaurants. Less aesthetic than Vera but very livable.
 
-**Old Town (Kala)** — Beautiful and atmospheric but heavily touristic. Best for short stays; longer-term residents often prefer quieter neighborhoods.
+**Old Town (Kala)** â€” Beautiful and atmospheric but heavily touristic. Best for short stays; longer-term residents often prefer quieter neighborhoods.
 
-**Marjanishvili** — Up-and-coming area with excellent cafés, a strong creative community and slightly lower rents.
+**Marjanishvili** â€” Up-and-coming area with excellent cafÃ©s, a strong creative community and slightly lower rents.
 
 ## The 365-Day Visa Advantage
 
-Georgia's visa policy is remarkable — citizens of most countries (including US, EU, UK, Australia and many others) can enter and stay for up to 365 days without a visa. This makes Tbilisi uniquely accessible for long-term stays without any bureaucratic hassle.
+Georgia's visa policy is remarkable â€” citizens of most countries (including US, EU, UK, Australia and many others) can enter and stay for up to 365 days without a visa. This makes Tbilisi uniquely accessible for long-term stays without any bureaucratic hassle.
 
-After 183 days of residency, individuals may be subject to Georgian tax rules — consult a local accountant if staying long-term.
+After 183 days of residency, individuals may be subject to Georgian tax rules â€” consult a local accountant if staying long-term.
 
 ## Safety
 
@@ -838,14 +838,14 @@ Tbilisi is consistently rated one of the safest cities in Eastern Europe. The ci
 
 
     'world-cup-2026-currency-guide': {
-        image: 'photo-1580048915913-4f8f5cb481c4',
+        image: '/cities/world-cup-currency.jpg',
         title: 'World Cup 2026 Currency Guide: How to Exchange Money for Every Host Country',
         desc: 'Complete currency guide for FIFA World Cup 2026. How to exchange USD, MXN and CAD, best rates and how to save money on every transaction.',
         category: 'World Cup 2026', date: 'June 2026', readTime: '10 min',
         keywords: 'world cup 2026 currency, world cup 2026 money exchange, usd to mxn world cup, dollar exchange world cup 2026, wise world cup 2026',
         content: `## World Cup 2026 Currency Guide
 
-The FIFA World Cup 2026 spans three countries — the United States, Mexico and Canada — each with its own currency. This guide covers everything you need to know about exchanging money for World Cup 2026.
+The FIFA World Cup 2026 spans three countries â€” the United States, Mexico and Canada â€” each with its own currency. This guide covers everything you need to know about exchanging money for World Cup 2026.
 
 ## The Three World Cup Currencies
 
@@ -861,21 +861,21 @@ Used in 11 host cities. Exchange with Wise for the best rates.
 
 ## Team Currencies
 
-Brazil (BRL) — 1 USD = 5.0 BRL. Convert BRL to USD
+Brazil (BRL) â€” 1 USD = 5.0 BRL. Convert BRL to USD
 
-Argentina (ARS) — 1 USD = 1,050 ARS. Convert ARS to USD
+Argentina (ARS) â€” 1 USD = 1,050 ARS. Convert ARS to USD
 
-Colombia (COP) — 1 USD = 4,100 COP. Convert COP to USD
+Colombia (COP) â€” 1 USD = 4,100 COP. Convert COP to USD
 
-**England/Europe (GBP/EUR)** — 1 EUR = 1.08 USD. Convert EUR to USD
+**England/Europe (GBP/EUR)** â€” 1 EUR = 1.08 USD. Convert EUR to USD
 
-Japan (JPY) — 1 USD = 155 JPY. Convert JPY to USD
+Japan (JPY) â€” 1 USD = 155 JPY. Convert JPY to USD
 
-Morocco (MAD) — 1 USD = 10 MAD.
+Morocco (MAD) â€” 1 USD = 10 MAD.
 
 ## Best Ways to Exchange Currency
 
-### 1. Wise — Best Overall
+### 1. Wise â€” Best Overall
 Wise offers the real mid-market exchange rate with minimal fees (0.4-1.5%). Best option for fans attending matches in multiple countries.
 
 Savings: On a $3,000 travel budget, Wise saves $90-150 vs airport exchange booths.
@@ -886,7 +886,7 @@ Better than airport booths. Withdraw larger amounts to minimize per-transaction 
 ### 3. Credit Cards with No Foreign Transaction Fees
 Cards like Charles Schwab or Chase Sapphire offer competitive rates across all three World Cup countries.
 
-### 4. Airport Exchange — Avoid
+### 4. Airport Exchange â€” Avoid
 ---CTA-BOOKING---
 Charge 5-15% above market rate. Only use in emergencies.
 
@@ -900,70 +900,70 @@ Canada | $150-220 CAD | $110-160
 ## Multi-Country Tips
 
 1. Use Wise multi-currency account
-2. Convert only what you need to MXN — harder to convert back
+2. Convert only what you need to MXN â€” harder to convert back
 3. Mexico accepts USD but pesos give better value
 4. Book hotels with Booking.com to pay in advance and avoid currency surprises
-5. Rent a car with RentalCars — pay upfront in your currency
+5. Rent a car with RentalCars â€” pay upfront in your currency
 
 ## FAQ
 
-**Best app for currency exchange World Cup 2026?** Wise — real exchange rates, minimal fees, works in all three countries.
+**Best app for currency exchange World Cup 2026?** Wise â€” real exchange rates, minimal fees, works in all three countries.
 
 **Does Mexico City accept USD?** Yes but always pay in pesos for better value.
 
-**How much cash should I bring to World Cup 2026?** $200-300 USD equivalent in local currency is enough for a few days — use your Wise card for the rest.`
+**How much cash should I bring to World Cup 2026?** $200-300 USD equivalent in local currency is enough for a few days â€” use your Wise card for the rest.`
     },
     'world-cup-2026-travel-guide': {
-        image: 'photo-1431324155629-1a6deb1dec8d',
+        image: '/cities/world-cup-travel.jpg',
         title: 'FIFA World Cup 2026 Travel Guide: Costs, Hotels and Tips for Every Host City',
         desc: 'Complete travel cost guide for the FIFA World Cup 2026 in USA, Mexico and Canada. Cheapest cities, budget neighborhoods and money-saving tips.',
         category: 'World Cup 2026', date: 'June 2026', readTime: '12 min',
         keywords: 'world cup 2026 travel guide, fifa world cup 2026 cost, world cup 2026 hotels, cheapest world cup 2026 city, world cup 2026 budget',
         content: `## FIFA World Cup 2026 Travel Guide
 
-The FIFA World Cup 2026 is the biggest sporting event in history — happening NOW across 16 cities in the United States, Mexico and Canada. With 48 teams and 104 matches, it is the first World Cup to span three countries.
+The FIFA World Cup 2026 is the biggest sporting event in history â€” happening NOW across 16 cities in the United States, Mexico and Canada. With 48 teams and 104 matches, it is the first World Cup to span three countries.
 
 ## Host Cities Overview
 
 ### USA
-New York — Most expensive. Hotels $250-400/night. Stay in Newark or Jersey City for savings. Find hotels
+New York â€” Most expensive. Hotels $250-400/night. Stay in Newark or Jersey City for savings. Find hotels
 
-Los Angeles — Stay in Inglewood or Long Beach at $120-180/night. Rent a car — essential in LA.
+Los Angeles â€” Stay in Inglewood or Long Beach at $120-180/night. Rent a car â€” essential in LA.
 
-Miami — Stay in Hialeah or Fort Lauderdale at $100-160/night. Find hotels
+Miami â€” Stay in Hialeah or Fort Lauderdale at $100-160/night. Find hotels
 
-Dallas — Best US value. Hotels in Irving $90-140/night. Rent a car
+Dallas â€” Best US value. Hotels in Irving $90-140/night. Rent a car
 
-Houston — Affordable. NRG area hotels $110-170/night.
+Houston â€” Affordable. NRG area hotels $110-170/night.
 
-Seattle — Stay in Bellevue or Renton $120-180/night.
+Seattle â€” Stay in Bellevue or Renton $120-180/night.
 
-San Francisco — Stay in Oakland or San Jose $100-160/night.
+San Francisco â€” Stay in Oakland or San Jose $100-160/night.
 
-Boston — Stay in Cambridge or Somerville for savings.
+Boston â€” Stay in Cambridge or Somerville for savings.
 
-Kansas City — Best overall US value. Hotels $80-130/night.
+Kansas City â€” Best overall US value. Hotels $80-130/night.
 
-Philadelphia — Stay in South Jersey 30-40% cheaper.
+Philadelphia â€” Stay in South Jersey 30-40% cheaper.
 ---CTA-BOOKING---
 
 ### Mexico
-**Mexico City** — Extraordinary value. Hotels $60-90/night. Food $5-12/meal. Convert currency with Wise before traveling.
+**Mexico City** â€” Extraordinary value. Hotels $60-90/night. Food $5-12/meal. Convert currency with Wise before traveling.
 
-**Guadalajara** — Hotels $50-90/night. Hidden gem.
+**Guadalajara** â€” Hotels $50-90/night. Hidden gem.
 
-**Monterrey** — Hotels $55-95/night. Great infrastructure.
+**Monterrey** â€” Hotels $55-95/night. Great infrastructure.
 
 ### Canada
-**Toronto** — Stay in Mississauga $130-200/night. Convert to CAD with Wise
+**Toronto** â€” Stay in Mississauga $130-200/night. Convert to CAD with Wise
 
-**Vancouver** — Stay in Burnaby or Surrey $120-180/night.
+**Vancouver** â€” Stay in Burnaby or Surrey $120-180/night.
 ---CTA-WISE---
 
 ## Budget Tips
 
-1. Use Wise for currency exchange — save 3-5% on every transaction
-2. Book rental cars NOW through RentalCars — prices triple closer to the event
+1. Use Wise for currency exchange â€” save 3-5% on every transaction
+2. Book rental cars NOW through RentalCars â€” prices triple closer to the event
 3. Mexican cities cost 60% less than US cities
 4. Book tours with GetYourGuide in advance
 ---CTA-RENTALCARS---
@@ -979,7 +979,7 @@ Miami | $160 | $80 | $1,680
 New York | $300 | $100 | $2,800`
     },
     'cheapest-world-cup-2026-cities': {
-        image: 'photo-1506905925346-21bda4d32df4',
+        image: '/cities/world-cup-cities.jpg',
         title: 'Cheapest FIFA World Cup 2026 Host Cities: Budget Guide',
         desc: 'Which World Cup 2026 host city is cheapest? Full cost comparison of all 16 cities with budget neighborhoods and money-saving tips.',
         category: 'World Cup 2026', date: 'June 2026', readTime: '10 min',
@@ -990,32 +990,32 @@ With 16 host cities across three countries, World Cup 2026 offers options for ev
 
 ## Tier 1: Budget (under $100/night)
 
-### 1. Mexico City — Best Value Overall
+### 1. Mexico City â€” Best Value Overall
 Hotels in Roma Norte: $60-90/night. Food: $5-12/meal. Metro: $0.25/ride.
 
 7-night budget: $800-1,200 USD
 
-Budget neighborhoods: Coyoacán, Del Valle, Tlalpan
+Budget neighborhoods: CoyoacÃ¡n, Del Valle, Tlalpan
 ---CTA-BOOKING---
 ---CTA-WISE---
 
 Hotels in Mexico City | Convert USD to MXN with Wise | City tours
 
-### 2. Guadalajara — Hidden Gem
+### 2. Guadalajara â€” Hidden Gem
 Hotels near Estadio Akron: $50-90/night.
 
 7-night budget: $750-1,100 USD
 
-Budget neighborhoods: Zapopan, Tonalá, Tlaquepaque
+Budget neighborhoods: Zapopan, TonalÃ¡, Tlaquepaque
 
-### 3. Monterrey — Industrial Value
+### 3. Monterrey â€” Industrial Value
 Hotels near Estadio BBVA: $55-95/night.
 
 7-night budget: $780-1,150 USD
 
 ## Tier 2: Affordable US Cities
 
-### 4. Kansas City — Best US Value
+### 4. Kansas City â€” Best US Value
 Hotels near Arrowhead: $90-140/night. Excellent BBQ food.
 
 7-night budget: $1,200-1,600 USD
@@ -1025,14 +1025,14 @@ Budget neighborhoods: Independence, Lee's Summit, Olathe
 Rent a car in Kansas City
 ---CTA-RENTALCARS---
 
-### 5. Dallas — Good Texas Value
+### 5. Dallas â€” Good Texas Value
 Hotels in Irving/Arlington: $90-140/night.
 
 7-night budget: $1,300-1,700 USD
 
 Budget neighborhoods: Irving, Garland, Grand Prairie
 
-### 6. Houston — Underrated Value
+### 6. Houston â€” Underrated Value
 NRG Stadium area: $100-150/night.
 
 7-night budget: $1,350-1,800 USD
@@ -1053,7 +1053,7 @@ $200-400/night. Budget $2,000-3,500 for 7 nights.
 
 ## The Smart Strategy
 
-Build your itinerary around Mexican cities — attend matches in Mexico City or Guadalajara where your entire week costs less than one night in New York.
+Build your itinerary around Mexican cities â€” attend matches in Mexico City or Guadalajara where your entire week costs less than one night in New York.
 
 Use Wise for all currency conversions and RentalCars for US cities where driving is essential.
 ---CTA-WISE---
@@ -1061,43 +1061,43 @@ Use Wise for all currency conversions and RentalCars for US cities where driving
 ---CTA-COMPARE---`
     },
     'world-cup-2026-mexico-city-guide': {
-        image: 'photo-1518105779142-d975f22f1b0a',
+        image: '/cities/mexico-city.jpg',
         title: 'World Cup 2026 Mexico City: Complete Travel and Budget Guide',
-        desc: 'Everything you need for the FIFA World Cup 2026 in Mexico City — costs, neighborhoods, transport and budget tips for Estadio Azteca.',
+        desc: 'Everything you need for the FIFA World Cup 2026 in Mexico City â€” costs, neighborhoods, transport and budget tips for Estadio Azteca.',
         category: 'World Cup 2026', date: 'June 2026', readTime: '10 min',
         keywords: 'world cup 2026 mexico city, estadio azteca world cup 2026, mexico city world cup hotels, cdmx world cup 2026',
         content: `## FIFA World Cup 2026 in Mexico City
 
-Mexico City hosts World Cup 2026 at the legendary Estadio Azteca — the only stadium to have hosted two World Cup Finals (1970 and 1986). At under $100/day for hotel and food combined, it is the best value World Cup destination in the entire tournament.
+Mexico City hosts World Cup 2026 at the legendary Estadio Azteca â€” the only stadium to have hosted two World Cup Finals (1970 and 1986). At under $100/day for hotel and food combined, it is the best value World Cup destination in the entire tournament.
 
 ## Getting There
 
-Fly into Benito Juárez International Airport (MEX). Uber to city center: $12-20 USD.
+Fly into Benito JuÃ¡rez International Airport (MEX). Uber to city center: $12-20 USD.
 ---CTA-WISE---
 
-**Currency tip:** Use Wise to convert to Mexican pesos at the real rate — save 3-6% vs airport exchange booths.
+**Currency tip:** Use Wise to convert to Mexican pesos at the real rate â€” save 3-6% vs airport exchange booths.
 
 ## Where to Stay
 
-**Roma Norte / Condesa** — Most popular for international visitors. Hotels $70-120/night. Safe, beautiful, great restaurants.
+**Roma Norte / Condesa** â€” Most popular for international visitors. Hotels $70-120/night. Safe, beautiful, great restaurants.
 
-**Coyoacán** — Bohemian and authentic. Hotels $50-90/night. 30 min from Azteca by metro. Home of Frida Kahlo museum.
+**CoyoacÃ¡n** â€” Bohemian and authentic. Hotels $50-90/night. 30 min from Azteca by metro. Home of Frida Kahlo museum.
 
-**Del Valle** — Residential, safe, great value. Hotels $45-80/night.
+**Del Valle** â€” Residential, safe, great value. Hotels $45-80/night.
 
-**Polanco** — Upscale. Hotels $120-200/night. Very safe.
+**Polanco** â€” Upscale. Hotels $120-200/night. Very safe.
 
 Find hotels in Mexico City
 
 ## Getting to Estadio Azteca
 
-Metro Line 2 to Tasqueña station, then Tren Ligero to Estadio Azteca. Total cost: $0.50 USD. Journey from Roma Norte: ~40 minutes.
+Metro Line 2 to TasqueÃ±a station, then Tren Ligero to Estadio Azteca. Total cost: $0.50 USD. Journey from Roma Norte: ~40 minutes.
 
 Uber: $5-10 USD from central neighborhoods.
 
 ## Food Guide
 
-Street tacos: $0.80-1.50 USD each. Full meal at local restaurant: $5-10 USD. Craft beer: $3-5 USD. The Mercado de Medellín and Mercado Roma are excellent for pre-match food.
+Street tacos: $0.80-1.50 USD each. Full meal at local restaurant: $5-10 USD. Craft beer: $3-5 USD. The Mercado de MedellÃ­n and Mercado Roma are excellent for pre-match food.
 
 ## 7-Day Budget
 
@@ -1112,7 +1112,7 @@ Book city tours and Azteca experiences | Hotels in CDMX
 
 ## Safety
 
-Roma Norte, Condesa, Polanco and Coyoacán are safe for tourists. Use Uber, avoid displaying expensive items and be aware of surroundings. Mexico City has improved dramatically in safety in recent years.
+Roma Norte, Condesa, Polanco and CoyoacÃ¡n are safe for tourists. Use Uber, avoid displaying expensive items and be aware of surroundings. Mexico City has improved dramatically in safety in recent years.
 ---CTA-BOOKING---
 ---CTA-GYG---
 ---CTA-COMPARE---`
@@ -1120,12 +1120,12 @@ Roma Norte, Condesa, Polanco and Coyoacán are safe for tourists. Use Uber, avoi
     'cost-of-living-buenos-aires-2026': {
         image: 'photo-1589909202802-8f4aadce9d55',
         title: 'Cost of Living in Buenos Aires in 2026: Complete Expat Guide',
-        desc: 'Everything you need to know about living in Buenos Aires in 2026 — rent, food, transport, safety and the real monthly budget.',
+        desc: 'Everything you need to know about living in Buenos Aires in 2026 â€” rent, food, transport, safety and the real monthly budget.',
         category: 'Latin America', date: 'May 2026', readTime: '10 min',
         keywords: 'cost of living buenos aires 2026, buenos aires expat, living in buenos aires, buenos aires monthly budget, argentina cost of living',
         content: `## Cost of Living in Buenos Aires in 2026
 
-Buenos Aires is one of the most culturally rich cities in the world — and in 2026, it remains one of the most affordable major cities for expats and digital nomads earning in foreign currencies. With a monthly budget of around $900 to $1,200 USD, you can live very comfortably in one of South America's most vibrant capitals.
+Buenos Aires is one of the most culturally rich cities in the world â€” and in 2026, it remains one of the most affordable major cities for expats and digital nomads earning in foreign currencies. With a monthly budget of around $900 to $1,200 USD, you can live very comfortably in one of South America's most vibrant capitals.
 
 ## Monthly Budget Breakdown
 
@@ -1139,9 +1139,9 @@ It is important to note that rental contracts in Argentina are often negotiated 
 
 ### Food and Dining
 
-Food in Buenos Aires is remarkably affordable for those earning in foreign currencies. A meal at a mid-range restaurant costs $8 to $15 USD per person. Local markets and supermarkets are well-stocked and inexpensive — weekly groceries for one person run $30 to $50 USD.
+Food in Buenos Aires is remarkably affordable for those earning in foreign currencies. A meal at a mid-range restaurant costs $8 to $15 USD per person. Local markets and supermarkets are well-stocked and inexpensive â€” weekly groceries for one person run $30 to $50 USD.
 
-Buenos Aires is famous for its steak culture. A high-quality parrilla dinner with wine costs $15 to $25 USD per person — a fraction of what the same meal would cost in New York or London.
+Buenos Aires is famous for its steak culture. A high-quality parrilla dinner with wine costs $15 to $25 USD per person â€” a fraction of what the same meal would cost in New York or London.
 
 ### Transport
 
@@ -1157,25 +1157,25 @@ Buenos Aires has excellent private healthcare at a fraction of Western prices. A
 
 ## Neighborhoods for Expats
 
-**Palermo** — The most popular expat neighborhood. Tree-lined streets, excellent restaurants, rooftop bars and a vibrant nightlife scene. Higher rents but worth the premium.
+**Palermo** â€” The most popular expat neighborhood. Tree-lined streets, excellent restaurants, rooftop bars and a vibrant nightlife scene. Higher rents but worth the premium.
 
-**Recoleta** — Elegant and European in character. Home to the famous Recoleta Cemetery and excellent museums. A quieter, more upscale option.
+**Recoleta** â€” Elegant and European in character. Home to the famous Recoleta Cemetery and excellent museums. A quieter, more upscale option.
 
-**San Telmo** — The oldest neighborhood in the city, known for its tango culture, antique markets and bohemian atmosphere. Cheaper rents than Palermo.
+**San Telmo** â€” The oldest neighborhood in the city, known for its tango culture, antique markets and bohemian atmosphere. Cheaper rents than Palermo.
 
-**Villa Crespo** — Up-and-coming neighborhood with excellent coffee shops and a strong creative community. Good value for money.
+**Villa Crespo** â€” Up-and-coming neighborhood with excellent coffee shops and a strong creative community. Good value for money.
 
-**Belgrano** — Residential and family-friendly. Quieter than Palermo but with good amenities and a large expat community.
+**Belgrano** â€” Residential and family-friendly. Quieter than Palermo but with good amenities and a large expat community.
 
 ## The Dollar Advantage
 
 One of the most significant factors for expats in Buenos Aires is the exchange rate advantage. Argentina has a complex currency situation, and expats earning in USD, EUR or GBP can access favorable exchange rates that effectively double their purchasing power compared to the official rate.
 
-This means that a $2,000 USD monthly salary can feel like $3,500 to $4,000 in local purchasing power — making Buenos Aires one of the most attractive cities in the world for remote workers.
+This means that a $2,000 USD monthly salary can feel like $3,500 to $4,000 in local purchasing power â€” making Buenos Aires one of the most attractive cities in the world for remote workers.
 
 ## Safety
 
-Buenos Aires is generally safe for expats, particularly in the neighborhoods mentioned above. Standard urban precautions apply — be aware of your surroundings, avoid displaying expensive items in public, and use official taxis or ride-sharing apps at night.
+Buenos Aires is generally safe for expats, particularly in the neighborhoods mentioned above. Standard urban precautions apply â€” be aware of your surroundings, avoid displaying expensive items in public, and use official taxis or ride-sharing apps at night.
 
 The city's safety score on most indexes is 5.5 to 6 out of 10, comparable to many European cities.
 
@@ -1207,7 +1207,7 @@ For longer stays, Argentina offers the Rentista visa for those with passive inco
         keywords: 'cost of living bangkok 2026, bangkok expat, living in bangkok, bangkok monthly budget, thailand cost of living digital nomad',
         content: `## Cost of Living in Bangkok in 2026
 
-Bangkok remains one of the top destinations for digital nomads and expats in 2026. The Thai capital combines excellent infrastructure, world-class food, fast internet and a vibrant international community — all at a fraction of the cost of Western cities. A comfortable monthly budget in Bangkok ranges from $1,000 to $2,000 USD depending on lifestyle.
+Bangkok remains one of the top destinations for digital nomads and expats in 2026. The Thai capital combines excellent infrastructure, world-class food, fast internet and a vibrant international community â€” all at a fraction of the cost of Western cities. A comfortable monthly budget in Bangkok ranges from $1,000 to $2,000 USD depending on lifestyle.
 
 ## Monthly Budget Breakdown
 
@@ -1221,11 +1221,11 @@ Short-term furnished rentals are easy to find and well-priced. Many nomads start
 
 Food is one of Bangkok's greatest advantages. Street food from hawker stalls costs $1 to $3 USD per meal. A sit-down meal at a local Thai restaurant runs $3 to $7 USD. Western restaurants in expat areas like Thong Lor or Ekkamai charge $10 to $20 USD per person.
 
-A monthly food budget of $200 to $400 USD covers everything from local street food to occasional Western dining. Bangkok's markets — including Or Tor Kor and Chatuchak Weekend Market — offer excellent fresh produce at low prices.
+A monthly food budget of $200 to $400 USD covers everything from local street food to occasional Western dining. Bangkok's markets â€” including Or Tor Kor and Chatuchak Weekend Market â€” offer excellent fresh produce at low prices.
 
 ### Transport
 
-Bangkok's BTS Skytrain and MRT metro make getting around easy and affordable. A monthly transit pass costs approximately $40 to $60 USD. Grab (the regional Uber equivalent) is widely used and affordable — most rides within central Bangkok cost $2 to $6 USD.
+Bangkok's BTS Skytrain and MRT metro make getting around easy and affordable. A monthly transit pass costs approximately $40 to $60 USD. Grab (the regional Uber equivalent) is widely used and affordable â€” most rides within central Bangkok cost $2 to $6 USD.
 
 Motorbike taxis are the fastest and cheapest option for short distances, typically $0.50 to $2 USD per ride.
 
@@ -1241,15 +1241,15 @@ Thailand has world-class private hospitals, and Bangkok is a medical tourism des
 
 ## Best Neighborhoods for Expats
 
-**Sukhumvit** — The main expat corridor. Excellent transport links, international restaurants and a vibrant nightlife. Higher cost than other areas but very convenient.
+**Sukhumvit** â€” The main expat corridor. Excellent transport links, international restaurants and a vibrant nightlife. Higher cost than other areas but very convenient.
 
-**Silom and Sathorn** — Bangkok's financial district. More professional atmosphere, excellent restaurants and good transport connections.
+**Silom and Sathorn** â€” Bangkok's financial district. More professional atmosphere, excellent restaurants and good transport connections.
 
-**Ari** — Popular with younger expats and locals. A quieter, more residential feel with excellent coffee shops and restaurants.
+**Ari** â€” Popular with younger expats and locals. A quieter, more residential feel with excellent coffee shops and restaurants.
 
-**Ekkamai and Thong Lor** — The trendiest areas in Bangkok. Excellent dining, nightlife and a strong creative community.
+**Ekkamai and Thong Lor** â€” The trendiest areas in Bangkok. Excellent dining, nightlife and a strong creative community.
 
-**On Nut** — More affordable than central Sukhumvit but still well-connected. Popular with budget-conscious expats.
+**On Nut** â€” More affordable than central Sukhumvit but still well-connected. Popular with budget-conscious expats.
 
 ## Internet and Remote Work
 
@@ -1277,24 +1277,24 @@ Thailand offers a 30-day visa-free entry for citizens of most countries, extenda
     'best-cities-remote-workers-latin-america-2026': {
         image: 'photo-1596422846543-75c6fc197f07',
         title: 'Best Cities for Remote Workers in Latin America in 2026',
-        desc: 'The top Latin American cities for digital nomads in 2026 — fast internet, affordable rent, good safety and vibrant communities.',
+        desc: 'The top Latin American cities for digital nomads in 2026 â€” fast internet, affordable rent, good safety and vibrant communities.',
         category: 'Latin America', date: 'May 2026', readTime: '9 min',
         keywords: 'best cities remote workers latin america 2026, digital nomad latin america, latin america remote work, cheapest cities latin america expat',
         content: `## Best Cities for Remote Workers in Latin America in 2026
 
 Latin America has emerged as one of the top regions in the world for digital nomads and remote workers. A combination of affordable living costs, improving internet infrastructure, warm weather, rich culture and growing expat communities makes the region increasingly attractive. Here are the best cities for remote workers in 2026.
 
-## 1. Medellín, Colombia — ~$1,050/month
+## 1. MedellÃ­n, Colombia â€” ~$1,050/month
 
-Medellín has transformed from one of the world's most dangerous cities to one of its most exciting expat destinations. The City of Eternal Spring enjoys year-round temperatures of 22 to 28°C and offers a vibrant digital nomad scene centered around El Poblado and Laureles neighborhoods.
+MedellÃ­n has transformed from one of the world's most dangerous cities to one of its most exciting expat destinations. The City of Eternal Spring enjoys year-round temperatures of 22 to 28Â°C and offers a vibrant digital nomad scene centered around El Poblado and Laureles neighborhoods.
 
-**Internet:** Average 60 to 80 Mbps — adequate for remote work. Co-working spaces like Selina and Atomhouse are excellent.
+**Internet:** Average 60 to 80 Mbps â€” adequate for remote work. Co-working spaces like Selina and Atomhouse are excellent.
 
 **Cost:** Rent for a furnished one-bedroom in El Poblado runs $500 to $800 USD. Monthly food and transport add $300 to $400 USD.
 
 **Community:** One of the largest digital nomad communities in Latin America. Regular meetups, Nomad events and a thriving startup ecosystem.
 
-## 2. Buenos Aires, Argentina — ~$900/month
+## 2. Buenos Aires, Argentina â€” ~$900/month
 
 Buenos Aires combines European architecture, world-class food and an unbeatable exchange rate advantage for those earning in foreign currencies. The city's creative and intellectual culture makes it a favorite among writers, designers and tech workers.
 
@@ -1304,37 +1304,37 @@ Buenos Aires combines European architecture, world-class food and an unbeatable 
 
 **Community:** A large and established expat community, particularly in Palermo and Villa Crespo.
 
-## 3. Mexico City, Mexico — ~$1,100/month
+## 3. Mexico City, Mexico â€” ~$1,100/month
 
 Mexico City has become one of the hottest nomad destinations of the 2020s. Its rich food culture, world-class museums, excellent transport and vibrant neighborhoods attract tens of thousands of remote workers annually.
 
 **Internet:** 60 to 100 Mbps average. Fiber is widely available in Roma Norte, Condesa and Polanco.
 
-**Cost:** Rent in Roma Norte or Condesa ranges from $600 to $1,000 USD per month for a furnished apartment. Food is affordable — excellent tacos cost $1 to $3 USD.
+**Cost:** Rent in Roma Norte or Condesa ranges from $600 to $1,000 USD per month for a furnished apartment. Food is affordable â€” excellent tacos cost $1 to $3 USD.
 
 **Community:** The largest digital nomad community in Latin America, centered around Roma Norte and Condesa.
 
-## 4. Lima, Peru — ~$1,000/month
+## 4. Lima, Peru â€” ~$1,000/month
 
-Lima is often overlooked but offers an excellent quality of life for remote workers. The city has world-class restaurants — Lima is considered one of the world's top food cities — fast internet and a relatively low cost of living.
+Lima is often overlooked but offers an excellent quality of life for remote workers. The city has world-class restaurants â€” Lima is considered one of the world's top food cities â€” fast internet and a relatively low cost of living.
 
-**Internet:** 70 to 120 Mbps average — one of the best in Latin America.
+**Internet:** 70 to 120 Mbps average â€” one of the best in Latin America.
 
 **Cost:** Rent in Miraflores or San Isidro costs $600 to $900 USD per month. Food and transport add $300 to $400 USD.
 
 **Safety:** Miraflores and San Isidro are considered safe for expats with standard precautions.
 
-## 5. Santiago, Chile — ~$1,400/month
+## 5. Santiago, Chile â€” ~$1,400/month
 
-Santiago is the most developed and modern city in Latin America. It offers excellent infrastructure, reliable internet, good safety and strong business culture — at a higher cost than other regional cities.
+Santiago is the most developed and modern city in Latin America. It offers excellent infrastructure, reliable internet, good safety and strong business culture â€” at a higher cost than other regional cities.
 
-**Internet:** 100 to 200 Mbps average — among the fastest in the region.
+**Internet:** 100 to 200 Mbps average â€” among the fastest in the region.
 
 **Cost:** Higher than other Latin American cities. Rent in Providencia or Las Condes costs $800 to $1,200 USD per month.
 
 **For whom:** Best suited for remote workers who prioritize stability, safety and infrastructure over rock-bottom prices.
 
-## 6. Montevideo, Uruguay — ~$1,300/month
+## 6. Montevideo, Uruguay â€” ~$1,300/month
 
 Montevideo is the safest capital in South America and offers a relaxed, high-quality lifestyle. Uruguay has excellent digital infrastructure and the most stable political and economic environment in the region.
 
@@ -1345,7 +1345,7 @@ Montevideo is the safest capital in South America and offers a relaxed, high-qua
 ## Comparison Table
 
 City | Monthly Budget | Internet | Safety
-Medellín | $1,050 | 70 Mbps | 5.5/10
+MedellÃ­n | $1,050 | 70 Mbps | 5.5/10
 Buenos Aires | $900 | 60 Mbps | 5.8/10
 Mexico City | $1,100 | 80 Mbps | 5.2/10
 Lima | $1,000 | 100 Mbps | 6.0/10
@@ -1354,9 +1354,9 @@ Montevideo | $1,300 | 100 Mbps | 7.5/10
 
 ## FAQ
 
-**Which Latin American city is best for digital nomads?** Medellín and Mexico City are consistently ranked the top two cities for digital nomads in Latin America due to their community size, infrastructure and affordability.
+**Which Latin American city is best for digital nomads?** MedellÃ­n and Mexico City are consistently ranked the top two cities for digital nomads in Latin America due to their community size, infrastructure and affordability.
 
-**Is Latin America safe for remote workers?** Safety varies significantly by city and neighborhood. Medellín El Poblado, Buenos Aires Palermo, Mexico City Roma Norte and Santiago Providencia are considered safe for expats with standard precautions.
+**Is Latin America safe for remote workers?** Safety varies significantly by city and neighborhood. MedellÃ­n El Poblado, Buenos Aires Palermo, Mexico City Roma Norte and Santiago Providencia are considered safe for expats with standard precautions.
 ---CTA-COMPARE---
 ---CTA-WISE---
 ---CTA-BOOKING---
@@ -1365,16 +1365,16 @@ Montevideo | $1,300 | 100 Mbps | 7.5/10
     'cheapest-cities-eastern-europe-digital-nomads-2026': {
         image: 'photo-1541849546-216549ae216d',
         title: 'Cheapest Cities in Eastern Europe for Digital Nomads in 2026',
-        desc: 'Tbilisi, Bucharest, Belgrade and beyond — the most affordable Eastern European cities with fast internet and growing nomad communities.',
+        desc: 'Tbilisi, Bucharest, Belgrade and beyond â€” the most affordable Eastern European cities with fast internet and growing nomad communities.',
         category: 'Europe', date: 'May 2026', readTime: '9 min',
         keywords: 'cheapest cities eastern europe 2026, eastern europe digital nomad, tbilisi georgia nomad, bucharest expat, belgrade remote work',
         content: `## Cheapest Cities in Eastern Europe for Digital Nomads in 2026
 
 Eastern Europe has become one of the most popular regions for digital nomads seeking affordable European living. Cities like Tbilisi, Bucharest, Belgrade and Sofia offer low costs, fast internet, rich culture and increasingly active nomad communities. Here is the complete guide to the cheapest and best Eastern European cities for remote workers in 2026.
 
-## 1. Tbilisi, Georgia — ~$850/month
+## 1. Tbilisi, Georgia â€” ~$850/month
 
-Tbilisi is the standout budget destination for digital nomads in 2026. Georgia's capital offers a unique blend of ancient history, excellent food, fast internet and one of the world's most nomad-friendly visa policies — most nationalities can stay visa-free for up to 365 days.
+Tbilisi is the standout budget destination for digital nomads in 2026. Georgia's capital offers a unique blend of ancient history, excellent food, fast internet and one of the world's most nomad-friendly visa policies â€” most nationalities can stay visa-free for up to 365 days.
 
 **Internet:** Average 80 to 100 Mbps. Fiber is available in most central areas. Co-working spaces like Fabrika and Impact Hub are excellent.
 
@@ -1386,31 +1386,31 @@ Tbilisi is the standout budget destination for digital nomads in 2026. Georgia's
 
 **Why go:** Visa-free 365 days, extremely low cost, unique culture, safety and an increasingly connected global community.
 
-## 2. Bucharest, Romania — ~$1,000/month
+## 2. Bucharest, Romania â€” ~$1,000/month
 
-Bucharest is one of the most underrated cities in Europe. Romania's capital offers some of the fastest internet speeds in the world — averaging 150 to 200 Mbps — combined with EU membership and a low cost of living.
+Bucharest is one of the most underrated cities in Europe. Romania's capital offers some of the fastest internet speeds in the world â€” averaging 150 to 200 Mbps â€” combined with EU membership and a low cost of living.
 
-**Internet:** 150 to 200 Mbps average — among the fastest in the world. Romania consistently ranks in global top 5 for internet speed.
+**Internet:** 150 to 200 Mbps average â€” among the fastest in the world. Romania consistently ranks in global top 5 for internet speed.
 
-**Rent:** A modern one-bedroom apartment in central neighborhoods like Floreasca or Dorobanți costs $600 to $800 USD per month.
+**Rent:** A modern one-bedroom apartment in central neighborhoods like Floreasca or DorobanÈ›i costs $600 to $800 USD per month.
 
 **Food:** Affordable and improving in quality. A meal at a local restaurant costs $5 to $10 USD. The city has an excellent craft beer and specialty coffee scene.
 
 **Community:** A growing digital nomad community, particularly in the Floreasca and Victoriei areas.
 
-## 3. Belgrade, Serbia — ~$900/month
+## 3. Belgrade, Serbia â€” ~$900/month
 
 Belgrade has emerged as one of the most exciting cities in Europe for remote workers. Serbia's capital is lively, affordable, has no income tax on foreign remote work earnings for the first year and offers a growing tech ecosystem.
 
 **Internet:** 80 to 120 Mbps average. Co-working spaces are well-developed.
 
-**Rent:** A furnished one-bedroom in Savamala, Vračar or Novi Beograd costs $500 to $700 USD per month.
+**Rent:** A furnished one-bedroom in Savamala, VraÄar or Novi Beograd costs $500 to $700 USD per month.
 
-**Nightlife:** Belgrade is famous for its nightlife — floating clubs (splavovi) on the Sava and Danube rivers are world-renowned.
+**Nightlife:** Belgrade is famous for its nightlife â€” floating clubs (splavovi) on the Sava and Danube rivers are world-renowned.
 
 **Tax advantage:** Foreign remote workers in Serbia can benefit from a flat 15% income tax rate, significantly lower than most European countries.
 
-## 4. Sofia, Bulgaria — ~$950/month
+## 4. Sofia, Bulgaria â€” ~$950/month
 
 Bulgaria is the EU's most affordable member state. Sofia offers EU membership, Schengen access, low costs and a growing tech sector.
 
@@ -1420,7 +1420,7 @@ Bulgaria is the EU's most affordable member state. Sofia offers EU membership, S
 
 **For whom:** Ideal for EU citizens who want affordable EU living, or non-EU citizens seeking a base for Schengen travel.
 
-## 5. Warsaw, Poland — ~$1,200/month
+## 5. Warsaw, Poland â€” ~$1,200/month
 
 Warsaw is the most developed and modern city on this list. Poland's capital offers excellent infrastructure, EU membership and significantly lower costs than Berlin, Amsterdam or Paris.
 
@@ -1452,54 +1452,54 @@ Warsaw | $1,200 | 125 Mbps | EU/90 days
     'internet-speed-cities-digital-nomads-2026': {
         image: 'photo-1525625293386-3f8f99389edd',
         title: 'Best Cities for Internet Speed and Remote Work in 2026',
-        desc: 'The cities with the fastest internet for remote workers in 2026 — and how much they cost to live in. Data from Ookla Speedtest.',
+        desc: 'The cities with the fastest internet for remote workers in 2026 â€” and how much they cost to live in. Data from Ookla Speedtest.',
         category: 'Nomads', date: 'May 2026', readTime: '8 min',
         keywords: 'best internet speed cities remote work 2026, fastest internet digital nomad cities, internet speed cost of living, remote work internet cities',
         content: `## Best Cities for Internet Speed and Remote Work in 2026
 
-For digital nomads and remote workers, reliable and fast internet is non-negotiable. But fast internet alone is not enough — affordability matters too. Here is the definitive 2026 guide to cities that combine excellent internet speeds with reasonable costs of living.
+For digital nomads and remote workers, reliable and fast internet is non-negotiable. But fast internet alone is not enough â€” affordability matters too. Here is the definitive 2026 guide to cities that combine excellent internet speeds with reasonable costs of living.
 
 ## The Internet Speed vs Cost Equation
 
-Many of the world's fastest internet cities — Singapore, Zurich, Seoul — are also among the most expensive. The real opportunity lies in cities that offer fast internet at an affordable price. This guide ranks cities by their value proposition: internet speed relative to cost of living.
+Many of the world's fastest internet cities â€” Singapore, Zurich, Seoul â€” are also among the most expensive. The real opportunity lies in cities that offer fast internet at an affordable price. This guide ranks cities by their value proposition: internet speed relative to cost of living.
 
 ## Top Cities by Internet Speed and Value
 
-### 1. Bucharest, Romania — 175 Mbps / $1,000/month
+### 1. Bucharest, Romania â€” 175 Mbps / $1,000/month
 
 Bucharest consistently ranks in the global top 5 for internet speed, with average download speeds of 150 to 200 Mbps on fixed broadband. Romania invested heavily in fiber infrastructure in the 2010s, and the results are remarkable.
 
 For remote workers, this means seamless video conferencing, fast file uploads and reliable connectivity at one of the lowest costs in the EU. A dedicated fiber connection costs just $10 to $15 USD per month.
 
-### 2. Ho Chi Minh City, Vietnam — 156 Mbps / $1,260/month
+### 2. Ho Chi Minh City, Vietnam â€” 156 Mbps / $1,260/month
 
-Vietnam has made remarkable strides in internet infrastructure. Ho Chi Minh City now averages 156 Mbps download speed — faster than most Western European cities — at a fraction of the cost.
+Vietnam has made remarkable strides in internet infrastructure. Ho Chi Minh City now averages 156 Mbps download speed â€” faster than most Western European cities â€” at a fraction of the cost.
 
 The city's District 1 and District 3 are popular with nomads, offering excellent co-working spaces, vibrant street food culture and strong internet connectivity.
 
-### 3. Singapore — 310 Mbps / $4,500/month
+### 3. Singapore â€” 310 Mbps / $4,500/month
 
 Singapore tops global internet speed rankings with average speeds of 310 Mbps. The city-state's investment in fiber infrastructure means 99% of homes have access to gigabit internet.
 
-The catch is cost — Singapore is one of the world's most expensive cities. Rent for a one-bedroom apartment averages $2,500 to $3,500 USD per month. Singapore makes sense for those on high salaries who prioritize connectivity and stability.
+The catch is cost â€” Singapore is one of the world's most expensive cities. Rent for a one-bedroom apartment averages $2,500 to $3,500 USD per month. Singapore makes sense for those on high salaries who prioritize connectivity and stability.
 
-### 4. Seoul, South Korea — 280 Mbps / $2,960/month
+### 4. Seoul, South Korea â€” 280 Mbps / $2,960/month
 
 Seoul is one of the world's most connected cities, with 5G coverage throughout the metropolitan area and average broadband speeds of 280 Mbps. The city has a thriving tech culture and excellent co-working infrastructure.
 
-Cost is moderate by Asian standards — a one-bedroom apartment in Gangnam or Itaewon costs $1,500 to $2,000 USD per month.
+Cost is moderate by Asian standards â€” a one-bedroom apartment in Gangnam or Itaewon costs $1,500 to $2,000 USD per month.
 
-### 5. Tbilisi, Georgia — 90 Mbps / $850/month
+### 5. Tbilisi, Georgia â€” 90 Mbps / $850/month
 
-Tbilisi offers exceptional value — 90 Mbps average internet at a monthly cost of just $850 USD. For nomads who do not need multi-gigabit speeds, Tbilisi's connectivity is more than sufficient for video calls, cloud work and file sharing.
+Tbilisi offers exceptional value â€” 90 Mbps average internet at a monthly cost of just $850 USD. For nomads who do not need multi-gigabit speeds, Tbilisi's connectivity is more than sufficient for video calls, cloud work and file sharing.
 
 The city has invested significantly in digital infrastructure since 2020, and co-working spaces like Fabrika offer reliable, fast connections.
 
-### 6. Medellín, Colombia — 70 Mbps / $1,050/month
+### 6. MedellÃ­n, Colombia â€” 70 Mbps / $1,050/month
 
-Medellín's internet infrastructure has improved significantly in recent years. Average speeds of 60 to 80 Mbps are sufficient for most remote work. The city's co-working spaces — particularly in El Poblado — offer reliable 100+ Mbps connections.
+MedellÃ­n's internet infrastructure has improved significantly in recent years. Average speeds of 60 to 80 Mbps are sufficient for most remote work. The city's co-working spaces â€” particularly in El Poblado â€” offer reliable 100+ Mbps connections.
 
-### 7. Bangkok, Thailand — 120 Mbps / $1,100/month
+### 7. Bangkok, Thailand â€” 120 Mbps / $1,100/month
 
 Bangkok combines fast internet with affordability. Average speeds of 100 to 150 Mbps are standard in modern apartments, and fiber connections cost $15 to $25 USD per month. The city's hundreds of co-working spaces offer reliable, fast connectivity.
 
@@ -1524,7 +1524,7 @@ Bucharest | 175 Mbps | $1,000 | Excellent
 Tbilisi | 90 Mbps | $850 | Excellent
 Ho Chi Minh City | 156 Mbps | $1,260 | Very Good
 Bangkok | 120 Mbps | $1,100 | Very Good
-Medellín | 70 Mbps | $1,050 | Good
+MedellÃ­n | 70 Mbps | $1,050 | Good
 Singapore | 310 Mbps | $4,500 | Poor (expensive)
 
 ## FAQ
@@ -1533,7 +1533,7 @@ Singapore | 310 Mbps | $4,500 | Poor (expensive)
 
 **Is 50 Mbps fast enough for remote work?** Yes, 50 Mbps is sufficient for HD video conferencing, cloud work and standard remote work tasks. 100+ Mbps provides a more comfortable experience for intensive tasks.
 
-**Which is the fastest and cheapest city for internet?** Bucharest and Tbilisi offer the best value — fast internet at low monthly costs compared to high-speed but expensive cities like Singapore or Seoul.
+**Which is the fastest and cheapest city for internet?** Bucharest and Tbilisi offer the best value â€” fast internet at low monthly costs compared to high-speed but expensive cities like Singapore or Seoul.
 ---CTA-COMPARE---
 ---CTA-WISE---
 `
@@ -1552,7 +1552,7 @@ When you're researching where to live, work or retire abroad, cost of living dat
 
 Numbeo is the world's largest user-contributed database of cost of living information, covering 10,000+ cities. Its data comes from user submissions, which creates both its strength (massive coverage) and its weakness (data quality varies significantly for smaller cities).
 
-Numbeo's core strength is its granular pricing data — you can see the exact cost of a loaf of bread, a monthly gym membership or a liter of gasoline in most major cities. It also provides a Quality of Life index combining cost, crime, healthcare, pollution and commute time.
+Numbeo's core strength is its granular pricing data â€” you can see the exact cost of a loaf of bread, a monthly gym membership or a liter of gasoline in most major cities. It also provides a Quality of Life index combining cost, crime, healthcare, pollution and commute time.
 
 Limitations: The user interface is dense and requires significant navigation. Data for smaller cities can be outdated or based on very few submissions. The comparison tool requires building comparisons manually.
 
@@ -1631,7 +1631,7 @@ export default async function BlogPost({ params }: Props) {
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem 2rem 2.5rem', maxWidth: '1100px', margin: '0 auto' }}>
                     <nav style={{ marginBottom: '1rem', fontSize: '0.8rem' }}>
                         <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
-                        <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.5rem' }}>→</span>
+                        <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.5rem' }}>â†’</span>
                         <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Blog</Link>
                     </nav>
                     <span style={{ display: 'inline-block', fontSize: '0.65rem', fontWeight: 800, color: 'white', backgroundColor: CATEGORY_COLORS[post.category] || '#64748b', padding: '0.2rem 0.7rem', borderRadius: '2rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
@@ -1654,7 +1654,7 @@ export default async function BlogPost({ params }: Props) {
                             if (line.startsWith('## ')) return <h2 key={i} style={{ fontSize: '1.35rem', fontWeight: 900, color: '#0f172a', margin: '2rem 0 0.75rem', letterSpacing: '-0.02em' }}>{line.slice(3)}</h2>;
                             if (line.startsWith('## ')) return <h2 key={i} style={{ fontSize: '1.35rem', fontWeight: 900, color: '#0f172a', margin: '2rem 0 0.75rem' }}>{line.slice(3)}</h2>;
                             if (line.startsWith('### ')) return <h3 key={i} style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', margin: '1.5rem 0 0.5rem' }}>{line.slice(4)}</h3>;
-                            if (line.startsWith('---CTA-WISE---')) return <a key={i} href='https://wise.prf.hn/click/camref:1110lFqtW' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#9FE870,#52B788)', color:'#1a3a1a', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Exchange currency with Wise — save up to 5% on every transaction</a>;
+                            if (line.startsWith('---CTA-WISE---')) return <a key={i} href='https://wise.prf.hn/click/camref:1110lFqtW' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#9FE870,#52B788)', color:'#1a3a1a', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Exchange currency with Wise â€” save up to 5% on every transaction</a>;
                             if (line.startsWith('---CTA-BOOKING---')) return <a key={i} href='https://www.awin1.com/cread.php?awinmid=18119&awinaffid=2865959' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#003580,#1a56db)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Find hotels for World Cup 2026 on Booking.com</a>;
                             if (line.startsWith('---CTA-RENTALCARS---')) return <a key={i} href='https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#FF6600,#cc4400)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Rent a car for World Cup 2026</a>;
                             if (line.startsWith('---CTA-GYG---')) return <a key={i} href='https://www.getyourguide.com/?partner_id=VVPTRVK' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#FF5533,#cc3300)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Book World Cup tours on GetYourGuide</a>;
@@ -1668,8 +1668,8 @@ export default async function BlogPost({ params }: Props) {
                         <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '0.5rem', fontSize: '0.875rem' }}>Compare cities yourself with real data</p>
                         <h3 style={{ color: 'white', fontSize: '1.25rem', fontWeight: 800, margin: '0 0 1.5rem' }}>Find your perfect city on RoamCost</h3>
                         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <Link href="/compare" style={{ backgroundColor: GREEN, color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>Compare cities →</Link>
-                            <Link href="/rankings/cheapest" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem', border: '1px solid rgba(255,255,255,0.2)' }}>See rankings →</Link>
+                            <Link href="/compare" style={{ backgroundColor: GREEN, color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem' }}>Compare cities â†’</Link>
+                            <Link href="/rankings/cheapest" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.625rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem', border: '1px solid rgba(255,255,255,0.2)' }}>See rankings â†’</Link>
                         </div>
                     </div>
                 </article>
@@ -1703,3 +1703,4 @@ export default async function BlogPost({ params }: Props) {
         </div>
     );
 }
+
