@@ -44,6 +44,19 @@ const CITY_SLUGS: Record<string, string> = {
     'Medellin': 'medellin-colombia', 'Quito': 'quito',
 };
 
+const FIFA_COMPARISONS = [
+    ['new-york', 'mexico-city'],
+    ['miami', 'toronto-canada'],
+    ['dallas', 'guadalajara-mexico'],
+    ['los-angeles', 'vancouver-canada'],
+    ['kansas-city-united-states', 'monterrey-mexico'],
+    ['houston-united-states', 'mexico-city'],
+    ['seattle-united-states', 'vancouver-canada'],
+    ['boston-united-states', 'toronto-canada'],
+    ['san-francisco-united-states', 'los-angeles'],
+    ['philadelphia-united-states', 'new-york'],
+];
+
 const POPULAR_COMPARISONS = [
     ['bangkok', 'lisbon'], ['new-york', 'mexico-city'], ['lisbon', 'barcelona'],
     ['berlin', 'prague'], ['dubai', 'singapore'], ['tokyo', 'seoul'],
@@ -218,6 +231,20 @@ function ComparePageInner() {
                     </button>
                 </div>
 
+                {/* FIFA World Cup 2026 */}
+                <div style={{ marginBottom: '1.5rem' }}>
+                    <p style={{ margin: '0 0 0.5rem', fontSize: '0.7rem', fontWeight: 800, color: '#FFD700', textTransform: 'uppercase', letterSpacing: '0.08em' }}>⚽ FIFA World Cup 2026</p>
+                    <p style={{ margin: '0 0 0.75rem', fontSize: '0.8rem', color: '#64748b' }}>Compare host cities</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
+                        {FIFA_COMPARISONS.map(([a, b]) => (
+                            <button key={a+b} onClick={() => { setCity1(a.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())); setCity2(b.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())); }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0.75rem', background: 'linear-gradient(135deg,rgba(255,215,0,0.08),rgba(82,183,136,0.08))', border: '1px solid rgba(255,215,0,0.3)', borderRadius: '0.5rem', cursor: 'pointer', fontSize: '0.78rem', fontWeight: 600, color: '#0f172a', textAlign: 'left', width: '100%' }}>
+                                <span>{a.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())}</span>
+                                <span style={{ color: '#FFD700', fontWeight: 900 }}>vs</span>
+                                <span>{b.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
                 {/* Popular */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1rem', border: '1px solid #e2e8f0', padding: '1.5rem' }}>
                     <p style={{ margin: '0 0 1rem', fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Popular comparisons</p>
