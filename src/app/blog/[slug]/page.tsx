@@ -824,6 +824,8 @@ The FIFA World Cup 2026 spans three countries — the United States, Mexico and 
 
 ### US Dollar (USD)
 Used in 11 host cities. Exchange with Wise for the best rates.
+---CTA-WISE---
+---CTA-WISE---
 
 ### Mexican Peso (MXN)
 1 USD = approximately 17-18 MXN. Mexico offers extraordinary value. Convert USD to MXN
@@ -859,6 +861,9 @@ Better than airport booths. Withdraw larger amounts to minimize per-transaction 
 Cards like Charles Schwab or Chase Sapphire offer competitive rates across all three World Cup countries.
 
 ### 4. Airport Exchange — Avoid
+---CTA-BOOKING---
+---CTA-WISE---
+---CTA-BOOKING---
 Charge 5-15% above market rate. Only use in emergencies.
 
 ## Budget by Currency
@@ -916,6 +921,8 @@ Boston — Stay in Cambridge or Somerville for savings.
 Kansas City — Best overall US value. Hotels $80-130/night.
 
 Philadelphia — Stay in South Jersey 30-40% cheaper.
+---CTA-BOOKING---
+---CTA-BOOKING---
 
 ### Mexico
 **Mexico City** — Extraordinary value. Hotels $60-90/night. Food $5-12/meal. Convert currency with Wise before traveling.
@@ -928,6 +935,8 @@ Philadelphia — Stay in South Jersey 30-40% cheaper.
 **Toronto** — Stay in Mississauga $130-200/night. Convert to CAD with Wise
 
 **Vancouver** — Stay in Burnaby or Surrey $120-180/night.
+---CTA-WISE---
+---CTA-WISE---
 
 ## Budget Tips
 
@@ -935,6 +944,10 @@ Philadelphia — Stay in South Jersey 30-40% cheaper.
 2. Book rental cars NOW through RentalCars — prices triple closer to the event
 3. Mexican cities cost 60% less than US cities
 4. Book tours with GetYourGuide in advance
+---CTA-RENTALCARS---
+---CTA-GYG---
+---CTA-RENTALCARS---
+---CTA-GYG---
 
 ## Budget by City (7 nights)
 
@@ -963,6 +976,8 @@ Hotels in Roma Norte: $60-90/night. Food: $5-12/meal. Metro: $0.25/ride.
 7-night budget: $800-1,200 USD
 
 Budget neighborhoods: Coyoacán, Del Valle, Tlalpan
+---CTA-BOOKING---
+---CTA-WISE---
 
 Hotels in Mexico City | Convert USD to MXN with Wise | City tours
 
@@ -988,6 +1003,8 @@ Hotels near Arrowhead: $90-140/night. Excellent BBQ food.
 Budget neighborhoods: Independence, Lee's Summit, Olathe
 
 Rent a car in Kansas City
+---CTA-RENTALCARS---
+---CTA-RENTALCARS---
 
 ### 5. Dallas — Good Texas Value
 Hotels in Irving/Arlington: $90-140/night.
@@ -1009,6 +1026,8 @@ Budget neighborhoods: Stafford, Pearland, Missouri City
 $1,500-2,300 USD for 7 nights. Stay in suburbs for savings.
 
 Convert to CAD with Wise for Canadian cities.
+---CTA-WISE---
+---CTA-COMPARE---
 
 ## Tier 4: Expensive
 
@@ -1019,7 +1038,10 @@ $200-400/night. Budget $2,000-3,500 for 7 nights.
 
 Build your itinerary around Mexican cities — attend matches in Mexico City or Guadalajara where your entire week costs less than one night in New York.
 
-Use Wise for all currency conversions and RentalCars for US cities where driving is essential.`
+Use Wise for all currency conversions and RentalCars for US cities where driving is essential.
+---CTA-WISE---
+---CTA-BOOKING---
+---CTA-COMPARE---`
     },
     'world-cup-2026-mexico-city-guide': {
         image: 'photo-1518105779142-d975f22f1b0a',
@@ -1034,6 +1056,7 @@ Mexico City hosts World Cup 2026 at the legendary Estadio Azteca — the only st
 ## Getting There
 
 Fly into Benito Juárez International Airport (MEX). Uber to city center: $12-20 USD.
+---CTA-WISE---
 
 **Currency tip:** Use Wise to convert to Mexican pesos at the real rate — save 3-6% vs airport exchange booths.
 
