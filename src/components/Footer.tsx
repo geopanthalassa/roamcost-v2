@@ -38,6 +38,8 @@ export default function Footer() {
                         <li><Link href="/contact" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Contact</Link></li>
                         <li><a href="mailto:roamcost@gmail.com" style={{ color: 'var(--muted)', fontSize: '0.9rem', textDecoration: 'none' }}>roamcost@gmail.com</a></li>
                         <li><Link href="/privacy" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Privacy Policy</Link></li>
+                        <li><Link href="/terms" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Terms of Service</Link></li>
+                        <li><Link href="/cookies" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Cookie Policy</Link></li>
                     </ul>
                 </div>
             </div>

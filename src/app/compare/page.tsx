@@ -17,7 +17,7 @@ const CITY_SLUGS: Record<string, string> = {
     'Berlin': 'berlin', 'Prague': 'prague', 'Tokyo': 'tokyo', 'Seoul': 'seoul',
     'Dubai': 'dubai', 'Singapore': 'singapore', 'New York': 'new-york',
     'Mexico City': 'mexico-city', 'Buenos Aires': 'buenos-aires', 'Lima': 'lima',
-    'MedellÃ­n': 'medellin-colombia', 'Amsterdam': 'amsterdam', 'Vienna': 'vienna',
+    'Medellín': 'medellin-colombia', 'Amsterdam': 'amsterdam', 'Vienna': 'vienna',
     'Madrid': 'madrid', 'Sydney': 'sydney', 'Melbourne': 'melbourne',
     'Toronto': 'toronto', 'Vancouver': 'vancouver', 'Miami': 'miami',
     'Los Angeles': 'los-angeles', 'Paris': 'paris', 'Rome': 'rome',
@@ -33,12 +33,12 @@ const CITY_SLUGS: Record<string, string> = {
     'Nairobi': 'nairobi', 'Cape Town': 'cape-town', 'Casablanca': 'casablanca',
     'Chicago': 'chicago', 'San Francisco': 'san-francisco', 'Boston': 'boston',
     'Seattle': 'seattle', 'Denver': 'denver', 'Atlanta': 'atlanta', 'Dallas': 'dallas',
-    'Houston': 'houston', 'Montreal': 'montreal', 'BogotÃ¡': 'bogota',
+    'Houston': 'houston', 'Montreal': 'montreal', 'Bogotá': 'bogota',
     'SÃ£o Paulo': 'sao-paulo', 'Rio de Janeiro': 'rio-de-janeiro', 'Santiago': 'santiago',
     'Montevideo': 'montevideo', 'Delhi': 'delhi-india', 'Mumbai': 'mumbai-india',
     'Bangalore': 'bangalore-india', 'Kyiv': 'kyiv', 'Moscow': 'moscow', 'Sofia': 'sofia',
     'Belgrade': 'belgrade', 'Edinburgh': 'edinburgh', 'Porto': 'porto',
-    'Seville': 'seville', 'Valencia': 'valencia', 'KrakÃ³w': 'krakow',
+    'Seville': 'seville', 'Valencia': 'valencia', 'Kraków': 'krakow',
     'Tallinn': 'tallinn', 'Riga': 'riga', 'Vilnius': 'vilnius', 'Auckland': 'auckland',
     'Amman': 'amman', 'Panama City': 'panama-city',
     'Medellin': 'medellin-colombia', 'Quito': 'quito',
@@ -227,7 +227,7 @@ function ComparePageInner() {
                     {/* Compare button */}
                     <button onClick={handleCompare} disabled={validCount < 2}
                         style={{ width: '100%', marginTop: '1.5rem', padding: '1rem', borderRadius: '0.875rem', backgroundColor: validCount >= 2 ? GREEN : '#e2e8f0', color: validCount >= 2 ? 'white' : '#94a3b8', fontSize: '1rem', fontWeight: 800, border: 'none', cursor: validCount >= 2 ? 'pointer' : 'default', transition: 'all 0.2s', letterSpacing: '-0.01em' }}>
-                        {validCount >= 2 ? `Compare ${validCount} ${validCount === 1 ? 'city' : 'cities'} â†’` : 'Select at least 2 cities'}
+                        {validCount >= 2 ? `Compare ${validCount} ${validCount === 1 ? 'city' : 'cities'} →` : 'Select at least 2 cities'}
                     </button>
                 </div>
 
