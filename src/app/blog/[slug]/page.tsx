@@ -1638,8 +1638,11 @@ export default async function BlogPost({ params }: Props) {
                         {post.category}
                     </span>
                     <h1 style={{ fontSize: '2rem', fontWeight: 900, color: 'white', margin: '0 0 0.75rem', letterSpacing: '-0.03em', lineHeight: 1.2, maxWidth: '700px' }}>{post.title}</h1>
-                    <div style={{ display: 'flex', gap: '1rem' }}>
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.8rem', fontWeight: 700 }}>By RoamCost Team</span>
+                        <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem' }}>•</span>
                         <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem' }}>{post.date}</span>
+                        <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem' }}>•</span>
                         <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem' }}>{post.readTime} read</span>
                     </div>
                 </div>
