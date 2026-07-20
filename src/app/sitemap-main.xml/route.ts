@@ -24,11 +24,12 @@ export async function GET() {
             .select('country')
             .gt('cost_index', 0)
             .range(from, from + pageSize - 1);
-        if (error || !data || data.length === 0) break;
-        for (const row of data) {
+        const rows = (data || []) as unknown as { country: string }[];
+        if (error || rows.length === 0) break;
+        for (const row of rows) {
             if (row.country) allCountries.add(row.country);
         }
-        if (data.length < pageSize) break;
+        if (rows.length < pageSize) break;
         from += pageSize;
     }
 

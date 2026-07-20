@@ -12,9 +12,10 @@ export async function GET() {
             .gt('cost_index', 0)
             .order('slug', { ascending: true })
             .range(from, from + pageSize - 1);
-        if (error || !data || data.length === 0) break;
-        allCities.push(...data);
-        if (data.length < pageSize) break;
+        const rows = (data || []) as unknown as { slug: string; city: string }[];
+        if (error || rows.length === 0) break;
+        allCities.push(...rows);
+        if (rows.length < pageSize) break;
         from += pageSize;
     }
 
