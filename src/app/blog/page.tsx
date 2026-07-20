@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://www.roamcost.com/blog' },
 };
 
-const POSTS = [
+export const POSTS = [
     { slug: 'best-cities-for-science-lovers', title: 'Best Cities for Science Lovers', desc: 'Where research, universities and labs meet affordable living -- ranked using real scientific output data.', category: 'Science', date: 'July 2026', readTime: '7 min' },
     { slug: 'best-cities-for-art-lovers', title: 'Best Cities for Art Lovers', desc: 'World-class museums and galleries, ranked by real 2024-2025 visitor numbers -- and what it costs to live nearby.', category: 'Art', date: 'July 2026', readTime: '7 min' },
     { slug: 'best-cities-for-history-lovers', title: 'Best Cities for History Buffs', desc: 'Ancient capitals, UNESCO sites and living history -- and what it actually costs to live there.', category: 'History', date: 'July 2026', readTime: '7 min' },

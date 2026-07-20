@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { POSTS } from '../blog/page';
 
 const BASE = 'https://www.roamcost.com';
 
@@ -47,7 +48,10 @@ function generateSiteMap(cities: any[]) {
         ];
     });
 
-    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...cityUrls];
+    const blogUrls = POSTS.map(post => ({
+        loc: `${BASE}/blog/${post.slug}`, priority: '0.6', changefreq: 'monthly'
+    }));
+    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...cityUrls, ...blogUrls];
 
     return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
