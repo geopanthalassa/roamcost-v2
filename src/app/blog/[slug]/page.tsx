@@ -17,18 +17,25 @@ const POSTS: Record<string, {
         content: `## Where Science Actually Happens
 Not every city with a famous university is a real science hub. The Nature Index tracks the affiliations of high-quality scientific articles across the world's top research journals, giving a real, measurable picture of where science gets done -- not just where it's talked about.
 ## 1. Beijing, China
+[-> See real cost of living data for Beijing](/city/beijing)
 Beijing is the city with the largest scientific output in the world, according to the Nature Index. Peking University and Tsinghua University anchor a research ecosystem that spans physics, materials science and AI. Cost of living remains moderate by global capital standards compared to Western science hubs.
 ## 2. New York, United States
+[-> See real cost of living data for New York](/city/new-york)
 The New York metro area ranks second globally, powered by Columbia, Yale and Princeton feeding into the city's research output. It's also one of the most expensive cities on this list -- a useful reminder that scientific prestige and affordability rarely move together.
 ## 3. Boston-Cambridge, United States
+[-> See real cost of living data for Boston](/city/boston-united-states)
 Home to MIT and Harvard, Boston-Cambridge is the historic center of biotech and pharmaceutical research in the US. Rent here is among the highest in the country, which is why many researchers commute from more affordable satellite towns.
 ## 4. San Francisco-San Jose, United States
+[-> See real cost of living data for San Francisco](/city/san-francisco-united-states)
 Stanford and UC Berkeley anchor this region, alongside major corporate research labs like Genentech. The Bay Area combines elite research output with some of the highest housing costs on earth.
 ## 5. Munich, Germany
+[-> See real cost of living data for Munich](/city/munich)
 Munich hosts the Max Planck Society, one of the most awarded research institutions in the world, with numerous Nobel laureates among its ranks. Unlike Boston or San Francisco, Munich offers strong research infrastructure at a noticeably lower cost of living.
 ## 6. Tokyo, Japan
+[-> See real cost of living data for Tokyo](/city/tokyo)
 The University of Tokyo and the RIKEN Institute make Tokyo a global leader in robotics, materials science and nanotechnology, with a cost of living that, while high, is more manageable than California's science hubs.
 ## 7. Zurich, Switzerland
+[-> See real cost of living data for Zurich](/city/zurich-switzerland)
 ETH Zurich consistently ranks among the world's top technical universities. Zurich offers an outstanding quality of life, though it comes with correspondingly high costs -- among the priciest in Europe.
 ## The Real Question: Where Can You Actually Afford to Live Near the Science?
 Scientific prestige and cost of living rarely align. Munich and Tokyo offer a middle ground -- serious research infrastructure without Bay Area or Boston-level rent. Use RoamCost's city comparison tool to check real rent, food and transport costs before you commit to living near any of these research hubs.`
@@ -42,6 +49,7 @@ Scientific prestige and cost of living rarely align. Munich and Tokyo offer a mi
         content: `## Ranked by Real Visitor Numbers, Not Vibes
 Instead of a subjective list, we used verified 2024-2025 attendance figures from major museums (The Art Newspaper, Artlyst) to rank the cities that put the most world-class art in front of the most people.
 ## 1. Paris, France
+[-> See real cost of living data for Paris](/city/paris)
 The Louvre alone drew close to 9 million visitors, retaining its position as the most visited museum on Earth despite a difficult year involving a high-profile theft. Add the Musee d'Orsay (3.8 million) and the Musee de l'Orangerie, and Paris remains unmatched in sheer concentration of world-class art.
 ## 2. Rome / Vatican City
 The Vatican Museums welcomed 6.9 million visitors, the second-highest total in the world, anchored by the Sistine Chapel and one of the largest classical art collections anywhere.
@@ -50,10 +58,13 @@ The Uffizi Gallery, birthplace of the Italian Renaissance, drew 5.3 million visi
 ## 4. Madrid, Spain
 The Prado broke 3.5 million visitors for the first time, with director Miguel Falomir openly cautioning against overtourism -- a sign of just how in-demand Spanish and Flemish masters remain. The nearby Reina Sofia adds Picasso's Guernica to the mix.
 ## 5. London, United Kingdom
+[-> See real cost of living data for London](/city/london)
 The British Museum, Tate Modern and the National Gallery all rank among the world's most visited art institutions, giving London one of the highest concentrations of major collections per square kilometer.
 ## 6. New York, United States
+[-> See real cost of living data for New York](/city/new-york)
 The Met alone drew roughly 5.7 million visitors, and MoMA adds one of the world's premier modern art collections a short walk away.
 ## 7. Barcelona, Spain
+[-> See real cost of living data for Barcelona](/city/barcelona)
 Barcelona earns its place differently -- not through a single museum, but through Gaudi's living architecture. The Sagrada Familia and Park Guell are UNESCO World Heritage Sites that function as art you walk through, not just look at.
 ## Living Near the Art vs Visiting It
 Paris and London are extraordinary to visit but expensive to live in long-term. Barcelona and Madrid offer a genuine middle ground -- serious art access without Paris-level rent. Compare real living costs for each of these cities on RoamCost before deciding where to settle.`
@@ -67,14 +78,17 @@ Paris and London are extraordinary to visit but expensive to live in long-term. 
         content: `## History You Can Live Inside, Not Just Visit
 These cities aren't just old -- they hold verified UNESCO World Heritage sites and major archaeological discoveries that keep active research going to this day.
 ## 1. Xi'an, China
+[-> See real cost of living data for Xi'an](/city/xi-an-china)
 Xi'an is one of the Four Great Ancient Capitals of the world alongside Rome, Athens and Cairo, having served as capital for 13 dynasties. In 1974, farmers digging a well uncovered the Terracotta Army -- over 8,000 life-size clay soldiers buried for 2,200 years to guard the tomb of Qin Shi Huang, China's first emperor. Each figure has individually sculpted facial features. Xi'an's ancient city wall, dating to the 1300s, remains the largest and best-preserved in China.
 ## 2. Rome and Naples, Italy
+[-> See real cost of living data for Naples](/city/naples)
 Italy holds 59 UNESCO World Heritage Sites, more than any other country on Earth, including the historic center of Rome and the ruins of Pompeii, easily reached from Naples. Pompeii was buried -- and preserved -- by the eruption of Mount Vesuvius in 79 CE, offering an almost unaltered window into daily Roman life.
 ## 3. Cairo / Giza, Egypt
 The Pyramids of Giza are the only one of the Seven Wonders of the Ancient World still standing. Cairo itself has been a center of learning and trade for over a thousand years, home to one of the oldest continuously operating universities on Earth.
 ## 4. Prague, Czech Republic
 Prague's medieval old town survived World War II largely intact, unlike most major European capitals, giving it one of the most complete surviving medieval cores in Europe -- best explored on foot, not from a bus window.
 ## 5. Beijing, China
+[-> See real cost of living data for Beijing](/city/beijing)
 The Forbidden City spans 720,000 square meters and served as the imperial palace for the Ming and Qing dynasties. Nearby, sections of the Great Wall remain accessible as day trips.
 ## What It Actually Costs to Live Surrounded by History
 Xi'an and Cairo offer some of the lowest costs of living on this list relative to their historical weight, while Rome and Prague sit firmly in mid-range European territory. Check RoamCost's city profiles for real rent, food and transport numbers before planning a long-term move to any of these historic capitals.`
@@ -1734,7 +1748,8 @@ export default async function BlogPost({ params }: Props) {
                             if (line.startsWith('---CTA-RENTALCARS---')) return <a key={i} href='https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#FF6600,#cc4400)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Rent a car for World Cup 2026</a>;
                             if (line.startsWith('---CTA-GYG---')) return <a key={i} href='https://www.getyourguide.com/?partner_id=VVPTRVK' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#FF5533,#cc3300)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Book World Cup tours on GetYourGuide</a>;
                             if (line.startsWith('---CTA-COMPARE---')) return <a key={i} href='/compare' style={{ display:'block', background:'linear-gradient(135deg,#52B788,#2d8a5e)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Compare cost of living between World Cup cities</a>;
-                            const boldLine = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+                            let boldLine = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+                              boldLine = boldLine.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:#52B788;font-weight:700;text-decoration:underline;">$1</a>');
                             if (boldLine !== line) return <p key={i} style={{ margin: '0 0 0.875rem', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: boldLine }} />;
                             return <p key={i} style={{ margin: '0 0 0.875rem', lineHeight: 1.8 }}>{line}</p>;
                         })}
