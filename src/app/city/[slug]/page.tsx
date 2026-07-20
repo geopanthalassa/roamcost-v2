@@ -294,16 +294,8 @@ export default async function CityPage({ params }: CityPageProps) {
                                 label: `Compare Hotels`, sub: 'Trivago', color: '#e83e3e', bg: '#fff1f1',
                                 href: `https://www.awin1.com/cread.php?awinmid=105929&awinaffid=2865959&ued=${encodeURIComponent('https://www.trivago.com/en-US/srl/hotels?search=200-' + encodeURIComponent(c.city))}`
                             },
-                            {
-                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8612c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
-                                label: `Flights to ${c.city}`, sub: 'Google Flights', color: '#e8612c', bg: '#fff7ed',
-                                href: `https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI1LTAxLTAxagcIARIDJEpGcgcIARIDJkpG`
-                            },
-                            {
-                                svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff385c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>,
-                                label: 'Long-term Stays', sub: 'Airbnb', color: '#ff385c', bg: '#fff1f2',
-                                href: `https://www.airbnb.com/s/${encodeURIComponent(c.city)}/homes`
-                            },
+                            
+                            
                             {
                                 svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00aa6c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
                                 label: `Things to do`, sub: 'Tripadvisor', color: '#00aa6c', bg: '#F0FAF4',
