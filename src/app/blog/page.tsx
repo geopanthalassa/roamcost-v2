@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 const POSTS = [
+    { slug: 'best-cities-for-science-lovers', title: 'Best Cities for Science Lovers', desc: 'Where research, universities and labs meet affordable living -- ranked using real scientific output data.', category: 'Science', date: 'July 2026', readTime: '7 min' },
+    { slug: 'best-cities-for-art-lovers', title: 'Best Cities for Art Lovers', desc: 'World-class museums and galleries, ranked by real 2024-2025 visitor numbers -- and what it costs to live nearby.', category: 'Art', date: 'July 2026', readTime: '7 min' },
+    { slug: 'best-cities-for-history-lovers', title: 'Best Cities for History Buffs', desc: 'Ancient capitals, UNESCO sites and living history -- and what it actually costs to live there.', category: 'History', date: 'July 2026', readTime: '7 min' },
 
     { slug: 'world-cup-2026-currency-guide', title: 'World Cup 2026 Currency Guide', desc: 'How to exchange USD, MXN and CAD for World Cup 2026. Best rates and money-saving tips for every host country.', category: 'World Cup 2026', date: 'June 2026', readTime: '10 min' },
     { slug: 'world-cup-2026-travel-guide', title: 'FIFA World Cup 2026 Travel Guide', desc: 'Complete travel cost guide for all 16 host cities in USA, Mexico and Canada. Cheapest cities and budget tips.', category: 'World Cup 2026', date: 'June 2026', readTime: '12 min' },

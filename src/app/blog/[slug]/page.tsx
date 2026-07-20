@@ -8,6 +8,78 @@ const POSTS: Record<string, {
     title: string; desc: string; category: string; date: string; readTime: string;
     keywords: string; image: string; content: string;
 }> = {
+    'best-cities-for-science-lovers': {
+        image: '/cities/munich.jpg',
+        title: 'Best Cities for Science Lovers',
+        desc: 'Where research, universities and labs meet affordable living -- ranked using real scientific output data.',
+        category: 'Science', date: 'July 2026', readTime: '7 min',
+        keywords: 'best cities for science, science cities world, research hubs cities, university cities cost of living',
+        content: `## Where Science Actually Happens
+Not every city with a famous university is a real science hub. The Nature Index tracks the affiliations of high-quality scientific articles across the world's top research journals, giving a real, measurable picture of where science gets done -- not just where it's talked about.
+## 1. Beijing, China
+Beijing is the city with the largest scientific output in the world, according to the Nature Index. Peking University and Tsinghua University anchor a research ecosystem that spans physics, materials science and AI. Cost of living remains moderate by global capital standards compared to Western science hubs.
+## 2. New York, United States
+The New York metro area ranks second globally, powered by Columbia, Yale and Princeton feeding into the city's research output. It's also one of the most expensive cities on this list -- a useful reminder that scientific prestige and affordability rarely move together.
+## 3. Boston-Cambridge, United States
+Home to MIT and Harvard, Boston-Cambridge is the historic center of biotech and pharmaceutical research in the US. Rent here is among the highest in the country, which is why many researchers commute from more affordable satellite towns.
+## 4. San Francisco-San Jose, United States
+Stanford and UC Berkeley anchor this region, alongside major corporate research labs like Genentech. The Bay Area combines elite research output with some of the highest housing costs on earth.
+## 5. Munich, Germany
+Munich hosts the Max Planck Society, one of the most awarded research institutions in the world, with numerous Nobel laureates among its ranks. Unlike Boston or San Francisco, Munich offers strong research infrastructure at a noticeably lower cost of living.
+## 6. Tokyo, Japan
+The University of Tokyo and the RIKEN Institute make Tokyo a global leader in robotics, materials science and nanotechnology, with a cost of living that, while high, is more manageable than California's science hubs.
+## 7. Zurich, Switzerland
+ETH Zurich consistently ranks among the world's top technical universities. Zurich offers an outstanding quality of life, though it comes with correspondingly high costs -- among the priciest in Europe.
+## The Real Question: Where Can You Actually Afford to Live Near the Science?
+Scientific prestige and cost of living rarely align. Munich and Tokyo offer a middle ground -- serious research infrastructure without Bay Area or Boston-level rent. Use RoamCost's city comparison tool to check real rent, food and transport costs before you commit to living near any of these research hubs.`
+    },
+    'best-cities-for-art-lovers': {
+        image: '/cities/paris.jpg',
+        title: 'Best Cities for Art Lovers',
+        desc: 'World-class museums and galleries, ranked by real 2024-2025 visitor numbers -- and what it costs to live nearby.',
+        category: 'Art', date: 'July 2026', readTime: '7 min',
+        keywords: 'best cities for art, art cities world, museum cities, cities with best museums cost of living',
+        content: `## Ranked by Real Visitor Numbers, Not Vibes
+Instead of a subjective list, we used verified 2024-2025 attendance figures from major museums (The Art Newspaper, Artlyst) to rank the cities that put the most world-class art in front of the most people.
+## 1. Paris, France
+The Louvre alone drew close to 9 million visitors, retaining its position as the most visited museum on Earth despite a difficult year involving a high-profile theft. Add the Musee d'Orsay (3.8 million) and the Musee de l'Orangerie, and Paris remains unmatched in sheer concentration of world-class art.
+## 2. Rome / Vatican City
+The Vatican Museums welcomed 6.9 million visitors, the second-highest total in the world, anchored by the Sistine Chapel and one of the largest classical art collections anywhere.
+## 3. Florence, Italy
+The Uffizi Gallery, birthplace of the Italian Renaissance, drew 5.3 million visitors across its three interconnected sites in 2024 -- home to Botticelli, Michelangelo and the roots of Western painting.
+## 4. Madrid, Spain
+The Prado broke 3.5 million visitors for the first time, with director Miguel Falomir openly cautioning against overtourism -- a sign of just how in-demand Spanish and Flemish masters remain. The nearby Reina Sofia adds Picasso's Guernica to the mix.
+## 5. London, United Kingdom
+The British Museum, Tate Modern and the National Gallery all rank among the world's most visited art institutions, giving London one of the highest concentrations of major collections per square kilometer.
+## 6. New York, United States
+The Met alone drew roughly 5.7 million visitors, and MoMA adds one of the world's premier modern art collections a short walk away.
+## 7. Barcelona, Spain
+Barcelona earns its place differently -- not through a single museum, but through Gaudi's living architecture. The Sagrada Familia and Park Guell are UNESCO World Heritage Sites that function as art you walk through, not just look at.
+## Living Near the Art vs Visiting It
+Paris and London are extraordinary to visit but expensive to live in long-term. Barcelona and Madrid offer a genuine middle ground -- serious art access without Paris-level rent. Compare real living costs for each of these cities on RoamCost before deciding where to settle.`
+    },
+    'best-cities-for-history-lovers': {
+        image: '/cities/xi-an-china.jpg',
+        title: 'Best Cities for History Buffs',
+        desc: 'Ancient capitals, UNESCO sites and living history -- and what it actually costs to live there.',
+        category: 'History', date: 'July 2026', readTime: '7 min',
+        keywords: 'best cities for history, historic cities world, UNESCO world heritage cities, ancient cities cost of living',
+        content: `## History You Can Live Inside, Not Just Visit
+These cities aren't just old -- they hold verified UNESCO World Heritage sites and major archaeological discoveries that keep active research going to this day.
+## 1. Xi'an, China
+Xi'an is one of the Four Great Ancient Capitals of the world alongside Rome, Athens and Cairo, having served as capital for 13 dynasties. In 1974, farmers digging a well uncovered the Terracotta Army -- over 8,000 life-size clay soldiers buried for 2,200 years to guard the tomb of Qin Shi Huang, China's first emperor. Each figure has individually sculpted facial features. Xi'an's ancient city wall, dating to the 1300s, remains the largest and best-preserved in China.
+## 2. Rome and Naples, Italy
+Italy holds 59 UNESCO World Heritage Sites, more than any other country on Earth, including the historic center of Rome and the ruins of Pompeii, easily reached from Naples. Pompeii was buried -- and preserved -- by the eruption of Mount Vesuvius in 79 CE, offering an almost unaltered window into daily Roman life.
+## 3. Cairo / Giza, Egypt
+The Pyramids of Giza are the only one of the Seven Wonders of the Ancient World still standing. Cairo itself has been a center of learning and trade for over a thousand years, home to one of the oldest continuously operating universities on Earth.
+## 4. Prague, Czech Republic
+Prague's medieval old town survived World War II largely intact, unlike most major European capitals, giving it one of the most complete surviving medieval cores in Europe -- best explored on foot, not from a bus window.
+## 5. Beijing, China
+The Forbidden City spans 720,000 square meters and served as the imperial palace for the Ming and Qing dynasties. Nearby, sections of the Great Wall remain accessible as day trips.
+## What It Actually Costs to Live Surrounded by History
+Xi'an and Cairo offer some of the lowest costs of living on this list relative to their historical weight, while Rome and Prague sit firmly in mid-range European territory. Check RoamCost's city profiles for real rent, food and transport numbers before planning a long-term move to any of these historic capitals.`
+    },
+
     'cheapest-cities-europe-2026': {
         image: 'photo-1513635269975-59663e0ac1ad',
         title: 'Cheapest Cities to Live in Europe in 2026',
