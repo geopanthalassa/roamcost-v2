@@ -37,12 +37,19 @@ function generateSiteMap(cities: any[]) {
         loc: `${BASE}/convert/${pair}`, priority: '0.8', changefreq: 'daily'
     }));
 
-    const cityUrls = cities.flatMap(({ slug, city, country }) => {
+    const cityUrls = cities.flatMap(({ slug, city }) => {
         const citySlug = (city || '').toLowerCase().replace(/ /g, '-');
-        const regionSlug = (country || '').toLowerCase().replace(/ /g, '-');
         return [
             { loc: `${BASE}/city/${slug}`, priority: '0.7', changefreq: 'weekly' },
             { loc: `${BASE}/cost-of-living-in-${citySlug}`, priority: '0.6', changefreq: 'monthly' },
+        ];
+    });
+    const seenRegions = new Set();
+    const regionUrls = cities.flatMap(({ country }) => {
+        const regionSlug = (country || '').toLowerCase().replace(/ /g, '-');
+        if (!regionSlug || seenRegions.has(regionSlug)) return [];
+        seenRegions.add(regionSlug);
+        return [
             { loc: `${BASE}/best-cities-in-${regionSlug}`, priority: '0.5', changefreq: 'monthly' },
             { loc: `${BASE}/cheapest-cities-in-${regionSlug}`, priority: '0.5', changefreq: 'monthly' },
         ];
@@ -51,7 +58,7 @@ function generateSiteMap(cities: any[]) {
     const blogUrls = POSTS.map(post => ({
         loc: `${BASE}/blog/${post.slug}`, priority: '0.6', changefreq: 'monthly'
     }));
-    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...cityUrls, ...blogUrls];
+    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...cityUrls, ...regionUrls, ...blogUrls];
 
     return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
