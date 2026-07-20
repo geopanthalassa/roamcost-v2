@@ -13,7 +13,11 @@ export async function GET() {
             .order('slug', { ascending: true })
             .range(from, from + pageSize - 1);
         const rows = (data || []) as unknown as { slug: string; city: string }[];
-        if (error || rows.length === 0) break;
+        if (error) {
+            console.error('Sitemap fetch error at offset', from, ':', error.message);
+            break;
+        }
+        if (rows.length === 0) break;
         allCities.push(...rows);
         if (rows.length < pageSize) break;
         from += pageSize;
