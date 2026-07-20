@@ -1,6 +1,8 @@
 import { supabase } from '@/lib/supabase';
 import { POSTS } from '../blog/page';
 const BASE = 'https://www.roamcost.com';
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 const POPULAR_PAIRS = [
     'paris-vs-london', 'tokyo-vs-seoul', 'barcelona-vs-lisbon',
     'new-york-vs-london', 'bangkok-vs-singapore', 'berlin-vs-amsterdam',

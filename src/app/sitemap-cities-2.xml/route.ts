@@ -1,5 +1,7 @@
 import { supabase } from '@/lib/supabase';
 const BASE = 'https://www.roamcost.com';
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 export async function GET() {
     const allCities: { slug: string; city: string }[] = [];
