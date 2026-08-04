@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: ThingsToDoProps) {
             url: `https://www.roamcost.com/city/${slug}/things-to-do`,
         },
         alternates: { canonical: `https://www.roamcost.com/city/${slug}/things-to-do` },
+          robots: { index: false, follow: true },
     };
 }
 
