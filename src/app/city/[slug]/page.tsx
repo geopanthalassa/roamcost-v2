@@ -13,11 +13,14 @@ interface CityPageProps { params: Promise<{ slug: string }>; }
 
 export async function generateMetadata({ params }: CityPageProps) {
     const { slug } = await params;
-    const { data } = await supabase.from('cities_master').select('city, country, cost_index, rent_usd, safety').eq('slug', slug).order('population', { ascending: false }).limit(1).maybeSingle();
+    const { data } = await supabase.from('cities_master').select('city, country, cost_index, rent_usd, rent_index, safety').eq('slug', slug).order('population', { ascending: false }).limit(1).maybeSingle();
     if (!data) return { title: 'City Not Found | RoamCost' };
     const d = data as { city: string; country: string; cost_index: number; rent_index: number; safety: number };
     const title = `Cost of Living in ${d.city}, ${d.country} 2026 | RoamCost`;
-    const description = `Move to ${d.city}? Compare rent ($${Math.round((d as any).rent_usd ?? d.rent_index ?? 0)}/mo), food, safety (${d.safety}/10) and quality of life. Real data for digital nomads, expats and travelers.`;
+    const rentValue = Math.round((d as any).rent_usd ?? d.rent_index ?? 0);
+      const rentClause = rentValue > 0 ? `rent (${rentValue}/mo), ` : '';
+      const safetyClause = (d.safety ?? 0) > 0 ? `safety (${d.safety}/10) and ` : '';
+      const description = `Move to ${d.city}? Compare ${rentClause}food, ${safetyClause}quality of life. Real data for digital nomads, expats and travelers.`;
     return {
         title,
         description,
