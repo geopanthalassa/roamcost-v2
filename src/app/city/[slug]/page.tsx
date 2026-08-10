@@ -221,7 +221,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                             <div key={m.label} style={{ padding: '1rem', backgroundColor: good ? '#F0FAF4' : '#fafafa', border: `1px solid ${good ? '#D8F3DC' : '#e2e8f0'}`, borderRadius: '0.75rem', textAlign: 'center' }}>
                                                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.3rem', color: iconColor }}>{m.svg}</div>
                                                 <div style={{ fontSize: '1.25rem', fontWeight: 900, color: good ? '#40916C' : '#94a3b8' }}>
-                                                    {m.value != null ? m.value : '"”'}{m.unit ? ` ${m.unit}` : ''}
+                                                    {m.value != null ? m.value : '--'}{m.unit ? ` ${m.unit}` : ''}
                                                 </div>
                                                 <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{m.label}</div>
                                             </div>
