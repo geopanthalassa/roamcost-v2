@@ -12,6 +12,7 @@ interface Place {
     rating_count: number | null;
     address: string | null;
     maps_url: string | null;
+    photo_name: string | null;
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -90,7 +91,12 @@ export default async function PlacesPage({ params }: Props) {
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
                                 {items.map(place => (
                                     <a key={place.id} href={place.maps_url || '#'} target="_blank" rel="noopener noreferrer"
-                                        style={{ display: 'block', backgroundColor: 'white', borderRadius: '0.875rem', padding: '1.25rem', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
+                                        style={{ display: 'block', backgroundColor: 'white', borderRadius: '0.875rem', overflow: 'hidden', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
+                                        {place.photo_name && (
+                                            <img src={`/api/places-photo?name=${encodeURIComponent(place.photo_name)}`} alt={place.name}
+                                                style={{ width: '100%', height: '160px', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                                        )}
+                                        <div style={{ padding: '1.25rem' }}>
                                         <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '0.95rem', marginBottom: '0.35rem' }}>{place.name}</div>
                                         {place.rating != null && (
                                             <div style={{ fontSize: '0.8rem', color: '#40916C', fontWeight: 700, marginBottom: '0.35rem' }}>
@@ -100,6 +106,7 @@ export default async function PlacesPage({ params }: Props) {
                                         {place.address && (
                                             <div style={{ fontSize: '0.75rem', color: '#94a3b8', lineHeight: 1.4 }}>{place.address}</div>
                                         )}
+                                        </div>
                                     </a>
                                 ))}
                             </div>
