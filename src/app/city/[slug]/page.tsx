@@ -53,6 +53,17 @@ export default async function CityPage({ params }: CityPageProps) {
     const c = data as unknown as City;
 
     const hasData = (c.cost_index ?? 0) > 0;
+
+    const { data: featuredPlacesData } = await supabase
+        .from('city_places')
+        .select('*')
+        .eq('city_slug', slug)
+        .in('category', ['restaurant_top_rated', 'attraction_must_see', 'attraction_hidden_gem']);
+    const featuredPlaces = (featuredPlacesData || []) as any[];
+    const featuredRestaurant = featuredPlaces.find(p => p.category === 'restaurant_top_rated');
+    const featuredAttraction = featuredPlaces.find(p => p.category === 'attraction_must_see');
+    const featuredHiddenGem = featuredPlaces.find(p => p.category === 'attraction_hidden_gem');
+    const previewPlaces = [featuredRestaurant, featuredAttraction, featuredHiddenGem].filter(Boolean);
     const heroImage = await getCityImageServer(c.slug, c.city, c.country, 1400);
 
     const { data: related } = await supabase
@@ -266,7 +277,35 @@ export default async function CityPage({ params }: CityPageProps) {
                 {/* WEATHER */}
                 <WeatherWidget lat={c.lat} long={c.long} city={c.city} />
 
-                {/* TRAVEL "” always visible */}
+                {previewPlaces.length > 0 && (
+                    <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+                            <div>
+                                <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem' }}>Places to Go</h2>
+                                <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Real, rated spots curated from Google</p>
+                            </div>
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
+                            {previewPlaces.map((place: any) => (
+                                <a key={place.id} href={place.maps_url || '#'} target="_blank" rel="noopener noreferrer"
+                                    style={{ display: 'block', backgroundColor: '#f8fafc', borderRadius: '0.875rem', overflow: 'hidden', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
+                                    {place.photo_name && (
+                                        <img src={`/api/places-photo?name=${encodeURIComponent(place.photo_name)}`} alt={place.name}
+                                            style={{ width: '100%', height: '120px', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                                    )}
+                                    <div style={{ padding: '0.875rem' }}>
+                                        <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '0.85rem', marginBottom: '0.25rem' }}>{place.name}</div>
+                                        {place.rating != null && (
+                                            <div style={{ fontSize: '0.75rem', color: '#40916C', fontWeight: 700 }}>Rating: {place.rating}</div>
+                                        )}
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                        <Link href={`/city/${c.slug}/places`} style={{ display: 'inline-block', backgroundColor: '#52B788', color: 'white', padding: '0.625rem 1.25rem', borderRadius: '0.625rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.85rem' }}>See more places -&gt;</Link>
+                    </div>
+                )}
+                {/* TRAVEL -- always visible */}
                 <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', marginBottom: '1.5rem', border: '1px solid #e2e8f0' }}>
                     <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7831E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.41 16z"/></svg>
