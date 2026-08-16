@@ -285,7 +285,7 @@ export default async function CityPage({ params }: CityPageProps) {
                                 <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Real, rated spots curated from Google</p>
                             </div>
                         </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
                             {previewPlaces.map((place: any) => (
                                 <a key={place.id} href={place.maps_url || '#'} target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', backgroundColor: '#f8fafc', borderRadius: '0.875rem', overflow: 'hidden', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
