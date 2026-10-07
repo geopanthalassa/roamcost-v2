@@ -79,8 +79,8 @@ export default function WorldMap({ cities }: WorldMapProps) {
             mapInstance.current = map;
 
             // Clean light tile layer
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                attribution: '© OpenStreetMap © CARTO',
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
                 subdomains: 'abcd',
                 maxZoom: 19,
             }).addTo(map);
