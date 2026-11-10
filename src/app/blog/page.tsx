@@ -35,7 +35,7 @@ export const POSTS = [
     { slug: 'bangkok-vs-bali', title: 'Bangkok vs Bali: Cost of Living Comparison 2026', desc: 'Two top nomad destinations head to head. Which is cheaper, safer and better for remote workers?', category: 'Asia', date: 'February 2026', readTime: '7 min' },
     { slug: 'cheapest-cities-latin-america', title: 'Cheapest Cities in Latin America for Expats 2026', desc: 'Medellín, Mexico City, Buenos Aires — where to live well in LatAm without breaking the bank.', category: 'Latin America', date: 'February 2026', readTime: '8 min' },
     { slug: 'retire-abroad-cheap-countries', title: 'Best Countries to Retire Abroad on a Small Budget', desc: 'Retire early or stretch your pension further. The best affordable countries with quality healthcare.', category: 'Retirement', date: 'January 2026', readTime: '9 min' },
-    { slug: 'digital-nomad-visa-guide', title: 'Digital Nomad Visa Guide 2026: Every Country Compared', desc: 'Which countries offer digital nomad visas? Requirements, costs and processing times all compared.', category: 'Visas', date: 'January 2026', readTime: '11 min' },
+    { slug: 'digital-nomad-visa-guide', title: 'Digital Nomad Visa Guide 2026: Every Country Compared', desc: 'Which countries offer digital nomad visas? Requirements, costs and processing times all compared.', category: 'Visas', date: 'November 2026', readTime: '11 min' },
     { slug: 'numbeo-vs-roamcost', title: 'RoamCost vs Numbeo: Which Cost of Living Tool is Better?', desc: 'How do the leading cost of living comparison tools stack up? We compared features, data accuracy and usability.', category: 'Tools', date: 'December 2025', readTime: '5 min' },
 ];
 

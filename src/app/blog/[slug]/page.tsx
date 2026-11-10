@@ -507,7 +507,7 @@ Do I still pay US taxes if I retire abroad? US citizens pay taxes on worldwide i
         image: 'photo-1596422846543-75c6fc197f07',
         title: 'Digital Nomad Visa Guide 2026: Every Country Compared',
         desc: 'Which countries offer digital nomad visas? Requirements, costs and processing times compared for 2026.',
-        category: 'Visas', date: 'January 2026', readTime: '11 min',
+        category: 'Visas', date: 'November 2026', readTime: '11 min',
         keywords: 'digital nomad visa 2026, countries with digital nomad visa, remote work visa, nomad visa requirements',
         content: `## Digital Nomad Visa Guide 2026
 
@@ -515,15 +515,19 @@ More than 50 countries now offer some form of digital nomad or remote worker vis
 
 ## Europe
 
-Portugal D8 Digital Nomad Visa: Income requirement €3,040/month. Duration: 1 year renewable to 2 years, with path to residency. Processing: 2-4 months at consulate. Cost: ~€180 application fee. One of the most established and sought-after programs.
+Portugal D8 Digital Nomad Visa: Income requirement €3,680/month. Duration: 1 year renewable to 2 years, with path to residency. Processing: 2-4 months at consulate. Cost: ~€180 application fee. One of the most established and sought-after programs.
 
 Estonia Digital Nomad Visa: Income requirement €3,504/month gross. Duration: 1 year. Processing: 30 days. Available at Estonian embassies. Best for those wanting EU base with access to Schengen Area.
 
-Spain Digital Nomad Visa: Income requirement €2,646/month (200% of minimum wage). Duration: 1 year renewable to 5 years. Processing: 20 working days in Spain, up to 3 months at consulate. Spain's NHR-equivalent Beckham Law offers preferential 24% tax rate.
+Spain Digital Nomad Visa: Income requirement €2,849/month (200% of minimum wage). Duration: 1 year renewable to 5 years. Processing: 20 working days in Spain, up to 3 months at consulate. Spain's NHR-equivalent Beckham Law offers preferential 24% tax rate.
 
 Greece Digital Nomad Visa: Income requirement €3,500/month. Duration: 1 year renewable. Greece offers 50% income tax reduction for the first 7 years for qualifying remote workers.
 
 Germany Freelance Visa (Freiberufler): No specific income minimum but proof of contracts required. Duration: 3 months to 3 years. Requires German-language appointment at embassy.
+
+Netherlands (DAFT self-employed permit): Not a classic nomad visa, and only open to US citizens. You register a Dutch business and keep at least €4,500 of capital in it. The permit is for genuine self-employed work, so working for a single client who directs your work does not fit. The first permit is valid for up to 2 years, and first-time applications have recently been decided in roughly 4-6 weeks under a pilot policy. Other nationalities need the points-based self-employed permit or another route.
+
+France (no dedicated nomad visa): France still has no digital nomad visa, and remote work is no longer allowed on the long-stay visitor visa that many nomads used before. Freelancers usually apply for the Entrepreneur / Profession Libérale long-stay visa (VLS-TS), and qualified profiles can look at the Talent Passport. Income thresholds depend on the route and the consulate, so check France-Visas before planning.
 
 ## Americas
 
@@ -546,12 +550,14 @@ Malaysia DE Rantau Nomad Pass: Income requirement $24,000/year. Duration: 1 year
 ## Key Comparisons
 
 Country | Min Income | Duration | Processing | Cost
-Portugal | €3,040/mo | 2 years | 2-4 months | ~€200
+Portugal | €3,680/mo | 2 years | 2-4 months | ~€200
 Estonia | €3,504/mo | 1 year | 30 days | ~€100
-Spain | €2,646/mo | 5 years | 3 months | ~€150
+Spain | €2,849/mo | 5 years | 3 months | ~€150
 Costa Rica | $3,000/mo | 2 years | 60 days | ~$250
 Colombia | ~$2,400/mo | 2 years | 30 days | ~$250
 Thailand DTV | $14,500 savings | 1 year | 2-4 weeks | ~$150
+Netherlands DAFT | €4,500 capital (US citizens only) | 2 years | 4-12 weeks | check IND
+France (Profession Libérale) | varies by route | 1 year | varies | check France-Visas
 
 ## FAQ
 
@@ -559,7 +565,17 @@ Which digital nomad visa is easiest to get? Thailand's DTV Visa and Estonia's Di
 
 Do digital nomad visas allow working for local companies? Generally no — these visas specifically require income from foreign sources. Working for local companies typically requires a standard work permit.
 
-Can I bring my family on a digital nomad visa? Most programs allow dependents (spouse and children) to be included, though income requirements may increase.`
+Can I bring my family on a digital nomad visa? Most programs allow dependents (spouse and children) to be included, though income requirements may increase.
+
+Does France have a digital nomad visa? No. France has no dedicated nomad visa, and remote work is no longer allowed on the long-stay visitor visa. Freelancers usually apply for the Profession Libérale visa or the Talent Passport.
+
+Can non-Americans use the Dutch DAFT permit? No. The DAFT route is only for US citizens. Other nationalities need the points-based self-employed permit or a different route.
+
+## Plan Your Move
+
+Once you shortlist a country, compare real costs before you commit. Explore [Lisbon](/city/lisbon), [Barcelona](/city/barcelona), [Berlin](/city/berlin), [Amsterdam](/city/amsterdam) and [Paris](/city/paris), or use the [city comparison tool](/compare). Visa rules change often, so confirm requirements on each country official immigration site before applying.
+
+Want to scout your future base first? [Compare flights on Aviasales (affiliate link)](https://tp.media/r?campaign_id=100&marker=711539&p=4114&trs=568806&u=https%3A%2F%2Faviasales.com)`
     },
 
 
