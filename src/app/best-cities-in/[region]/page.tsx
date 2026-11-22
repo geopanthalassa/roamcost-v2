@@ -60,6 +60,7 @@ export async function generateMetadata({ params }: RegionalPageProps) {
     if (!region) return { title: 'Region Rankings | RoamCost' };
     const name = region.replace(/-/g, ' ').toUpperCase();
     return {
+        alternates: { canonical: `https://www.roamcost.com/best-cities-in-${region}` },
         title: `Best Cities to Live in ${name} | RoamCost`,
         description: `Ranking the top cities in ${name} by quality of life, safety, and internet speed.`,
     };

@@ -1,4 +1,4 @@
-import { redirect, notFound } from 'next/navigation';
+import { permanentRedirect, notFound } from 'next/navigation';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -28,5 +28,5 @@ export default async function CostOfLivingRedirect({ params }: { params: Promise
     const { city } = await params;
     const slug = await findSlug(city);
     if (!slug) notFound();
-    redirect(`/city/${slug}`);
+    permanentRedirect(`/city/${slug}`);
 }

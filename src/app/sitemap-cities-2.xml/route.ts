@@ -28,13 +28,8 @@ export async function GET() {
     const midpoint = Math.ceil(allCities.length / 2);
     const half = allCities.slice(midpoint);
 
-    const cityUrls = half.flatMap(({ slug, city }) => {
-        const citySlug = (city || '').toLowerCase().replace(/ /g, '-');
-        return [
-            { loc: `${BASE}/city/${slug}`, priority: '0.7', changefreq: 'weekly' },
-            { loc: `${BASE}/cost-of-living-in-${citySlug}`, priority: '0.6', changefreq: 'monthly' },
-        ];
-    });
+    // Only canonical /city/[slug] URLs belong in the sitemap (the /cost-of-living-in-* URLs are redirects).
+    const cityUrls = half.map(({ slug }) => ({ loc: `${BASE}/city/${slug}`, priority: '0.7', changefreq: 'weekly' }));
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

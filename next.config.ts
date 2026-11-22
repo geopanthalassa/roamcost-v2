@@ -8,16 +8,16 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
+  // Pretty URLs like /best-cities-in-japan are served by dynamic routes under /best-cities-in/[region]
+  async rewrites() {
+    return [
+      { source: '/best-cities-in-:region', destination: '/best-cities-in/:region' },
+      { source: '/cheapest-cities-in-:region', destination: '/cheapest-cities-in/:region' },
+      { source: '/cost-of-living-in-:city', destination: '/cost-of-living-in/:city' },
+    ];
+  },
   async redirects() {
     return [
-      // Redirect /cost-of-living-in-[city] → /city/[city]
-      {
-        source: '/cost-of-living-in-:city',
-        destination: '/city/:city',
-        permanent: true,
-      },
-      // Redirect /cheapest-cities-in-[region] → /cheapest-cities-in-[region] (already exists)
-      // Redirect /best-cities-in-[region] → /best-cities-in-[region] (already exists)
       // Redirect old Hot Takes slug
       {
         source: '/hot-takes/chiang-mai-thailand-vs-medellin-colombia',
