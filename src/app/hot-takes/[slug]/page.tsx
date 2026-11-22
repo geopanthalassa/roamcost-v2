@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { highlightText } from '@/lib/highlight';
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -502,19 +503,19 @@ export default async function HotTakeArticle({ params }: Props) {
 
                     {/* EN intro */}
                     <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
-                        <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#334155', margin: 0 }}>{a.en.intro}</p>
+                        <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#334155', margin: 0 }} dangerouslySetInnerHTML={{ __html: highlightText(a.en.intro) }} />
                     </div>
 
                     {/* ES intro */}
                     <div style={{ backgroundColor: '#fefdf7', borderRadius: '1rem', padding: '1.5rem 2rem', border: '1px solid #fef08a', marginBottom: '2rem' }}>
                         <div style={{ fontSize: '0.65rem', fontWeight: 800, color: '#ca8a04', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>En español</div>
-                        <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#475569', margin: 0, fontStyle: 'italic' }}>{a.es.intro}</p>
+                        <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#475569', margin: 0, fontStyle: 'italic' }} dangerouslySetInnerHTML={{ __html: highlightText(a.es.intro) }} />
                     </div>
 
                     {/* Comparison table */}
                     <div style={{ backgroundColor: 'white', borderRadius: '1rem', border: '1px solid #e2e8f0', overflow: 'hidden', marginBottom: '2rem' }}>
                         <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <h2 style={{ margin: 0, fontSize: '1rem', fontWeight: 900, color: '#0f172a' }}>Cost Comparison / Comparación de costos</h2>
+                            <h2 style={{ margin: 0, fontSize: '1rem', fontWeight: 900, color: '#0f172a', borderLeft: '5px solid #3b82f6', paddingLeft: '0.65rem' }}>Cost Comparison / Comparación de costos</h2>
                         </div>
                         <div style={{ overflowX: 'auto' }}>
                             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -541,9 +542,9 @@ export default async function HotTakeArticle({ params }: Props) {
                     </div>
 
                     {/* Verdict */}
-                    <div style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '2rem', marginBottom: '2rem' }}>
+                    <div className="on-dark" style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '2rem', marginBottom: '2rem' }}>
                         <div style={{ fontSize: '0.7rem', fontWeight: 800, color: GREEN, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>Our Verdict / Nuestro veredicto</div>
-                        <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem', lineHeight: 1.75, margin: '0 0 1rem' }}>{a.en.verdict}</p>
+                        <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem', lineHeight: 1.75, margin: '0 0 1rem' }} dangerouslySetInnerHTML={{ __html: highlightText(a.en.verdict) }} />
                         <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>{a.es.verdict}</p>
                     </div>
 
