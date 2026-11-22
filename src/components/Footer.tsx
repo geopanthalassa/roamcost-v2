@@ -26,7 +26,7 @@ export default function Footer() {
                     <h4 style={{ fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', color: '#0f172a' }}>Travel</h4>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         <li><a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Find Hotels</a></li>
-                        <li><a href="https://www.kiwi.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Find Flights</a></li>
+                        <li><a href="https://tp.media/r?campaign_id=100&marker=711539&p=4114&trs=568806&u=https%3A%2F%2Faviasales.com" target="_blank" rel="noopener noreferrer sponsored" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Find Flights</a></li>
                         <li><a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Long-term Stays</a></li>
                     </ul>
                 </div>

@@ -369,6 +369,161 @@ Can a couple live on $2,000/month abroad? In Southeast Asia and Eastern Europe, 
 
 Is $2,000/month enough to retire abroad? In most of Southeast Asia, Eastern Europe and Latin America, $2,000/month funds a comfortable retirement with healthcare. Countries like Thailand, Portugal and Colombia are popular retirement destinations at this budget.`
     },
+    'thailand-vs-vietnam-vs-bali': {
+        image: 'photo-1537996194471-e657df975ab4',
+        title: 'Thailand vs Vietnam vs Bali: Where to Base Yourself in 2026',
+        desc: 'Real cost-of-living numbers, visa rules and trade-offs for the three most popular Southeast Asia bases: Thailand, Vietnam and Bali.',
+        category: 'Asia', date: 'November 2026', readTime: '9 min',
+        keywords: 'thailand vs vietnam vs bali, cheapest southeast asia country, digital nomad southeast asia 2026, chiang mai vs da nang vs ubud, cost of living southeast asia',
+        content: `## Thailand vs Vietnam vs Bali: The Short Answer
+
+Three countries, three very different ways to live in Southeast Asia. Using RoamCost's city data (estimated monthly cost for one person, updated May 2026), Vietnam is the cheapest of the three, Thailand offers the best balance of infrastructure, safety and healthcare, and Bali is the easiest place to find a nomad community but has the most legal gray areas around remote work.
+
+## The Numbers: Monthly Cost for One Person
+
+City | Rent | Food | Transport | Total
+Da Nang, Vietnam | $608 | $216 | $25 | $950
+Hoi An, Vietnam | $684 | $189 | $18 | $934
+Hanoi, Vietnam | $760 | $252 | $30 | $1,140
+Ho Chi Minh City, Vietnam | $836 | $270 | $35 | $1,260
+Chiang Mai, Thailand | $684 | $225 | $26 | $1,050
+Phuket, Thailand | $1,064 | $288 | $29 | $1,444
+Bangkok, Thailand | $1,064 | $315 | $36 | $1,483
+Denpasar / Ubud, Bali | $570 | $216 | $22 | $900
+
+Totals include utilities and other everyday costs, so they are a little higher than rent plus food plus transport. These are estimates for a standard apartment and local-style living. Tourist hotspots like Canggu or Phuket beach areas can cost noticeably more than the city average.
+
+[-> See real cost of living data for Chiang Mai](/city/chiang-mai-thailand)
+[-> See real cost of living data for Da Nang](/city/da-nang-vietnam)
+[-> See real cost of living data for Ubud](/city/ubud-indonesia)
+
+## Thailand: The Balanced Choice
+
+Thailand is the safest all-round bet for a first long stay. Chiang Mai scores 8.45 for safety and 7.39 for healthcare in our quality-of-life data, and internet scores around 4.3 out of 10 there, with Bangkok higher at 4.8. You get international hospitals, huge expat infrastructure and easy flights to the rest of Asia.
+
+Visa: the Destination Thailand Visa (DTV) is the main route for remote workers. It allows stays of 180 days with a 180-day extension, and requires proof of funds (around $14,500 in savings). Check the Thai embassy for the current requirements before you apply.
+
+Best for: first-timers, families, people who want strong healthcare and city comforts. Weakness: Bangkok and Phuket are now close to Western-lite prices.
+
+[-> Bangkok cost of living](/city/bangkok)
+
+## Vietnam: The Cheapest Option
+
+Vietnam is where your budget stretches furthest. Da Nang and Hoi An sit around $930-950 a month, and even Ho Chi Minh City at about $1,260 is cheaper than Bangkok. Ho Chi Minh City scores 6.77 for safety and 5.54 for healthcare, with internet around 4.6.
+
+Visa: Vietnam offers a 90-day e-visa. It costs $25 for a single entry and $50 for multiple entries, and can be requested online. Citizens of some countries (including Germany, France, Italy, Spain, the UK and Japan) can also enter visa-free for up to 45 days under the current exemption, valid through March 2028. We could not confirm a dedicated digital nomad visa, so most remote workers rely on the e-visa and renew by leaving and re-entering, which means you should confirm the current rules with Vietnamese authorities before planning a year-long stay.
+
+Best for: budget-focused nomads, food lovers, people who like big, busy cities. Weakness: no clear long-stay visa path for remote workers.
+
+[-> Ho Chi Minh City cost of living](/city/ho-chi-minh-city-vietnam)
+
+## Bali: The Nomad Community
+
+Bali, around Ubud and Denpasar, comes out cheapest in our data at about $900 a month, but this figure is an estimate that applies to the broader region. Popular areas such as Canggu and Uluwatu are known to cost much more, so treat the number as a floor rather than a promise.
+
+Visa: tourist entry (visa on arrival) is extendable once for 30 days, for a total of 60 days. Tourist visas are for tourism: immigration officers can check your activities, and breaking the rules can lead to fines, deportation or a ban. For remote work, Indonesia has the E33G remote worker visa. It is valid for one year and renewable, and requires proof of remote employment with a foreign company, proof of funds and health insurance covering Indonesia.
+
+Best for: people who want an instant community of fellow remote workers, wellness and surf. Weakness: the most complicated visa situation, plus less reliable infrastructure outside the main hubs.
+
+## Which One Should You Pick?
+
+Pick Thailand if you want the smoothest landing, strong healthcare and a safe base for a year. Pick Vietnam if you want the lowest monthly bill and love food, city energy and beaches. Pick Bali if community and lifestyle matter more than the lowest price, and you are prepared to sort out the E33G.
+
+Many nomads split the year: three months in each. Check our [Bangkok vs Bali comparison](/blog/bangkok-vs-bali) and the [Digital Nomad Visa Guide](/blog/digital-nomad-visa-guide) for the full details.
+
+## Plan Your Move
+
+Flights across Southeast Asia are cheap when you book early. [Compare flights on Aviasales](https://tp.media/r?campaign_id=100&marker=711539&p=4114&trs=568806&u=https%3A%2F%2Faviasales.com) to find fares to Bangkok, Da Nang, Ho Chi Minh City or Bali.
+
+## FAQ
+
+Which is cheaper, Thailand, Vietnam or Bali? In our data Bali's Ubud/Denpasar area (about $900) and Vietnam's Hoi An and Da Nang (about $930-950) are the cheapest, with Chiang Mai at about $1,050. Bangkok (about $1,480) is the most expensive of the cities we compared.
+
+Which has the best visa for remote workers? Thailand's DTV and Indonesia's E33G are the clearest remote-work options. Vietnam relies mainly on the 90-day e-visa.
+
+Which is safest? Among cities with safety scores in our data, Chiang Mai (8.45) ranks highest, followed by Bangkok (7.04) and Ho Chi Minh City (6.77).
+
+Visa rules change often. Always confirm requirements with the embassy or official immigration website before you travel.`,
+    },
+    'cheapest-places-to-retire-abroad-2026': {
+        image: 'photo-1508009603885-50cf7c579365',
+        title: 'Cheapest Places to Retire Abroad in 2026: Costs and Visa Requirements',
+        desc: 'Where a modest pension goes furthest. Real monthly costs for retirement-friendly cities and the income you need for each retirement visa.',
+        category: 'Retirement', date: 'November 2026', readTime: '9 min',
+        keywords: 'cheapest places to retire abroad 2026, retire abroad on social security, retirement visa income requirements, cheap retirement destinations',
+        content: `## Cheapest Places to Retire Abroad in 2026
+
+Retiring abroad comes down to two numbers: what a normal month costs in the city you pick, and the income the visa requires you to prove. This guide puts both side by side, using RoamCost's city data (estimated monthly cost for one person, updated May 2026) and retirement visa rules checked in November 2026.
+
+## Monthly Cost in Retirement-Friendly Cities
+
+City | Rent | Food | Transport | Total
+Cebu City, Philippines | $608 | $180 | $20 | $848
+Cuenca, Ecuador | $570 | $210 | $28 | $920
+Da Nang, Vietnam | $608 | $216 | $25 | $950
+San Miguel de Allende, Mexico | $650 | $240 | $30 | $1,050
+Chiang Mai, Thailand | $684 | $225 | $26 | $1,050
+Merida, Mexico | $760 | $255 | $30 | $1,180
+Kuala Lumpur, Malaysia | $1,064 | $288 | $33 | $1,448
+Panama City, Panama | $1,444 | $360 | $39 | $1,924
+Porto, Portugal | $1,710 | $513 | $57 | $2,560
+
+Totals include utilities and everyday costs for one person living in a standard apartment. Add health insurance, which varies a lot with age, and travel home.
+
+[-> See real cost of living data for Cuenca](/city/cuenca-ecuador)
+[-> See real cost of living data for Chiang Mai](/city/chiang-mai-thailand)
+[-> See real cost of living data for Porto](/city/porto-portugal)
+
+## Retirement Visa Income Requirements
+
+Country | Visa | What you must show
+Panama | Pensionado | $1,000 a month in pension income
+Costa Rica | Pensionado | $1,000 a month from a pension, Social Security or similar guaranteed income
+Philippines | SRRV Classic | A lifetime pension of $800 a month (single), plus a deposit that depends on age
+Colombia | Retirement visa | About three times the monthly minimum wage, roughly $1,400 a month in 2026
+Ecuador | Jubilado | Three unified basic salaries, about $1,446 a month in 2026
+Belize | Qualified Retirement Program | $2,000 a month from a non-Belizean source
+Thailand | O-A / extension / O-X | Age 50+; 800,000 baht deposit or 65,000 baht a month (about $2,000) for O-A; 3,000,000 baht for O-X
+Indonesia | E33F retirement KITAS | $3,000 a month, age 55+
+
+## The Best Value Picks
+
+Ecuador (Cuenca): among the lowest monthly costs in our data, at about $920, and a visa threshold of roughly $1,446 a month. The pension requirement is higher than the cost of living, so the visa is the bigger hurdle than the budget.
+
+Philippines (Cebu City): the cheapest city in this list at about $848, and one of the lowest income requirements: $800 a month in pension for a single applicant. The SRRV also asks for a deposit: for applicants aged 50 and over, $15,000 with a pension or $30,000 without.
+
+Panama: a $1,000 a month Pensionado visa is among the lowest bars anywhere, but Panama City costs about $1,924, so many retirees look outside the capital.
+
+Thailand (Chiang Mai): a monthly cost of about $1,050 with a strong safety score of 8.45 and a healthcare score of 7.39 in our data. Thailand has no single retirement visa: the O-A and the in-country extension both need 800,000 baht or a 65,000 baht monthly income (about $2,000), and the ten-year O-X needs a 3,000,000 baht deposit. You must also carry health insurance, and applicants must be 50 or older. Confirm exact figures with the Thai embassy handling your application.
+
+Mexico (San Miguel de Allende, Merida): around $1,050 to $1,180 a month, close to the US and with a large expat community. Check the current income threshold with your nearest Mexican consulate because it varies by consulate.
+
+Portugal (Porto): the most expensive city on this list at about $2,560, but with a strong healthcare score of 8.17 and European residency.
+
+## How to Choose
+
+Match the two numbers: pick a city where your pension covers the monthly cost with room to spare, then check that your income clears the visa threshold. A visa that only asks for $1,000 a month is still a poor fit if the cheapest city costs $1,900.
+
+Do not forget healthcare. International health insurance is often the largest single cost for retirees, and quality varies by city. Our quality-of-life scores can help you compare healthcare and safety side by side.
+
+For more destinations see our [Best Countries to Retire Abroad guide](/blog/retire-abroad-cheap-countries) and the [Digital Nomad Visa Guide](/blog/digital-nomad-visa-guide).
+
+## Plan Your Visit First
+
+Before you commit, spend a month in your shortlist cities on a tourist stay. [Compare flights on Aviasales](https://tp.media/r?campaign_id=100&marker=711539&p=4114&trs=568806&u=https%3A%2F%2Faviasales.com) to find fares for a scouting trip.
+
+## FAQ
+
+What is the cheapest place to retire abroad? Among the cities we compared, Cebu City in the Philippines (about $848 a month) and Cuenca in Ecuador (about $920) are the cheapest, followed by Da Nang in Vietnam and Chiang Mai in Thailand.
+
+How much pension do I need for a retirement visa? It ranges from about $800 a month (Philippines SRRV) and $1,000 a month (Panama and Costa Rica) up to $3,000 a month (Indonesia E33F). See the table above.
+
+Can I retire abroad on Social Security? Often yes, as long as the payment meets the visa's income requirement. Confirm with the embassy that Social Security counts as qualifying income.
+
+Do I still pay US taxes? US citizens are taxed on worldwide income wherever they live. Speak to a tax adviser before moving.
+
+Visa rules and costs change. Treat this guide as a starting point and confirm every requirement with the official immigration authority.`,
+    },
     'bangkok-vs-bali': {
         image: 'photo-1537996194471-e657df975ab4',
         title: 'Bangkok vs Bali: Cost of Living Comparison 2026',
