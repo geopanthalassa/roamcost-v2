@@ -524,6 +524,61 @@ Do I still pay US taxes? US citizens are taxed on worldwide income wherever they
 
 Visa rules and costs change. Treat this guide as a starting point and confirm every requirement with the official immigration authority.`,
     },
+    'cost-of-living-zanzibar': {
+        image: 'photo-1507525428034-b723cf961d3e',
+        title: 'Cost of Living in Zanzibar: What We Know (and What We Don\'t) in 2026',
+        desc: 'Zanzibar has no verified cost-of-living dataset yet. Here is the nearest hard data (Dar es Salaam), the e-visa rules and how to budget honestly.',
+        category: 'Africa', date: 'November 2026', readTime: '6 min',
+        keywords: 'cost of living in zanzibar, living in zanzibar, zanzibar digital nomad, tanzania e-visa, zanzibar monthly budget, dar es salaam cost of living',
+        content: `## Cost of Living in Zanzibar: The Honest Answer
+
+Many people search for the cost of living in Zanzibar, but there is no reliable public dataset for the island. RoamCost does not have verified rent, food and transport figures for Zanzibar yet, and we prefer to say so rather than invent a number. What we do have is solid data for the nearest big city on the mainland, plus the entry rules, which are the same for the whole country.
+
+## The Nearest Hard Data: Dar es Salaam
+
+Dar es Salaam is the ferry-and-flight gateway to Zanzibar. Our figures for the city (estimated monthly cost for one person, updated May 2026) are below, with Nairobi and Cape Town for context.
+
+City | Rent | Food | Transport | Total
+Dar es Salaam, Tanzania | $684 | $216 | $26 | $971
+Nairobi, Kenya | $1,064 | $270 | $33 | $1,425
+Cape Town, South Africa | $1,064 | $315 | $39 | $1,481
+
+Dar es Salaam scores 6.1 for safety, 3.24 for healthcare and 1.11 for internet in our quality-of-life data, so plan for limited healthcare and slow connections compared with Southeast Asia.
+
+[-> See Dar es Salaam cost of living data](/city/dar-es-salaam-tanzania)
+
+## What This Means for Zanzibar
+
+Treat the Dar es Salaam total as a rough reference, not a Zanzibar price. Tourist areas of an island can cost more than a mainland city, especially for rentals and imported goods, and prices differ a lot between Stone Town and the beach villages. Before committing, ask for current rents from several local listings and compare them with the table above.
+
+Best for: short and medium stays of a few months, people who want beaches and a low-key base. Weakness: no verified cost data, patchy internet and limited healthcare.
+
+## Visa and Entry
+
+Tanzania offers a tourist e-visa. According to VisaVerge (updated March 2026), a single-entry visa costs $50 for most nationalities and $100 for US citizens, a multiple-entry visa costs $100, and visitors usually receive a pass for up to three months. One e-visa covers both the mainland and Zanzibar, so you do not need a separate permit for the island.
+
+We could not confirm a dedicated digital nomad visa for Tanzania. Remote workers generally enter as tourists, which is not a legal basis for long-term work, so check the current rules on the official Tanzania Immigration website before you plan a long stay.
+
+Note: fees and rules change often. Confirm everything on the official portal before paying.
+
+## Practical Tips
+
+Download offline maps, buy a local SIM as a backup for slow connections, and check yellow fever and health requirements with your doctor well before travel. Travel insurance that covers medical evacuation is worth the cost.
+
+## Plan Your Trip
+
+Flights to Zanzibar usually connect through Dar es Salaam, Nairobi or Gulf hubs. [Compare flights on Aviasales](https://tp.media/r?campaign_id=100&marker=711539&p=4114&trs=568806&u=https%3A%2F%2Faviasales.com) to find the best fare.
+
+## FAQ
+
+How much does it cost to live in Zanzibar? We do not have verified figures for Zanzibar. As a reference, Dar es Salaam on the mainland costs about $971 per month for one person in our data.
+
+Do I need a separate visa for Zanzibar? No. A Tanzania e-visa covers both the mainland and Zanzibar.
+
+Is there a digital nomad visa for Tanzania? We could not confirm one. Check the official Tanzania Immigration website for the current options.
+
+Visa rules and prices change often. Always confirm requirements with the official immigration website before you travel.`
+    },
     'bangkok-vs-bali': {
         image: 'photo-1537996194471-e657df975ab4',
         title: 'Bangkok vs Bali: Cost of Living Comparison 2026',
