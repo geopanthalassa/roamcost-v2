@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import PlacePhoto from '@/components/PlacePhoto';
 import type { Metadata } from 'next';
 
 export const revalidate = 86400;
@@ -137,12 +138,12 @@ export default async function DestinationPage({ params }: Props) {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             {day.stops.map((s, i) => (
                                 <a key={i} href={s.place.maps_url || '#'} target="_blank" rel="noopener noreferrer"
-                                    style={{ display: 'flex', gap: '1rem', backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '0.875rem', overflow: 'hidden', textDecoration: 'none' }}>
+                                    style={{ display: 'flex', gap: 0, backgroundColor: 'white', border: '1px solid #e2e8f0', borderRadius: '0.875rem', overflow: 'hidden', textDecoration: 'none' }}>
                                     {s.place.photo_name && (
-                                        <img src={`/api/places-photo?name=${encodeURIComponent(s.place.photo_name)}`} alt={s.place.name}
-                                            style={{ width: '120px', minHeight: '110px', objectFit: 'cover', flexShrink: 0 }} loading="lazy" />
+                                        <PlacePhoto photoName={s.place.photo_name} alt={s.place.name}
+                                            style={{ width: '96px', alignSelf: 'stretch', objectFit: 'cover', flexShrink: 0 }} />
                                     )}
-                                    <div style={{ padding: '0.9rem 1rem 0.9rem 0' , paddingLeft: s.place.photo_name ? 0 : '1rem' }}>
+                                    <div style={{ padding: '0.9rem 1rem', minWidth: 0 }}>
                                         <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{s.time} · {s.kind}</div>
                                         <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '1rem', margin: '0.2rem 0' }}>{s.place.name}</div>
                                         {s.place.rating != null && (

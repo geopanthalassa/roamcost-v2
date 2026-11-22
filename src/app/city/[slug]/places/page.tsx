@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import PlacePhoto from '@/components/PlacePhoto';
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -93,8 +94,8 @@ export default async function PlacesPage({ params }: Props) {
                                     <a key={place.id} href={place.maps_url || '#'} target="_blank" rel="noopener noreferrer"
                                         style={{ display: 'block', backgroundColor: 'white', borderRadius: '0.875rem', overflow: 'hidden', border: '1px solid #e2e8f0', textDecoration: 'none' }}>
                                         {place.photo_name && (
-                                            <img src={`/api/places-photo?name=${encodeURIComponent(place.photo_name)}`} alt={place.name}
-                                                style={{ width: '100%', height: '160px', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                                            <PlacePhoto photoName={place.photo_name} alt={place.name}
+                                                style={{ width: '100%', height: '160px', objectFit: 'cover', display: 'block' }} />
                                         )}
                                         <div style={{ padding: '1.25rem' }}>
                                         <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '0.95rem', marginBottom: '0.35rem' }}>{place.name}</div>
