@@ -463,7 +463,12 @@ h3, .city-name, [style*="fontWeight: 900"] {
 
 /* AFFILIATES BAR MOBILE */
 @media (max-width: 640px) {
-  .affiliates-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .affiliates-bar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 0.625rem !important; }
+  .affiliate-card { padding: 0.75rem 0.625rem !important; gap: 0.5rem !important; min-width: 0; }
+  .affiliate-icon { width: 34px !important; height: 34px !important; border-radius: 0.625rem !important; }
+  .affiliate-icon svg { width: 20px; height: 20px; }
+  .affiliate-text { min-width: 0; overflow-wrap: break-word; }
+  .affiliate-text > div:first-child { font-size: 0.8rem !important; }
 }
 
 /* ── ARTICLE PAGES (blog + hot-takes) MOBILE ── */

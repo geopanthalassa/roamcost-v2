@@ -255,17 +255,17 @@ export default async function Home() {
                                 icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF5533" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                             },
                         ].map(item => (
-                            <a key={item.sub} href={item.href} target="_blank" rel="noopener noreferrer"
+                            <a key={item.sub} href={item.href} target="_blank" rel="noopener noreferrer" className="affiliate-card"
                                 style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem',
                                     backgroundColor: item.bg, borderRadius: '1rem',
                                     border: `1.5px solid ${item.border}33`,
                                     textDecoration: 'none', transition: 'transform 0.15s, box-shadow 0.15s' }}>
-                                <div style={{ flexShrink: 0, width: '52px', height: '52px', borderRadius: '0.875rem',
+                                <div className="affiliate-icon" style={{ flexShrink: 0, width: '52px', height: '52px', borderRadius: '0.875rem',
                                     backgroundColor: 'white', display: 'flex', alignItems: 'center',
                                     justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
                                     {item.icon}
                                 </div>
-                                <div>
+                                <div className="affiliate-text">
                                     <div style={{ fontSize: '1rem', fontWeight: 900, color: item.iconColor, letterSpacing: '-0.01em' }}>{item.sub}</div>
                                     <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 500 }}>{item.label}</div>
                                 </div>
@@ -279,7 +279,7 @@ export default async function Home() {
                 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                     <div style={{ marginBottom: '2.5rem' }}>
                         <p style={{ fontSize: '0.75rem', fontWeight: 800, color: '#52B788', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Side-by-side analysis</p>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '0.5rem 1rem' }}>
                             <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0f172a', letterSpacing: '-0.03em', margin: 0 }}>Popular Comparisons</h2>
                             <Link href="/compare" style={{ fontSize: '0.875rem', fontWeight: 700, color: '#52B788', textDecoration: 'none' }}>
                                 Compare any city →
