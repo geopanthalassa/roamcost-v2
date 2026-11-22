@@ -9,6 +9,7 @@ import { useCurrency } from '@/context/CurrencyContext';
 const NAV_LINKS = [
     { href: '/', label: 'Home' },
     { href: '/rankings/quality', label: 'Rankings', match: '/rankings' },
+    { href: '/destinations', label: 'Destinations', match: '/destinations' },
     { href: '/compare', label: 'Compare', match: '/compare' },
     { href: '/hot-takes', label: 'Hot Takes', match: '/hot-takes' },
     { href: '/calculator', label: 'Converter', match: '/calculator' },

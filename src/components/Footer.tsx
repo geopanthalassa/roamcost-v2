@@ -17,6 +17,7 @@ export default function Footer() {
                         <li><Link href="/rankings/quality" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Quality of Life</Link></li>
                         <li><Link href="/rankings/cheapest" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Cheapest Cities</Link></li>
                         <li><Link href="/rankings/safest" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Safest Cities</Link></li>
+                        <li><Link href="/destinations" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Destinations</Link></li>
                         <li><Link href="/rankings/nomads" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Digital Nomads</Link></li>
                         <li><Link href="/compare" style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Compare Cities</Link></li>
                     </ul>

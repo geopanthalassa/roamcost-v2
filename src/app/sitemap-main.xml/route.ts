@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { POSTS } from '../blog/page';
+import { getDestinationSlugs } from '../destinations/page';
 const BASE = 'https://www.roamcost.com';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -62,7 +63,13 @@ export async function GET() {
         loc: `${BASE}/blog/${post.slug}`, priority: '0.6', changefreq: 'monthly'
     }));
 
-    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...regionUrls, ...blogUrls];
+    const destSlugs = await getDestinationSlugs().catch(() => [] as string[]);
+    const destUrls = [
+        { loc: `${BASE}/destinations`, priority: '0.8', changefreq: 'weekly' },
+        ...destSlugs.map(slug => ({ loc: `${BASE}/destinations/${slug}`, priority: '0.7', changefreq: 'monthly' })),
+    ];
+
+    const allUrls = [...staticUrls, ...compareUrls, ...convertUrls, ...regionUrls, ...blogUrls, ...destUrls];
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls.map(u => `  <url>
