@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { POSTS } from '../blog/page';
-import { getDestinationSlugs } from '../destinations/page';
+import { getDestinationSlugs } from '@/lib/destinations';
 const BASE = 'https://www.roamcost.com';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;

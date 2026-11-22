@@ -1876,7 +1876,7 @@ export default async function BlogPost({ params }: Props) {
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
-            <div style={{ position: 'relative', height: '350px', overflow: 'hidden' }}>
+            <div className="post-hero" style={{ position: 'relative', height: '350px', overflow: 'hidden' }}>
                 <img 
                     src={post.image.startsWith('photo-') 
                         ? `https://images.unsplash.com/${post.image}?auto=format&fit=crop&w=1400&h=350&q=80`
@@ -1885,7 +1885,7 @@ export default async function BlogPost({ params }: Props) {
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem 2rem 2.5rem', maxWidth: '1100px', margin: '0 auto' }}>
+                <div className="post-hero-inner" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem 2rem 2.5rem', maxWidth: '1100px', margin: '0 auto' }}>
                     <nav style={{ marginBottom: '1rem', fontSize: '0.8rem' }}>
                         <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
                         <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.5rem' }}>→</span>
@@ -1894,7 +1894,7 @@ export default async function BlogPost({ params }: Props) {
                     <span style={{ display: 'inline-block', fontSize: '0.65rem', fontWeight: 800, color: 'white', backgroundColor: CATEGORY_COLORS[post.category] || '#64748b', padding: '0.2rem 0.7rem', borderRadius: '2rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                         {post.category}
                     </span>
-                    <h1 style={{ fontSize: '2rem', fontWeight: 900, color: 'white', margin: '0 0 0.75rem', letterSpacing: '-0.03em', lineHeight: 1.2, maxWidth: '700px' }}>{post.title}</h1>
+                    <h1 className="post-h1" style={{ fontSize: '2rem', fontWeight: 900, color: 'white', margin: '0 0 0.75rem', letterSpacing: '-0.03em', lineHeight: 1.2, maxWidth: '700px' }}>{post.title}</h1>
                     <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
                         <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.8rem', fontWeight: 700 }}>By RoamCost Team</span>
                         <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem' }}>•</span>
@@ -1905,9 +1905,9 @@ export default async function BlogPost({ params }: Props) {
                 </div>
             </div>
 
-            <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 1.5rem', display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'start' }}>
+            <div className="post-layout" style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 1.5rem', display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'start' }}>
                 <article>
-                    <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2.5rem', border: '1px solid #e2e8f0', lineHeight: 1.8, color: '#334155' }}>
+                    <div className="post-card" style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2.5rem', border: '1px solid #e2e8f0', lineHeight: 1.8, color: '#334155' }}>
                         <p style={{ fontSize: '1.05rem', color: '#475569', marginBottom: '2rem', lineHeight: 1.7, fontStyle: 'italic', borderLeft: `4px solid ${GREEN}`, paddingLeft: '1rem' }}>{post.desc}</p>
                         {post.content.split('\n').map((line, i) => {
                             if (!line.trim()) return <div key={i} style={{ height: '0.5rem' }} />;
@@ -1934,7 +1934,7 @@ export default async function BlogPost({ params }: Props) {
                         </div>
                     </div>
                 </article>
-                <div style={{ position: 'sticky', top: '90px' }}>
+                <div className="post-aside" style={{ position: 'sticky', top: '90px' }}>
                     <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
                         <h4 style={{ fontWeight: 800, color: '#0f172a', marginBottom: '1rem', fontSize: '0.9rem' }}>Quick tools</h4>
                         {[

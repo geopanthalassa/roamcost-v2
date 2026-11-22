@@ -465,3 +465,23 @@ h3, .city-name, [style*="fontWeight: 900"] {
 @media (max-width: 640px) {
   .affiliates-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
+
+/* ── ARTICLE PAGES (blog + hot-takes) MOBILE ── */
+@media (max-width: 900px) {
+  .post-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+    padding: 1.25rem 0.75rem 2.5rem !important;
+  }
+  .post-card {
+    padding: 1.25rem !important;
+    border-radius: 0.875rem !important;
+    overflow-wrap: anywhere;
+  }
+  .post-aside { position: static !important; }
+}
+@media (max-width: 640px) {
+  .post-hero { height: 300px !important; }
+  .post-hero-inner { padding: 1.25rem 1rem 1.5rem !important; }
+  .post-h1 { font-size: 1.5rem !important; }
+}

@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
+import { getDestinationSlugs } from '@/lib/destinations';
 import type { Metadata } from 'next';
 
 export const revalidate = 86400;
@@ -11,20 +12,6 @@ export const metadata: Metadata = {
 };
 
 interface Row { slug: string; city: string; country: string; total_usd: number | null; }
-
-export async function getDestinationSlugs(): Promise<string[]> {
-    const slugs = new Set<string>();
-    let from = 0;
-    while (true) {
-        const { data, error } = await supabase.from('city_places').select('city_slug').range(from, from + 999);
-        const rows = (data || []) as unknown as { city_slug: string }[];
-        if (error || rows.length === 0) break;
-        rows.forEach(r => slugs.add(r.city_slug));
-        if (rows.length < 1000) break;
-        from += 1000;
-    }
-    return Array.from(slugs);
-}
 
 export default async function DestinationsPage() {
     const slugs = await getDestinationSlugs();

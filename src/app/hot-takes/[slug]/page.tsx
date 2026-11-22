@@ -488,7 +488,7 @@ export default async function HotTakeArticle({ params }: Props) {
                 </div>
             </div>
 
-            <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 1.5rem', display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'start' }}>
+            <div className="post-layout" style={{ maxWidth: '1100px', margin: '0 auto', padding: '3rem 1.5rem', display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'start' }}>
                 <article>
                     {/* City chips */}
                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
@@ -578,7 +578,7 @@ export default async function HotTakeArticle({ params }: Props) {
                 </article>
 
                 {/* Sidebar */}
-                <div style={{ position: 'sticky', top: '90px' }}>
+                <div className="post-aside" style={{ position: 'sticky', top: '90px' }}>
                     <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
                         <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem' }}>More Hot Takes</div>
                         {Object.entries(ARTICLES).filter(([s]) => s !== slug).slice(0, 5).map(([s, art]) => (
