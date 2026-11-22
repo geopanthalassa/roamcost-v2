@@ -116,6 +116,15 @@ export default async function DestinationPage({ params }: Props) {
 
     return (
         <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh', padding: '2rem 1.5rem 4rem' }}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.roamcost.com' },
+                    { '@type': 'ListItem', position: 2, name: 'Destinations', item: 'https://www.roamcost.com/destinations' },
+                    { '@type': 'ListItem', position: 3, name: `${city.city} 3-day itinerary`, item: `https://www.roamcost.com/destinations/${slug}` },
+                ],
+            }).replace(/</g, '\\u003c') }} />
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
                 <nav style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '1rem' }}>
                     <Link href="/" style={{ color: '#94a3b8', textDecoration: 'none' }}>Home</Link>

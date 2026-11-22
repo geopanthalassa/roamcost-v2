@@ -1904,6 +1904,50 @@ function highlight(line: string): string {
     return t;
 }
 
+
+const SITE = 'https://www.roamcost.com';
+
+// Builds schema.org JSON-LD (Article, BreadcrumbList and, when the post has a FAQ section, FAQPage).
+function buildJsonLd(slug: string, post: { title: string; desc: string; date: string; image: string; content: string }) {
+    const img = post.image.startsWith('photo-')
+        ? `https://images.unsplash.com/${post.image}?auto=format&fit=crop&w=1200&q=80`
+        : post.image.startsWith('/') ? SITE + post.image : post.image;
+    const d = new Date(`1 ${post.date}`);
+    const iso = isNaN(d.getTime()) ? undefined : d.toISOString().slice(0, 10);
+    const url = `${SITE}/blog/${slug}`;
+    const graph: Record<string, unknown>[] = [
+        {
+            '@type': 'Article', headline: post.title, description: post.desc, image: img,
+            datePublished: iso, dateModified: iso, mainEntityOfPage: url,
+            author: { '@type': 'Organization', name: 'RoamCost Team', url: SITE },
+            publisher: { '@type': 'Organization', name: 'RoamCost', url: SITE },
+        },
+        {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+                { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+                { '@type': 'ListItem', position: 3, name: post.title, item: url },
+            ],
+        },
+    ];
+    const lines = post.content.split('\n');
+    const start = lines.findIndex(l => /^##\s+FAQ/i.test(l));
+    if (start >= 0) {
+        const clean = (t: string) => t.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+        const qa: { '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }[] = [];
+        for (const l of lines.slice(start + 1)) {
+            if (l.startsWith('## ')) break;
+            const q = l.indexOf('? ');
+            if (q > 8 && q < 160) {
+                qa.push({ '@type': 'Question', name: clean(l.slice(0, q + 1)), acceptedAnswer: { '@type': 'Answer', text: clean(l.slice(q + 2)) } });
+            }
+        }
+        if (qa.length) graph.push({ '@type': 'FAQPage', mainEntity: qa });
+    }
+    return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = POSTS[slug];
@@ -1931,6 +1975,7 @@ export default async function BlogPost({ params }: Props) {
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: buildJsonLd(slug, post) }} />
             <div className="post-hero" style={{ position: 'relative', height: '350px', overflow: 'hidden' }}>
                 <img 
                     src={post.image.startsWith('photo-') 
