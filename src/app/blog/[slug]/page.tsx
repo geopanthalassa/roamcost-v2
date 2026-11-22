@@ -1849,6 +1849,61 @@ const CATEGORY_COLORS: Record<string, string> = {
     Visas: '#06b6d4', Tools: '#64748b',
 };
 
+
+const H2_COLORS = ['#52B788', '#3b82f6', '#F7831E', '#8b5cf6'];
+const CALLOUTS: Record<string, { color: string; label: string }> = {
+    'Best for': { color: '#16a34a', label: 'Best for' },
+    'Weakness': { color: '#ea580c', label: 'Weakness' },
+    'Visa': { color: '#2563eb', label: 'Visa' },
+    'Tip': { color: '#7c3aed', label: 'Tip' },
+    'Note': { color: '#0891b2', label: 'Note' },
+};
+
+// Groups consecutive "a | b | c" lines into table blocks; everything else stays a plain line.
+function groupLines(content: string): (string | string[][])[] {
+    const out: (string | string[][])[] = [];
+    let table: string[][] = [];
+    const flush = () => {
+        if (table.length >= 2) out.push(table);
+        else table.forEach(r => out.push(r.join(' | ')));
+        table = [];
+    };
+    for (const line of content.split('\n')) {
+        const cells = line.split(' | ').map(c => c.trim());
+        if (cells.length >= 2 && !line.startsWith('#') && !line.startsWith('[')) table.push(cells);
+        else { flush(); out.push(line); }
+    }
+    flush();
+    return out;
+}
+
+function PostTable({ rows }: { rows: string[][] }) {
+    const [head, ...body] = rows;
+    return (
+        <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', margin: '0.75rem 0 1.5rem', borderRadius: '0.75rem', border: '1px solid #d1fae5' }}>
+            <table style={{ width: 'max-content', minWidth: '100%', borderCollapse: 'collapse', fontSize: '0.85rem', lineHeight: 1.4 }}>
+                <thead>
+                    <tr>{head.map((c, i) => <th key={i} style={{ background: '#52B788', color: 'white', textAlign: 'left', padding: '0.65rem 0.75rem', fontWeight: 800, whiteSpace: 'nowrap' }}>{c}</th>)}</tr>
+                </thead>
+                <tbody>
+                    {body.map((r, ri) => (
+                        <tr key={ri} style={{ background: ri % 2 ? '#f0fdf4' : 'white' }}>
+                            {r.map((c, ci) => <td key={ci} style={{ padding: '0.6rem 0.75rem', borderTop: '1px solid #e2e8f0', fontWeight: ci === 0 ? 800 : 500, color: ci === 0 ? '#0f172a' : '#334155', whiteSpace: ci === 0 ? 'normal' : 'nowrap', minWidth: ci === 0 ? '110px' : undefined }}>{c}</td>)}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+}
+
+function highlight(line: string): string {
+    let t = line.replace(/\*\*([^*]+)\*\*/g, '<mark class="hl">$1</mark>');
+    t = t.replace(/(^|[\s(])([$€£]\s?\d[\d,.]*(?:\s?-\s?[$€£]?\d[\d,.]*)?(?:\/(?:mo|month|day|year))?)/g, '$1<mark class="hl-num">$2</mark>');
+    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:#059669;font-weight:700;text-decoration:underline;">$1</a>');
+    return t;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = POSTS[slug];
@@ -1909,8 +1964,29 @@ export default async function BlogPost({ params }: Props) {
                 <article>
                     <div className="post-card" style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2.5rem', border: '1px solid #e2e8f0', lineHeight: 1.8, color: '#334155' }}>
                         <p style={{ fontSize: '1.05rem', color: '#475569', marginBottom: '2rem', lineHeight: 1.7, fontStyle: 'italic', borderLeft: `4px solid ${GREEN}`, paddingLeft: '1rem' }}>{post.desc}</p>
-                        {post.content.split('\n').map((line, i) => {
+                        {(() => { let inFaq = false; return groupLines(post.content).map((item, i) => {
+                            if (typeof item !== 'string') return <PostTable key={i} rows={item} />;
+                            const line = item;
                             if (!line.trim()) return <div key={i} style={{ height: '0.5rem' }} />;
+                            if (line.startsWith('[->')) {
+                                const m = line.match(/\[->\s*([^\]]+)\]\(([^)]+)\)/);
+                                if (m) return <p key={i} style={{ margin: '0 0 0.6rem' }}><a href={m[2]} style={{ display: 'inline-block', background: '#ecfdf5', color: '#047857', border: '1px solid #a7f3d0', padding: '0.45rem 0.9rem', borderRadius: '2rem', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none' }}>{m[1]} →</a></p>;
+                            }
+                            if (line.startsWith('## ')) {
+                                const title = line.slice(3);
+                                inFaq = /^FAQ/i.test(title);
+                                const color = H2_COLORS[title.length % H2_COLORS.length];
+                                return <h2 key={i} style={{ fontSize: '1.3rem', fontWeight: 900, color: '#0f172a', margin: '2.25rem 0 0.9rem', letterSpacing: '-0.02em', lineHeight: 1.3, borderLeft: `5px solid ${color}`, background: `${color}14`, padding: '0.55rem 0.85rem', borderRadius: '0 0.6rem 0.6rem 0' }}>{title}</h2>;
+                            }
+                            const co = Object.keys(CALLOUTS).find(k => line.startsWith(k + ':'));
+                            if (co) {
+                                const c = CALLOUTS[co];
+                                return <div key={i} style={{ borderLeft: `4px solid ${c.color}`, background: `${c.color}12`, padding: '0.7rem 1rem', borderRadius: '0 0.6rem 0.6rem 0', margin: '0.6rem 0 1rem', lineHeight: 1.65 }}><strong style={{ color: c.color, textTransform: 'uppercase', fontSize: '0.72rem', letterSpacing: '0.07em', display: 'block', marginBottom: '0.15rem' }}>{c.label}</strong><span dangerouslySetInnerHTML={{ __html: highlight(line.slice(co.length + 1).trim()) }} /></div>;
+                            }
+                            if (inFaq) {
+                                const q = line.indexOf('? ');
+                                if (q > 8 && q < 160) return <p key={i} style={{ margin: '0 0 1rem', lineHeight: 1.75 }}><mark className="hl-q">{line.slice(0, q + 1)}</mark> <span dangerouslySetInnerHTML={{ __html: highlight(line.slice(q + 2)) }} /></p>;
+                            }
                             if (line.startsWith('## ')) return <h2 key={i} style={{ fontSize: '1.35rem', fontWeight: 900, color: '#0f172a', margin: '2rem 0 0.75rem', letterSpacing: '-0.02em' }}>{line.slice(3)}</h2>;
                             if (line.startsWith('## ')) return <h2 key={i} style={{ fontSize: '1.35rem', fontWeight: 900, color: '#0f172a', margin: '2rem 0 0.75rem' }}>{line.slice(3)}</h2>;
                             if (line.startsWith('### ')) return <h3 key={i} style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', margin: '1.5rem 0 0.5rem' }}>{line.slice(4)}</h3>;
@@ -1919,11 +1995,8 @@ export default async function BlogPost({ params }: Props) {
                             if (line.startsWith('---CTA-RENTALCARS---')) return <a key={i} href='https://www.awin1.com/cread.php?awinmid=18808&awinaffid=2865959' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#FF6600,#cc4400)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Rent a car for World Cup 2026</a>;
                             if (line.startsWith('---CTA-GYG---')) return <a key={i} href='https://www.getyourguide.com/?partner_id=VVPTRVK' target='_blank' rel='noopener noreferrer' style={{ display:'block', background:'linear-gradient(135deg,#FF5533,#cc3300)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Book World Cup tours on GetYourGuide</a>;
                             if (line.startsWith('---CTA-COMPARE---')) return <a key={i} href='/compare' style={{ display:'block', background:'linear-gradient(135deg,#52B788,#2d8a5e)', color:'#ffffff', fontWeight:900, fontSize:'0.95rem', padding:'0.875rem 1.5rem', borderRadius:'0.75rem', textDecoration:'none', margin:'1.25rem 0', textAlign:'center' }}>Compare cost of living between World Cup cities</a>;
-                            let boldLine = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-                              boldLine = boldLine.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:#52B788;font-weight:700;text-decoration:underline;">$1</a>');
-                            if (boldLine !== line) return <p key={i} style={{ margin: '0 0 0.875rem', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: boldLine }} />;
-                            return <p key={i} style={{ margin: '0 0 0.875rem', lineHeight: 1.8 }}>{line}</p>;
-                        })}
+                            return <p key={i} style={{ margin: '0 0 0.875rem', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: highlight(line) }} />;
+                        }); })()}
                     </div>
                     <div style={{ backgroundColor: '#0f172a', borderRadius: '1rem', padding: '2rem', marginTop: '2rem', textAlign: 'center' }}>
                         <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '0.5rem', fontSize: '0.875rem' }}>Compare cities yourself with real data</p>

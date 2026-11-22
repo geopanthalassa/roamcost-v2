@@ -490,3 +490,8 @@ h3, .city-name, [style*="fontWeight: 900"] {
   .post-hero-inner { padding: 1.25rem 1rem 1.5rem !important; }
   .post-h1 { font-size: 1.5rem !important; }
 }
+
+/* ── ARTICLE HIGHLIGHTS ── */
+.post-card mark.hl { background: linear-gradient(transparent 52%, #fde68a 52%); color: #0f172a; font-weight: 800; padding: 0 0.12em; border-radius: 2px; }
+.post-card mark.hl-num { background: linear-gradient(transparent 50%, #bbf7d0 50%); color: #065f46; font-weight: 800; padding: 0 0.1em; border-radius: 2px; white-space: nowrap; }
+.post-card mark.hl-q { background: linear-gradient(transparent 50%, #bfdbfe 50%); color: #1e3a8a; font-weight: 800; padding: 0 0.12em; border-radius: 2px; }
