@@ -2026,7 +2026,9 @@ export default async function BlogPost({ params }: Props) {
     if (!post) return notFound();
 
     const GREEN = '#52B788';
-    const related = Object.entries(POSTS).filter(([s]) => s !== slug).slice(0, 3);
+    const others = Object.entries(POSTS).filter(([s]) => s !== slug);
+    const sameCat = others.filter(([, p]) => p.category === post.category);
+    const related = [...sameCat, ...others.filter(([s]) => !sameCat.some(([x]) => x === s)).reverse()].slice(0, 3);
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>

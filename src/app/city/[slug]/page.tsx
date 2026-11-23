@@ -2,6 +2,7 @@
 import { supabase } from '@/lib/supabase';
 import { getCityImageServer } from '@/lib/getCityImageServer';
 import { notFound } from 'next/navigation';
+import { CITY_GUIDES } from '@/lib/cityGuides';
 import { City } from '@/types/database';
 import Link from 'next/link';
 import CityCard from '@/components/CityCard';
@@ -420,6 +421,12 @@ export default async function CityPage({ params }: CityPageProps) {
                             </div>
                         </div>
                     </div>
+                )}
+
+                {CITY_GUIDES[c.slug] && (
+                    <a href={`/blog/${CITY_GUIDES[c.slug].slug}`} style={{ display: 'block', margin: '0 0 1.5rem', padding: '1rem 1.25rem', background: '#FEF3C7', borderLeft: '5px solid #F59E0B', borderRadius: '0.75rem', textDecoration: 'none', color: '#0f172a', fontWeight: 700 }}>
+                        Read our guide: {CITY_GUIDES[c.slug].title} →
+                    </a>
                 )}
 
                 {related && related.length > 0 && (
